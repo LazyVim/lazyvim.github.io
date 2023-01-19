@@ -3,8 +3,7 @@
 
 // const lightCodeTheme = require("prism-react-renderer/themes/github");
 // const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-const darkCodeTheme = require("./src/themes/tokyonight_moon");
-const lightCodeTheme = darkCodeTheme;
+const theme = require("./src/themes/tokyonight_moon");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -107,8 +106,8 @@ const config = {
         } LazyVim, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: theme,
+        darkTheme: theme,
         additionalLanguages: ["lua", "bash"],
       },
     }),
