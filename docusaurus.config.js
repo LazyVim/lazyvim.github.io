@@ -55,6 +55,7 @@ const config = {
         indexBlog: false,
         indexPages: false,
         docsRouteBasePath: "/",
+        searchBarShortcutHint: false,
       },
     ],
   ],
