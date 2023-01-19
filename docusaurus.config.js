@@ -1,8 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-// const lightCodeTheme = require("prism-react-renderer/themes/github");
-// const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const theme = require("./src/themes/tokyonight_moon");
 
 /** @type {import('@docusaurus/types').Config} */
@@ -38,8 +36,7 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          editUrl: "https://github.com/LazyVim/lazyvim.github.io/tree/master/",
         },
         blog: false,
         theme: {
@@ -101,9 +98,8 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${
-          new Date().getFullYear()
-        } LazyVim, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()
+          } LazyVim, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: theme,
