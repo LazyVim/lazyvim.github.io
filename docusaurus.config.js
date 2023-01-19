@@ -56,11 +56,7 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          {
-            href: "https://github.com/LazyVim/LazyVim",
-            label: "GitHub",
-            position: "right",
-          },
+          ...require("./socials.js"),
         ],
       },
       footer: {

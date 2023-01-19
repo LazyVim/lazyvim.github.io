@@ -41,3 +41,24 @@ html[data-theme='dark'] {
   --ifm-background-color: #1e2030;
   --ifm-background-surface-color: #222436;
 }
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+}
+
+.social path {
+  fill: var(--ifm-navbar-link-color);
+}
+
+.social:hover path {
+  fill: var(--ifm-color-primary);
+}
+
+@media screen and (max-width: 996px) {
+  .social {
+    display: none;
+  }
+}
