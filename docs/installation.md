@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # 🛠️ Installation
 
 You can find a starter template for **LazyVim** [here](https://github.com/LazyVim/starter)
