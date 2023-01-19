@@ -26,6 +26,10 @@ possible keymaps starting with `<space>`.
 | ``<C-Right>`` | Increase window width | **n** |
 | ``<A-j>`` | Move down | **n**, **v**, **i** |
 | ``<A-k>`` | Move up | **n**, **v**, **i** |
+| ``<S-h>`` | Prev buffer | **n** |
+| ``<S-l>`` | Next buffer | **n** |
+| ``[b`` | Prev buffer | **n** |
+| ``]b`` | Next buffer | **n** |
 | ``<leader>bb`` | Switch to Other Buffer | **n** |
 | ``<leader>` `` | Switch to Other Buffer | **n** |
 | ``<esc>`` | Escape and clear hlsearch | **i**, **n** |
