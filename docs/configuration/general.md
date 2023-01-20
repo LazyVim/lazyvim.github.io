@@ -24,6 +24,11 @@ so you don't need to require those files manually.
 └── init.toml
 ```
 
+:::caution
+Do not `require` any files under `lua/config/` or `lazyvim.config` manually.
+**LazyVim** will load those files automatically.
+:::
+
 <!-- general:start -->
 
 import Tabs from '@theme/Tabs';
