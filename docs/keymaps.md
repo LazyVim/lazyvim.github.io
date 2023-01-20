@@ -16,148 +16,208 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| ``<C-h>`` | Go to left window | **n** |
-| ``<C-j>`` | Go to lower window | **n** |
-| ``<C-k>`` | Go to upper window | **n** |
-| ``<C-l>`` | Go to right window | **n** |
-| ``<C-Up>`` | Increase window height | **n** |
-| ``<C-Down>`` | Decrease window height | **n** |
-| ``<C-Left>`` | Decrease window width | **n** |
-| ``<C-Right>`` | Increase window width | **n** |
-| ``<A-j>`` | Move down | **n**, **v**, **i** |
-| ``<A-k>`` | Move up | **n**, **v**, **i** |
-| ``<S-h>`` | Prev buffer | **n** |
-| ``<S-l>`` | Next buffer | **n** |
-| ``[b`` | Prev buffer | **n** |
-| ``]b`` | Next buffer | **n** |
-| ``<leader>bb`` | Switch to Other Buffer | **n** |
-| ``<leader>` `` | Switch to Other Buffer | **n** |
-| ``<esc>`` | Escape and clear hlsearch | **i**, **n** |
-| ``<leader>ur`` | Redraw / clear hlsearch / diff update | **n** |
-| ``n`` | Next search result | **n**, **x**, **o** |
-| ``N`` | Prev search result | **n**, **x**, **o** |
-| ``<C-s>`` | Save file | **i**, **v**, **n**, **s** |
-| ``<leader>l`` | Lazy | **n** |
-| ``<leader>fn`` | New File | **n** |
-| ``<leader>xl`` | Open Location List | **n** |
-| ``<leader>xq`` | Open Quickfix List | **n** |
-| ``<leader>uf`` | Toggle format on Save | **n** |
-| ``<leader>us`` | Toggle Spelling | **n** |
-| ``<leader>uw`` | Toggle Word Wrap | **n** |
-| ``<leader>ul`` | Toggle Line Numbers | **n** |
-| ``<leader>ud`` | Toggle Diagnostics | **n** |
-| ``<leader>uc`` | Toggle Conceal | **n** |
-| ``<leader>gg`` | Lazygit (root dir) | **n** |
-| ``<leader>gG`` | Lazygit (cwd) | **n** |
-| ``<leader>qq`` | Quit all | **n** |
-| ``<leader>ui`` | Inspect Pos | **n** |
-| ``<leader>ft`` | Terminal (root dir) | **n** |
-| ``<leader>fT`` | Terminal (cwd) | **n** |
-| ``<esc><esc>`` | Enter Normal Mode | **t** |
-| ``<leader>ww`` | Other window | **n** |
-| ``<leader>wd`` | Delete window | **n** |
-| ``<leader>w-`` | Split window below | **n** |
-| ``<leader>w\|`` | Split window right | **n** |
-| ``<leader>-`` | Split window below | **n** |
-| ``<leader>\|`` | Split window right | **n** |
-| ``<leader><tab>l`` | Last Tab | **n** |
-| ``<leader><tab>f`` | First Tab | **n** |
-| ``<leader><tab><tab>`` | New Tab | **n** |
-| ``<leader><tab>]`` | Next Tab | **n** |
-| ``<leader><tab>d`` | Close Tab | **n** |
-| ``<leader><tab>[`` | Previous Tab | **n** |
+| <code>&lt;C-h&gt;</code> | Go to left window | **n** |
+| <code>&lt;C-j&gt;</code> | Go to lower window | **n** |
+| <code>&lt;C-k&gt;</code> | Go to upper window | **n** |
+| <code>&lt;C-l&gt;</code> | Go to right window | **n** |
+| <code>&lt;C-Up&gt;</code> | Increase window height | **n** |
+| <code>&lt;C-Down&gt;</code> | Decrease window height | **n** |
+| <code>&lt;C-Left&gt;</code> | Decrease window width | **n** |
+| <code>&lt;C-Right&gt;</code> | Increase window width | **n** |
+| <code>&lt;A-j&gt;</code> | Move down | **n**, **v**, **i** |
+| <code>&lt;A-k&gt;</code> | Move up | **n**, **v**, **i** |
+| <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
+| <code>&lt;S-l&gt;</code> | Next buffer | **n** |
+| <code>[b</code> | Prev buffer | **n** |
+| <code>]b</code> | Next buffer | **n** |
+| <code>&lt;leader&gt;bb</code> | Switch to Other Buffer | **n** |
+| <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
+| <code>&lt;esc&gt;</code> | Escape and clear hlsearch | **i**, **n** |
+| <code>&lt;leader&gt;ur</code> | Redraw / clear hlsearch / diff update | **n** |
+| <code>n</code> | Next search result | **n**, **x**, **o** |
+| <code>N</code> | Prev search result | **n**, **x**, **o** |
+| <code>&lt;C-s&gt;</code> | Save file | **i**, **v**, **n**, **s** |
+| <code>&lt;leader&gt;l</code> | Lazy | **n** |
+| <code>&lt;leader&gt;fn</code> | New File | **n** |
+| <code>&lt;leader&gt;xl</code> | Open Location List | **n** |
+| <code>&lt;leader&gt;xq</code> | Open Quickfix List | **n** |
+| <code>&lt;leader&gt;uf</code> | Toggle format on Save | **n** |
+| <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
+| <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
+| <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
+| <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
+| <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
+| <code>&lt;leader&gt;gg</code> | Lazygit (root dir) | **n** |
+| <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
+| <code>&lt;leader&gt;qq</code> | Quit all | **n** |
+| <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
+| <code>&lt;leader&gt;ft</code> | Terminal (root dir) | **n** |
+| <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
+| <code>&lt;esc&gt;&lt;esc&gt;</code> | Enter Normal Mode | **t** |
+| <code>&lt;leader&gt;ww</code> | Other window | **n** |
+| <code>&lt;leader&gt;wd</code> | Delete window | **n** |
+| <code>&lt;leader&gt;w-</code> | Split window below | **n** |
+| <code>&lt;leader&gt;w&vert;</code> | Split window right | **n** |
+| <code>&lt;leader&gt;-</code> | Split window below | **n** |
+| <code>&lt;leader&gt;&vert;</code> | Split window right | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;&lt;tab&gt;</code> | New Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;]</code> | Next Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;d</code> | Close Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;[</code> | Previous Tab | **n** |
 
 ## LSP
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| ``<leader>cd`` | Line Diagnostics | **n** |
-| ``<leader>cl`` | Lsp Info | **n** |
-| ``gd`` | Goto Definition | **n** |
-| ``gr`` | References | **n** |
-| ``gD`` | Goto Declaration | **n** |
-| ``gI`` | Goto Implementation | **n** |
-| ``gt`` | Goto Type Definition | **n** |
-| ``K`` | Hover | **n** |
-| ``gK`` | Signature Help | **n** |
-| ``<c-k>`` | Signature Help | **i** |
-| ``]d`` | Next Diagnostic | **n** |
-| ``[d`` | Prev Diagnostic | **n** |
-| ``]e`` | Next Error | **n** |
-| ``[e`` | Prev Error | **n** |
-| ``]w`` | Next Warning | **n** |
-| ``[w`` | Prev Warning | **n** |
-| ``<leader>ca`` | Code Action | **n**, **v** |
-| ``<leader>cf`` | Format Document | **n** |
-| ``<leader>cf`` | Format Range | **v** |
-| ``<leader>cr`` | Rename | **n** |
+| <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
+| <code>&lt;leader&gt;cl</code> | Lsp Info | **n** |
+| <code>gd</code> | Goto Definition | **n** |
+| <code>gr</code> | References | **n** |
+| <code>gD</code> | Goto Declaration | **n** |
+| <code>gI</code> | Goto Implementation | **n** |
+| <code>gt</code> | Goto Type Definition | **n** |
+| <code>K</code> | Hover | **n** |
+| <code>gK</code> | Signature Help | **n** |
+| <code>&lt;c-k&gt;</code> | Signature Help | **i** |
+| <code>]d</code> | Next Diagnostic | **n** |
+| <code>[d</code> | Prev Diagnostic | **n** |
+| <code>]e</code> | Next Error | **n** |
+| <code>[e</code> | Prev Error | **n** |
+| <code>]w</code> | Next Warning | **n** |
+| <code>[w</code> | Prev Warning | **n** |
+| <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
+| <code>&lt;leader&gt;cf</code> | Format Document | **n** |
+| <code>&lt;leader&gt;cf</code> | Format Range | **v** |
+| <code>&lt;leader&gt;cr</code> | Rename | **n** |
 
-## Plugins
+## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| ``<leader>cm`` | [mason.nvim](https://github.com/williamboman/mason.nvim.git) Mason | **n** |
-| ``<leader>bd`` | [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git) Delete Buffer | **n** |
-| ``<leader>bD`` | [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git) Delete Buffer (Force) | **n** |
-| ``gza`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Add surrounding | **n**, **v** |
-| ``gzd`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Delete surrounding | **n** |
-| ``gzf`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Find right surrounding | **n** |
-| ``gzF`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Find left surrounding | **n** |
-| ``gzh`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Highlight surrounding | **n** |
-| ``gzr`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Replace surrounding | **n** |
-| ``gzn`` | [mini.surround](https://github.com/echasnovski/mini.surround.git) Update `MiniSurround.config.n_lines` | **n** |
-| ``<leader>fe`` | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) Explorer NeoTree (root dir) | **n** |
-| ``<leader>fE`` | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) Explorer NeoTree (cwd) | **n** |
-| ``<leader>e`` | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) Explorer NeoTree (root dir) | **n** |
-| ``<leader>E`` | [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) Explorer NeoTree (cwd) | **n** |
-| ``<S-Enter>`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Redirect Cmdline | **c** |
-| ``<leader>snl`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Noice Last Message | **n** |
-| ``<leader>snh`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Noice History | **n** |
-| ``<leader>sna`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Noice All | **n** |
-| ``<c-f>`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Scroll forward | **n** |
-| ``<c-b>`` | [noice.nvim](https://github.com/folke/noice.nvim.git) Scroll backward | **n** |
-| ``<leader>un`` | [nvim-notify](https://github.com/rcarriga/nvim-notify.git) Delete all Notifications | **n** |
-| ``<leader>sr`` | [nvim-spectre](https://github.com/windwp/nvim-spectre.git) Replace in files (Spectre) | **n** |
-| ``<c-space>`` | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git) Increment selection | **n** |
-| ``<bs>`` | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git) Schrink selection | **x** |
-| ``<leader>qs`` | [persistence.nvim](https://github.com/folke/persistence.nvim.git) Restore Session | **n** |
-| ``<leader>ql`` | [persistence.nvim](https://github.com/folke/persistence.nvim.git) Restore Last Session | **n** |
-| ``<leader>qd`` | [persistence.nvim](https://github.com/folke/persistence.nvim.git) Don't Save Current Session | **n** |
-| ``<leader>,`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Switch Buffer | **n** |
-| ``<leader>/`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Find in Files (Grep) | **n** |
-| ``<leader>:`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Command History | **n** |
-| ``<leader><space>`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Find Files (root dir) | **n** |
-| ``<leader>fb`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Buffers | **n** |
-| ``<leader>ff`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Find Files (root dir) | **n** |
-| ``<leader>fF`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Find Files (cwd) | **n** |
-| ``<leader>fr`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Recent | **n** |
-| ``<leader>gc`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) commits | **n** |
-| ``<leader>gs`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) status | **n** |
-| ``<leader>sa`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Auto Commands | **n** |
-| ``<leader>sb`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Buffer | **n** |
-| ``<leader>sc`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Command History | **n** |
-| ``<leader>sC`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Commands | **n** |
-| ``<leader>sd`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Diagnostics | **n** |
-| ``<leader>sg`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Grep (root dir) | **n** |
-| ``<leader>sG`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Grep (cwd) | **n** |
-| ``<leader>sh`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Help Pages | **n** |
-| ``<leader>sH`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Search Highlight Groups | **n** |
-| ``<leader>sk`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Key Maps | **n** |
-| ``<leader>sM`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Man Pages | **n** |
-| ``<leader>sm`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Jump to Mark | **n** |
-| ``<leader>so`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Options | **n** |
-| ``<leader>sw`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Word (root dir) | **n** |
-| ``<leader>sW`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Word (cwd) | **n** |
-| ``<leader>uC`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Colorscheme with preview | **n** |
-| ``<leader>ss`` | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) Goto Symbol | **n** |
-| ``]t`` | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) Next todo comment | **n** |
-| ``[t`` | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) Previous todo comment | **n** |
-| ``<leader>xt`` | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) Todo (Trouble) | **n** |
-| ``<leader>xT`` | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) Todo/Fix/Fixme (Trouble) | **n** |
-| ``<leader>st`` | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) Todo | **n** |
-| ``<leader>xx`` | [trouble.nvim](https://github.com/folke/trouble.nvim.git) Document Diagnostics (Trouble) | **n** |
-| ``<leader>xX`` | [trouble.nvim](https://github.com/folke/trouble.nvim.git) Workspace Diagnostics (Trouble) | **n** |
-| ``]]`` | [vim-illuminate](https://github.com/RRethy/vim-illuminate.git) Next Reference | **n** |
-| ``[[`` | [vim-illuminate](https://github.com/RRethy/vim-illuminate.git) Prev Reference | **n** |
+| <code>&lt;leader&gt;cm</code> | Mason | **n** |
+
+## [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
+| <code>&lt;leader&gt;bD</code> | Delete Buffer (Force) | **n** |
+
+## [mini.surround](https://github.com/echasnovski/mini.surround.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>gza</code> | Add surrounding | **n**, **v** |
+| <code>gzd</code> | Delete surrounding | **n** |
+| <code>gzf</code> | Find right surrounding | **n** |
+| <code>gzF</code> | Find left surrounding | **n** |
+| <code>gzh</code> | Highlight surrounding | **n** |
+| <code>gzr</code> | Replace surrounding | **n** |
+| <code>gzn</code> | Update `MiniSurround.config.n_lines` | **n** |
+
+## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;fe</code> | Explorer NeoTree (root dir) | **n** |
+| <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
+| <code>&lt;leader&gt;e</code> | Explorer NeoTree (root dir) | **n** |
+| <code>&lt;leader&gt;E</code> | Explorer NeoTree (cwd) | **n** |
+
+## [noice.nvim](https://github.com/folke/noice.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;S-Enter&gt;</code> | Redirect Cmdline | **c** |
+| <code>&lt;leader&gt;snl</code> | Noice Last Message | **n** |
+| <code>&lt;leader&gt;snh</code> | Noice History | **n** |
+| <code>&lt;leader&gt;sna</code> | Noice All | **n** |
+| <code>&lt;c-f&gt;</code> | Scroll forward | **n** |
+| <code>&lt;c-b&gt;</code> | Scroll backward | **n** |
+
+## [nvim-notify](https://github.com/rcarriga/nvim-notify.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;un</code> | Delete all Notifications | **n** |
+
+## [nvim-spectre](https://github.com/windwp/nvim-spectre.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;sr</code> | Replace in files (Spectre) | **n** |
+
+## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;c-space&gt;</code> | Increment selection | **n** |
+| <code>&lt;bs&gt;</code> | Schrink selection | **x** |
+
+## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;qs</code> | Restore Session | **n** |
+| <code>&lt;leader&gt;ql</code> | Restore Last Session | **n** |
+| <code>&lt;leader&gt;qd</code> | Don't Save Current Session | **n** |
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
+| <code>&lt;leader&gt;/</code> | Find in Files (Grep) | **n** |
+| <code>&lt;leader&gt;:</code> | Command History | **n** |
+| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (root dir) | **n** |
+| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
+| <code>&lt;leader&gt;ff</code> | Find Files (root dir) | **n** |
+| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
+| <code>&lt;leader&gt;fr</code> | Recent | **n** |
+| <code>&lt;leader&gt;gc</code> | commits | **n** |
+| <code>&lt;leader&gt;gs</code> | status | **n** |
+| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
+| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
+| <code>&lt;leader&gt;sc</code> | Command History | **n** |
+| <code>&lt;leader&gt;sC</code> | Commands | **n** |
+| <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sg</code> | Grep (root dir) | **n** |
+| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
+| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
+| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
+| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
+| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
+| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
+| <code>&lt;leader&gt;so</code> | Options | **n** |
+| <code>&lt;leader&gt;sw</code> | Word (root dir) | **n** |
+| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
+| <code>&lt;leader&gt;uC</code> | Colorscheme with preview | **n** |
+| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
+
+## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>]t</code> | Next todo comment | **n** |
+| <code>[t</code> | Previous todo comment | **n** |
+| <code>&lt;leader&gt;xt</code> | Todo (Trouble) | **n** |
+| <code>&lt;leader&gt;xT</code> | Todo/Fix/Fixme (Trouble) | **n** |
+| <code>&lt;leader&gt;st</code> | Todo | **n** |
+
+## [trouble.nvim](https://github.com/folke/trouble.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;xx</code> | Document Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
+
+## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>]]</code> | Next Reference | **n** |
+| <code>[[</code> | Prev Reference | **n** |
 
 <!-- keymaps:end -->
