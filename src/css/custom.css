@@ -33,6 +33,13 @@
   --ifm-navbar-search-input-background-color: #2f334d;
 }
 
+.logo-svg-text {
+  fill: var(--ifm-color-primary)
+}
+.navbar__logo img {
+  fill: var(--ifm-color-primary)
+}
+
 .footer--dark {
   --ifm-footer-background-color: #2f334d;
 }

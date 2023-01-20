@@ -66,8 +66,9 @@ const config = {
       navbar: {
         title: "LazyVim",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.png",
+          alt: "LazyVim Logo",
+          src: "img/icon.svg",
+          srcDark: "img/icon-dark.svg",
         },
         items: [
           ...require("./socials.js"),

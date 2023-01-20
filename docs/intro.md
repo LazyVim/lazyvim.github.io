@@ -5,10 +5,14 @@ sidebar_position: 1
 
 # 🚀 Getting Started
 
+import LogoSvg from '/img/logo.svg';
+
+<LogoSvg className="logosvg" />
+
 LazyVim is a Neovim setup powered by [💤 lazy.nvim](https://github.com/folke/lazy.nvim)
 to make it easy to customize and extend your config.
 
-![image](https://user-images.githubusercontent.com/292349/211285846-0b7bb3bf-0462-4029-b64c-4ee1d037fc1c.png)
+![image](https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png)
 
 ## ✨ Features
 
