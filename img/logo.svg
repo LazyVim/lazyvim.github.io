@@ -1,0 +1,10 @@
+<svg height="125" width="570" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <text class="logo-svg-text" dx="0" y="15" font-family="monospace" xml:space="preserve" letter-spacing="-.5" dominant-baseline="hanging" font-size="15">
+    <tspan alignment-baseline="hanging" x="0" dy="0">██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z</tspan>
+    <tspan alignment-baseline="hanging" x="0" dy="1.35em">██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z    </tspan>
+    <tspan alignment-baseline="hanging" x="0" dy="1.35em">██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z       </tspan>
+    <tspan alignment-baseline="hanging" x="0" dy="1.35em">██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z         </tspan>
+    <tspan alignment-baseline="hanging" x="0" dy="1.35em">███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║           </tspan>
+    <tspan alignment-baseline="hanging" x="0" dy="1.35em">╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝           </tspan>
+  </text>
+</svg>
