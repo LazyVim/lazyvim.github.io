@@ -2,7 +2,7 @@
 
 Example for changing the colorscheme to [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim):
 
-```lua title="lua/plugins/colorscheme.lua"
+```lua title="lua/plugins/colorscheme.lua" {2,8}
 -- add gruvbox
 { "ellisonleao/gruvbox.nvim" },
 

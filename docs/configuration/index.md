@@ -3,14 +3,13 @@
 ## 📂 File Structure
 
 The files under config will be automatically loaded at the appropriate time,
-so you don't need to require those files manually.
-**LazyVim** comes with a set of default config files that will be loaded
-**_before_** your own. See [here](https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/config)
+so you don't need to require those files manually. For more information, see [general settings](./configuration/general).
 
 You can add your custom plugin specs under `lua/plugins/`. All files there
-will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim)
+will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim).
+For more information, see [configuring plugins](./configuration/plugins).
 
-```
+```text {4-7,9-11}
 ~/.config/nvim
 ├── lua
 │   ├── config
@@ -25,9 +24,9 @@ will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim)
 └── init.toml
 ```
 
-## LazyVim
+## Icons & Colorscheme
 
-**LazyVim** can be configured in the same way as any other plugin.
+Icons & colorscheme can be configured as options for the **LazyVim** plugin.
 
 For example in `lua/plugins/core.lua`
 
