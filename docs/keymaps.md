@@ -60,12 +60,12 @@ possible keymaps starting with `<space>`.
 | ``<leader>w\|`` | Split window right | **n** |
 | ``<leader>-`` | Split window below | **n** |
 | ``<leader>\|`` | Split window right | **n** |
-| ``<leader><tab>l`` | Last | **n** |
-| ``<leader><tab>f`` | First | **n** |
+| ``<leader><tab>l`` | Last Tab | **n** |
+| ``<leader><tab>f`` | First Tab | **n** |
 | ``<leader><tab><tab>`` | New Tab | **n** |
-| ``<leader><tab>]`` | Next | **n** |
-| ``<leader><tab>d`` | Close | **n** |
-| ``<leader><tab>[`` | Previous | **n** |
+| ``<leader><tab>]`` | Next Tab | **n** |
+| ``<leader><tab>d`` | Close Tab | **n** |
+| ``<leader><tab>[`` | Previous Tab | **n** |
 
 ## LSP
 
