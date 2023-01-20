@@ -35,6 +35,11 @@
 .logo-svg-text {
   fill: var(--ifm-color-primary)
 }
+
+.logo-svg-text tspan {
+  white-space: pre
+}
+
 .navbar__logo img {
   fill: var(--ifm-color-primary)
 }
