@@ -98,3 +98,18 @@ You can also disable a default keymap by setting it to `false`.
   },
 },
 ```
+
+You can also return a whole new set of keymaps to be used instead.
+Or return `{}` to disable all keymaps for a plugin.
+
+```lua title="lua/plugins/telescope.lua"
+{
+  "nvim-telescope/telescope.nvim",
+  -- replace all Telescope keymaps with only one mapping
+  keys = function()
+    return {
+      { "<leader>ff", "Telescope find_files" desc = "Find Files", },
+    }
+  end,
+},
+```
