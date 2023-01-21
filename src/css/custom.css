@@ -32,12 +32,12 @@
   --ifm-navbar-search-input-background-color: #2f334d;
 }
 
-.logo-svg-text {
-  fill: var(--ifm-color-primary)
+.logosvg {
+  max-width: 570px;
 }
 
-.logo-svg-text tspan {
-  white-space: pre
+.logosvg path {
+  fill: var(--ifm-color-primary)
 }
 
 .navbar__logo img {
