@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # General Settings
@@ -24,7 +24,7 @@ so you don't need to require those files manually.
 └── init.toml
 ```
 
-:::caution
+:::danger
 Do not `require` any files under `lua/config/` or `lazyvim.config` manually.
 **LazyVim** will load those files automatically.
 :::
