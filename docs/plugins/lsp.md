@@ -1,5 +1,27 @@
 # LSP
 
+## ⌨️ Customizing [LSP Keymaps](/keymaps#lsp)
+
+The syntax for adding, deleting and changing [LSP Keymaps](/keymaps#lsp),
+is the same as for [plugin keymaps](/configuration/plugins#%EF%B8%8F-adding--disabling-plugin-keymaps),
+but you need to configure it using the `init()` method.
+
+```lua
+-- LSP keymaps
+{
+  "neovim/nvim-lspconfig",
+  init = function()
+    local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- change a keymap
+    keys[#keys + 1] = { "K", "<cmd>echo 'hello'<cr>" }
+    -- disable a keymap
+    keys[#keys + 1] = { "K", false }
+    -- add a keymap
+    keys[#keys + 1] = { "H", "<cmd>echo 'hello'<cr>" }
+  end,
+}
+```
+
 <!-- plugins:start -->
 
 import Tabs from '@theme/Tabs';
@@ -7,8 +29,7 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
- lspconfig
-
+lspconfig
 
 <Tabs>
 
@@ -66,7 +87,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -210,7 +230,6 @@ opts = {}
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -232,7 +251,6 @@ opts = { experimental = { pathStrict = true } }
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -256,7 +274,6 @@ opts = nil
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -279,7 +296,6 @@ opts = nil
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -292,8 +308,7 @@ opts = nil
 
 ## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 
- formatters
-
+formatters
 
 <Tabs>
 
@@ -313,7 +328,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -341,8 +355,7 @@ end
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
- cmdline tools and lsp servers
-
+cmdline tools and lsp servers
 
 <Tabs>
 
@@ -360,7 +373,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
