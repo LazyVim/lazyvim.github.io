@@ -82,6 +82,7 @@ that can make changes to the default values, or return new values to be used ins
 Adding `keys=` follows the rules as explained above.
 
 You can also disable a default keymap by setting it to `false`.
+To override a keymap, simply add one with the same `lhs` and a new `rhs`.
 
 ```lua title="lua/plugins/telescope.lua"
 {
@@ -89,6 +90,8 @@ You can also disable a default keymap by setting it to `false`.
   keys = {
     -- disable the keymap to grep files
     {"<leader>/", false},
+    -- change a keymap
+    { "<leader>ff", "Telescope find_files" desc = "Find Files" },
     -- add a keymap to browse plugin files
     {
       "<leader>fp",
@@ -108,7 +111,7 @@ Or return `{}` to disable all keymaps for a plugin.
   -- replace all Telescope keymaps with only one mapping
   keys = function()
     return {
-      { "<leader>ff", "Telescope find_files" desc = "Find Files", },
+      { "<leader>ff", "Telescope find_files" desc = "Find Files" },
     }
   end,
 },
