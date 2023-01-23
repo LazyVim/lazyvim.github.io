@@ -17,8 +17,13 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 - Make a backup of your current Neovim files:
 
   ```sh
+  # required
   mv ~/.config/nvim ~/.config/nvim.bak
+
+  # optional but recommended
   mv ~/.local/share/nvim ~/.local/share/nvim.bak
+  mv ~/.local/state/nvim ~/.local/state/nvim.bak
+  mv ~/.cache/nvim ~/.cache/nvim.bak
   ```
 
 - Clone the starter
@@ -42,6 +47,44 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
   Refer to the comments in the files on how to customize **LazyVim**.
 
 </TabItem>
+
+<TabItem value="windows" label="Windows">
+
+Install the [LazyVim Starter](https://github.com/LazyVim/starter)
+with [PowerShell](https://github.com/PowerShell/PowerShell)
+
+- Make a backup of your current Neovim files:
+
+  ```powershell
+  # required
+  Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+
+  # optional but recommended
+  Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
+  ```
+
+- Clone the starter
+
+  ```powershell
+  git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
+  ```
+
+- Remove the `.git` folder, so you can add it to your own repo later
+
+  ```powershell
+  Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse
+  ```
+
+- Start Neovim!
+
+  ```powershell
+  nvim
+  ```
+
+  Refer to the comments in the files on how to customize **LazyVim**.
+
+</TabItem>
+
 <TabItem value="docker" label="Try it with Docker">
 
 ```sh

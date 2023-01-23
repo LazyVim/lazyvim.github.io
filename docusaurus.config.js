@@ -48,7 +48,7 @@ const config = {
 
   plugins: [
     [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      require.resolve("@easyops-cn/docusaurus-search-local"),
       {
         hashed: true,
         indexDocs: true,
@@ -115,7 +115,7 @@ const config = {
       prism: {
         theme: theme,
         darkTheme: theme,
-        additionalLanguages: ["lua", "bash"],
+        additionalLanguages: ["lua", "bash", "powershell"],
       },
     }),
 };
