@@ -43,6 +43,9 @@ opts = {
     { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
     { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
   },
+  deactivate = function()
+    vim.cmd([[Neotree close]])
+  end,
   init = function()
     vim.g.neo_tree_remove_legacy_commands = 1
     if vim.fn.argc() == 1 then
@@ -115,10 +118,10 @@ opts = {
         ["<c-t>"] = function(...)
           return require("trouble.providers.telescope").open_with_trouble(...)
         end,
-        ["<C-i>"] = function()
+        ["<a-i>"] = function()
           Util.telescope("find_files", { no_ignore = true })()
         end,
-        ["<C-h>"] = function()
+        ["<a-h>"] = function()
           Util.telescope("find_files", { hidden = true })()
         end,
         ["<C-Down>"] = function(...)
@@ -201,10 +204,10 @@ opts = {
           ["<c-t>"] = function(...)
             return require("trouble.providers.telescope").open_with_trouble(...)
           end,
-          ["<C-i>"] = function()
+          ["<a-i>"] = function()
             Util.telescope("find_files", { no_ignore = true })()
           end,
-          ["<C-h>"] = function()
+          ["<a-h>"] = function()
             Util.telescope("find_files", { hidden = true })()
           end,
           ["<C-Down>"] = function(...)
