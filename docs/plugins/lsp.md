@@ -104,7 +104,7 @@ opts = {
     {
       "hrsh7th/cmp-nvim-lsp",
       cond = function()
-        require("lazyvim.util").has("cmp")
+        return require("lazyvim.util").has("nvim-cmp")
       end,
     },
   },
@@ -313,7 +313,7 @@ opts = nil
 {
   "hrsh7th/cmp-nvim-lsp",
   cond = function()
-    require("lazyvim.util").has("cmp")
+    return require("lazyvim.util").has("nvim-cmp")
   end,
 }
 ```

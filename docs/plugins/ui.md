@@ -476,9 +476,6 @@ opts = {
 {
   "folke/noice.nvim",
   event = "VeryLazy",
-  deactivate = function()
-    require("noice").disable()
-  end,
   opts = {
     lsp = {
       override = {
