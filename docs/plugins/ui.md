@@ -249,7 +249,7 @@ opts = function(plugin)
         end,
       },
     },
-    extensions = { "nvim-tree" },
+    extensions = { "neo-tree" },
   }
 end
 ```
@@ -334,7 +334,7 @@ end
           end,
         },
       },
-      extensions = { "nvim-tree" },
+      extensions = { "neo-tree" },
     }
   end,
 }
