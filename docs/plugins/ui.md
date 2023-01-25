@@ -100,7 +100,7 @@ opts = nil
 
 </Tabs>
 
-## [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
+## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
  bufferline
 
@@ -139,7 +139,7 @@ opts = {
 
 ```lua
 {
-  "akinsho/nvim-bufferline.lua",
+  "akinsho/bufferline.nvim",
   event = "VeryLazy",
   opts = {
     options = {
@@ -179,10 +179,6 @@ opts = {
 
 ```lua
 opts = function(plugin)
-  if plugin.override then
-    require("lazyvim.util").deprecate("lualine.override", "lualine.opts")
-  end
-
   local icons = require("lazyvim.config").icons
 
   local function fg(name)
@@ -268,10 +264,6 @@ end
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
   opts = function(plugin)
-    if plugin.override then
-      require("lazyvim.util").deprecate("lualine.override", "lualine.opts")
-    end
-
     local icons = require("lazyvim.config").icons
 
     local function fg(name)

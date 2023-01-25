@@ -159,13 +159,6 @@ opts = {
   },
   ---@param opts PluginLspOpts
   config = function(plugin, opts)
-    if plugin.servers then
-      require("lazyvim.util").deprecate("lspconfig.servers", "lspconfig.opts.servers")
-    end
-    if plugin.setup_server then
-      require("lazyvim.util").deprecate("lspconfig.setup_server", "lspconfig.opts.setup[SERVER]")
-    end
-
     -- setup autoformat
     require("lazyvim.plugins.lsp.format").autoformat = opts.autoformat
     -- setup formatting and keymaps
@@ -412,9 +405,6 @@ opts = {
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
   config = function(plugin, opts)
-    if plugin.ensure_installed then
-      require("lazyvim.util").deprecate("treesitter.ensure_installed", "treesitter.opts.ensure_installed")
-    end
     require("mason").setup(opts)
     local mr = require("mason-registry")
     for _, tool in ipairs(opts.ensure_installed) do
