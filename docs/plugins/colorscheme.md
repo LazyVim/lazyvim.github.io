@@ -24,7 +24,8 @@ import TabItem from '@theme/TabItem';
 
 ## [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 
-tokyonight
+ tokyonight
+
 
 <Tabs>
 
@@ -35,6 +36,7 @@ opts = { style = "moon" }
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -52,7 +54,8 @@ opts = { style = "moon" }
 
 ## [catppuccin](https://github.com/catppuccin/nvim)
 
-catppuccin
+ catppuccin
+
 
 <Tabs>
 
@@ -63,6 +66,7 @@ opts = nil
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
