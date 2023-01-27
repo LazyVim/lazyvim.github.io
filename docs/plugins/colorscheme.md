@@ -3,16 +3,18 @@
 Example for changing the colorscheme to [Gruvbox](https://github.com/ellisonleao/gruvbox.nvim):
 
 ```lua title="lua/plugins/colorscheme.lua" {2,8}
--- add gruvbox
-{ "ellisonleao/gruvbox.nvim" },
+return {
+  -- add gruvbox
+  { "ellisonleao/gruvbox.nvim" },
 
--- Configure LazyVim to load gruvbox
-{
-  "LazyVim/LazyVim",
-  opts = {
-    colorscheme = "gruvbox",
-  },
-},
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
+  }
+}
 ```
 
 <!-- plugins:start -->
@@ -22,8 +24,7 @@ import TabItem from '@theme/TabItem';
 
 ## [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 
- tokyonight
-
+tokyonight
 
 <Tabs>
 
@@ -34,7 +35,6 @@ opts = { style = "moon" }
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -52,8 +52,7 @@ opts = { style = "moon" }
 
 ## [catppuccin](https://github.com/catppuccin/nvim)
 
- catppuccin
-
+catppuccin
 
 <Tabs>
 
@@ -64,7 +63,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
