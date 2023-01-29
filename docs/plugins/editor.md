@@ -20,6 +20,11 @@ opts = {
     bind_to_cwd = false,
     follow_current_file = true,
   },
+  window = {
+    mappings = {
+      ["<space>"] = "none",
+    },
+  },
 }
 ```
 
@@ -66,6 +71,11 @@ opts = {
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = true,
+    },
+    window = {
+      mappings = {
+        ["<space>"] = "none",
+      },
     },
   },
 }
