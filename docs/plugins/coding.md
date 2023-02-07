@@ -361,8 +361,9 @@ opts = {
 ```lua
 {
   "echasnovski/mini.surround",
-  keys = function(plugin, keys)
+  keys = function(_, keys)
     -- Populate the keys based on the user's options
+    local plugin = require("lazy.core.config").spec.plugins["mini.surround"]
     local opts = require("lazy.core.plugin").values(plugin, "opts", false)
     local mappings = {
       { opts.mappings.add, desc = "Add surrounding", mode = { "n", "v" } },
@@ -499,10 +500,11 @@ end
 ```lua
 {
   "echasnovski/mini.ai",
-  keys = {
-    { "a", mode = { "x", "o" } },
-    { "i", mode = { "x", "o" } },
-  },
+  -- keys = {
+  --   { "a", mode = { "x", "o" } },
+  --   { "i", mode = { "x", "o" } },
+  -- },
+  event = "VeryLazy",
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",

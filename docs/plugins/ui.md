@@ -487,8 +487,8 @@ opts = {
     { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
     { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
     { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-    { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward" },
-    { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward"},
+    { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
+    { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
   },
 }
 ```
@@ -583,8 +583,6 @@ end
     return dashboard
   end,
   config = function(_, dashboard)
-    vim.b.miniindentscope_disable = true
-
     -- close Lazy and re-open when the dashboard is ready
     if vim.o.filetype == "lazy" then
       vim.cmd.close()
@@ -625,7 +623,14 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { separator = " ", highlight = true, depth_limit = 5 }
+opts = function()
+  return {
+    separator = " ",
+    highlight = true,
+    depth_limit = 5,
+    icons = require("lazyvim.config").icons.kinds,
+  }
+end
 ```
 
 </TabItem>
@@ -645,7 +650,14 @@ opts = { separator = " ", highlight = true, depth_limit = 5 }
       end
     end)
   end,
-  opts = { separator = " ", highlight = true, depth_limit = 5 },
+  opts = function()
+    return {
+      separator = " ",
+      highlight = true,
+      depth_limit = 5,
+      icons = require("lazyvim.config").icons.kinds,
+    }
+  end,
 }
 ```
 

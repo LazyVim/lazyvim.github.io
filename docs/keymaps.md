@@ -24,8 +24,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;C-Down&gt;</code> | Decrease window height | **n** |
 | <code>&lt;C-Left&gt;</code> | Decrease window width | **n** |
 | <code>&lt;C-Right&gt;</code> | Increase window width | **n** |
-| <code>&lt;A-j&gt;</code> | Move down | **n**, **v**, **i** |
-| <code>&lt;A-k&gt;</code> | Move up | **n**, **v**, **i** |
+| <code>&lt;A-j&gt;</code> | Move down | **n**, **i**, **v** |
+| <code>&lt;A-k&gt;</code> | Move up | **n**, **i**, **v** |
 | <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
 | <code>&lt;S-l&gt;</code> | Next buffer | **n** |
 | <code>[b</code> | Prev buffer | **n** |
@@ -134,8 +134,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;snl</code> | Noice Last Message | **n** |
 | <code>&lt;leader&gt;snh</code> | Noice History | **n** |
 | <code>&lt;leader&gt;sna</code> | Noice All | **n** |
-| <code>&lt;c-f&gt;</code> | Scroll forward | **n** |
-| <code>&lt;c-b&gt;</code> | Scroll backward | **n** |
+| <code>&lt;c-f&gt;</code> | Scroll forward | **i**, **n**, **s** |
+| <code>&lt;c-b&gt;</code> | Scroll backward | **i**, **n**, **s** |
 
 ## [nvim-notify](https://github.com/rcarriga/nvim-notify.git)
 
