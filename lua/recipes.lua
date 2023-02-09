@@ -1,5 +1,6 @@
 return {
   -- ## Add a `nvim-cmp` source
+  --
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
@@ -24,8 +25,8 @@ return {
   },
 
   -- ## Supertab
-  -- Use `<tab>` for completion and snippets (supertab).
   --
+  -- Use `<tab>` for completion and snippets (supertab).
   --
   -- 1. Disable default `<tab>` and `<s-tab>` behavior in LuaSnip
   {

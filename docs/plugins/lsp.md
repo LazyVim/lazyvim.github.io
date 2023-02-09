@@ -95,7 +95,7 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
     { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
@@ -347,7 +347,7 @@ end
 ```lua
 {
   "jose-elias-alvarez/null-ls.nvim",
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
   opts = function()
     local nls = require("null-ls")

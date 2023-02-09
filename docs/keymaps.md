@@ -39,8 +39,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;C-s&gt;</code> | Save file | **i**, **v**, **n**, **s** |
 | <code>&lt;leader&gt;l</code> | Lazy | **n** |
 | <code>&lt;leader&gt;fn</code> | New File | **n** |
-| <code>&lt;leader&gt;xl</code> | Open Location List | **n** |
-| <code>&lt;leader&gt;xq</code> | Open Quickfix List | **n** |
+| <code>&lt;leader&gt;xl</code> | Location List | **n** |
+| <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;uf</code> | Toggle format on Save | **n** |
 | <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
 | <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
@@ -91,6 +91,13 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;cf</code> | Format Document | **n** |
 | <code>&lt;leader&gt;cf</code> | Format Range | **v** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
+
+## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
+| <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 
@@ -212,6 +219,8 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;xx</code> | Document Diagnostics (Trouble) | **n** |
 | <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
+| <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
 
 ## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
 

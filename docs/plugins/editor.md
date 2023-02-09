@@ -413,7 +413,7 @@ opts = {
 ```lua
 {
   "lewis6991/gitsigns.nvim",
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   opts = {
     signs = {
       add = { text = "▎" },
@@ -473,7 +473,7 @@ opts = { delay = 200 }
 ```lua
 {
   "RRethy/vim-illuminate",
-  event = "BufReadPost",
+  event = { "BufReadPost", "BufNewFile" },
   opts = { delay = 200 },
   config = function(_, opts)
     require("illuminate").configure(opts)
@@ -556,6 +556,8 @@ opts = { use_diagnostic_signs = true }
   keys = {
     { "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
     { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+    { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
+    { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
   },
 }
 ```
@@ -586,7 +588,7 @@ opts = {}
 {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoTelescope" },
-  event = "BufReadPost",
+  event = { "BufReadPost", "BufNewFile" },
   config = true,
   -- stylua: ignore
   keys = {
