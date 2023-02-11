@@ -52,6 +52,12 @@ return {
   colorscheme = function()
     require("tokyonight").load()
   end,
+  -- load the default settings
+  defaults = {
+    autocmds = true, -- lazyvim.config.autocmds
+    keymaps = true, -- lazyvim.config.keymaps
+    options = true, -- lazyvim.config.options
+  },
   -- icons used by other plugins
   icons = {
     diagnostics = {
@@ -72,6 +78,7 @@ return {
       Color = " ",
       Constant = " ",
       Constructor = " ",
+      Copilot = " ",
       Enum = " ",
       EnumMember = " ",
       Event = " ",
