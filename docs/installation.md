@@ -72,7 +72,7 @@ with [PowerShell](https://github.com/PowerShell/PowerShell)
 - Remove the `.git` folder, so you can add it to your own repo later
 
   ```powershell
-  Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse
+  Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
   ```
 
 - Start Neovim!
