@@ -24,8 +24,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;C-Down&gt;</code> | Decrease window height | **n** |
 | <code>&lt;C-Left&gt;</code> | Decrease window width | **n** |
 | <code>&lt;C-Right&gt;</code> | Increase window width | **n** |
-| <code>&lt;A-j&gt;</code> | Move down | **n**, **i**, **v** |
-| <code>&lt;A-k&gt;</code> | Move up | **n**, **i**, **v** |
+| <code>&lt;A-j&gt;</code> | Move line or selection down | **n**, **i**, **v** |
+| <code>&lt;A-k&gt;</code> | Move line or selection up | **n**, **i**, **v** |
 | <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
 | <code>&lt;S-l&gt;</code> | Next buffer | **n** |
 | <code>[b</code> | Prev buffer | **n** |
