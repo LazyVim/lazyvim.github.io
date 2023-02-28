@@ -202,6 +202,7 @@ opts = {
     { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
     { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
     { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
+    { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
     { "<leader>sw", Util.telescope("grep_string"), desc = "Word (root dir)" },
     { "<leader>sW", Util.telescope("grep_string", { cwd = false }), desc = "Word (cwd)" },
     { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
@@ -222,6 +223,24 @@ opts = {
         },
       }),
       desc = "Goto Symbol",
+    },
+    {
+      "<leader>sS",
+      Util.telescope("lsp_workspace_symbols", {
+        symbols = {
+          "Class",
+          "Function",
+          "Method",
+          "Constructor",
+          "Interface",
+          "Module",
+          "Struct",
+          "Trait",
+          "Field",
+          "Property",
+        },
+      }),
+      desc = "Goto Symbol (Workspace)",
     },
   },
   opts = {
@@ -417,8 +436,8 @@ opts = {
   signs = {
     add = { text = "▎" },
     change = { text = "▎" },
-    delete = { text = "契" },
-    topdelete = { text = "契" },
+    delete = { text = "" },
+    topdelete = { text = "" },
     changedelete = { text = "▎" },
     untracked = { text = "▎" },
   },
@@ -459,8 +478,8 @@ opts = {
     signs = {
       add = { text = "▎" },
       change = { text = "▎" },
-      delete = { text = "契" },
-      topdelete = { text = "契" },
+      delete = { text = "" },
+      topdelete = { text = "" },
       changedelete = { text = "▎" },
       untracked = { text = "▎" },
     },
@@ -518,18 +537,28 @@ opts = { delay = 200 }
   opts = { delay = 200 },
   config = function(_, opts)
     require("illuminate").configure(opts)
+
+    local function map(key, dir, buffer)
+      vim.keymap.set("n", key, function()
+        require("illuminate")["goto_" .. dir .. "_reference"](false)
+      end, { desc = dir:sub(1, 1):upper() .. dir:sub(2) .. " Reference", buffer = buffer })
+    end
+
+    map("]]", "next")
+    map("[[", "prev")
+
+    -- also set it after loading ftplugins, since a lot overwrite [[ and ]]
     vim.api.nvim_create_autocmd("FileType", {
       callback = function()
         local buffer = vim.api.nvim_get_current_buf()
-        pcall(vim.keymap.del, "n", "]]", { buffer = buffer })
-        pcall(vim.keymap.del, "n", "[[", { buffer = buffer })
+        map("]]", "next", buffer)
+        map("[[", "prev", buffer)
       end,
     })
   end,
-  -- stylua: ignore
   keys = {
-    { "]]", function() require("illuminate").goto_next_reference(false) end, desc = "Next Reference", },
-    { "[[", function() require("illuminate").goto_prev_reference(false) end, desc = "Prev Reference" },
+    { "]]", desc = "Next Reference" },
+    { "[[", desc = "Prev Reference" },
   },
 }
 ```

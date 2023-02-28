@@ -29,6 +29,7 @@ opts = {
 ```lua
 {
   "L3MON4D3/LuaSnip",
+  build = "make install_jsregexp",
   dependencies = {
     "rafamadriz/friendly-snippets",
     config = function()
@@ -378,6 +379,9 @@ opts = {
       { opts.mappings.replace, desc = "Replace surrounding" },
       { opts.mappings.update_n_lines, desc = "Update `MiniSurround.config.n_lines`" },
     }
+    mappings = vim.tbl_filter(function(m)
+      return m[1] and #m[1] > 0
+    end, mappings)
     return vim.list_extend(mappings, keys)
   end,
   opts = {
@@ -509,15 +513,7 @@ end
   --   { "i", mode = { "x", "o" } },
   -- },
   event = "VeryLazy",
-  dependencies = {
-    {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      init = function()
-        -- no need to load the plugin, since we only need its queries
-        require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
-      end,
-    },
-  },
+  dependencies = { "nvim-treesitter-textobjects" },
   opts = function()
     local ai = require("mini.ai")
     return {
@@ -577,35 +573,6 @@ end
         a = a,
       })
     end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-treesitter/nvim-treesitter-textobjects",
-  init = function()
-    -- no need to load the plugin, since we only need its queries
-    require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
   end,
 }
 ```

@@ -47,7 +47,7 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help" } }
+opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" } }
 ```
 
 </TabItem>
@@ -59,7 +59,7 @@ opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help" } }
 {
   "folke/persistence.nvim",
   event = "BufReadPre",
-  opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help" } },
+  opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals" } },
   -- stylua: ignore
   keys = {
     { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },

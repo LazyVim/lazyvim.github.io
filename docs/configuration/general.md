@@ -194,8 +194,7 @@ map(
   { desc = "Redraw / clear hlsearch / diff update" }
 )
 
-map("n", "gw", "*N")
-map("x", "gw", "*N")
+map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })

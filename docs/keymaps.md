@@ -34,6 +34,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;esc&gt;</code> | Escape and clear hlsearch | **i**, **n** |
 | <code>&lt;leader&gt;ur</code> | Redraw / clear hlsearch / diff update | **n** |
+| <code>gw</code> | Search word under cursor | **n**, **x** |
 | <code>n</code> | Next search result | **n**, **x**, **o** |
 | <code>N</code> | Prev search result | **n**, **x**, **o** |
 | <code>&lt;C-s&gt;</code> | Save file | **i**, **v**, **n**, **s** |
@@ -215,10 +216,12 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
 | <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
 | <code>&lt;leader&gt;so</code> | Options | **n** |
+| <code>&lt;leader&gt;sR</code> | Resume | **n** |
 | <code>&lt;leader&gt;sw</code> | Word (root dir) | **n** |
 | <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
 | <code>&lt;leader&gt;uC</code> | Colorscheme with preview | **n** |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
+| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
 
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
 
