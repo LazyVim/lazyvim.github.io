@@ -67,7 +67,14 @@ end
 opts = {
   -- make sure mason installs the server
   servers = {
-    tsserver = {},
+    ---@type lspconfig.options.tsserver
+    tsserver = {
+      settings = {
+        completions = {
+          completeFunctionCalls = true,
+        },
+      },
+    },
   },
   setup = {
     tsserver = function(_, opts)
@@ -75,6 +82,7 @@ opts = {
         if client.name == "tsserver" then
           -- stylua: ignore
           vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
+          -- stylua: ignore
           vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
         end
       end)
@@ -97,7 +105,14 @@ opts = {
   opts = {
     -- make sure mason installs the server
     servers = {
-      tsserver = {},
+      ---@type lspconfig.options.tsserver
+      tsserver = {
+        settings = {
+          completions = {
+            completeFunctionCalls = true,
+          },
+        },
+      },
     },
     setup = {
       tsserver = function(_, opts)
@@ -105,6 +120,7 @@ opts = {
           if client.name == "tsserver" then
             -- stylua: ignore
             vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
+            -- stylua: ignore
             vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
           end
         end)

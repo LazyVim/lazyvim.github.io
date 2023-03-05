@@ -225,6 +225,11 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 map("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
 map("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
 
+if not Util.has("trouble.nvim") then
+  map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
+  map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
+end
+
 -- stylua: ignore start
 
 -- toggle options
@@ -334,15 +339,16 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
-    "qf",
+    "PlenaryTestPopup",
     "help",
+    "lspinfo",
     "man",
     "notify",
-    "lspinfo",
+    "qf",
+    "query", -- :InspectTree
     "spectre_panel",
     "startuptime",
     "tsplayground",
-    "PlenaryTestPopup",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

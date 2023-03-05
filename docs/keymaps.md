@@ -179,7 +179,7 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;c-space&gt;</code> | Increment selection | **n** |
-| <code>&lt;bs&gt;</code> | Schrink selection | **x** |
+| <code>&lt;bs&gt;</code> | Decrement selection | **x** |
 
 ## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
 
@@ -241,6 +241,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
 | <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
 | <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
+| <code>[q</code> | Previous trouble/quickfix item | **n** |
+| <code>]q</code> | Next trouble/quickfix item | **n** |
 
 ## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
 

@@ -24,6 +24,7 @@ opts = {
     "javascript",
     "json",
     "lua",
+    "luap",
     "markdown",
     "markdown_inline",
     "python",
@@ -81,7 +82,7 @@ opts = {
   },
   keys = {
     { "<c-space>", desc = "Increment selection" },
-    { "<bs>", desc = "Schrink selection", mode = "x" },
+    { "<bs>", desc = "Decrement selection", mode = "x" },
   },
   ---@type TSConfig
   opts = {
@@ -96,6 +97,7 @@ opts = {
       "javascript",
       "json",
       "lua",
+      "luap",
       "markdown",
       "markdown_inline",
       "python",
