@@ -94,7 +94,7 @@ To override a keymap, simply add one with the same `lhs` and a new `rhs`.
     -- disable the keymap to grep files
     {"<leader>/", false},
     -- change a keymap
-    { "<leader>ff", "Telescope find_files", desc = "Find Files" },
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
     -- add a keymap to browse plugin files
     {
       "<leader>fp",
@@ -114,7 +114,7 @@ Or return `{}` to disable all keymaps for a plugin.
   -- replace all Telescope keymaps with only one mapping
   keys = function()
     return {
-      { "<leader>ff", "Telescope find_files", desc = "Find Files" },
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
     }
   end,
 },
