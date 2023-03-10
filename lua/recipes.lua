@@ -119,9 +119,24 @@ return {
     },
   },
 
+  -- ## Use Eslint for fix on save and prettier for formatting
+  --
+  -- The [recommended](https://prettier.io/docs/en/integrating-with-linters.html) setup to
+  -- integrate prettier with linters is to **not** integrate it with eslint.
+  -- For this config, we have two extras, to enable eslint fix on save and enable the prettier
+  -- formatter with null-ls.
+  --
+  -- Add the below to your `lua/config/lazy.lua` file
+  {
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.prettier" },
+  },
+
   -- ## Add Eslint and use it for formatting
-  -- If your project is using eslint with prettier, then this will automatically fix
-  -- eslint errors and format with prettier on save.
+  --
+  -- If your project is using eslint with p[eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier),
+  -- then this will automatically fix eslint errors and format with prettier on save.
+  -- Important: make sure not to add prettier to null-ls, otherwise this won't work!
   {
     "neovim/nvim-lspconfig",
     opts = {

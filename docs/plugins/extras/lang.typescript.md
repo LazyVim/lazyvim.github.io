@@ -159,4 +159,34 @@ opts = nil
 
 </Tabs>
 
+## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "jose-elias-alvarez/null-ls.nvim",
+  opts = function(_, opts)
+    table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->

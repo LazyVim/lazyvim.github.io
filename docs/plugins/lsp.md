@@ -158,7 +158,7 @@ opts = {
     },
   },
   ---@param opts PluginLspOpts
-  config = function(plugin, opts)
+  config = function(_, opts)
     -- setup autoformat
     require("lazyvim.plugins.lsp.format").autoformat = opts.autoformat
     -- setup formatting and keymaps
@@ -338,9 +338,12 @@ opts = nil
 opts = function()
   local nls = require("null-ls")
   return {
+    root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
     sources = {
-      -- nls.builtins.formatting.prettierd,
+      nls.builtins.formatting.fish_indent,
+      nls.builtins.diagnostics.fish,
       nls.builtins.formatting.stylua,
+      nls.builtins.formatting.shfmt,
       nls.builtins.diagnostics.flake8,
     },
   }
@@ -360,9 +363,12 @@ end
   opts = function()
     local nls = require("null-ls")
     return {
+      root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
       sources = {
-        -- nls.builtins.formatting.prettierd,
+        nls.builtins.formatting.fish_indent,
+        nls.builtins.diagnostics.fish,
         nls.builtins.formatting.stylua,
+        nls.builtins.formatting.shfmt,
         nls.builtins.diagnostics.flake8,
       },
     }
@@ -387,6 +393,7 @@ end
 opts = {
   ensure_installed = {
     "stylua",
+    "shfmt",
     "flake8",
   },
 }
@@ -406,11 +413,12 @@ opts = {
   opts = {
     ensure_installed = {
       "stylua",
+      "shfmt",
       "flake8",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}
-  config = function(plugin, opts)
+  config = function(_, opts)
     require("mason").setup(opts)
     local mr = require("mason-registry")
     for _, tool in ipairs(opts.ensure_installed) do
