@@ -53,7 +53,7 @@ Defaults merging rules:
 - **event**: the list of events will be extended with your custom events
 - **ft**: the list of filetypes will be extended with your custom filetypes
 - **keys**: the list of keymaps will be extended with your custom keymaps
-- **opts**: your custom opts will be merged with the default opts
+- **opts**: as an object will overwrite the default opts as a function can merge custom opts with the default opts
 - **dependencies**: the list of dependencies will be extended with your custom dependencies
 - **_any other property will override the defaults_**
 
