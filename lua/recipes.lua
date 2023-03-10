@@ -134,7 +134,7 @@ return {
 
   -- ## Add Eslint and use it for formatting
   --
-  -- If your project is using eslint with p[eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier),
+  -- If your project is using eslint with [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier),
   -- then this will automatically fix eslint errors and format with prettier on save.
   -- Important: make sure not to add prettier to null-ls, otherwise this won't work!
   {
