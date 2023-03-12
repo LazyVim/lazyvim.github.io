@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # General Settings
 
-The files under `lua/config` will be automatically loaded at the appropriate time,
+The files `autocmds.lua`, `keymaps.lua`, `lazy.lua` and `options.lua` under `lua/config` will be automatically loaded at the appropriate time,
 so you don't need to require those files manually.
 **LazyVim** comes with a set of default config files that will be loaded
 **_before_** your own.
@@ -25,7 +25,7 @@ so you don't need to require those files manually.
 ```
 
 :::danger
-Do not `require` any files under `lua/config/` or `lazyvim.config` manually.
+Do not `require` `autocmds`, `keymaps`, `lazy` or `options` under `lua/config/` or `lazyvim.config` manually.
 **LazyVim** will load those files automatically.
 :::
 
