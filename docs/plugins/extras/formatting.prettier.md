@@ -24,11 +24,9 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  ensure_installed = {
-    "prettierd",
-  },
-}
+opts = function(_, opts)
+  table.insert(opts.ensure_installed, "prettierd")
+end
 ```
 
 </TabItem>
@@ -39,11 +37,9 @@ opts = {
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = {
-    ensure_installed = {
-      "prettierd",
-    },
-  },
+  opts = function(_, opts)
+    table.insert(opts.ensure_installed, "prettierd")
+  end,
 }
 ```
 

@@ -194,16 +194,8 @@ opts = {
       require("lspconfig")[server].setup(server_opts)
     end
 
-    -- temp fix for lspconfig rename
-    -- https://github.com/neovim/nvim-lspconfig/pull/2439
-    local mappings = require("mason-lspconfig.mappings.server")
-    if not mappings.lspconfig_to_package.lua_ls then
-      mappings.lspconfig_to_package.lua_ls = "lua-language-server"
-      mappings.package_to_lspconfig["lua-language-server"] = "lua_ls"
-    end
-
-    local mlsp = require("mason-lspconfig")
-    local available = mlsp.get_available_servers()
+    local have_mason, mlsp = pcall(require, "mason-lspconfig")
+    local available = have_mason and mlsp.get_available_servers() or {}
 
     local ensure_installed = {} ---@type string[]
     for server, server_opts in pairs(servers) do
@@ -218,8 +210,10 @@ opts = {
       end
     end
 
-    require("mason-lspconfig").setup({ ensure_installed = ensure_installed })
-    require("mason-lspconfig").setup_handlers({ setup })
+    if have_mason then
+      mlsp.setup({ ensure_installed = ensure_installed })
+      mlsp.setup_handlers({ setup })
+    end
   end,
 }
 ```

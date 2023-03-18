@@ -88,9 +88,10 @@ possible keymaps starting with `<space>`.
 | <code>[e</code> | Prev Error | **n** |
 | <code>]w</code> | Next Warning | **n** |
 | <code>[w</code> | Prev Warning | **n** |
-| <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
 | <code>&lt;leader&gt;cf</code> | Format Document | **n** |
 | <code>&lt;leader&gt;cf</code> | Format Range | **v** |
+| <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
+| <code>&lt;leader&gt;cA</code> | Source Action | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
 
 ## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git)
