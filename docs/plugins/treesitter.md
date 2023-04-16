@@ -14,16 +14,16 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   highlight = { enable = true },
-  indent = { enable = true, disable = { "python" } },
+  indent = { enable = true },
   context_commentstring = { enable = true, enable_autocmd = false },
   ensure_installed = {
     "bash",
     "c",
-    "help",
     "html",
     "javascript",
     "json",
     "lua",
+    "luadoc",
     "luap",
     "markdown",
     "markdown_inline",
@@ -33,6 +33,7 @@ opts = {
     "tsx",
     "typescript",
     "vim",
+    "vimdoc",
     "yaml",
   },
   incremental_selection = {
@@ -87,16 +88,16 @@ opts = {
   ---@type TSConfig
   opts = {
     highlight = { enable = true },
-    indent = { enable = true, disable = { "python" } },
+    indent = { enable = true },
     context_commentstring = { enable = true, enable_autocmd = false },
     ensure_installed = {
       "bash",
       "c",
-      "help",
       "html",
       "javascript",
       "json",
       "lua",
+      "luadoc",
       "luap",
       "markdown",
       "markdown_inline",
@@ -106,6 +107,7 @@ opts = {
       "tsx",
       "typescript",
       "vim",
+      "vimdoc",
       "yaml",
     },
     incremental_selection = {

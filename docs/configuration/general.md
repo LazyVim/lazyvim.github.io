@@ -51,7 +51,6 @@ import TabItem from '@theme/TabItem';
 
 ```lua title="lazyvim.config.options"
 -- This file is automatically loaded by plugins.config
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -80,7 +79,7 @@ opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.shiftround = true -- Round indent
 opt.shiftwidth = 2 -- Size of an indent
-opt.shortmess:append { W = true, I = true, c = true }
+opt.shortmess:append({ W = true, I = true, c = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
@@ -101,7 +100,7 @@ opt.wrap = false -- Disable line wrap
 
 if vim.fn.has("nvim-0.9.0") == 1 then
   opt.splitkeep = "screen"
-  opt.shortmess:append { C = true }
+  opt.shortmess:append({ C = true })
 end
 
 -- Fix markdown indentation settings
@@ -242,8 +241,8 @@ local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 map("n", "<leader>uc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 
 -- lazygit
-map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root() }) end, { desc = "Lazygit (root dir)" })
-map("n", "<leader>gG", function() Util.float_term({ "lazygit" }) end, { desc = "Lazygit (cwd)" })
+map("n", "<leader>gg", function() Util.float_term({ "lazygit" }, { cwd = Util.get_root(), esc_esc = false }) end, { desc = "Lazygit (root dir)" })
+map("n", "<leader>gG", function() Util.float_term({ "lazygit" }, {esc_esc = false}) end, { desc = "Lazygit (cwd)" })
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -256,7 +255,7 @@ end
 -- floating terminal
 map("n", "<leader>ft", function() Util.float_term(nil, { cwd = Util.get_root() }) end, { desc = "Terminal (root dir)" })
 map("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
-map("t", "<esc><esc>", "<c-\\><c-n>", {desc = "Enter Normal Mode"})
+map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
 
 -- windows
 map("n", "<leader>ww", "<C-W>p", { desc = "Other window" })
@@ -345,10 +344,10 @@ vim.api.nvim_create_autocmd("FileType", {
     "man",
     "notify",
     "qf",
-    "query", -- :InspectTree
     "spectre_panel",
     "startuptime",
     "tsplayground",
+    "checkhealth",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false
@@ -363,6 +362,18 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+  end,
+})
+
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = augroup("auto_create_dir"),
+  callback = function(event)
+    if event.match:match("^%w%w+://") then
+      return
+    end
+    local file = vim.loop.fs_realpath(event.match) or event.match
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
 

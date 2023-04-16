@@ -191,7 +191,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(plugin)
+opts = function()
   local icons = require("lazyvim.config").icons
 
   local function fg(name)
@@ -206,7 +206,7 @@ opts = function(plugin)
     options = {
       theme = "auto",
       globalstatus = true,
-      disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
+      disabled_filetypes = { statusline = { "dashboard", "alpha" } },
     },
     sections = {
       lualine_a = { "mode" },
@@ -262,7 +262,7 @@ opts = function(plugin)
         end,
       },
     },
-    extensions = { "neo-tree" },
+    extensions = { "neo-tree", "lazy" },
   }
 end
 ```
@@ -276,7 +276,7 @@ end
 {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  opts = function(plugin)
+  opts = function()
     local icons = require("lazyvim.config").icons
 
     local function fg(name)
@@ -291,7 +291,7 @@ end
       options = {
         theme = "auto",
         globalstatus = true,
-        disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
+        disabled_filetypes = { statusline = { "dashboard", "alpha" } },
       },
       sections = {
         lualine_a = { "mode" },
@@ -347,7 +347,7 @@ end
           end,
         },
       },
-      extensions = { "neo-tree" },
+      extensions = { "neo-tree", "lazy" },
     }
   end,
 }
@@ -548,9 +548,9 @@ opts = function()
     button.opts.hl = "AlphaButtons"
     button.opts.hl_shortcut = "AlphaShortcut"
   end
-  dashboard.section.footer.opts.hl = "Type"
   dashboard.section.header.opts.hl = "AlphaHeader"
   dashboard.section.buttons.opts.hl = "AlphaButtons"
+  dashboard.section.footer.opts.hl = "AlphaFooter"
   dashboard.opts.layout[1].val = 8
   return dashboard
 end
@@ -591,9 +591,9 @@ end
       button.opts.hl = "AlphaButtons"
       button.opts.hl_shortcut = "AlphaShortcut"
     end
-    dashboard.section.footer.opts.hl = "Type"
     dashboard.section.header.opts.hl = "AlphaHeader"
     dashboard.section.buttons.opts.hl = "AlphaButtons"
+    dashboard.section.footer.opts.hl = "AlphaFooter"
     dashboard.opts.layout[1].val = 8
     return dashboard
   end,
