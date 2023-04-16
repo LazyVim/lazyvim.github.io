@@ -208,7 +208,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;sb</code> | Buffer | **n** |
 | <code>&lt;leader&gt;sc</code> | Command History | **n** |
 | <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sd</code> | Document diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Workspace diagnostics | **n** |
 | <code>&lt;leader&gt;sg</code> | Grep (root dir) | **n** |
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
@@ -233,6 +234,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;xt</code> | Todo (Trouble) | **n** |
 | <code>&lt;leader&gt;xT</code> | Todo/Fix/Fixme (Trouble) | **n** |
 | <code>&lt;leader&gt;st</code> | Todo | **n** |
+| <code>&lt;leader&gt;sT</code> | Todo/Fix/Fixme | **n** |
 
 ## [trouble.nvim](https://github.com/folke/trouble.nvim.git)
 
@@ -251,5 +253,33 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>]]</code> | Next Reference | **n** |
 | <code>[[</code> | Prev Reference | **n** |
+
+## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
+Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
+| <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
+| <code>&lt;leader&gt;dc</code> | Continue | **n** |
+| <code>&lt;leader&gt;do</code> | Step Over | **n** |
+| <code>&lt;leader&gt;di</code> | Step Into | **n** |
+| <code>&lt;leader&gt;dw</code> | Widgets | **n** |
+| <code>&lt;leader&gt;dr</code> | Repl | **n** |
+
+## [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
+Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;du</code> | Dap UI | **n** |
+
+## [one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind.git)
+Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
+| <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
 <!-- keymaps:end -->

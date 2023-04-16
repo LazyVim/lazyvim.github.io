@@ -212,7 +212,8 @@ opts = {
     { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
     { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
-    { "<leader>sd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+    { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
+    { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
     { "<leader>sg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
     { "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
     { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
@@ -396,6 +397,24 @@ opts = {}
 ```lua
 opts = {
   plugins = { spelling = true },
+  defaults = {
+    mode = { "n", "v" },
+    ["g"] = { name = "+goto" },
+    ["gz"] = { name = "+surround" },
+    ["]"] = { name = "+next" },
+    ["["] = { name = "+prev" },
+    ["<leader><tab>"] = { name = "+tabs" },
+    ["<leader>b"] = { name = "+buffer" },
+    ["<leader>c"] = { name = "+code" },
+    ["<leader>f"] = { name = "+file/find" },
+    ["<leader>g"] = { name = "+git" },
+    ["<leader>gh"] = { name = "+hunks" },
+    ["<leader>q"] = { name = "+quit/session" },
+    ["<leader>s"] = { name = "+search" },
+    ["<leader>u"] = { name = "+ui" },
+    ["<leader>w"] = { name = "+windows" },
+    ["<leader>x"] = { name = "+diagnostics/quickfix" },
+  },
 }
 ```
 
@@ -410,11 +429,7 @@ opts = {
   event = "VeryLazy",
   opts = {
     plugins = { spelling = true },
-  },
-  config = function(_, opts)
-    local wk = require("which-key")
-    wk.setup(opts)
-    local keymaps = {
+    defaults = {
       mode = { "n", "v" },
       ["g"] = { name = "+goto" },
       ["gz"] = { name = "+surround" },
@@ -431,11 +446,12 @@ opts = {
       ["<leader>u"] = { name = "+ui" },
       ["<leader>w"] = { name = "+windows" },
       ["<leader>x"] = { name = "+diagnostics/quickfix" },
-    }
-    if Util.has("noice.nvim") then
-      keymaps["<leader>sn"] = { name = "+noice" }
-    end
-    wk.register(keymaps)
+    },
+  },
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+    wk.register(opts.defaults)
   end,
 }
 ```
@@ -711,6 +727,7 @@ opts = {}
     { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
     { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
     { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+    { "<leader>sT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
   },
 }
 ```
