@@ -160,6 +160,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;snl</code> | Noice Last Message | **n** |
 | <code>&lt;leader&gt;snh</code> | Noice History | **n** |
 | <code>&lt;leader&gt;sna</code> | Noice All | **n** |
+| <code>&lt;leader&gt;snd</code> | Dismiss All | **n** |
 | <code>&lt;c-f&gt;</code> | Scroll forward | **i**, **n**, **s** |
 | <code>&lt;c-b&gt;</code> | Scroll backward | **i**, **n**, **s** |
 
