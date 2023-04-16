@@ -78,7 +78,7 @@ possible keymaps starting with `<space>`.
 | <code>gr</code> | References | **n** |
 | <code>gD</code> | Goto Declaration | **n** |
 | <code>gI</code> | Goto Implementation | **n** |
-| <code>gT</code> | Goto Type Definition | **n** |
+| <code>gy</code> | Goto T[y]pe Definition | **n** |
 | <code>K</code> | Hover | **n** |
 | <code>gK</code> | Signature Help | **n** |
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
