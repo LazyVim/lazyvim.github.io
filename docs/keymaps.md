@@ -260,14 +260,22 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
+| <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dc</code> | Continue | **n** |
-| <code>&lt;leader&gt;dO</code> | Step Over | **n** |
+| <code>&lt;leader&gt;dC</code> | Run to Cursor | **n** |
+| <code>&lt;leader&gt;dg</code> | Go to line (no execute) | **n** |
 | <code>&lt;leader&gt;di</code> | Step Into | **n** |
+| <code>&lt;leader&gt;dj</code> | Down | **n** |
+| <code>&lt;leader&gt;dk</code> | Up | **n** |
+| <code>&lt;leader&gt;dl</code> | Run Last | **n** |
 | <code>&lt;leader&gt;do</code> | Step Out | **n** |
-| <code>&lt;leader&gt;dw</code> | Widgets | **n** |
+| <code>&lt;leader&gt;dO</code> | Step Over | **n** |
+| <code>&lt;leader&gt;dp</code> | Pause | **n** |
 | <code>&lt;leader&gt;dr</code> | Repl | **n** |
+| <code>&lt;leader&gt;ds</code> | Session | **n** |
+| <code>&lt;leader&gt;dt</code> | Terminate | **n** |
+| <code>&lt;leader&gt;dw</code> | Widgets | **n** |
 
 ## [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
 Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
@@ -275,6 +283,7 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;du</code> | Dap UI | **n** |
+| <code>&lt;leader&gt;de</code> | Eval | **n**, **v** |
 
 ## [one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind.git)
 Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
