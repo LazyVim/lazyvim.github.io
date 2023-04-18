@@ -196,7 +196,7 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Find in Files (Grep) | **n** |
+| <code>&lt;leader&gt;/</code> | Grep (root dir) | **n** |
 | <code>&lt;leader&gt;:</code> | Command History | **n** |
 | <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fb</code> | Buffers | **n** |
@@ -263,8 +263,9 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 | <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
 | <code>&lt;leader&gt;dc</code> | Continue | **n** |
-| <code>&lt;leader&gt;do</code> | Step Over | **n** |
+| <code>&lt;leader&gt;dO</code> | Step Over | **n** |
 | <code>&lt;leader&gt;di</code> | Step Into | **n** |
+| <code>&lt;leader&gt;do</code> | Step Out | **n** |
 | <code>&lt;leader&gt;dw</code> | Widgets | **n** |
 | <code>&lt;leader&gt;dr</code> | Repl | **n** |
 
