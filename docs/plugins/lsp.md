@@ -52,6 +52,8 @@ opts = {
     },
     severity_sort = true,
   },
+  -- add any global capabilities here
+  capabilities = {},
   -- Automatically format on save
   autoformat = true,
   -- options for vim.lsp.buf.format
@@ -131,6 +133,8 @@ opts = {
       },
       severity_sort = true,
     },
+    -- add any global capabilities here
+    capabilities = {},
     -- Automatically format on save
     autoformat = true,
     -- options for vim.lsp.buf.format
@@ -202,7 +206,13 @@ opts = {
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
     local servers = opts.servers
-    local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      require("cmp_nvim_lsp").default_capabilities(),
+      opts.capabilities or {}
+    )
 
     local function setup(server)
       local server_opts = vim.tbl_deep_extend("force", {
