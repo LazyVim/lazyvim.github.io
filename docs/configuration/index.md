@@ -7,7 +7,7 @@ so you don't need to require those files manually. For more information, see [ge
 
 You can add your custom plugin specs under `lua/plugins/`. All files there
 will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim).
-For more information, see [configuring plugins](./configuration/plugins).
+For more information, see [configuring plugins](./plugins).
 
 ```text {4-7,9-11}
 ~/.config/nvim

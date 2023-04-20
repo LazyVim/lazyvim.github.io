@@ -3,7 +3,7 @@
 ## ⌨️ Customizing [LSP Keymaps](/keymaps#lsp)
 
 The syntax for adding, deleting and changing [LSP Keymaps](/keymaps#lsp),
-is the same as for [plugin keymaps](/configuration/plugins#%EF%B8%8F-adding--disabling-plugin-keymaps),
+is the same as for [plugin keymaps](/plugins#%EF%B8%8F-adding--disabling-plugin-keymaps),
 but you need to configure it using the `init()` method.
 
 ```lua
