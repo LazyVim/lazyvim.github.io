@@ -293,4 +293,11 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
+## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
+Part of [lazyvim.plugins.extras.util.project](/plugins/extras/util.project)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;fp</code> | Projects | **n** |
+
 <!-- keymaps:end -->
