@@ -7,7 +7,7 @@ To use this, add it to your **lazy.nvim** imports:
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
   spec = {
-    { "folke/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "plugins" },
   },
@@ -70,6 +70,20 @@ opts = {
     ---@type lspconfig.options.tsserver
     tsserver = {
       settings = {
+        typescript = {
+          format = {
+            indentSize = vim.o.shiftwidth,
+            convertTabsToSpaces = vim.o.expandtab,
+            tabSize = vim.o.tabstop,
+          },
+        },
+        javascript = {
+          format = {
+            indentSize = vim.o.shiftwidth,
+            convertTabsToSpaces = vim.o.expandtab,
+            tabSize = vim.o.tabstop,
+          },
+        },
         completions = {
           completeFunctionCalls = true,
         },
@@ -108,6 +122,20 @@ opts = {
       ---@type lspconfig.options.tsserver
       tsserver = {
         settings = {
+          typescript = {
+            format = {
+              indentSize = vim.o.shiftwidth,
+              convertTabsToSpaces = vim.o.expandtab,
+              tabSize = vim.o.tabstop,
+            },
+          },
+          javascript = {
+            format = {
+              indentSize = vim.o.shiftwidth,
+              convertTabsToSpaces = vim.o.expandtab,
+              tabSize = vim.o.tabstop,
+            },
+          },
           completions = {
             completeFunctionCalls = true,
           },

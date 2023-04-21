@@ -7,7 +7,7 @@ To use this, add it to your **lazy.nvim** imports:
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
   spec = {
-    { "folke/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "lazyvim.plugins.extras.coding.copilot" },
     { import = "plugins" },
   },
@@ -66,8 +66,8 @@ opts = function(_, opts)
   local colors = {
     [""] = Util.fg("Special"),
     ["Normal"] = Util.fg("Special"),
-    ["Warning"] = Util.fg("DiagnosticWarn"),
-    ["InProgress"] = Util.fg("DiagnosticInfo"),
+    ["Warning"] = Util.fg("DiagnosticError"),
+    ["InProgress"] = Util.fg("DiagnosticWarn"),
   }
   table.insert(opts.sections.lualine_x, 2, {
     function()
@@ -101,8 +101,8 @@ end
     local colors = {
       [""] = Util.fg("Special"),
       ["Normal"] = Util.fg("Special"),
-      ["Warning"] = Util.fg("DiagnosticWarn"),
-      ["InProgress"] = Util.fg("DiagnosticInfo"),
+      ["Warning"] = Util.fg("DiagnosticError"),
+      ["InProgress"] = Util.fg("DiagnosticWarn"),
     }
     table.insert(opts.sections.lualine_x, 2, {
       function()
