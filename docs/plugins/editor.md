@@ -19,6 +19,7 @@ opts = {
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = true,
+    use_libuv_file_watcher = true,
   },
   window = {
     mappings = {
@@ -79,6 +80,7 @@ opts = {
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = true,
+      use_libuv_file_watcher = true,
     },
     window = {
       mappings = {
@@ -94,6 +96,17 @@ opts = {
       },
     },
   },
+  config = function(_, opts)
+    require("neo-tree").setup(opts)
+    vim.api.nvim_create_autocmd("TermClose", {
+      pattern = "*lazygit",
+      callback = function()
+        if package.loaded["neo-tree.sources.git_status"] then
+          require("neo-tree.sources.git_status").refresh()
+        end
+      end,
+    })
+  end,
 }
 ```
 
@@ -101,7 +114,7 @@ opts = {
 
 </Tabs>
 
-## [nvim-spectre](https://github.com/windwp/nvim-spectre)
+## [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 
  search/replace in multiple files
 
@@ -121,7 +134,7 @@ opts = nil
 
 ```lua
 {
-  "windwp/nvim-spectre",
+  "nvim-pack/nvim-spectre",
   -- stylua: ignore
   keys = {
     { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
@@ -204,6 +217,7 @@ opts = {
     { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
     { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+    { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
     { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },

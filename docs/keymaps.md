@@ -170,7 +170,7 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;un</code> | Delete all Notifications | **n** |
 
-## [nvim-spectre](https://github.com/windwp/nvim-spectre.git)
+## [nvim-spectre](https://github.com/nvim-pack/nvim-spectre.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -203,6 +203,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ff</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
+| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gc</code> | commits | **n** |
 | <code>&lt;leader&gt;gs</code> | status | **n** |
 | <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
@@ -272,7 +273,7 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 | <code>&lt;leader&gt;do</code> | Step Out | **n** |
 | <code>&lt;leader&gt;dO</code> | Step Over | **n** |
 | <code>&lt;leader&gt;dp</code> | Pause | **n** |
-| <code>&lt;leader&gt;dr</code> | Repl | **n** |
+| <code>&lt;leader&gt;dr</code> | Toggle REPL | **n** |
 | <code>&lt;leader&gt;ds</code> | Session | **n** |
 | <code>&lt;leader&gt;dt</code> | Terminate | **n** |
 | <code>&lt;leader&gt;dw</code> | Widgets | **n** |
