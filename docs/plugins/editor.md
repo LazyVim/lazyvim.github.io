@@ -101,7 +101,7 @@ opts = {
 
 </Tabs>
 
-## [nvim-spectre](https://github.com/windwp/nvim-spectre)
+## [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
 
  search/replace in multiple files
 
@@ -121,7 +121,7 @@ opts = nil
 
 ```lua
 {
-  "windwp/nvim-spectre",
+  "nvim-pack/nvim-spectre",
   -- stylua: ignore
   keys = {
     { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
