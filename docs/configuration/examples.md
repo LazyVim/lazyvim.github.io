@@ -79,7 +79,7 @@ return {
 
   -- add telescope-fzf-native
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
