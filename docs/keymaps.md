@@ -168,7 +168,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;un</code> | Delete all Notifications | **n** |
+| <code>&lt;leader&gt;un</code> | Dismiss all Notifications | **n** |
 
 ## [nvim-spectre](https://github.com/nvim-pack/nvim-spectre.git)
 

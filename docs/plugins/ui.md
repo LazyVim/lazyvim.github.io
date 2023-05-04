@@ -40,7 +40,7 @@ opts = {
       function()
         require("notify").dismiss({ silent = true, pending = true })
       end,
-      desc = "Delete all Notifications",
+      desc = "Dismiss all Notifications",
     },
   },
   opts = {
@@ -376,7 +376,7 @@ end
 opts = {
   -- char = "▏",
   char = "│",
-  filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+  filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
   show_trailing_blankline_indent = false,
   show_current_context = false,
 }
@@ -394,7 +394,7 @@ opts = {
   opts = {
     -- char = "▏",
     char = "│",
-    filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy" },
+    filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
     show_trailing_blankline_indent = false,
     show_current_context = false,
   },
