@@ -71,6 +71,8 @@ possible keymaps starting with `<space>`.
 ## LSP
 
 | Key | Description | Mode |
+
+Please note that “hovering” in neovim is slightly different. Here, 
 | --- | --- | --- |
 | <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
 | <code>&lt;leader&gt;cl</code> | Lsp Info | **n** |
@@ -181,7 +183,7 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;c-space&gt;</code> | Increment selection | **n** |
-| <code>&lt;bs&gt;</code> | Decrement selection | **x** |
+| <code>&lt;c-bs&gt;</code> | Decrement selection | **x** |
 
 ## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
 
