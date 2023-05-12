@@ -154,7 +154,7 @@ opts = {}
     -- fixes lazy-loading issues with the copilot cmp source
     require("lazyvim.util").on_attach(function(client)
       if client.name == "copilot" then
-        copilot_cmp._on_insert_enter()
+        copilot_cmp._on_insert_enter({})
       end
     end)
   end,

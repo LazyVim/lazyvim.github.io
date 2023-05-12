@@ -416,7 +416,7 @@ opts = {
 
 </Tabs>
 
-## [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+## [mini.comment](https://github.com/echasnovski/mini.comment)
 
  comments
 
@@ -426,36 +426,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mini.comment](https://github.com/echasnovski/mini.comment)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  hooks = {
-    pre = function()
-      require("ts_context_commentstring.internal").update_commentstring({})
-    end,
-  },
-}
+opts = {}
 ```
 
 </TabItem>
@@ -467,16 +438,8 @@ opts = {
 {
   "echasnovski/mini.comment",
   event = "VeryLazy",
-  opts = {
-    hooks = {
-      pre = function()
-        require("ts_context_commentstring.internal").update_commentstring({})
-      end,
-    },
-  },
-  config = function(_, opts)
-    require("mini.comment").setup(opts)
-  end,
+  opts = {},
+  main = "mini.comment",
 }
 ```
 
