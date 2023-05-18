@@ -335,9 +335,7 @@ opts = {}
 {
   "echasnovski/mini.pairs",
   event = "VeryLazy",
-  config = function(_, opts)
-    require("mini.pairs").setup(opts)
-  end,
+  opts = {},
 }
 ```
 
@@ -405,10 +403,6 @@ opts = {
       update_n_lines = "gzn", -- Update `n_lines`
     },
   },
-  config = function(_, opts)
-    -- use gz mappings instead of s to prevent conflict with leap
-    require("mini.surround").setup(opts)
-  end,
 }
 ```
 
@@ -439,7 +433,6 @@ opts = {}
   "echasnovski/mini.comment",
   event = "VeryLazy",
   opts = {},
-  main = "mini.comment",
 }
 ```
 
