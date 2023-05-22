@@ -127,7 +127,7 @@ vim.g.markdown_recommended_style = 0
 <TabItem value="defaults" label="Default Keymaps">
 
 ```lua title="lazyvim.config.keymaps"
--- This file is automatically loaded by lazyvim.plugins.config
+-- This file is automatically loaded by lazyvim.config.init
 
 local Util = require("lazyvim.util")
 
@@ -294,7 +294,7 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 <TabItem value="defaults" label="Default Auto Commands">
 
 ```lua title="lazyvim.config.autocmds"
--- This file is automatically loaded by plugins.init
+-- This file is automatically loaded by lazyvim.config.init
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
@@ -348,6 +348,7 @@ vim.api.nvim_create_autocmd("FileType", {
     "startuptime",
     "tsplayground",
     "checkhealth",
+    "neotest-output",
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

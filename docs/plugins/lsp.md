@@ -107,7 +107,7 @@ opts = {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    { "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } },
+    { "folke/neodev.nvim", opts = {} },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
@@ -302,7 +302,7 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { experimental = { pathStrict = true } }
+opts = {}
 ```
 
 </TabItem>
@@ -311,7 +311,7 @@ opts = { experimental = { pathStrict = true } }
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "folke/neodev.nvim", opts = { experimental = { pathStrict = true } } }
+{ "folke/neodev.nvim", opts = {} }
 ```
 
 </TabItem>

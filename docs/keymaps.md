@@ -294,6 +294,25 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
+## [neotest](https://github.com/nvim-neotest/neotest.git)
+Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
+| <code>&lt;leader&gt;tR</code> | Run File | **n** |
+| <code>&lt;leader&gt;ts</code> | Toggle Summary | **n** |
+| <code>&lt;leader&gt;to</code> | Show Output | **n** |
+| <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |
+| <code>&lt;leader&gt;tS</code> | Stop | **n** |
+
+## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
+Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;td</code> | Debug Nearest | **n** |
+
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/plugins/extras/util.project)
 
