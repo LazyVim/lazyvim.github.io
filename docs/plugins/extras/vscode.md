@@ -15,11 +15,15 @@ Enabled plugins:
   "mini.surround",
   "nvim-treesitter",
   "nvim-treesitter-textobjects",
+  "nvim-ts-context-commentstring",
   "vim-repeat",
 }
 ```
 
 Some additional keymaps are added similar to the ones in regular LazyVim.
+
+If you want to include any additional plugins in **vscode**,
+you can set `vscode=true` on a plugin spec.
 
 <!-- plugins:start -->
 

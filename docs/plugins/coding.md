@@ -410,10 +410,33 @@ opts = {
 
 </Tabs>
 
-## [mini.comment](https://github.com/echasnovski/mini.comment)
+## [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 
  comments
 
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mini.comment](https://github.com/echasnovski/mini.comment)
 
 <Tabs>
 
@@ -432,6 +455,14 @@ opts = {}
 {
   "echasnovski/mini.comment",
   event = "VeryLazy",
+  config = function(_, opts)
+    local c = require("mini.comment")
+    c.setup(opts)
+    local H = require("lazyvim.util").get_upvalue(c.setup, "H")
+    H.get_commentstring = function()
+      return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
+    end
+  end,
   opts = {},
 }
 ```
