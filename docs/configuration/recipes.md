@@ -26,14 +26,14 @@ override nvim-cmp and add cmp-emoji
 
 ```lua
 {
-  "telescope.nvim",
+  "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
-    config = function()
-      require("telescope").load_extension("fzf")
-    end,
   },
+  config = function()
+    require("telescope").load_extension("fzf")
+  end,
 }
 ```
 
