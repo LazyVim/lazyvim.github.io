@@ -35,7 +35,7 @@ opts = {
       local tw = require("lspconfig.server_configurations.tailwindcss")
       --- @param ft string
       opts.filetypes = vim.tbl_filter(function(ft)
-        return not vim.tbl_contains(opts.filetypes_exclude, ft)
+        return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
       end, tw.default_config.filetypes)
     end,
   },
@@ -61,43 +61,9 @@ opts = {
         local tw = require("lspconfig.server_configurations.tailwindcss")
         --- @param ft string
         opts.filetypes = vim.tbl_filter(function(ft)
-          return not vim.tbl_contains(opts.filetypes_exclude, ft)
+          return not vim.tbl_contains(opts.filetypes_exclude or {}, ft)
         end, tw.default_config.filetypes)
       end,
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  user_default_options = {
-    tailwind = true,
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "NvChad/nvim-colorizer.lua",
-  opts = {
-    user_default_options = {
-      tailwind = true,
     },
   },
 }
