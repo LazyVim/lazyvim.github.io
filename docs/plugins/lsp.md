@@ -56,6 +56,9 @@ opts = {
   capabilities = {},
   -- Automatically format on save
   autoformat = true,
+  -- Enable this to show formatters used in a notification
+  -- Useful for debugging formatter issues
+  format_notify = false,
   -- options for vim.lsp.buf.format
   -- `bufnr` and `filter` is handled by the LazyVim formatter,
   -- but can be also overridden when specified
@@ -137,6 +140,9 @@ opts = {
     capabilities = {},
     -- Automatically format on save
     autoformat = true,
+    -- Enable this to show formatters used in a notification
+    -- Useful for debugging formatter issues
+    format_notify = false,
     -- options for vim.lsp.buf.format
     -- `bufnr` and `filter` is handled by the LazyVim formatter,
     -- but can be also overridden when specified
@@ -179,10 +185,9 @@ opts = {
   config = function(_, opts)
     local Util = require("lazyvim.util")
     -- setup autoformat
-    require("lazyvim.plugins.lsp.format").autoformat = opts.autoformat
+    require("lazyvim.plugins.lsp.format").setup(opts)
     -- setup formatting and keymaps
     Util.on_attach(function(client, buffer)
-      require("lazyvim.plugins.lsp.format").on_attach(client, buffer)
       require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
     end)
 
