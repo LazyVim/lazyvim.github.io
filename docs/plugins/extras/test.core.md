@@ -1,5 +1,19 @@
 # Neotest
 
+Please make sure to read the **neotest** docs on how to add test adapters.
+
+Example on adding the plenary test adapter:
+
+```lua title="~/.config/nvim/lua/plugins/test.lua"
+return {
+  { "nvim-neotest/neotest-plenary" },
+  {
+    "nvim-neotest/neotest",
+    opts = { adapters = { "neotest-plenary" } },
+  },
+}
+```
+
 <!-- plugins:start -->
 
 To use this, add it to your **lazy.nvim** imports:
