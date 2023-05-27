@@ -299,6 +299,8 @@ Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;tt</code> | Run File | **n** |
+| <code>&lt;leader&gt;tT</code> | Run All Test Files | **n** |
 | <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
 | <code>&lt;leader&gt;tR</code> | Run File | **n** |
 | <code>&lt;leader&gt;ts</code> | Toggle Summary | **n** |
