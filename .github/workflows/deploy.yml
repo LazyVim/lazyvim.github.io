@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  workflow_dispatch:
+  schedule:
+    # Run this every hour
+    - cron: "0 * * * *"
 
 jobs:
   build:
