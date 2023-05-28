@@ -302,7 +302,6 @@ Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
 | <code>&lt;leader&gt;tt</code> | Run File | **n** |
 | <code>&lt;leader&gt;tT</code> | Run All Test Files | **n** |
 | <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
-| <code>&lt;leader&gt;tR</code> | Run File | **n** |
 | <code>&lt;leader&gt;ts</code> | Toggle Summary | **n** |
 | <code>&lt;leader&gt;to</code> | Show Output | **n** |
 | <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |
