@@ -3,6 +3,7 @@
 
 # Production
 /build
+.nvim
 
 # Generated files
 .docusaurus
