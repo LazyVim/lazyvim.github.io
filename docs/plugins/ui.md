@@ -474,7 +474,11 @@ opts = {
     {
       filter = {
         event = "msg_show",
-        find = "%d+L, %d+B",
+        any = {
+          { find = "%d+L, %d+B" },
+          { find = "; after #%d+" },
+          { find = "; before #%d+" },
+        },
       },
       view = "mini",
     },
@@ -520,7 +524,11 @@ opts = {
       {
         filter = {
           event = "msg_show",
-          find = "%d+L, %d+B",
+          any = {
+            { find = "%d+L, %d+B" },
+            { find = "; after #%d+" },
+            { find = "; before #%d+" },
+          },
         },
         view = "mini",
       },
