@@ -7,7 +7,7 @@ sidebar_position: 4
 <!-- examples:start -->
 
 ```lua
--- every spec file under config.plugins will be loaded automatically by lazy.nvim
+-- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
 --
 -- In your plugin files, you can:
 -- * add extra plugins
@@ -201,7 +201,7 @@ return {
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
-  -- add jsonls and schemastore ans setup treesitter for json, json5 and jsonc
+  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
 
   -- add any tools you want to have installed below
