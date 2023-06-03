@@ -16,10 +16,10 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;C-h&gt;</code> | Go to left window | **n** |
-| <code>&lt;C-j&gt;</code> | Go to lower window | **n** |
-| <code>&lt;C-k&gt;</code> | Go to upper window | **n** |
-| <code>&lt;C-l&gt;</code> | Go to right window | **n** |
+| <code>&lt;C-h&gt;</code> | Go to left window | **n**, **t** |
+| <code>&lt;C-j&gt;</code> | Go to lower window | **n**, **t** |
+| <code>&lt;C-k&gt;</code> | Go to upper window | **n**, **t** |
+| <code>&lt;C-l&gt;</code> | Go to right window | **n**, **t** |
 | <code>&lt;C-Up&gt;</code> | Increase window height | **n** |
 | <code>&lt;C-Down&gt;</code> | Decrease window height | **n** |
 | <code>&lt;C-Left&gt;</code> | Decrease window width | **n** |
@@ -54,7 +54,10 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;ft</code> | Terminal (root dir) | **n** |
 | <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
+| <code>&lt;c-/&gt;</code> | Terminal (root dir) | **n** |
 | <code>&lt;esc&gt;&lt;esc&gt;</code> | Enter Normal Mode | **t** |
+| <code>&lt;C-w&gt;</code> | Terminal Window Mappings | **t** |
+| <code>&lt;C-/&gt;</code> | Hide Terminal | **t** |
 | <code>&lt;leader&gt;ww</code> | Other window | **n** |
 | <code>&lt;leader&gt;wd</code> | Delete window | **n** |
 | <code>&lt;leader&gt;w-</code> | Split window below | **n** |

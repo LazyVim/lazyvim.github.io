@@ -16,6 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = {
+  sources = { "filesystem", "buffers", "git_status", "document_symbols" },
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = true,
@@ -77,6 +78,7 @@ opts = {
     end
   end,
   opts = {
+    sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = true,
@@ -124,7 +126,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
+opts = { open_cmd = "noswapfile vnew" }
 ```
 
 </TabItem>
@@ -135,6 +137,8 @@ opts = nil
 ```lua
 {
   "nvim-pack/nvim-spectre",
+  cmd = "Spectre",
+  opts = { open_cmd = "noswapfile vnew" },
   -- stylua: ignore
   keys = {
     { "<leader>sr", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
