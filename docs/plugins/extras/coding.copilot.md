@@ -30,6 +30,10 @@ import TabItem from '@theme/TabItem';
 opts = {
   suggestion = { enabled = false },
   panel = { enabled = false },
+  filetypes = {
+    markdown = true,
+    help = true,
+  },
 }
 ```
 
@@ -46,6 +50,10 @@ opts = {
   opts = {
     suggestion = { enabled = false },
     panel = { enabled = false },
+    filetypes = {
+      markdown = true,
+      help = true,
+    },
   },
 }
 ```
