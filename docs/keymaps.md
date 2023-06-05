@@ -55,6 +55,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ft</code> | Terminal (root dir) | **n** |
 | <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
 | <code>&lt;c-/&gt;</code> | Terminal (root dir) | **n** |
+| <code>&lt;c-_&gt;</code> | which_key_ignore | **n**, **t** |
 | <code>&lt;esc&gt;&lt;esc&gt;</code> | Enter Normal Mode | **t** |
 | <code>&lt;C-/&gt;</code> | Hide Terminal | **t** |
 | <code>&lt;leader&gt;ww</code> | Other window | **n** |
