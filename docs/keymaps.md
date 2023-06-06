@@ -317,6 +317,13 @@ Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
 | --- | --- | --- |
 | <code>&lt;leader&gt;td</code> | Debug Nearest | **n** |
 
+## [edgy.nvim](https://github.com/folke/edgy.nvim.git)
+Part of [lazyvim.plugins.extras.ui.edgy](/plugins/extras/ui.edgy)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ue</code> | Edgy Select Window | **n** |
+
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/plugins/extras/util.project)
 
