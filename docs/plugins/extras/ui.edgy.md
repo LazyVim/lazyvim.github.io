@@ -70,6 +70,10 @@ opts = {
       filter = function(buf)
         return vim.b[buf].neo_tree_source == "filesystem"
       end,
+      pinned = true,
+      open = function()
+        vim.api.nvim_input("<esc><space>e")
+      end,
       size = { height = 0.5 },
     },
     {
@@ -110,8 +114,15 @@ opts = {
   "folke/edgy.nvim",
   event = "VeryLazy",
   keys = {
+    {
+      "<leader>ue",
+      function()
+        require("edgy").toggle()
+      end,
+      desc = "Edgy Toggle",
+    },
     -- stylua: ignore
-    { "<leader>ue", function() require("edgy").select() end, desc = "Edgy Select Window" },
+    { "<leader>uE", function() require("edgy").select() end, desc = "Edgy Select Window" },
   },
   opts = {
     bottom = {
@@ -155,6 +166,10 @@ opts = {
         ft = "neo-tree",
         filter = function(buf)
           return vim.b[buf].neo_tree_source == "filesystem"
+        end,
+        pinned = true,
+        open = function()
+          vim.api.nvim_input("<esc><space>e")
         end,
         size = { height = 0.5 },
       },

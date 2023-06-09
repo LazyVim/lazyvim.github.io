@@ -322,7 +322,8 @@ Part of [lazyvim.plugins.extras.ui.edgy](/plugins/extras/ui.edgy)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;ue</code> | Edgy Select Window | **n** |
+| <code>&lt;leader&gt;ue</code> | Edgy Toggle | **n** |
+| <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
 
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/plugins/extras/util.project)
