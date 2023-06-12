@@ -62,6 +62,7 @@ opts = {
       end,
     },
     { ft = "spectre_panel", size = { height = 0.4 } },
+    { title = "Neotest Output", ft = "neotest-output-panel", size = { height = 15 } },
   },
   left = {
     {
@@ -76,6 +77,7 @@ opts = {
       end,
       size = { height = 0.5 },
     },
+    { title = "Neotest Summary", ft = "neotest-summary" },
     {
       title = "Neo-Tree Git",
       ft = "neo-tree",
@@ -100,6 +102,24 @@ opts = {
       open = "SymbolsOutline",
     },
     "neo-tree",
+  },
+  keys = {
+    -- increase width
+    ["<c-Right>"] = function(win)
+      win:resize("width", 2)
+    end,
+    -- decrease width
+    ["<c-Left>"] = function(win)
+      win:resize("width", -2)
+    end,
+    -- increase height
+    ["<c-Up>"] = function(win)
+      win:resize("height", 2)
+    end,
+    -- decrease height
+    ["<c-Down>"] = function(win)
+      win:resize("height", -2)
+    end,
   },
 }
 ```
@@ -159,6 +179,7 @@ opts = {
         end,
       },
       { ft = "spectre_panel", size = { height = 0.4 } },
+      { title = "Neotest Output", ft = "neotest-output-panel", size = { height = 15 } },
     },
     left = {
       {
@@ -173,6 +194,7 @@ opts = {
         end,
         size = { height = 0.5 },
       },
+      { title = "Neotest Summary", ft = "neotest-summary" },
       {
         title = "Neo-Tree Git",
         ft = "neo-tree",
@@ -197,6 +219,24 @@ opts = {
         open = "SymbolsOutline",
       },
       "neo-tree",
+    },
+    keys = {
+      -- increase width
+      ["<c-Right>"] = function(win)
+        win:resize("width", 2)
+      end,
+      -- decrease width
+      ["<c-Left>"] = function(win)
+        win:resize("width", -2)
+      end,
+      -- increase height
+      ["<c-Up>"] = function(win)
+        win:resize("height", 2)
+      end,
+      -- decrease height
+      ["<c-Down>"] = function(win)
+        win:resize("height", -2)
+      end,
     },
   },
 }
