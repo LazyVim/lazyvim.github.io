@@ -100,6 +100,7 @@ opts = {}
 
 ```lua
 opts = function()
+  vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
   local cmp = require("cmp")
   return {
     completion = {
@@ -140,7 +141,7 @@ opts = function()
     },
     experimental = {
       ghost_text = {
-        hl_group = "LspCodeLens",
+        hl_group = "CmpGhostText",
       },
     },
   }
@@ -164,6 +165,7 @@ end
     "saadparwaiz1/cmp_luasnip",
   },
   opts = function()
+    vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")
     return {
       completion = {
@@ -204,7 +206,7 @@ end
       },
       experimental = {
         ghost_text = {
-          hl_group = "LspCodeLens",
+          hl_group = "CmpGhostText",
         },
       },
     }
