@@ -52,6 +52,12 @@ opts = {
     },
     severity_sort = true,
   },
+  -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+  -- Be aware that you also will need to properly configure your LSP server to
+  -- provide the inlay hints.
+  inlay_hints = {
+    enabled = false,
+  },
   -- add any global capabilities here
   capabilities = {},
   -- Automatically format on save
@@ -136,6 +142,12 @@ opts = {
       },
       severity_sort = true,
     },
+    -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+    -- Be aware that you also will need to properly configure your LSP server to
+    -- provide the inlay hints.
+    inlay_hints = {
+      enabled = false,
+    },
     -- add any global capabilities here
     capabilities = {},
     -- Automatically format on save
@@ -195,6 +207,14 @@ opts = {
     for name, icon in pairs(require("lazyvim.config").icons.diagnostics) do
       name = "DiagnosticSign" .. name
       vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+    end
+
+    if opts.inlay_hints.enabled and vim.lsp.buf.inlay_hint then
+      Util.on_attach(function(client, buffer)
+        if client.server_capabilities.inlayHintProvider then
+          vim.lsp.buf.inlay_hint(buffer, true)
+        end
+      end)
     end
 
     if type(opts.diagnostics.virtual_text) == "table" and opts.diagnostics.virtual_text.prefix == "icons" then
