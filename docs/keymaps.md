@@ -298,6 +298,14 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
+## [mini.files](https://github.com/echasnovski/mini.files.git)
+Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-files)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
+| <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
+
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
 Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
 
