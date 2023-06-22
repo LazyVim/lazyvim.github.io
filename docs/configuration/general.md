@@ -50,7 +50,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="defaults" label="Default Options">
 
 ```lua title="lazyvim.config.options"
--- This file is automatically loaded by plugins.config
+-- This file is automatically loaded by plugins.core
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
