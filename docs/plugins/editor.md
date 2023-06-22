@@ -35,6 +35,16 @@ opts = {
       expander_expanded = "",
       expander_highlight = "NeoTreeExpander",
     },
+    icon = {
+      folder_empty = "󰜌",
+      folder_empty_open = "󰜌",
+    },
+    git_status = {
+      symbols = {
+        renamed = "󰁕",
+        unstaged = "󰄱",
+      },
+    },
   },
 }
 ```
@@ -97,6 +107,16 @@ opts = {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
+      },
+      icon = {
+        folder_empty = "󰜌",
+        folder_empty_open = "󰜌",
+      },
+      git_status = {
+        symbols = {
+          renamed = "󰁕",
+          unstaged = "󰄱",
+        },
       },
     },
   },
