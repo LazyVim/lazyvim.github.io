@@ -26,7 +26,7 @@ to make it easy to customize and extend your config.
 
 - Neovim >= **0.8.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
-- a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
+- a [Nerd Font](https://www.nerdfonts.com/) **_(optional, but needed to display some icons)_**
 - [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
 - for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) **_(optional)_**
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
