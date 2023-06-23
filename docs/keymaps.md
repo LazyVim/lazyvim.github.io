@@ -298,6 +298,15 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
+## [flash.nvim](https://github.com/folke/flash.nvim.git)
+Part of [lazyvim.plugins.extras.editor.flash](/plugins/extras/editor.flash)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>s</code> | Flash | **n**, **x**, **o** |
+| <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
+| <code>r</code> | Remote Flash | **o** |
+
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-files)
 
