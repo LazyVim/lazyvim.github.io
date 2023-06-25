@@ -122,7 +122,7 @@ opts = function()
   if Util.has("symbols-outline.nvim") then
     table.insert(opts.left, {
       title = "Outline",
-      ft = "outline",
+      ft = "Outline",
       pinned = true,
       open = "SymbolsOutline",
     })
@@ -246,7 +246,7 @@ end
     if Util.has("symbols-outline.nvim") then
       table.insert(opts.left, {
         title = "Outline",
-        ft = "outline",
+        ft = "Outline",
         pinned = true,
         open = "SymbolsOutline",
       })
