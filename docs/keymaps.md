@@ -306,6 +306,7 @@ Part of [lazyvim.plugins.extras.editor.flash](/plugins/extras/editor.flash)
 | <code>s</code> | Flash | **n**, **x**, **o** |
 | <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
 | <code>r</code> | Remote Flash | **o** |
+| <code>R</code> | Treesitter Search | **n**, **o**, **x** |
 
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-files)
