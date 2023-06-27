@@ -27,6 +27,8 @@ import TabItem from '@theme/TabItem';
 opts = {
   windows = {
     preview = true,
+    width_focus = 30,
+    width_preview = 30,
   },
   options = {
     -- Whether to use for editing directories
@@ -47,6 +49,8 @@ opts = {
   opts = {
     windows = {
       preview = true,
+      width_focus = 30,
+      width_preview = 30,
     },
     options = {
       -- Whether to use for editing directories
@@ -74,8 +78,12 @@ opts = {
     require("mini.files").setup(opts)
 
     local show_dotfiles = true
-    local filter_show = function(fs_entry) return true end
-    local filter_hide = function(fs_entry) return not vim.startswith(fs_entry.name, ".") end
+    local filter_show = function(fs_entry)
+      return true
+    end
+    local filter_hide = function(fs_entry)
+      return not vim.startswith(fs_entry.name, ".")
+    end
 
     local toggle_dotfiles = function()
       show_dotfiles = not show_dotfiles

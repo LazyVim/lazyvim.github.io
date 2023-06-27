@@ -71,7 +71,7 @@ opts = {}
     },
     {
       "R",
-      mode = { "n", "o", "x" },
+      mode = { "o", "x" },
       function()
         require("flash").treesitter_search()
       end,
