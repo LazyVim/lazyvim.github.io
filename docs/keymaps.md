@@ -265,7 +265,7 @@ Part of [lazyvim.plugins.extras.coding.yanky](/plugins/extras/coding.yanky)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;P</code> | Open Yank History | **n** |
+| <code>&lt;leader&gt;p</code> | Open Yank History | **n** |
 | <code>y</code> | Yank text | **n**, **x** |
 | <code>p</code> | Put yanked text after cursor | **n**, **x** |
 | <code>P</code> | Put yanked text before cursor | **n**, **x** |
