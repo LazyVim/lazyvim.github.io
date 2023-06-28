@@ -260,6 +260,30 @@ possible keymaps starting with `<space>`.
 | <code>]]</code> | Next Reference | **n** |
 | <code>[[</code> | Prev Reference | **n** |
 
+## [yanky.nvim](https://github.com/gbprod/yanky.nvim.git)
+Part of [lazyvim.plugins.extras.coding.yanky](/plugins/extras/coding.yanky)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;P</code> | Open Yank History | **n** |
+| <code>y</code> | Yank text | **n**, **x** |
+| <code>p</code> | Put yanked text after cursor | **n**, **x** |
+| <code>P</code> | Put yanked text before cursor | **n**, **x** |
+| <code>gp</code> | Put yanked text after selection | **n**, **x** |
+| <code>gP</code> | Put yanked text before selection | **n**, **x** |
+| <code>[y</code> | Cycle forward through yank history | **n** |
+| <code>]y</code> | Cycle backward through yank history | **n** |
+| <code>]p</code> | Put indented after cursor (linewise) | **n** |
+| <code>[p</code> | Put indented before cursor (linewise) | **n** |
+| <code>]P</code> | Put indented after cursor (linewise) | **n** |
+| <code>[P</code> | Put indented before cursor (linewise) | **n** |
+| <code>&gt;p</code> | Put and indent right | **n** |
+| <code>&lt;p</code> | Put and indent left | **n** |
+| <code>&gt;P</code> | Put before and indent right | **n** |
+| <code>&lt;P</code> | Put before and indent left | **n** |
+| <code>=p</code> | Put after applying a filter | **n** |
+| <code>=P</code> | Put before applying a filter | **n** |
+
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
 Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 
