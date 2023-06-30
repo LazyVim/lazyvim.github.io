@@ -184,7 +184,7 @@ opts = {
   setup = {
     rust_analyzer = function(_, opts)
       require("lazyvim.util").on_attach(function(client, buffer)
-		-- stylua: ignore
+        -- stylua: ignore
         if client.name == "rust_analyzer" then
           vim.keymap.set("n", "K", "<cmd>RustHoverActions<cr>", { buffer = buffer, desc = "Hover Actions (Rust)" })
           vim.keymap.set( "n", "<leader>cR", "<cmd>RustCodeAction<cr>", { buffer = buffer, desc = "Code Action (Rust)" })
@@ -198,7 +198,8 @@ opts = {
       local codelldb_path = extension_path .. "adapter/codelldb"
       local liblldb_path = vim.fn.has("mac") == 1 and extension_path .. "lldb/lib/liblldb.dylib"
         or extension_path .. "lldb/lib/liblldb.so"
-      local rust_tools_opts = vim.tbl_deep_extend("force", opts, {
+      local user_rust_tools_opts = require("lazyvim.util").opts("rust-tools.nvim")
+      local rust_tools_opts = vim.tbl_deep_extend("force", user_rust_tools_opts, {
         dap = {
           adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
         },
@@ -213,7 +214,7 @@ opts = {
             ]])
           end,
         },
-        server = {
+        server = vim.tbl_deep_extend("force", opts, {
           settings = {
             ["rust-analyzer"] = {
               cargo = {
@@ -237,7 +238,7 @@ opts = {
               },
             },
           },
-        },
+        }),
       })
       require("rust-tools").setup(rust_tools_opts)
       return true
@@ -269,7 +270,11 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  dependencies = { "simrat39/rust-tools.nvim" },
+  dependencies = {
+    "simrat39/rust-tools.nvim",
+    -- Avoid calling setup twice if user supplies `opts`
+    config = function() end,
+  },
   opts = {
     servers = {
       -- Ensure mason installs the server
@@ -279,7 +284,7 @@ opts = {
     setup = {
       rust_analyzer = function(_, opts)
         require("lazyvim.util").on_attach(function(client, buffer)
-				-- stylua: ignore
+          -- stylua: ignore
           if client.name == "rust_analyzer" then
             vim.keymap.set("n", "K", "<cmd>RustHoverActions<cr>", { buffer = buffer, desc = "Hover Actions (Rust)" })
             vim.keymap.set( "n", "<leader>cR", "<cmd>RustCodeAction<cr>", { buffer = buffer, desc = "Code Action (Rust)" })
@@ -293,7 +298,8 @@ opts = {
         local codelldb_path = extension_path .. "adapter/codelldb"
         local liblldb_path = vim.fn.has("mac") == 1 and extension_path .. "lldb/lib/liblldb.dylib"
           or extension_path .. "lldb/lib/liblldb.so"
-        local rust_tools_opts = vim.tbl_deep_extend("force", opts, {
+        local user_rust_tools_opts = require("lazyvim.util").opts("rust-tools.nvim")
+        local rust_tools_opts = vim.tbl_deep_extend("force", user_rust_tools_opts, {
           dap = {
             adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
           },
@@ -308,7 +314,7 @@ opts = {
               ]])
             end,
           },
-          server = {
+          server = vim.tbl_deep_extend("force", opts, {
             settings = {
               ["rust-analyzer"] = {
                 cargo = {
@@ -332,7 +338,7 @@ opts = {
                 },
               },
             },
-          },
+          }),
         })
         require("rust-tools").setup(rust_tools_opts)
         return true
@@ -368,6 +374,71 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "simrat39/rust-tools.nvim",
+  -- Avoid calling setup twice if user supplies `opts`
+  config = function() end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest](https://github.com/nvim-neotest/neotest)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  adapters = {
+    ["neotest-rust"] = {},
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-neotest/neotest",
+  optional = true,
+  dependencies = {
+    "rouge8/neotest-rust",
+  },
+  opts = {
+    adapters = {
+      ["neotest-rust"] = {},
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest-rust](https://github.com/rouge8/neotest-rust)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
 opts = nil
 ```
 
@@ -377,7 +448,9 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "simrat39/rust-tools.nvim" }
+{
+  "rouge8/neotest-rust",
+}
 ```
 
 </TabItem>
