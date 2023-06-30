@@ -48,7 +48,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
 | <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
 | <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
-| <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
 | <code>&lt;leader&gt;gg</code> | Lazygit (root dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit all | **n** |
