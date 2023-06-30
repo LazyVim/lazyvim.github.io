@@ -1,1 +1,0 @@
-(self.webpackChunklazyvim=self.webpackChunklazyvim||[]).push([[525],{5525:()=>{}}]);
