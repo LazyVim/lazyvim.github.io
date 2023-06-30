@@ -227,9 +227,24 @@ require("lazy").setup({
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
       })
+      local md_file = docs .. "/plugins/extras/" .. modname:gsub(".*extras%.", "") .. ".md"
+      if not vim.loop.fs_stat(md_file) then
+        local dir = vim.fn.fnamemodify(md_file, ":h")
+        vim.fn.mkdir(dir, "p")
+        Util.write_file(
+          md_file,
+          ([[
+# `%s`
+
+<!-- plugins:start -->
+<!-- plugins:end -->
+]]):format(modname:gsub(".*extras%.", ""))
+        )
+      end
+
       Docs.save({
         plugins = { content = table.concat(lines, "\n") },
-      }, docs .. "/plugins/extras/" .. modname:gsub(".*extras%.", "") .. ".md")
+      }, md_file)
     end
   end)
 
