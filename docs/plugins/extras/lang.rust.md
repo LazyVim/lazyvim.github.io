@@ -327,11 +327,6 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    "simrat39/rust-tools.nvim",
-    -- Avoid calling setup twice if user supplies `opts`
-    config = function() end,
-  },
   opts = {
     servers = {
       -- Ensure mason installs the server
@@ -389,33 +384,6 @@ opts = {
       end,
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "simrat39/rust-tools.nvim",
-  -- Avoid calling setup twice if user supplies `opts`
-  config = function() end,
 }
 ```
 

@@ -69,6 +69,10 @@ opts = {
   servers = {
     ---@type lspconfig.options.tsserver
     tsserver = {
+      keys = {
+        { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
+        { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+      },
       settings = {
         typescript = {
           format = {
@@ -92,14 +96,6 @@ opts = {
   },
   setup = {
     tsserver = function(_, opts)
-      require("lazyvim.util").on_attach(function(client, buffer)
-        if client.name == "tsserver" then
-          -- stylua: ignore
-          vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
-          -- stylua: ignore
-          vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
-        end
-      end)
       require("typescript").setup({ server = opts })
       return true
     end,
@@ -121,6 +117,10 @@ opts = {
     servers = {
       ---@type lspconfig.options.tsserver
       tsserver = {
+        keys = {
+          { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
+          { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+        },
         settings = {
           typescript = {
             format = {
@@ -144,14 +144,6 @@ opts = {
     },
     setup = {
       tsserver = function(_, opts)
-        require("lazyvim.util").on_attach(function(client, buffer)
-          if client.name == "tsserver" then
-            -- stylua: ignore
-            vim.keymap.set("n", "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
-            -- stylua: ignore
-            vim.keymap.set("n", "<leader>cR", "<cmd>TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
-          end
-        end)
         require("typescript").setup({ server = opts })
         return true
       end,
