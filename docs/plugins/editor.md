@@ -358,43 +358,6 @@ opts = {
 
 </Tabs>
 
-## [flit.nvim](https://github.com/ggandor/flit.nvim)
-
- easily jump to any location and enhanced f/t motions for Leap
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { labeled_modes = "nx" }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "ggandor/flit.nvim",
-  keys = function()
-    ---@type LazyKeys[]
-    local ret = {}
-    for _, key in ipairs({ "f", "F", "t", "T" }) do
-      ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
-    end
-    return ret
-  end,
-  opts = { labeled_modes = "nx" },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [leap.nvim](https://github.com/ggandor/leap.nvim)
 
 <Tabs>
