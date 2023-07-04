@@ -105,6 +105,15 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
 
+## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>f</code> | f | **n**, **x**, **o** |
+| <code>F</code> | F | **n**, **x**, **o** |
+| <code>t</code> | t | **n**, **x**, **o** |
+| <code>T</code> | T | **n**, **x**, **o** |
+
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
 
 | Key | Description | Mode |
