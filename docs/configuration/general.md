@@ -310,7 +310,7 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 <TabItem value="defaults" label="Default Auto Commands">
 
 ```lua title="lazyvim.config.autocmds"
--- This file is automatically loaded by lazyvim.config.init
+-- This file is automatically loaded by lazyvim.config.init.
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
