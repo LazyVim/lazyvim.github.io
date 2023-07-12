@@ -119,7 +119,7 @@ opts = {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+    { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     { "folke/neodev.nvim", opts = {} },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -204,6 +204,11 @@ opts = {
   ---@param opts PluginLspOpts
   config = function(_, opts)
     local Util = require("lazyvim.util")
+
+    if Util.has("neoconf.nvim") then
+      local plugin = require("lazy.core.config").spec.plugins["neoconf.nvim"]
+      require("neoconf").setup(require("lazy.core.plugin").values(plugin, "opts", false))
+    end
     -- setup autoformat
     require("lazyvim.plugins.lsp.format").setup(opts)
     -- setup formatting and keymaps
@@ -335,7 +340,7 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "folke/neoconf.nvim", cmd = "Neoconf", config = true }
+{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } }
 ```
 
 </TabItem>
