@@ -53,6 +53,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit all | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
+| <code>&lt;leader&gt;L</code> | LazyVim Changelog | **n** |
 | <code>&lt;leader&gt;ft</code> | Terminal (root dir) | **n** |
 | <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
 | <code>&lt;c-/&gt;</code> | Terminal (root dir) | **n** |
@@ -105,22 +106,15 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
 
-## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
+## [flash.nvim](https://github.com/folke/flash.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>f</code> | f | **n**, **x**, **o** |
-| <code>F</code> | F | **n**, **x**, **o** |
-| <code>t</code> | t | **n**, **x**, **o** |
-| <code>T</code> | T | **n**, **x**, **o** |
-
-## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>s</code> | Leap forward to | **n**, **x**, **o** |
-| <code>S</code> | Leap backward to | **n**, **x**, **o** |
-| <code>gs</code> | Leap from windows | **n**, **x**, **o** |
+| <code>s</code> | Flash | **n**, **x**, **o** |
+| <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
+| <code>r</code> | Remote Flash | **o** |
+| <code>R</code> | Treesitter Search | **o**, **x** |
+| <code>&lt;c-s&gt;</code> | Toggle Flash Search | **c** |
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 
@@ -322,16 +316,24 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
-## [flash.nvim](https://github.com/folke/flash.nvim.git)
-Part of [lazyvim.plugins.extras.editor.flash](/plugins/extras/editor.flash)
+## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
+Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>s</code> | Flash | **n**, **x**, **o** |
-| <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
-| <code>r</code> | Remote Flash | **o** |
-| <code>R</code> | Treesitter Search | **o**, **x** |
-| <code>&lt;c-s&gt;</code> | Toggle Flash Search | **c** |
+| <code>f</code> | f | **n**, **x**, **o** |
+| <code>F</code> | F | **n**, **x**, **o** |
+| <code>t</code> | t | **n**, **x**, **o** |
+| <code>T</code> | T | **n**, **x**, **o** |
+
+## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
+Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>s</code> | Leap forward to | **n**, **x**, **o** |
+| <code>S</code> | Leap backward to | **n**, **x**, **o** |
+| <code>gs</code> | Leap from windows | **n**, **x**, **o** |
 
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-files)

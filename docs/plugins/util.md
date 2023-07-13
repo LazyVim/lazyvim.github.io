@@ -99,30 +99,4 @@ opts = nil
 
 </Tabs>
 
-## [vim-repeat](https://github.com/tpope/vim-repeat)
-
- makes some plugins dot-repeatable like leap
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "tpope/vim-repeat", event = "VeryLazy" }
-```
-
-</TabItem>
-
-</Tabs>
-
 <!-- plugins:end -->

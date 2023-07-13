@@ -358,44 +358,10 @@ opts = {
 
 </Tabs>
 
-## [flit.nvim](https://github.com/ggandor/flit.nvim)
+## [flash.nvim](https://github.com/folke/flash.nvim)
 
- easily jump to any location and enhanced f/t motions for Leap
+ Add Flash
 
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { labeled_modes = "nx" }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "ggandor/flit.nvim",
-  keys = function()
-    ---@type LazyKeys[]
-    local ret = {}
-    for _, key in ipairs({ "f", "F", "t", "T" }) do
-      ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
-    end
-    return ret
-  end,
-  opts = { labeled_modes = "nx" },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [leap.nvim](https://github.com/ggandor/leap.nvim)
 
 <Tabs>
 
@@ -412,20 +378,98 @@ opts = {}
 
 ```lua
 {
-  "ggandor/leap.nvim",
+  "folke/flash.nvim",
+  event = "VeryLazy",
+  vscode = true,
+  ---@type Flash.Config
+  opts = {},
+  -- stylua: ignore
   keys = {
-    { "s", mode = { "n", "x", "o" }, desc = "Leap forward to" },
-    { "S", mode = { "n", "x", "o" }, desc = "Leap backward to" },
-    { "gs", mode = { "n", "x", "o" }, desc = "Leap from windows" },
+    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+    { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
-  config = function(_, opts)
-    local leap = require("leap")
-    for k, v in pairs(opts) do
-      leap.opts[k] = v
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+ Flash Telescope config
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  if not require("lazyvim.util").has("flash.nvim") then
+    return
+  end
+  local function flash(prompt_bufnr)
+    require("flash").jump({
+      pattern = "^",
+      label = { after = { 0, 0 } },
+      search = {
+        mode = "search",
+        exclude = {
+          function(win)
+            return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+          end,
+        },
+      },
+      action = function(match)
+        local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+        picker:set_selection(match.pos[1] - 1)
+      end,
+    })
+  end
+  opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+    mappings = { n = { s = flash }, i = { ["<c-s>"] = flash } },
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-telescope/telescope.nvim",
+  optional = true,
+  opts = function(_, opts)
+    if not require("lazyvim.util").has("flash.nvim") then
+      return
     end
-    leap.add_default_mappings(true)
-    vim.keymap.del({ "x", "o" }, "x")
-    vim.keymap.del({ "x", "o" }, "X")
+    local function flash(prompt_bufnr)
+      require("flash").jump({
+        pattern = "^",
+        label = { after = { 0, 0 } },
+        search = {
+          mode = "search",
+          exclude = {
+            function(win)
+              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+            end,
+          },
+        },
+        action = function(match)
+          local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+          picker:set_selection(match.pos[1] - 1)
+        end,
+      })
+    end
+    opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
+      mappings = { n = { s = flash }, i = { ["<c-s>"] = flash } },
+    })
   end,
 }
 ```
