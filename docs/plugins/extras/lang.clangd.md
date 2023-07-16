@@ -8,8 +8,8 @@ To use this, add it to your **lazy.nvim** imports:
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.lang.clangd" },
     { import = "plugins" },
+    { import = "lazyvim.plugins.extras.lang.clangd" },
   },
 })
 ```
