@@ -20,7 +20,7 @@ opts = {
   open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
   filesystem = {
     bind_to_cwd = false,
-    follow_current_file = true,
+    follow_current_file = { enabled = true },
     use_libuv_file_watcher = true,
   },
   window = {
@@ -35,16 +35,6 @@ opts = {
       expander_expanded = "",
       expander_highlight = "NeoTreeExpander",
     },
-    icon = {
-      folder_empty = "󰜌",
-      folder_empty_open = "󰜌",
-    },
-    git_status = {
-      symbols = {
-        renamed = "󰁕",
-        unstaged = "󰄱",
-      },
-    },
   },
 }
 ```
@@ -57,6 +47,7 @@ opts = {
 ```lua
 {
   "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
   cmd = "Neotree",
   keys = {
     {
@@ -80,7 +71,6 @@ opts = {
     vim.cmd([[Neotree close]])
   end,
   init = function()
-    vim.g.neo_tree_remove_legacy_commands = 1
     if vim.fn.argc() == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
@@ -93,7 +83,7 @@ opts = {
     open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
     filesystem = {
       bind_to_cwd = false,
-      follow_current_file = true,
+      follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
     },
     window = {
@@ -107,16 +97,6 @@ opts = {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
-      },
-      icon = {
-        folder_empty = "󰜌",
-        folder_empty_open = "󰜌",
-      },
-      git_status = {
-        symbols = {
-          renamed = "󰁕",
-          unstaged = "󰄱",
-        },
       },
     },
   },
