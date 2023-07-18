@@ -4,14 +4,14 @@ sidebar_position: 1
 
 # lazy.nvim
 
-The [starter](https://github.com/LazyVim/starter) includes a pre-configure [lazy.nvim](https://github.com/folke/lazy.nvim)
+The [starter](https://github.com/LazyVim/starter) includes a pre-configured [lazy.nvim](https://github.com/folke/lazy.nvim)
 setup that installs the **LazyVim** plugin and imports its plugins.
 
 :::tip
 The version for **lazy.nvim** and **LazyVim** will default to the latest
 stable release.
 
-If you'd rather use the latest development version, add the below
+If you'd rather use the latest development version, add the code below
 to your specs:
 
 ```lua title="lua/plugins/core.lua"
