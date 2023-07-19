@@ -227,7 +227,8 @@ require("lazy").setup({
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
       })
-      local md_file = docs .. "/plugins/extras/" .. modname:gsub(".*extras%.", "") .. ".md"
+      local subdir = modname:find("extras%.lang") and "lang/" or ""
+      local md_file = docs .. "/plugins/extras/" .. subdir .. modname:gsub(".*extras%.", "") .. ".md"
       if not vim.loop.fs_stat(md_file) then
         local dir = vim.fn.fnamemodify(md_file, ":h")
         vim.fn.mkdir(dir, "p")
