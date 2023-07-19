@@ -59,7 +59,7 @@ function M.keymaps()
   Util.walk(rootLazyVim .. "/lua/lazyvim/plugins/extras", function(path, name, t)
     if t == "file" and name:find("%.lua$") then
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
-      local extra_doc = "/plugins/extras/" .. modname:gsub("lazyvim%.plugins%.extras%.", "")
+      local extra_doc = "/extras/" .. modname:gsub("lazyvim%.plugins%.extras%.", ""):gsub("%.", "/")
       local extra = require("lazy.core.plugin").Spec.new({ import = modname }, { optional = true })
       Util.foreach(extra.plugins, function(name, plugin)
         group = ("[%s](%s)\nPart of [%s](%s)"):format(plugin.name, plugin.url, modname, extra_doc)

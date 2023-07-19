@@ -19,7 +19,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
-Extend auto completion
+ Extend auto completion
+
 
 <Tabs>
 
@@ -35,6 +36,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -74,6 +76,7 @@ opts = {}
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -90,7 +93,8 @@ opts = {}
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-Add Rust & related to treesitter
+ Add Rust & related to treesitter
+
 
 <Tabs>
 
@@ -105,6 +109,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -125,7 +130,8 @@ end
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
-Ensure Rust debugger is installed
+ Ensure Rust debugger is installed
+
 
 <Tabs>
 
@@ -140,6 +146,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -199,6 +206,7 @@ end
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -244,7 +252,8 @@ end
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-Correctly setup lspconfig for Rust 🚀
+ Correctly setup lspconfig for Rust 🚀
+
 
 <Tabs>
 
@@ -311,6 +320,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -397,6 +407,7 @@ opts = {
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -429,6 +440,7 @@ opts = nil
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

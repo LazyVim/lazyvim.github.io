@@ -256,7 +256,7 @@ possible keymaps starting with `<space>`.
 | <code>[[</code> | Prev Reference | **n** |
 
 ## [yanky.nvim](https://github.com/gbprod/yanky.nvim.git)
-Part of [lazyvim.plugins.extras.coding.yanky](/plugins/extras/coding.yanky)
+Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -280,7 +280,7 @@ Part of [lazyvim.plugins.extras.coding.yanky](/plugins/extras/coding.yanky)
 | <code>=P</code> | Put before applying a filter | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
-Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
+Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -302,7 +302,7 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 | <code>&lt;leader&gt;dw</code> | Widgets | **n** |
 
 ## [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui.git)
-Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
+Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -310,7 +310,7 @@ Part of [lazyvim.plugins.extras.dap.core](/plugins/extras/dap.core)
 | <code>&lt;leader&gt;de</code> | Eval | **n**, **v** |
 
 ## [one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind.git)
-Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
+Part of [lazyvim.plugins.extras.dap.nlua](/extras/dap/nlua)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -318,7 +318,7 @@ Part of [lazyvim.plugins.extras.dap.nlua](/plugins/extras/dap.nlua)
 | <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
 
 ## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
-Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
+Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -328,7 +328,7 @@ Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
 | <code>T</code> | T | **n**, **x**, **o** |
 
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
-Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
+Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -337,7 +337,7 @@ Part of [lazyvim.plugins.extras.editor.leap](/plugins/extras/editor.leap)
 | <code>gs</code> | Leap from windows | **n**, **x**, **o** |
 
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
-Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-files)
+Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -345,7 +345,7 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-f
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
-Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
+Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -353,14 +353,14 @@ Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
 | <code>&lt;leader&gt;dPc</code> | Debug Class | **n** |
 
 ## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim.git)
-Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
+Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
 
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
-Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
+Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -373,14 +373,14 @@ Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
 | <code>&lt;leader&gt;tS</code> | Stop | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
-Part of [lazyvim.plugins.extras.test.core](/plugins/extras/test.core)
+Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;td</code> | Debug Nearest | **n** |
 
 ## [edgy.nvim](https://github.com/folke/edgy.nvim.git)
-Part of [lazyvim.plugins.extras.ui.edgy](/plugins/extras/ui.edgy)
+Part of [lazyvim.plugins.extras.ui.edgy](/extras/ui/edgy)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -388,7 +388,7 @@ Part of [lazyvim.plugins.extras.ui.edgy](/plugins/extras/ui.edgy)
 | <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
 
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
-Part of [lazyvim.plugins.extras.util.project](/plugins/extras/util.project)
+Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 
 | Key | Description | Mode |
 | --- | --- | --- |

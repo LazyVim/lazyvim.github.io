@@ -33,6 +33,7 @@ end
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -67,6 +68,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -110,6 +112,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

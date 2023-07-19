@@ -29,7 +29,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-lspconfig
+ lspconfig
+
 
 <Tabs>
 
@@ -109,6 +110,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -334,6 +336,7 @@ opts = {}
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -355,6 +358,7 @@ opts = {}
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -378,6 +382,7 @@ opts = nil
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -400,6 +405,7 @@ opts = nil
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -417,7 +423,8 @@ opts = nil
 
 ## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 
-formatters
+ formatters
+
 
 <Tabs>
 
@@ -440,6 +447,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -470,7 +478,8 @@ end
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
-cmdline tools and lsp servers
+ cmdline tools and lsp servers
+
 
 <Tabs>
 
@@ -487,6 +496,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

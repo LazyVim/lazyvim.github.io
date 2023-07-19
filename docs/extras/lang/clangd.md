@@ -19,7 +19,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-Add C/C++ to treesitter
+ Add C/C++ to treesitter
+
 
 <Tabs>
 
@@ -34,6 +35,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -90,6 +92,7 @@ opts = {
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -133,7 +136,8 @@ opts = {
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-Correctly setup lspconfig for clangd 🚀
+ Correctly setup lspconfig for clangd 🚀
+
 
 <Tabs>
 
@@ -186,6 +190,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -290,6 +295,7 @@ end
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -365,6 +371,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
