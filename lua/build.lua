@@ -297,9 +297,13 @@ function M.plugins(path)
         if first_child and first_child:field("value")[1] and first_child:field("value")[1]:id() ~= node:id() then
           plugin_node = node
         end
+        local comments = {}
+
         local comment_node = plugin_node:parent():prev_named_sibling()
-        if comment_node and comment_node:type() ~= "comment" then
-          comment_node = nil
+
+        while comment_node and comment_node:type() == "comment" do
+          table.insert(comments, 1, get_text(comment_node))
+          comment_node = comment_node:prev_named_sibling()
         end
 
         local opts_node = get_field(plugin_node, "opts")
@@ -312,7 +316,7 @@ function M.plugins(path)
             name = name,
             url = "https://github.com/" .. text,
             code = get_text(plugin_node),
-            comment = comment_node and get_text(comment_node) or nil,
+            comment = #comments > 0 and table.concat(comments, "\n") or nil,
             opts = opts_node and get_text(opts_node) or get_field(plugin_node, "config") and "{}" or nil,
           }
         end

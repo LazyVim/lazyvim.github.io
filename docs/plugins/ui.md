@@ -111,7 +111,8 @@ opts = nil
 
 ## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
- bufferline
+ This is what powers LazyVim's fancy-looking
+ tabs, which include filetype icons and close buttons.
 
 
 <Tabs>
@@ -429,7 +430,9 @@ opts = {
 
 ## [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
 
- active indent guide and indent text objects
+ Active indent guide and indent text objects. When you're browsing
+ code, this highlights the current level of indentation, and animates
+ the highlighting.
 
 
 <Tabs>
@@ -731,7 +734,9 @@ end
 
 ## [nvim-navic](https://github.com/SmiteshP/nvim-navic)
 
- lsp symbol navigation for lualine
+ lsp symbol navigation for lualine. This shows where
+ in the code structure you are - within functions, classes,
+ etc - in the statusline.
 
 
 <Tabs>

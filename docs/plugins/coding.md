@@ -351,7 +351,10 @@ opts = {}
 
 ## [mini.surround](https://github.com/echasnovski/mini.surround)
 
- surround
+ Fast and feature-rich surround actions. For text that includes
+ surrounding characters like brackets or quotes, this allows you
+ to select the text inside, change or modify the surrounding characters,
+ and more.
 
 
 <Tabs>
@@ -483,7 +486,7 @@ opts = {
 
 ## [mini.ai](https://github.com/echasnovski/mini.ai)
 
- better text-objects
+ Better text-objects
 
 
 <Tabs>

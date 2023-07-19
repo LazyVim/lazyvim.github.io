@@ -340,7 +340,9 @@ opts = {
 
 ## [flash.nvim](https://github.com/folke/flash.nvim)
 
- Add Flash
+ Flash enhances the built-in search functionality by showing labels
+ at the end of each match, letting you quickly jump to a specific
+ location.
 
 
 <Tabs>
@@ -460,7 +462,8 @@ end
 
 ## [which-key.nvim](https://github.com/folke/which-key.nvim)
 
- which-key
+ which-key helps you remember key bindings by showing a popup
+ with the active keybindings of the command you started typing.
 
 
 <Tabs>
@@ -535,7 +538,9 @@ opts = {
 
 ## [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
- git signs
+ git signs highlights text that has changed since the list
+ git commit, and also lets you interactively stage & unstage
+ hunks in a commit.
 
 
 <Tabs>
@@ -625,7 +630,9 @@ opts = {
 
 ## [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
- references
+ Automatically highlights other instances of the word under your cursor.
+ This works with LSP, Treesitter, and regexp matching to find the other
+ instances.
 
 
 <Tabs>
@@ -789,7 +796,8 @@ opts = { use_diagnostic_signs = true }
 
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 
- todo comments
+ Finds and lists all of the TODO, HACK, BUG, etc comment
+ in your project and loads them into a browsable list.
 
 
 <Tabs>
