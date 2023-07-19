@@ -1,4 +1,4 @@
-# `lang.terraform`
+# Terraform
 
 <!-- plugins:start -->
 
@@ -36,7 +36,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -72,7 +71,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -110,7 +108,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

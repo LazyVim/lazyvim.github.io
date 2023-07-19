@@ -1,4 +1,4 @@
-# `lang.docker`
+# Docker
 
 <!-- plugins:start -->
 
@@ -32,7 +32,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -68,7 +67,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -112,7 +110,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
