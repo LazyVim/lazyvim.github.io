@@ -345,7 +345,7 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/plugins/extras/editor.mini-f
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
-Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
+Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang/lang.python)
 
 | Key | Description | Mode |
 | --- | --- | --- |
@@ -353,7 +353,7 @@ Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
 | <code>&lt;leader&gt;dPc</code> | Debug Class | **n** |
 
 ## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim.git)
-Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang.python)
+Part of [lazyvim.plugins.extras.lang.python](/plugins/extras/lang/lang.python)
 
 | Key | Description | Mode |
 | --- | --- | --- |
