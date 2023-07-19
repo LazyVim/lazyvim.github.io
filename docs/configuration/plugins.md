@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 📦 Plugins
+# Plugins
 
 Configuring **LazyVim** plugins is exactly the same as using **lazy.nvim** to build
 a config from scratch.
