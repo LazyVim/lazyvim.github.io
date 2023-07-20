@@ -7,6 +7,11 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
+ Treesitter is a new parser generator tool that we can
+ use in Neovim to power faster and more accurate
+ syntax highlighting.
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">

@@ -39,7 +39,9 @@ opts = {}
 
 ## [persistence.nvim](https://github.com/folke/persistence.nvim)
 
- session management
+ Session management. This saves your session in the background,
+ keeping track of open buffers, window arrangement, and more.
+ You can restore sessions when returning through the dashboard.
 
 
 <Tabs>

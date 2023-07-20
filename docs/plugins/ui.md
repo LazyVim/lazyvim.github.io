@@ -618,7 +618,8 @@ opts = {
 
 ## [alpha-nvim](https://github.com/goolord/alpha-nvim)
 
- dashboard
+ Dashboard. This runs when neovim starts, and is what displays
+ the "LAZYVIM" banner.
 
 
 <Tabs>

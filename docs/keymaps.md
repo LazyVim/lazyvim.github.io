@@ -205,6 +205,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gc</code> | commits | **n** |
 | <code>&lt;leader&gt;gs</code> | status | **n** |
+| <code>&lt;leader&gt;s"</code> | Registers | **n** |
 | <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
 | <code>&lt;leader&gt;sb</code> | Buffer | **n** |
 | <code>&lt;leader&gt;sc</code> | Command History | **n** |
