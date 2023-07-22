@@ -223,6 +223,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;sR</code> | Resume | **n** |
 | <code>&lt;leader&gt;sw</code> | Word (root dir) | **n** |
 | <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
+| <code>&lt;leader&gt;sw</code> | Selection (root dir) | **v** |
+| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
 | <code>&lt;leader&gt;uC</code> | Colorscheme with preview | **n** |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
 | <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |

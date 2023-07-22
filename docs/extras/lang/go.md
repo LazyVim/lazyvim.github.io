@@ -67,6 +67,10 @@ end
 opts = {
   servers = {
     gopls = {
+      keys = {
+        -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
+        { "<leader>td", "<cmd>lua require('dap-go').debug_test()<CR>", desc = "Debug Nearest (Go)" },
+      },
       settings = {
         gopls = {
           gofumpt = true,
@@ -141,6 +145,10 @@ opts = {
   opts = {
     servers = {
       gopls = {
+        keys = {
+          -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
+          { "<leader>td", "<cmd>lua require('dap-go').debug_test()<CR>", desc = "Debug Nearest (Go)" },
+        },
         settings = {
           gopls = {
             gofumpt = true,
@@ -285,7 +293,37 @@ opts = nil
         vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl", "gofumpt", "goimports-reviser", "delve" })
       end,
     },
+    {
+      "leoluz/nvim-dap-go",
+      config = true,
+    },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-dap-go](https://github.com/leoluz/nvim-dap-go)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "leoluz/nvim-dap-go",
+  config = true,
 }
 ```
 
