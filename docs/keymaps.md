@@ -10,6 +10,9 @@ possible keymaps starting with `<space>`.
 
 ![image](https://user-images.githubusercontent.com/292349/211862473-1ff5ee7a-3bb9-4782-a9f6-014f0e5d4474.png)
 
+- default `<leader>` is `<space>`
+- default `<localleader>` is `\`
+
 <!-- keymaps:start -->
 
 ## General
