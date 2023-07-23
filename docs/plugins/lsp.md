@@ -238,7 +238,7 @@ opts = {
 
     if opts.inlay_hints.enabled and inlay_hint then
       Util.on_attach(function(client, buffer)
-        if client.server_capabilities.inlayHintProvider then
+        if client.supports_method('textDocument/inlayHint') then
           inlay_hint(buffer, true)
         end
       end)
