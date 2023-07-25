@@ -192,9 +192,9 @@ opts = {
             local jdtls_cache_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name
             vim.list_extend(cmd, {
               "-configuration",
-              vim.fs.joinpath(jdtls_cache_dir, "config"),
+              jdtls_cache_dir .. "/config",
               "-data",
-              vim.fs.joinpath(jdtls_cache_dir, "workspace"),
+              jdtls_cache_dir .. "/workspace",
             })
           end
           local jdtls_base_config = {
@@ -296,9 +296,9 @@ opts = {
               local jdtls_cache_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name
               vim.list_extend(cmd, {
                 "-configuration",
-                vim.fs.joinpath(jdtls_cache_dir, "config"),
+                jdtls_cache_dir .. "/config",
                 "-data",
-                vim.fs.joinpath(jdtls_cache_dir, "workspace"),
+                jdtls_cache_dir .. "/workspace",
               })
             end
             local jdtls_base_config = {
