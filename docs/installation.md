@@ -18,12 +18,12 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 
   ```sh
   # required
-  mv ~/.config/nvim ~/.config/nvim.bak
+  mv ~/.config/nvim{,.bak}
 
   # optional but recommended
-  mv ~/.local/share/nvim ~/.local/share/nvim.bak
-  mv ~/.local/state/nvim ~/.local/state/nvim.bak
-  mv ~/.cache/nvim ~/.cache/nvim.bak
+  mv ~/.local/share/nvim{,.bak}
+  mv ~/.local/state/nvim{,.bak}
+  mv ~/.cache/nvim{,.bak}
   ```
 
 - Clone the starter
