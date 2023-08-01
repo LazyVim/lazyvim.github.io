@@ -31,7 +31,7 @@ However, it's recommended to leave `version=false` for now, since a lot
 the plugins that support versioning, have outdated releases, which may break
 your Neovim install.
 
-If you still want try using the latest stable releases, you can set
+If you still want to try using the latest stable releases, you can set
 `config.defaults.version = "*"`
 
 Some plugins that are known to break with their outdated release will still
