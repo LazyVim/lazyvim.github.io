@@ -257,6 +257,22 @@ If you like a clean Lualine and remove buffers a lot (for example when using `bd
     },
   },
 },
+{
+  "akinsho/bufferline.nvim",
+  keys = {
+    {
+      "<leader>bP",
+      function()
+        vim.cmd("BufferLineGroupClose ungrouped")
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        if bufs and not bufs[3] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete non-pinned buffers",
+    },
+  },
+},
 ```
 
 <!-- recipes:end -->
