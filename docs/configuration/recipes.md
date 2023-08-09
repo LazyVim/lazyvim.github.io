@@ -265,7 +265,7 @@ If you like a clean Lualine and remove buffers a lot (for example when using `bd
       function()
         vim.cmd("BufferLineGroupClose ungrouped")
         local bufs = vim.fn.getbufinfo({ buflisted = true })
-        if bufs and not bufs[3] then
+        if bufs and not bufs[2] then
           require("alpha").start(true)
         end
       end,
