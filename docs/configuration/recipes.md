@@ -191,4 +191,71 @@ Important: make sure not to add prettier to null-ls, otherwise this won't work!
 }
 ```
 
+## Change `alpha-nvim` header
+
+If you would like tho change the logo that greets you when opening nvim, you can do this:
+```lua
+{
+  "goolord/alpha-nvim",
+  opts = function()
+    local dashboard = require("alpha.themes.dashboard")
+
+    dashboard.section.header.val = {
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣄⢘⣒⣀⣀⣀⣀⠀⠀⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⣿⣛⠛⢛⣿⣿⡿⠟⠂⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⡀⠀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣷⣿⡆⠀",
+      "⠀⠀⠀⠀⠀⠀⣀⣤⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀",
+      "⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠜⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠀⢿⣿⣿⣿⣿⠿⠿⣿⣿⡿⢿⣿⣿⠈⣿⣿⣿⡏⣠⡴⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⣠⣿⣿⣿⡿⢁⣴⣶⣄⠀⠀⠉⠉⠉⠀⢻⣿⡿⢰⣿⡇⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⢿⣿⠟⠋⠀⠈⠛⣿⣿⠀⠀⠀⠀⠀⠀⠸⣿⡇⢸⣿⡇⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⢸⣿⠀⠀⠀⠀⠀⠘⠿⠆⠀⠀⠀⠀⠀⠀⣿⡇⠀⠿⠇⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+      "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+    }
+  end,
+},
+```
+
+Each row of your ASCII art has to be quoted and separated by a comma. Generate or find ASCII art by Googling for "ASCII art (generator)", or check https://github.com/goolord/alpha-nvim/discussions/16 for inspiration.
+
+**Extra tip:** Quickly add the comma and double quotes to your ASCII art by pasting it into the buffer (`p`), selecting it with `` `[v`] `` (including the backticks!) and then typing `:s/(.*)/"\1",<CR>`. This does a search-and-replace to quote and comma-separate each selected line.
+
+## Open `alpha-nvim` when all buffers are closed
+
+If you like a clean Lualine and remove buffers a lot (for example when using `bd` or `bP`), you are greeted by an empty buffer when all buffers are closed. If you'd like, you can configure `alpha-nvim` to open when there are no more buffers:
+
+```lua{
+  "echasnovski/mini.bufremove",
+  keys = {
+    {
+      "<leader>bd",
+      function()
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("mini.bufremove").delete(0, false)
+        if bufs and not bufs[2] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete Buffer",
+    },
+    {
+      "<leader>bD",
+      function()
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("mini.bufremove").delete(0, true)
+        if bufs and not bufs[2] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete Buffer (Force)",
+    },
+  },
+},
+```
+
 <!-- recipes:end -->
