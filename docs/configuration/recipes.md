@@ -193,7 +193,7 @@ Important: make sure not to add prettier to null-ls, otherwise this won't work!
 
 ## Change `alpha-nvim` header
 
-If you would like tho change the logo that greets you when opening nvim, you can do this:
+If you would like to change the logo that greets you when opening nvim, you can do this:
 ```lua
 {
   "goolord/alpha-nvim",
