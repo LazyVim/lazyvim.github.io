@@ -26,6 +26,11 @@ const config = {
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
+    localeConfigs: {
+      en: {
+        htmlLang: "en-GB",
+      },
+    },
   },
 
   presets: [
@@ -71,6 +76,10 @@ const config = {
           srcDark: "img/icon-dark.svg",
         },
         items: [
+          {
+            type: "localeDropdown",
+            position: "left",
+          },
           ...require("./socials.js"),
         ],
       },
@@ -109,8 +118,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()
-          } LazyVim, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} LazyVim, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: theme,

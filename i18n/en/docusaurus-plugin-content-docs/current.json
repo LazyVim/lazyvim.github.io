@@ -1,0 +1,54 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.⚙️ Configuration": {
+    "message": "⚙️ Configuration",
+    "description": "The label for category ⚙️ Configuration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.📦 Plugins": {
+    "message": "📦 Plugins",
+    "description": "The label for category 📦 Plugins in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.⭐ Extras": {
+    "message": "⭐ Extras",
+    "description": "The label for category ⭐ Extras in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.coding": {
+    "message": "coding",
+    "description": "The label for category coding in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.dap": {
+    "message": "dap",
+    "description": "The label for category dap in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.editor": {
+    "message": "editor",
+    "description": "The label for category editor in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.formatting": {
+    "message": "formatting",
+    "description": "The label for category formatting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.lang": {
+    "message": "lang",
+    "description": "The label for category lang in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.linting": {
+    "message": "linting",
+    "description": "The label for category linting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.test": {
+    "message": "test",
+    "description": "The label for category test in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ui": {
+    "message": "ui",
+    "description": "The label for category ui in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.util": {
+    "message": "util",
+    "description": "The label for category util in sidebar tutorialSidebar"
+  }
+}
