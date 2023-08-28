@@ -41,8 +41,10 @@ return {
 In order to disable a plugin, add a spec with `enabled=false`
 
 ```lua title="lua/plugins/disabled.lua"
--- disable trouble
-{ "folke/trouble.nvim", enabled = false }
+return {
+  -- disable trouble
+  { "folke/trouble.nvim", enabled = false },
+}
 ```
 
 ## ✏️ Customizing Plugin Specs
