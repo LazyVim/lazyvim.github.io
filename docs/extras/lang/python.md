@@ -63,6 +63,16 @@ opts = {
     pyright = {},
     ruff_lsp = {},
   },
+  setup = {
+    ruff_lsp = function()
+      require("lazyvim.util").on_attach(function(client, _)
+        if client.name == "ruff_lsp" then
+          -- Disable hover in favor of Pyright
+          client.server_capabilities.hoverProvider = false
+        end
+      end)
+    end,
+  },
 }
 ```
 
@@ -79,16 +89,16 @@ opts = {
       pyright = {},
       ruff_lsp = {},
     },
-  },
-  setup = {
-    ruff_lsp = function()
-      require("lazyvim.util").on_attach(function(client, _)
-        if client.name == "ruff_lsp" then
-          -- Disable hover in favor of Pyright
-          client.server_capabilities.hoverProvider = false
-        end
-      end)
-    end,
+    setup = {
+      ruff_lsp = function()
+        require("lazyvim.util").on_attach(function(client, _)
+          if client.name == "ruff_lsp" then
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+          end
+        end)
+      end,
+    },
   },
 }
 ```
@@ -247,7 +257,14 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = {
+  name = {
+    "venv",
+    ".venv",
+    "env",
+    ".env",
+  },
+}
 ```
 
 </TabItem>
@@ -259,7 +276,14 @@ opts = {}
 {
   "linux-cultist/venv-selector.nvim",
   cmd = "VenvSelect",
-  opts = {},
+  opts = {
+    name = {
+      "venv",
+      ".venv",
+      "env",
+      ".env",
+    },
+  },
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
 }
 ```

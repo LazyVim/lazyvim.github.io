@@ -195,8 +195,6 @@ map(
   { desc = "Redraw / clear hlsearch / diff update" }
 )
 
-map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
-
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
 map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
@@ -211,7 +209,7 @@ map("i", ".", ".<c-g>u")
 map("i", ";", ";<c-g>u")
 
 -- save file
-map({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
 
 --keywordprg
 map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
@@ -340,7 +338,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
   callback = function()
+    local current_tab = vim.fn.tabpagenr()
     vim.cmd("tabdo wincmd =")
+    vim.cmd("tabnext " .. current_tab)
   end,
 })
 

@@ -37,10 +37,9 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;esc&gt;</code> | Escape and clear hlsearch | **i**, **n** |
 | <code>&lt;leader&gt;ur</code> | Redraw / clear hlsearch / diff update | **n** |
-| <code>gw</code> | Search word under cursor | **n**, **x** |
 | <code>n</code> | Next search result | **n**, **x**, **o** |
 | <code>N</code> | Prev search result | **n**, **x**, **o** |
-| <code>&lt;C-s&gt;</code> | Save file | **i**, **v**, **n**, **s** |
+| <code>&lt;C-s&gt;</code> | Save file | **i**, **x**, **n**, **s** |
 | <code>&lt;leader&gt;K</code> | Keywordprg | **n** |
 | <code>&lt;leader&gt;l</code> | Lazy | **n** |
 | <code>&lt;leader&gt;fn</code> | New File | **n** |
