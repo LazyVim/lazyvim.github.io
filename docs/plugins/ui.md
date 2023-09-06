@@ -490,7 +490,7 @@ opts = {
 
 ## [which-key.nvim](https://github.com/folke/which-key.nvim)
 
- noicer ui
+ Live-updating popup of keybindings as you use them.
 
 
 <Tabs>
@@ -526,6 +526,8 @@ end
 </Tabs>
 
 ## [noice.nvim](https://github.com/folke/noice.nvim)
+
+ noicer ui
 
 <Tabs>
 
