@@ -264,6 +264,7 @@ opts = {
     "env",
     ".env",
   },
+  dap_enabled = true, -- Ensure that the venv selector affect PythonPath in nvim-dap as well!
 }
 ```
 
@@ -283,6 +284,7 @@ opts = {
       "env",
       ".env",
     },
+    dap_enabled = true, -- Ensure that the venv selector affect PythonPath in nvim-dap as well!
   },
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
 }

@@ -132,6 +132,12 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
 | <code>&lt;leader&gt;bD</code> | Delete Buffer (Force) | **n** |
 
+## [mini.pairs](https://github.com/echasnovski/mini.pairs.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;up</code> | Toggle auto pairs | **n** |
+
 ## [mini.surround](https://github.com/echasnovski/mini.surround.git)
 
 | Key | Description | Mode |
