@@ -48,6 +48,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uf</code> | Toggle format on Save | **n** |
 | <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
 | <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
+| <code>&lt;leader&gt;up</code> | Toggle Auto Pairs | **n** |
 | <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
 | <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
 | <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
