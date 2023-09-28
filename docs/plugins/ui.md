@@ -375,22 +375,25 @@ end
 
 ```lua
 opts = {
-  -- char = "▏",
-  char = "│",
-  filetype_exclude = {
-    "help",
-    "alpha",
-    "dashboard",
-    "neo-tree",
-    "Trouble",
-    "lazy",
-    "mason",
-    "notify",
-    "toggleterm",
-    "lazyterm",
+  indent = {
+    char = "│",
+    highlight = "IndentBlanklineChar",
   },
-  show_trailing_blankline_indent = false,
-  show_current_context = false,
+  scope = { enabled = false },
+  exclude = {
+    filetypes = {
+      "help",
+      "alpha",
+      "dashboard",
+      "neo-tree",
+      "Trouble",
+      "lazy",
+      "mason",
+      "notify",
+      "toggleterm",
+      "lazyterm",
+    },
+  },
 }
 ```
 
@@ -404,23 +407,27 @@ opts = {
   "lukas-reineke/indent-blankline.nvim",
   event = { "BufReadPost", "BufNewFile" },
   opts = {
-    -- char = "▏",
-    char = "│",
-    filetype_exclude = {
-      "help",
-      "alpha",
-      "dashboard",
-      "neo-tree",
-      "Trouble",
-      "lazy",
-      "mason",
-      "notify",
-      "toggleterm",
-      "lazyterm",
+    indent = {
+      char = "│",
+      highlight = "IndentBlanklineChar",
     },
-    show_trailing_blankline_indent = false,
-    show_current_context = false,
+    scope = { enabled = false },
+    exclude = {
+      filetypes = {
+        "help",
+        "alpha",
+        "dashboard",
+        "neo-tree",
+        "Trouble",
+        "lazy",
+        "mason",
+        "notify",
+        "toggleterm",
+        "lazyterm",
+      },
+    },
   },
+  main = "ibl",
 }
 ```
 
