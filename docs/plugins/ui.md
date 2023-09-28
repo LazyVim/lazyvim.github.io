@@ -491,7 +491,7 @@ opts = {
 
 ## [which-key.nvim](https://github.com/folke/which-key.nvim)
 
- noicer ui
+ Displays a popup with possible key bindings of the command you started typing
 
 
 <Tabs>
@@ -527,6 +527,9 @@ end
 </Tabs>
 
 ## [noice.nvim](https://github.com/folke/noice.nvim)
+
+ Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+
 
 <Tabs>
 

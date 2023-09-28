@@ -154,7 +154,10 @@ opts = { open_cmd = "noswapfile vnew" }
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
- fuzzy finder
+ Fuzzy finder.
+ The default key bindings to find files will use Telescope's
+ `find_files` or `git_files` depending on whether the
+ directory is a git repo.
 
 
 <Tabs>
