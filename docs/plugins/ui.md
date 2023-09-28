@@ -375,10 +375,7 @@ end
 
 ```lua
 opts = {
-  indent = {
-    char = "│",
-    highlight = "IndentBlanklineChar",
-  },
+  indent = { char = "│" },
   scope = { enabled = false },
   exclude = {
     filetypes = {
@@ -407,10 +404,7 @@ opts = {
   "lukas-reineke/indent-blankline.nvim",
   event = { "BufReadPost", "BufNewFile" },
   opts = {
-    indent = {
-      char = "│",
-      highlight = "IndentBlanklineChar",
-    },
+    indent = { char = "│" },
     scope = { enabled = false },
     exclude = {
       filetypes = {
