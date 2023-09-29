@@ -217,7 +217,7 @@ opts = {
 
 </Tabs>
 
-## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
 
  Ensure Go tools are installed
 
@@ -247,7 +247,8 @@ end
 
 ```lua
 {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
+  optional = true,
   opts = function(_, opts)
     if type(opts.sources) == "table" then
       local nls = require("null-ls")

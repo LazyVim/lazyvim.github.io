@@ -74,7 +74,7 @@ end
 
 </Tabs>
 
-## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
 
 <Tabs>
 
@@ -94,7 +94,8 @@ end
 
 ```lua
 {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
+  optional = true,
   opts = function(_, opts)
     local nls = require("null-ls")
     table.insert(opts.sources, nls.builtins.formatting.csharpier)

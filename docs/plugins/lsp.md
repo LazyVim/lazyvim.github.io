@@ -419,7 +419,7 @@ opts = nil
 
 </Tabs>
 
-## [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
 
  formatters
 
@@ -451,7 +451,7 @@ end
 
 ```lua
 {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = { "mason.nvim" },
   opts = function()
