@@ -33,11 +33,10 @@ opts = {
   linters_by_ft = {
     fish = { "fish" },
   },
-  -- Custom linters, or fully replace a builtin
-  linters = {},
   -- LazyVim extension to easily override linter options
+  -- or add custom linters.
   ---@type table<string,table>
-  linter_opts = {
+  linters = {
     -- -- Example of using selene only when a selene.toml file is present
     -- selene = {
     --   -- `condition` is another LazyVim extension that allows you to
@@ -52,6 +51,7 @@ opts = {
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -64,11 +64,10 @@ opts = {
     linters_by_ft = {
       fish = { "fish" },
     },
-    -- Custom linters, or fully replace a builtin
-    linters = {},
     -- LazyVim extension to easily override linter options
+    -- or add custom linters.
     ---@type table<string,table>
-    linter_opts = {
+    linters = {
       -- -- Example of using selene only when a selene.toml file is present
       -- selene = {
       --   -- `condition` is another LazyVim extension that allows you to
@@ -89,12 +88,9 @@ opts = {
       end
       local lint = require("lint")
       for name, linter in pairs(opts.linters) do
-        lint.linters[name] = linter
+        lint.linters[name] = vim.tbl_deep_extend("force", lint.linters[name] or {}, linter)
       end
       lint.linters_by_ft = vim.tbl_extend("force", lint.linters_by_ft, opts.linters_by_ft)
-      for l, o in pairs(opts.linter_opts or {}) do
-        lint.linters[l] = vim.tbl_deep_extend("force", lint.linters[l], o)
-      end
       M._did_setup = true
     end
 

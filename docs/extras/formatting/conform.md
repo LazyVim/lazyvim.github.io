@@ -38,9 +38,10 @@ opts = {
     fish = { "fish_indent" },
     sh = { "shfmt" },
   },
-  -- LazyVim extension to easily override formatter options
+  -- LazyVim will merge the options you set here with builtin formatters.
+  -- You can also define any custom formatters here.
   ---@type table<string,table>
-  formatter_opts = {
+  formatters = {
     -- -- Example of using dprint only when a dprint.json file is present
     -- dprint = {
     --   condition = function(ctx)
@@ -52,6 +53,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -75,9 +77,10 @@ opts = {
       fish = { "fish_indent" },
       sh = { "shfmt" },
     },
-    -- LazyVim extension to easily override formatter options
+    -- LazyVim will merge the options you set here with builtin formatters.
+    -- You can also define any custom formatters here.
     ---@type table<string,table>
-    formatter_opts = {
+    formatters = {
       -- -- Example of using dprint only when a dprint.json file is present
       -- dprint = {
       --   condition = function(ctx)
@@ -88,8 +91,9 @@ opts = {
   },
   config = function(_, opts)
     opts.formatters = opts.formatters or {}
-    for f, o in pairs(opts.formatter_opts or {}) do
-      opts.formatters[f] = vim.tbl_deep_extend("force", require("conform.formatters." .. f), o)
+    for f, o in pairs(opts.formatters) do
+      local ok, formatter = pcall(require, "conform.formatters." .. f)
+      opts.formatters[f] = vim.tbl_deep_extend("force", {}, ok and formatter or {}, o)
     end
     require("conform").setup(opts)
   end,
