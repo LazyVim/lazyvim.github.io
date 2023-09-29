@@ -1,4 +1,12 @@
-# `formatting.conform`
+# `conform.nvim`
+
+When `conform.nvim` is enabled, it will automatically be used as the
+formatter for all files that it supports.
+When no conform formatter is available for a filetype, LSP format
+will be used instead.
+
+LazyVim adds a custom `formatter_opts` option to allow overriding the
+default options for each formatter.
 
 <!-- plugins:start -->
 
@@ -44,7 +52,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
