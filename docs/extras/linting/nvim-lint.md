@@ -1,8 +1,6 @@
 # `nvim-lint`
 
-LazyVim adds a custom `linter_opts` option to allow overriding the
-default options for each formatter.
-`condition` is another LazyVim extension that allows you to
+LazyVim adds a `condition` option for linters that allows you to
 dynamically enable/disable linters based on the context.
 
 <!-- plugins:start -->
@@ -53,7 +51,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

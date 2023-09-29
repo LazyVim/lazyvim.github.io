@@ -5,8 +5,8 @@ formatter for all files that it supports.
 When no conform formatter is available for a filetype, LSP format
 will be used instead.
 
-LazyVim adds a custom `formatter_opts` option to allow overriding the
-default options for each formatter.
+Any formatter options added to `opts.formatters` will be merged with
+the builtin formatters.
 
 <!-- plugins:start -->
 
@@ -52,7 +52,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
