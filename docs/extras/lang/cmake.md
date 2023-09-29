@@ -90,6 +90,41 @@ end
 
 </Tabs>
 
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    cmake = { "cmakelint" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      cmake = { "cmakelint" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 <Tabs>

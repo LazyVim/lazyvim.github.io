@@ -134,6 +134,43 @@ end
 
 </Tabs>
 
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    terraform = { "terraform_validate" },
+    tf = { "terraform_validate" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      terraform = { "terraform_validate" },
+      tf = { "terraform_validate" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [conform.nvim](https://github.com/stevearc/conform.nvim)
 
 <Tabs>
