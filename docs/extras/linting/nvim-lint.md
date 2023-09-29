@@ -80,19 +80,12 @@ opts = {
   },
   config = function(_, opts)
     local M = {}
-    M._did_setup = false
 
-    function M.setup()
-      if M._did_setup then
-        return
-      end
-      local lint = require("lint")
-      for name, linter in pairs(opts.linters) do
-        lint.linters[name] = vim.tbl_deep_extend("force", lint.linters[name] or {}, linter)
-      end
-      lint.linters_by_ft = vim.tbl_extend("force", lint.linters_by_ft, opts.linters_by_ft)
-      M._did_setup = true
+    local lint = require("lint")
+    for name, linter in pairs(opts.linters) do
+      lint.linters[name] = vim.tbl_deep_extend("force", lint.linters[name] or {}, linter)
     end
+    lint.linters_by_ft = opts.linters_by_ft
 
     function M.debounce(ms, fn)
       local timer = vim.loop.new_timer()
@@ -106,7 +99,6 @@ opts = {
     end
 
     function M.lint()
-      M.setup()
       local lint = require("lint")
       local names = lint.linters_by_ft[vim.bo.filetype] or {}
       local ctx = { filename = vim.api.nvim_buf_get_name(0) }
