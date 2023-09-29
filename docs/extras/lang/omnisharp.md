@@ -107,6 +107,53 @@ end
 
 </Tabs>
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    cs = { "csharpier" },
+  },
+  formatters = {
+    csharpier = {
+      command = "dotnet-csharpier",
+      args = { "--write-stdout" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      cs = { "csharpier" },
+    },
+    formatters = {
+      csharpier = {
+        command = "dotnet-csharpier",
+        args = { "--write-stdout" },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 <Tabs>

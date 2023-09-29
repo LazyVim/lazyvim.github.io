@@ -70,8 +70,19 @@ opts = {
     ---@type lspconfig.options.tsserver
     tsserver = {
       keys = {
-        { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-        { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+        {
+          "<leader>co",
+          function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = {
+                only = { "source.organizeImports.ts" },
+                diagnostics = {},
+              },
+            })
+          end,
+          desc = "Organize Imports",
+        },
       },
       settings = {
         typescript = {
@@ -94,12 +105,6 @@ opts = {
       },
     },
   },
-  setup = {
-    tsserver = function(_, opts)
-      require("typescript").setup({ server = opts })
-      return true
-    end,
-  },
 }
 ```
 
@@ -111,15 +116,25 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  dependencies = { "jose-elias-alvarez/typescript.nvim" },
   opts = {
     -- make sure mason installs the server
     servers = {
       ---@type lspconfig.options.tsserver
       tsserver = {
         keys = {
-          { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-          { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+          {
+            "<leader>co",
+            function()
+              vim.lsp.buf.code_action({
+                apply = true,
+                context = {
+                  only = { "source.organizeImports.ts" },
+                  diagnostics = {},
+                },
+              })
+            end,
+            desc = "Organize Imports",
+          },
         },
         settings = {
           typescript = {
@@ -142,67 +157,7 @@ opts = {
         },
       },
     },
-    setup = {
-      tsserver = function(_, opts)
-        require("typescript").setup({ server = opts })
-        return true
-      end,
-    },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [typescript.nvim](https://github.com/jose-elias-alvarez/typescript.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "jose-elias-alvarez/typescript.nvim" }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvimtools/none-ls.nvim",
-  optional = true,
-  opts = function(_, opts)
-    table.insert(opts.sources, require("typescript.extensions.null-ls.code-actions"))
-  end,
 }
 ```
 

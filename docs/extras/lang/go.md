@@ -267,6 +267,41 @@ end
 
 </Tabs>
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    go = { "goimports", "gofumpt" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      go = { "goimports", "gofumpt" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 
 <Tabs>
