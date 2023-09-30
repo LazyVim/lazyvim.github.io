@@ -233,8 +233,6 @@ opts = function(_, opts)
     vim.list_extend(opts.sources, {
       nls.builtins.code_actions.gomodifytags,
       nls.builtins.code_actions.impl,
-      nls.builtins.formatting.gofumpt,
-      nls.builtins.formatting.goimports_reviser,
     })
   end
 end
@@ -255,46 +253,9 @@ end
       vim.list_extend(opts.sources, {
         nls.builtins.code_actions.gomodifytags,
         nls.builtins.code_actions.impl,
-        nls.builtins.formatting.gofumpt,
-        nls.builtins.formatting.goimports_reviser,
       })
     end
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [conform.nvim](https://github.com/stevearc/conform.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  formatters_by_ft = {
-    go = { "goimports", "gofumpt" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "stevearc/conform.nvim",
-  optional = true,
-  opts = {
-    formatters_by_ft = {
-      go = { "goimports", "gofumpt" },
-    },
-  },
 }
 ```
 
@@ -326,7 +287,7 @@ opts = nil
       "mason.nvim",
       opts = function(_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl", "gofumpt", "goimports-reviser", "delve" })
+        vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl", "delve" })
       end,
     },
     {
