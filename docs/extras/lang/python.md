@@ -257,15 +257,19 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  name = {
-    "venv",
-    ".venv",
-    "env",
-    ".env",
-  },
-  dap_enabled = true, -- Ensure that the venv selector affect PythonPath in nvim-dap as well!
-}
+opts = function(_, opts)
+  if require("lazyvim.util").has("nvim-dap-python") then
+    opts.dap_enabled = true
+  end
+  return vim.tbl_deep_extend("force", opts, {
+    name = {
+      "venv",
+      ".venv",
+      "env",
+      ".env",
+    },
+  })
+end
 ```
 
 </TabItem>
@@ -277,15 +281,19 @@ opts = {
 {
   "linux-cultist/venv-selector.nvim",
   cmd = "VenvSelect",
-  opts = {
-    name = {
-      "venv",
-      ".venv",
-      "env",
-      ".env",
-    },
-    dap_enabled = true, -- Ensure that the venv selector affect PythonPath in nvim-dap as well!
-  },
+  opts = function(_, opts)
+    if require("lazyvim.util").has("nvim-dap-python") then
+      opts.dap_enabled = true
+    end
+    return vim.tbl_deep_extend("force", opts, {
+      name = {
+        "venv",
+        ".venv",
+        "env",
+        ".env",
+      },
+    })
+  end,
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv" } },
 }
 ```
