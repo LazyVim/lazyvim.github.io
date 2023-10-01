@@ -152,4 +152,78 @@ opts = nil
 
 </Tabs>
 
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local nls = require("null-ls")
+  opts.sources = opts.sources or {}
+  vim.list_extend(opts.sources, {
+    nls.builtins.diagnostics.credo,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvimtools/none-ls.nvim",
+  optional = true,
+  opts = function(_, opts)
+    local nls = require("null-ls")
+    opts.sources = opts.sources or {}
+    vim.list_extend(opts.sources, {
+      nls.builtins.diagnostics.credo,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    elixir = { "credo" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      elixir = { "credo" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
