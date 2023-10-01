@@ -54,6 +54,36 @@ end
 
 </Tabs>
 
+## [SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim)
+
+ yaml schema support
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "b0o/SchemaStore.nvim",
+  lazy = true,
+  version = false, -- last release is way too old
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
  correctly setup lspconfig
@@ -124,10 +154,6 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  dependencies = {
-    "b0o/SchemaStore.nvim",
-    version = false, -- last release is way too old
-  },
   opts = {
     -- make sure mason installs the server
     servers = {
@@ -178,32 +204,6 @@ opts = {
       end,
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "b0o/SchemaStore.nvim",
-  version = false, -- last release is way too old
 }
 ```
 
