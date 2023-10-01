@@ -45,6 +45,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fn</code> | New File | **n** |
 | <code>&lt;leader&gt;xl</code> | Location List | **n** |
 | <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
+| <code>&lt;leader&gt;cf</code> | Format | **n**, **v** |
 | <code>&lt;leader&gt;uf</code> | Toggle format on Save | **n** |
 | <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
 | <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
@@ -96,8 +97,6 @@ possible keymaps starting with `<space>`.
 | <code>[e</code> | Prev Error | **n** |
 | <code>]w</code> | Next Warning | **n** |
 | <code>[w</code> | Prev Warning | **n** |
-| <code>&lt;leader&gt;cf</code> | Format Document | **n** |
-| <code>&lt;leader&gt;cf</code> | Format Range | **v** |
 | <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
 | <code>&lt;leader&gt;cA</code> | Source Action | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
