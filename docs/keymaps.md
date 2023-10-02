@@ -354,6 +354,13 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 | <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim.git)
+Part of [lazyvim.plugins.extras.formatting.conform](/extras/formatting/conform)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **v** |
+
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
 Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 
