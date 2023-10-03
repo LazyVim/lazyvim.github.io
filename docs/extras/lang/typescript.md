@@ -190,7 +190,7 @@ opts = function()
       },
     }
   end
-  for _, language in ipairs({ "typescript", "javascript" }) do
+  for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
     if not dap.configurations[language] then
       dap.configurations[language] = {
         {
@@ -249,7 +249,7 @@ end
         },
       }
     end
-    for _, language in ipairs({ "typescript", "javascript" }) do
+    for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
       if not dap.configurations[language] then
         dap.configurations[language] = {
           {
