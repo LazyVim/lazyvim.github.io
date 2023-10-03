@@ -99,6 +99,22 @@ opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
+if vim.fn.has("nvim-0.10") == 1 then
+  opt.smoothscroll = true
+end
+
+-- Folding
+vim.opt.foldlevel = 99
+if vim.treesitter.foldexpr then
+  vim.opt.foldmethod = "expr"
+  vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+else
+  vim.opt.foldmethod = "indent"
+end
+if vim.treesitter.foldtext then
+  vim.opt.foldtext = "v:lua.vim.treesitter.foldtext()"
+end
+
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
