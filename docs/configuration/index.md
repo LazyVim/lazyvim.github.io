@@ -61,6 +61,9 @@ return {
   },
   -- icons used by other plugins
   icons = {
+    misc = {
+      dots = "󰇘",
+    },
     dap = {
       Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
       Breakpoint = " ",
