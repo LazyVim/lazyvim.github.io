@@ -95,6 +95,55 @@ opts = {}
 
 </Tabs>
 
+## [mini.surround](https://github.com/echasnovski/mini.surround)
+
+ rename surround mappings from gs to gz to prevent conflict with leap
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  mappings = {
+    add = "gza", -- Add surrounding in Normal and Visual modes
+    delete = "gzd", -- Delete surrounding
+    find = "gzf", -- Find surrounding (to the right)
+    find_left = "gzF", -- Find surrounding (to the left)
+    highlight = "gzh", -- Highlight surrounding
+    replace = "gzr", -- Replace surrounding
+    update_n_lines = "gzn", -- Update `n_lines`
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "echasnovski/mini.surround",
+  opts = {
+    mappings = {
+      add = "gza", -- Add surrounding in Normal and Visual modes
+      delete = "gzd", -- Delete surrounding
+      find = "gzf", -- Find surrounding (to the right)
+      find_left = "gzF", -- Find surrounding (to the left)
+      highlight = "gzh", -- Highlight surrounding
+      replace = "gzr", -- Replace surrounding
+      update_n_lines = "gzn", -- Update `n_lines`
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [vim-repeat](https://github.com/tpope/vim-repeat)
 
  makes some plugins dot-repeatable like leap
