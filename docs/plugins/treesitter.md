@@ -76,6 +76,18 @@ opts = {
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      config = function()
+        -- Disable class keymaps in diff mode
+        vim.api.nvim_create_autocmd("BufReadPost", {
+          callback = function(event)
+            if vim.wo.diff then
+              for _, key in ipairs({ "[c", "]c", "[C", "]C" }) do
+                pcall(vim.keymap.del, "n", key, { buffer = event.buf })
+              end
+            end
+          end,
+        })
+      end,
     },
   },
   cmd = { "TSUpdateSync" },
@@ -156,7 +168,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
+opts = {}
 ```
 
 </TabItem>
@@ -167,6 +179,18 @@ opts = nil
 ```lua
 {
   "nvim-treesitter/nvim-treesitter-textobjects",
+  config = function()
+    -- Disable class keymaps in diff mode
+    vim.api.nvim_create_autocmd("BufReadPost", {
+      callback = function(event)
+        if vim.wo.diff then
+          for _, key in ipairs({ "[c", "]c", "[C", "]C" }) do
+            pcall(vim.keymap.del, "n", key, { buffer = event.buf })
+          end
+        end
+      end,
+    })
+  end,
 }
 ```
 
