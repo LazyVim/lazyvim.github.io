@@ -57,7 +57,7 @@ opts = {
 ```lua
 {
   "mfussenegger/nvim-lint",
-  event = "BufReadPost",
+  event = "LazyFile",
   opts = {
     -- Event to trigger linters
     events = { "BufWritePost", "BufReadPost", "InsertLeave" },
@@ -99,7 +99,6 @@ opts = {
     end
 
     function M.lint()
-      local lint = require("lint")
       local names = lint.linters_by_ft[vim.bo.filetype] or {}
       local ctx = { filename = vim.api.nvim_buf_get_name(0) }
       ctx.dirname = vim.fn.fnamemodify(ctx.filename, ":h")

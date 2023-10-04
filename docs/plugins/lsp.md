@@ -113,7 +113,7 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LazyFile",
   dependencies = {
     { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
     { "folke/neodev.nvim", opts = {} },
@@ -446,7 +446,7 @@ end
 ```lua
 {
   "nvimtools/none-ls.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LazyFile",
   dependencies = { "mason.nvim" },
   opts = function()
     local nls = require("null-ls")

@@ -50,7 +50,7 @@ end
 ```lua
 {
   "echasnovski/mini.hipatterns",
-  event = "BufReadPre",
+  event = "LazyFile",
   opts = function()
     local hi = require("mini.hipatterns")
     return {

@@ -154,7 +154,7 @@ opts = {
 ```lua
 {
   "akinsho/bufferline.nvim",
-  event = "VeryLazy",
+  event = "LazyFile",
   keys = {
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
     { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
@@ -405,7 +405,7 @@ opts = {
 ```lua
 {
   "lukas-reineke/indent-blankline.nvim",
-  event = { "BufReadPost", "BufNewFile" },
+  event = "LazyFile",
   opts = {
     indent = {
       char = "│",
@@ -463,7 +463,7 @@ opts = {
 {
   "echasnovski/mini.indentscope",
   version = false, -- wait till new 0.7.0 release to put it back on semver
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LazyFile",
   opts = {
     -- symbol = "▏",
     symbol = "│",

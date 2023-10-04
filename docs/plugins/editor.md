@@ -606,7 +606,7 @@ opts = {
 ```lua
 {
   "lewis6991/gitsigns.nvim",
-  event = { "BufReadPre", "BufNewFile" },
+  event = "LazyFile",
   opts = {
     signs = {
       add = { text = "▎" },
@@ -674,7 +674,7 @@ opts = {
 ```lua
 {
   "RRethy/vim-illuminate",
-  event = { "BufReadPost", "BufNewFile" },
+  event = "LazyFile",
   opts = {
     delay = 200,
     large_file_cutoff = 2000,
@@ -834,7 +834,7 @@ opts = {}
 {
   "folke/todo-comments.nvim",
   cmd = { "TodoTrouble", "TodoTelescope" },
-  event = { "BufReadPost", "BufNewFile" },
+  event = "LazyFile",
   config = true,
   -- stylua: ignore
   keys = {
