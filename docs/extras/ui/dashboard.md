@@ -85,10 +85,6 @@ end
 {
   "glepnir/dashboard-nvim",
   event = "VimEnter",
-  dependencies = {
-    -- disable alpha
-    { "goolord/alpha-nvim", enabled = false },
-  },
   opts = function()
     local logo = [[
          ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
