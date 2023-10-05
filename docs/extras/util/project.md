@@ -136,4 +136,47 @@ end
 
 </Tabs>
 
+## [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local projects = {
+    action = "Telescope projects",
+    desc = " Projects",
+    icon = " ",
+    key = "p",
+  }
+  table.insert(opts.config.center, 3, projects)
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "glepnir/dashboard-nvim",
+  optional = true,
+  opts = function(_, opts)
+    local projects = {
+      action = "Telescope projects",
+      desc = " Projects",
+      icon = " ",
+      key = "p",
+    }
+    table.insert(opts.config.center, 3, projects)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
