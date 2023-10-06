@@ -50,7 +50,7 @@ opts = {
       end, opts.filetypes)
 
       -- Add additional filetypes
-      vim.list_extend(opts.filetypes, opts.filetypes_include)
+      vim.list_extend(opts.filetypes, opts.filetypes_include or {})
     end,
   },
 }
@@ -90,7 +90,7 @@ opts = {
         end, opts.filetypes)
 
         -- Add additional filetypes
-        vim.list_extend(opts.filetypes, opts.filetypes_include)
+        vim.list_extend(opts.filetypes, opts.filetypes_include or {})
       end,
     },
   },
