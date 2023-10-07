@@ -107,6 +107,19 @@ To override a keymap, simply add one with the same `lhs` and a new `rhs`.
 },
 ```
 
+Make sure to use the exact same mode as the keymap you want to disable.
+You don't have to specify a mode for `normal` mode keymaps.
+
+```lua title="lua/plugins/flash.lua"
+{
+  "folke/flash.nvim",
+  keys = {
+    -- disable the default flash keymap
+    { "s", mode = { "n", "x", "o" }, false },
+  },
+}
+```
+
 You can also return a whole new set of keymaps to be used instead.
 Or return `{}` to disable all keymaps for a plugin.
 
