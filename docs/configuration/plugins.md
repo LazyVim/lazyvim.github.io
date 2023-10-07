@@ -107,8 +107,10 @@ return {
 },
 ```
 
+:::caution
 Make sure to use the exact same mode as the keymap you want to disable.
 You don't have to specify a mode for `normal` mode keymaps.
+:::
 
 ```lua title="lua/plugins/flash.lua"
 return {
