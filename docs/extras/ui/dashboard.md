@@ -38,6 +38,11 @@ opts = function()
 
   local opts = {
     theme = "doom",
+    hide = {
+      -- this is taken care of by lualine
+      -- enabling this messes up the actual laststatus setting after loading a file
+      statusline = false,
+    },
     config = {
       header = vim.split(logo, "\n"),
       center = {
@@ -72,6 +77,7 @@ opts = function()
       end,
     })
   end
+
   return opts
 end
 ```
@@ -99,6 +105,11 @@ end
 
     local opts = {
       theme = "doom",
+      hide = {
+        -- this is taken care of by lualine
+        -- enabling this messes up the actual laststatus setting after loading a file
+        statusline = false,
+      },
       config = {
         header = vim.split(logo, "\n"),
         center = {
@@ -133,6 +144,7 @@ end
         end,
       })
     end
+
     return opts
   end,
 }

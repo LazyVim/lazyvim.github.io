@@ -215,6 +215,8 @@ opts = function()
   local icons = require("lazyvim.config").icons
   local Util = require("lazyvim.util")
 
+  vim.o.laststatus = vim.g.lualine_laststatus
+
   return {
     options = {
       theme = "auto",
@@ -295,9 +297,15 @@ end
 {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
+  init = function()
+    vim.g.lualine_laststatus = vim.o.laststatus
+    vim.o.laststatus = 0
+  end,
   opts = function()
     local icons = require("lazyvim.config").icons
     local Util = require("lazyvim.util")
+
+    vim.o.laststatus = vim.g.lualine_laststatus
 
     return {
       options = {
@@ -724,8 +732,6 @@ end
     return dashboard
   end,
   config = function(_, dashboard)
-    local laststatus = vim.o.laststatus
-    vim.o.laststatus = 0
     -- close Lazy and re-open when the dashboard is ready
     if vim.o.filetype == "lazy" then
       vim.cmd.close()
@@ -737,14 +743,6 @@ end
         end,
       })
     end
-
-    vim.api.nvim_create_autocmd("BufUnload", {
-      once = true,
-      buffer = vim.api.nvim_get_current_buf(),
-      callback = function()
-        vim.opt.laststatus = laststatus
-      end,
-    })
 
     require("alpha").setup(dashboard.opts)
 
