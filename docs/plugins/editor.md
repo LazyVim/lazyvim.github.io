@@ -242,6 +242,18 @@ end
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
   version = false, -- telescope did only one release, so use HEAD for now
+  dependencies = {
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      enabled = vim.fn.executable("make") == 1,
+      config = function()
+        Util.on_load("telescope.nvim", function()
+          require("telescope").load_extension("fzf")
+        end)
+      end,
+    },
+  },
   keys = {
     { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
     { "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
@@ -373,6 +385,38 @@ end
         },
       },
     }
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-telescope/telescope-fzf-native.nvim",
+  build = "make",
+  enabled = vim.fn.executable("make") == 1,
+  config = function()
+    Util.on_load("telescope.nvim", function()
+      require("telescope").load_extension("fzf")
+    end)
   end,
 }
 ```

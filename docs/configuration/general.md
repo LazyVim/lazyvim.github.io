@@ -429,19 +429,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
--- HACK: re-caclulate folds when entering a buffer through Telescope
--- @see https://github.com/nvim-telescope/telescope.nvim/issues/699
-vim.api.nvim_create_autocmd("BufEnter", {
-  group = augroup("fix_folds"),
-  callback = function()
-    if vim.opt.foldmethod:get() == "expr" then
-      vim.schedule(function()
-        vim.opt.foldmethod = "expr"
-      end)
-    end
-  end,
-})
-
 ```
 
 </TabItem>
