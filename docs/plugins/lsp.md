@@ -119,12 +119,6 @@ opts = {
     { "folke/neodev.nvim", opts = {} },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    {
-      "hrsh7th/cmp-nvim-lsp",
-      cond = function()
-        return require("lazyvim.util").has("nvim-cmp")
-      end,
-    },
   },
   ---@class PluginLspOpts
   opts = {
@@ -379,34 +373,6 @@ opts = nil
 
 ```lua
 "williamboman/mason-lspconfig.nvim"
-```
-
-</TabItem>
-
-</Tabs>
-
-## [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "hrsh7th/cmp-nvim-lsp",
-  cond = function()
-    return require("lazyvim.util").has("nvim-cmp")
-  end,
-}
 ```
 
 </TabItem>
