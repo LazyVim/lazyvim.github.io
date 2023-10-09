@@ -260,6 +260,50 @@ end
 
 </Tabs>
 
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+ use edgy's selection window
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  defaults = {
+    get_selection_window = function()
+      require("edgy").goto_main()
+      return 0
+    end,
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-telescope/telescope.nvim",
+  optional = true,
+  opts = {
+    defaults = {
+      get_selection_window = function()
+        require("edgy").goto_main()
+        return 0
+      end,
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 
  prevent neo-tree from opening files in edgy windows
