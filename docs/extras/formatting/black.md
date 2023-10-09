@@ -89,7 +89,7 @@ end
 ```lua
 opts = {
   formatters_by_ft = {
-    ["python"] = { { "blackd", "black" } },
+    ["python"] = { "black" },
   },
 }
 ```
@@ -105,7 +105,7 @@ opts = {
   optional = true,
   opts = {
     formatters_by_ft = {
-      ["python"] = { { "blackd", "black" } },
+      ["python"] = { "black" },
     },
   },
 }
