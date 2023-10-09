@@ -86,7 +86,7 @@ return {
       Array = " ",
       Boolean = " ",
       Class = " ",
-      Codeium = " ",
+      Codeium = "󰘦 ",
       Color = " ",
       Constant = " ",
       Constructor = " ",
