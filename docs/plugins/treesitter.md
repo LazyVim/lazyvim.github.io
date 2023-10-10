@@ -103,7 +103,7 @@ opts = {
       end,
     },
   },
-  cmd = { "TSUpdateSync" },
+  cmd = { "TSUpdateSync", "TSUdate", "TSIntsall" },
   keys = {
     { "<c-space>", desc = "Increment selection" },
     { "<bs>", desc = "Decrement selection", mode = "x" },
