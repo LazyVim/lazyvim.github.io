@@ -53,7 +53,7 @@ opts = {
     {
       "<leader>fe",
       function()
-        require("neo-tree.command").execute({ toggle = true, dir = require("lazyvim.util").get_root() })
+        require("neo-tree.command").execute({ toggle = true, dir = Util.root() })
       end,
       desc = "Explorer NeoTree (root dir)",
     },
@@ -71,7 +71,7 @@ opts = {
     vim.cmd([[Neotree close]])
   end,
   init = function()
-    if vim.fn.argc() == 1 then
+    if vim.fn.argc(-1) == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
         require("neo-tree")
@@ -102,7 +102,7 @@ opts = {
   },
   config = function(_, opts)
     local function on_move(data)
-      Util.on_rename(data.source, data.destination)
+      Util.lsp.on_rename(data.source, data.destination)
     end
 
     local events = require("neo-tree.events")
@@ -292,42 +292,20 @@ end
     { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
     {
       "<leader>ss",
-      Util.telescope("lsp_document_symbols", {
-        symbols = {
-          "Class",
-          "Function",
-          "Method",
-          "Constructor",
-          "Interface",
-          "Module",
-          "Struct",
-          "Trait",
-          "Field",
-          "Property",
-          "Enum",
-          "Constant",
-        },
-      }),
+      function()
+        require("telescope.builtin").lsp_document_symbols({
+          symbols = require("lazyvim.config").get_kind_filter(),
+        })
+      end,
       desc = "Goto Symbol",
     },
     {
       "<leader>sS",
-      Util.telescope("lsp_dynamic_workspace_symbols", {
-        symbols = {
-          "Class",
-          "Function",
-          "Method",
-          "Constructor",
-          "Interface",
-          "Module",
-          "Struct",
-          "Trait",
-          "Field",
-          "Property",
-          "Enum",
-          "Constant",
-        },
-      }),
+      function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols({
+          symbols = require("lazyvim.config").get_kind_filter(),
+        })
+      end,
       desc = "Goto Symbol (Workspace)",
     },
   },
@@ -478,7 +456,7 @@ opts = {}
 
 ```lua
 opts = function(_, opts)
-  if not require("lazyvim.util").has("flash.nvim") then
+  if not Util.has("flash.nvim") then
     return
   end
   local function flash(prompt_bufnr)
@@ -515,7 +493,7 @@ end
   "nvim-telescope/telescope.nvim",
   optional = true,
   opts = function(_, opts)
-    if not require("lazyvim.util").has("flash.nvim") then
+    if not Util.has("flash.nvim") then
       return
     end
     local function flash(prompt_bufnr)

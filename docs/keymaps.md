@@ -46,7 +46,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;xl</code> | Location List | **n** |
 | <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;cf</code> | Format | **n**, **v** |
-| <code>&lt;leader&gt;uf</code> | Toggle format on Save | **n** |
+| <code>&lt;leader&gt;uf</code> | Toggle auto format (global) | **n** |
+| <code>&lt;leader&gt;uF</code> | Toggle auto format (buffer) | **n** |
 | <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
 | <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
 | <code>&lt;leader&gt;uL</code> | Toggle Relative Line Numbers | **n** |
@@ -108,6 +109,12 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
+
+## [conform.nvim](https://github.com/stevearc/conform.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **v** |
 
 ## [flash.nvim](https://github.com/folke/flash.nvim.git)
 
@@ -321,13 +328,19 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 | <code>&lt;leader&gt;du</code> | Dap UI | **n** |
 | <code>&lt;leader&gt;de</code> | Eval | **n**, **v** |
 
-## [one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind.git)
-Part of [lazyvim.plugins.extras.dap.nlua](/extras/dap/nlua)
+## [aerial.nvim](https://github.com/stevearc/aerial.nvim.git)
+Part of [lazyvim.plugins.extras.editor.aerial](/extras/editor/aerial)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;daL</code> | Adapter Lua Server | **n** |
-| <code>&lt;leader&gt;dal</code> | Adapter Lua | **n** |
+| <code>&lt;leader&gt;cs</code> | Aerial (Symbols) | **n** |
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
+Part of [lazyvim.plugins.extras.editor.aerial](/extras/editor/aerial)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ss</code> | Goto Symbol (Aerial) | **n** |
 
 ## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
@@ -356,12 +369,12 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 | <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
-## [conform.nvim](https://github.com/stevearc/conform.nvim.git)
-Part of [lazyvim.plugins.extras.formatting.conform](/extras/formatting/conform)
+## [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim.git)
+Part of [lazyvim.plugins.extras.editor.symbols-outline](/extras/editor/symbols-outline)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **v** |
+| <code>&lt;leader&gt;cs</code> | Symbols Outline | **n** |
 
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
 Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)

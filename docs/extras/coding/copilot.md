@@ -72,10 +72,10 @@ opts = {
 opts = function(_, opts)
   local Util = require("lazyvim.util")
   local colors = {
-    [""] = Util.fg("Special"),
-    ["Normal"] = Util.fg("Special"),
-    ["Warning"] = Util.fg("DiagnosticError"),
-    ["InProgress"] = Util.fg("DiagnosticWarn"),
+    [""] = Util.ui.fg("Special"),
+    ["Normal"] = Util.ui.fg("Special"),
+    ["Warning"] = Util.ui.fg("DiagnosticError"),
+    ["InProgress"] = Util.ui.fg("DiagnosticWarn"),
   }
   table.insert(opts.sections.lualine_x, 2, {
     function()
@@ -87,7 +87,7 @@ opts = function(_, opts)
       if not package.loaded["copilot"] then
         return
       end
-      local ok, clients = pcall(require("lazyvim.util").get_clients, { name = "copilot", bufnr = 0 })
+      local ok, clients = pcall(require("lazyvim.util").lsp.get_clients, { name = "copilot", bufnr = 0 })
       if not ok then
         return false
       end
@@ -117,10 +117,10 @@ end
   opts = function(_, opts)
     local Util = require("lazyvim.util")
     local colors = {
-      [""] = Util.fg("Special"),
-      ["Normal"] = Util.fg("Special"),
-      ["Warning"] = Util.fg("DiagnosticError"),
-      ["InProgress"] = Util.fg("DiagnosticWarn"),
+      [""] = Util.ui.fg("Special"),
+      ["Normal"] = Util.ui.fg("Special"),
+      ["Warning"] = Util.ui.fg("DiagnosticError"),
+      ["InProgress"] = Util.ui.fg("DiagnosticWarn"),
     }
     table.insert(opts.sections.lualine_x, 2, {
       function()
@@ -132,7 +132,7 @@ end
         if not package.loaded["copilot"] then
           return
         end
-        local ok, clients = pcall(require("lazyvim.util").get_clients, { name = "copilot", bufnr = 0 })
+        local ok, clients = pcall(require("lazyvim.util").lsp.get_clients, { name = "copilot", bufnr = 0 })
         if not ok then
           return false
         end
@@ -179,7 +179,7 @@ opts = {}
     copilot_cmp.setup(opts)
     -- attach cmp source whenever copilot attaches
     -- fixes lazy-loading issues with the copilot cmp source
-    require("lazyvim.util").on_attach(function(client)
+    require("lazyvim.util").lsp.on_attach(function(client)
       if client.name == "copilot" then
         copilot_cmp._on_insert_enter({})
       end

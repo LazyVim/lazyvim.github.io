@@ -78,7 +78,6 @@ opts = {}
       opts = {
         defaults = {
           ["<leader>d"] = { name = "+debug" },
-          ["<leader>da"] = { name = "+adapters" },
         },
       },
     },
@@ -238,7 +237,6 @@ opts = {}
 opts = {
   defaults = {
     ["<leader>d"] = { name = "+debug" },
-    ["<leader>da"] = { name = "+adapters" },
   },
 }
 ```
@@ -255,7 +253,6 @@ opts = {
   opts = {
     defaults = {
       ["<leader>d"] = { name = "+debug" },
-      ["<leader>da"] = { name = "+adapters" },
     },
   },
 }

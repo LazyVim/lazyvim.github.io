@@ -103,7 +103,7 @@ opts = {
     vim.api.nvim_create_autocmd("User", {
       pattern = "MiniFilesActionRename",
       callback = function(event)
-        require("lazyvim.util").on_rename(event.data.from, event.data.to)
+        require("lazyvim.util").lsp.on_rename(event.data.from, event.data.to)
       end,
     })
   end,

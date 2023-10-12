@@ -225,4 +225,65 @@ opts = {}
 
 </Tabs>
 
+## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
+
+ Show context of the current function
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { mode = "cursor" }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-treesitter/nvim-treesitter-context",
+  event = "LazyFile",
+  enabled = true,
+  opts = { mode = "cursor" },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
+
+ Automatically add closing tags for HTML and JSX
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "windwp/nvim-ts-autotag",
+  event = "InsertEnter",
+  opts = {},
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
