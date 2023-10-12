@@ -165,6 +165,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
 | <code>&lt;leader&gt;e</code> | Explorer NeoTree (root dir) | **n** |
 | <code>&lt;leader&gt;E</code> | Explorer NeoTree (cwd) | **n** |
+| <code>&lt;leader&gt;ge</code> | Git explorer | **n** |
+| <code>&lt;leader&gt;be</code> | Buffer explorer | **n** |
 
 ## [noice.nvim](https://github.com/folke/noice.nvim.git)
 
