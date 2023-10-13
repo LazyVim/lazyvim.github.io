@@ -177,6 +177,9 @@ function M.recipes()
 end
 
 function M.update()
+  local Plugin = require("lazy.core.plugin")
+  --- include all specs
+  Plugin.Spec.fix_disabled = function() end
   local docs = vim.fs.normalize(root .. "/docs")
 
   local config = Docs.extract(rootLazyVim .. "/lua/lazyvim/config/init.lua", "\nlocal defaults = ({.-\n})")
@@ -212,7 +215,13 @@ function M.update()
       vim.list_extend(lines, {
         "",
         ([[
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -223,6 +232,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 ]]):format(modname),
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
@@ -270,7 +288,7 @@ function M.plugins(path)
   local source = Util.read_file(test)
   local parser = vim.treesitter.get_string_parser(source, "lua")
 
-  ---@type {code: string, opts: string, name: string, comment?:string, url: string}[]
+  ---@type {code: string, opts: string, name: string, comment?:string, url: string, optional?: boolean, idx:number}[]
   local plugins = {}
 
   local function get_text(node)
@@ -313,7 +331,9 @@ function M.plugins(path)
 
         if spec.plugins[name] then
           plugins[#plugins + 1] = {
+            idx = #plugins + 1,
             name = name,
+            optional = spec.plugins[name].optional,
             url = "https://github.com/" .. text,
             code = get_text(plugin_node),
             comment = #comments > 0 and table.concat(comments, "\n") or nil,
@@ -344,8 +364,21 @@ import TabItem from '@theme/TabItem';
 ]],
   }
 
+  -- sort by optional and idx
+  table.sort(plugins, function(a, b)
+    if a.optional ~= b.optional then
+      return b.optional
+    end
+    return a.idx < b.idx
+  end)
+
   for _, plugin in ipairs(plugins) do
-    lines[#lines + 1] = "## [" .. plugin.name .. "](" .. plugin.url .. ")"
+    lines[#lines + 1] = "## ["
+      .. plugin.name
+      .. "]("
+      .. plugin.url
+      .. ")"
+      .. (plugin.optional and " _(optional)_" or "")
 
     if plugin.comment then
       lines[#lines + 1] = ""

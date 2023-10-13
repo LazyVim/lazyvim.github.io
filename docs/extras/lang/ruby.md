@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -119,7 +134,60 @@ opts = {
 
 </Tabs>
 
-## [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+## [nvim-dap-ruby](https://github.com/suketa/nvim-dap-ruby)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "suketa/nvim-dap-ruby",
+  config = function()
+    require("dap-ruby").setup()
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest-rspec](https://github.com/olimorris/neotest-rspec)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "olimorris/neotest-rspec",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
 
 <Tabs>
 
@@ -151,35 +219,7 @@ opts = nil
 
 </Tabs>
 
-## [nvim-dap-ruby](https://github.com/suketa/nvim-dap-ruby)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "suketa/nvim-dap-ruby",
-  config = function()
-    require("dap-ruby").setup()
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [neotest](https://github.com/nvim-neotest/neotest)
+## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
 
 <Tabs>
 
@@ -228,31 +268,6 @@ opts = {
       },
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [neotest-rspec](https://github.com/olimorris/neotest-rspec)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "olimorris/neotest-rspec",
 }
 ```
 

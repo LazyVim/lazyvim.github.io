@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -224,44 +239,6 @@ opts = {}
 
 </Tabs>
 
-## [which-key.nvim](https://github.com/folke/which-key.nvim)
-
- which key integration
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["<leader>d"] = { name = "+debug" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["<leader>d"] = { name = "+debug" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim)
 
  mason.nvim integration
@@ -312,6 +289,44 @@ opts = {
     -- online, please don't ask me how to install them :)
     ensure_installed = {
       -- Update this to ensure that you have the debuggers for the langs you want
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
+
+ which key integration
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  defaults = {
+    ["<leader>d"] = { name = "+debug" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/which-key.nvim",
+  optional = true,
+  opts = {
+    defaults = {
+      ["<leader>d"] = { name = "+debug" },
     },
   },
 }

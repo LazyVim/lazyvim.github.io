@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -62,7 +77,45 @@ opts = {
 
 </Tabs>
 
-## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
+## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot-cmp",
+  dependencies = "copilot.lua",
+  opts = {},
+  config = function(_, opts)
+    local copilot_cmp = require("copilot_cmp")
+    copilot_cmp.setup(opts)
+    -- attach cmp source whenever copilot attaches
+    -- fixes lazy-loading issues with the copilot cmp source
+    require("lazyvim.util").lsp.on_attach(function(client)
+      if client.name == "copilot" then
+        copilot_cmp._on_insert_enter({})
+      end
+    end)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
 <Tabs>
 
@@ -146,44 +199,6 @@ end
         return colors[status.status] or colors[""]
       end,
     })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "zbirenbaum/copilot-cmp",
-  dependencies = "copilot.lua",
-  opts = {},
-  config = function(_, opts)
-    local copilot_cmp = require("copilot_cmp")
-    copilot_cmp.setup(opts)
-    -- attach cmp source whenever copilot attaches
-    -- fixes lazy-loading issues with the copilot cmp source
-    require("lazyvim.util").lsp.on_attach(function(client)
-      if client.name == "copilot" then
-        copilot_cmp._on_insert_enter({})
-      end
-    end)
   end,
 }
 ```

@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -67,88 +82,6 @@ end
       vim.list_extend(opts.ensure_installed, { "c_sharp" })
     end
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  local nls = require("null-ls")
-  opts.sources = opts.sources or {}
-  table.insert(opts.sources, nls.builtins.formatting.csharpier)
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvimtools/none-ls.nvim",
-  optional = true,
-  opts = function(_, opts)
-    local nls = require("null-ls")
-    opts.sources = opts.sources or {}
-    table.insert(opts.sources, nls.builtins.formatting.csharpier)
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [conform.nvim](https://github.com/stevearc/conform.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  formatters_by_ft = {
-    cs = { "csharpier" },
-  },
-  formatters = {
-    csharpier = {
-      command = "dotnet-csharpier",
-      args = { "--write-stdout" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "stevearc/conform.nvim",
-  optional = true,
-  opts = {
-    formatters_by_ft = {
-      cs = { "csharpier" },
-    },
-    formatters = {
-      csharpier = {
-        command = "dotnet-csharpier",
-        args = { "--write-stdout" },
-      },
-    },
-  },
 }
 ```
 
@@ -248,6 +181,88 @@ opts = {
         enable_roslyn_analyzers = true,
         organize_imports_on_format = true,
         enable_import_completion = true,
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local nls = require("null-ls")
+  opts.sources = opts.sources or {}
+  table.insert(opts.sources, nls.builtins.formatting.csharpier)
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvimtools/none-ls.nvim",
+  optional = true,
+  opts = function(_, opts)
+    local nls = require("null-ls")
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, nls.builtins.formatting.csharpier)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    cs = { "csharpier" },
+  },
+  formatters = {
+    csharpier = {
+      command = "dotnet-csharpier",
+      args = { "--write-stdout" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      cs = { "csharpier" },
+    },
+    formatters = {
+      csharpier = {
+        command = "dotnet-csharpier",
+        args = { "--write-stdout" },
       },
     },
   },

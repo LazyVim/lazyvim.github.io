@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -131,44 +146,6 @@ end
   opts = function(_, opts)
     if type(opts.ensure_installed) == "table" then
       vim.list_extend(opts.ensure_installed, { "ron", "rust", "toml" })
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
-
- Ensure Rust debugger is installed
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "codelldb" })
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "williamboman/mason.nvim",
-  optional = true,
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "codelldb" })
     end
   end,
 }
@@ -415,7 +392,70 @@ opts = {
 
 </Tabs>
 
-## [neotest](https://github.com/nvim-neotest/neotest)
+## [neotest-rust](https://github.com/rouge8/neotest-rust)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "rouge8/neotest-rust",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim) _(optional)_
+
+ Ensure Rust debugger is installed
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  if type(opts.ensure_installed) == "table" then
+    vim.list_extend(opts.ensure_installed, { "codelldb" })
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  optional = true,
+  opts = function(_, opts)
+    if type(opts.ensure_installed) == "table" then
+      vim.list_extend(opts.ensure_installed, { "codelldb" })
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
 
 <Tabs>
 
@@ -446,31 +486,6 @@ opts = {
       ["neotest-rust"] = {},
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [neotest-rust](https://github.com/rouge8/neotest-rust)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "rouge8/neotest-rust",
 }
 ```
 

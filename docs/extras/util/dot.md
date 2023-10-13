@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -14,8 +20,62 @@ require("lazy").setup({
 })
 ```
 
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+## [tree-sitter-hypr](https://github.com/luckasRanarison/tree-sitter-hypr)
+
+ Add Hyprland Parser
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "luckasRanarison/tree-sitter-hypr",
+  enabled = have("hypr"),
+  event = "BufRead */hypr/*.conf",
+  build = ":TSUpdate hypr",
+  config = function()
+    -- Fix ft detection for hyprland
+    vim.filetype.add({
+      pattern = { [".*/hypr/.*%.conf"] = "hypr" },
+    })
+    require("nvim-treesitter.parsers").get_parser_configs().hypr = {
+      install_info = {
+        url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+        files = { "src/parser.c" },
+        branch = "master",
+      },
+      filetype = "hypr",
+    }
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 

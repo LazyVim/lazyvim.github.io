@@ -2,7 +2,13 @@
 
 <!-- plugins:start -->
 
-To use this, add it to your **lazy.nvim** imports:
+:::info
+You can enable the extra with the `:LazyExtras` command.
+Plugins marked as optional will only be configured if they are installed.
+:::
+
+<details>
+<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
 
 ```lua title="lua/config/lazy.lua" {4}
 require("lazy").setup({
@@ -13,6 +19,15 @@ require("lazy").setup({
   },
 })
 ```
+
+</details>
+
+Below you can find a list of included plugins and their default settings.
+
+:::caution
+You don't need to copy the default settings to your config.
+They are only shown here for reference.
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -44,78 +59,6 @@ end
       vim.list_extend(opts.ensure_installed, { "cmake" })
     end
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  local nls = require("null-ls")
-  opts.sources = vim.list_extend(opts.sources or {}, {
-    nls.builtins.diagnostics.cmake_lint,
-  })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvimtools/none-ls.nvim",
-  optional = true,
-  opts = function(_, opts)
-    local nls = require("null-ls")
-    opts.sources = vim.list_extend(opts.sources or {}, {
-      nls.builtins.diagnostics.cmake_lint,
-    })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  linters_by_ft = {
-    cmake = { "cmakelint" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "mfussenegger/nvim-lint",
-  optional = true,
-  opts = {
-    linters_by_ft = {
-      cmake = { "cmakelint" },
-    },
-  },
 }
 ```
 
@@ -177,6 +120,78 @@ opts = {}
   "Civitasv/cmake-tools.nvim",
   opts = {},
   event = "LazyFile",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local nls = require("null-ls")
+  opts.sources = vim.list_extend(opts.sources or {}, {
+    nls.builtins.diagnostics.cmake_lint,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvimtools/none-ls.nvim",
+  optional = true,
+  opts = function(_, opts)
+    local nls = require("null-ls")
+    opts.sources = vim.list_extend(opts.sources or {}, {
+      nls.builtins.diagnostics.cmake_lint,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    cmake = { "cmakelint" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      cmake = { "cmakelint" },
+    },
+  },
 }
 ```
 
