@@ -283,7 +283,7 @@ They are only shown here for reference.
     plugins = M.plugins("lsp/init.lua"),
   }, docs .. "/plugins/lsp.md")
 
-  for _, p in ipairs({ "coding", "colorscheme", "editor", "treesitter", "ui", "util" }) do
+  for _, p in ipairs({ "coding", "colorscheme", "editor", "treesitter", "ui", "util", "formatting", "linting" }) do
     Docs.save({
       plugins = M.plugins(p .. ".lua"),
     }, docs .. "/plugins/" .. p .. ".md")
