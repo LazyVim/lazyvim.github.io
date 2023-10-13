@@ -46,6 +46,13 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;xl</code> | Location List | **n** |
 | <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;cf</code> | Format | **n**, **v** |
+| <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
+| <code>]d</code> | Next Diagnostic | **n** |
+| <code>[d</code> | Prev Diagnostic | **n** |
+| <code>]e</code> | Next Error | **n** |
+| <code>[e</code> | Prev Error | **n** |
+| <code>]w</code> | Next Warning | **n** |
+| <code>[w</code> | Prev Warning | **n** |
 | <code>&lt;leader&gt;uf</code> | Toggle auto format (global) | **n** |
 | <code>&lt;leader&gt;uF</code> | Toggle auto format (buffer) | **n** |
 | <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
@@ -83,7 +90,6 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
 | <code>&lt;leader&gt;cl</code> | Lsp Info | **n** |
 | <code>gd</code> | Goto Definition | **n** |
 | <code>gr</code> | References | **n** |
@@ -93,12 +99,6 @@ possible keymaps starting with `<space>`.
 | <code>K</code> | Hover | **n** |
 | <code>gK</code> | Signature Help | **n** |
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
-| <code>]d</code> | Next Diagnostic | **n** |
-| <code>[d</code> | Prev Diagnostic | **n** |
-| <code>]e</code> | Next Error | **n** |
-| <code>[e</code> | Prev Error | **n** |
-| <code>]w</code> | Next Warning | **n** |
-| <code>[w</code> | Prev Warning | **n** |
 | <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
 | <code>&lt;leader&gt;cA</code> | Source Action | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
