@@ -232,6 +232,105 @@ opts = {
 
 </Tabs>
 
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+ Ensure Go tools are installed
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "goimports", "gofumpt" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "goimports", "gofumpt" })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "delve" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "delve" })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-dap-go](https://github.com/leoluz/nvim-dap-go)
 
 <Tabs>
@@ -285,9 +384,6 @@ opts = nil
 
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
 
- Ensure Go tools are installed
-
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -299,6 +395,7 @@ opts = function(_, opts)
     nls.builtins.code_actions.gomodifytags,
     nls.builtins.code_actions.impl,
     nls.builtins.formatting.goimports,
+    nls.builtins.formatting.gofumpt,
   })
 end
 ```
@@ -312,12 +409,22 @@ end
 {
   "nvimtools/none-ls.nvim",
   optional = true,
+  dependencies = {
+    {
+      "williamboman/mason.nvim",
+      opts = function(_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
+      end,
+    },
+  },
   opts = function(_, opts)
     local nls = require("null-ls")
     opts.sources = vim.list_extend(opts.sources or {}, {
       nls.builtins.code_actions.gomodifytags,
       nls.builtins.code_actions.impl,
       nls.builtins.formatting.goimports,
+      nls.builtins.formatting.gofumpt,
     })
   end,
 }
@@ -336,7 +443,7 @@ end
 ```lua
 opts = {
   formatters_by_ft = {
-    go = { "goimports" },
+    go = { "goimports", "gofumpt" },
   },
 }
 ```
@@ -352,7 +459,7 @@ opts = {
   optional = true,
   opts = {
     formatters_by_ft = {
-      go = { "goimports" },
+      go = { "goimports", "gofumpt" },
     },
   },
 }
@@ -383,10 +490,10 @@ opts = nil
   optional = true,
   dependencies = {
     {
-      "mason.nvim",
+      "williamboman/mason.nvim",
       opts = function(_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl", "goimports", "delve" })
+        vim.list_extend(opts.ensure_installed, { "delve" })
       end,
     },
     {
