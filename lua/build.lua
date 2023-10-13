@@ -180,7 +180,14 @@ function M.update()
   local Plugin = require("lazy.core.plugin")
   --- include all specs
   ---
-  Plugin.Spec.fix_disabled = function() end
+  function Plugin.Spec:fix_disabled()
+    for _, plugin in pairs(self.plugins) do
+      if plugin.enabled == false then
+        self:remove_fragments(plugin.name, { self = true })
+      end
+    end
+    self:rebuild()
+  end
   local docs = vim.fs.normalize(root .. "/docs")
 
   local config = Docs.extract(rootLazyVim .. "/lua/lazyvim/config/init.lua", "\nlocal defaults = ({.-\n})")

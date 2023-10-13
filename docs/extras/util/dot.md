@@ -53,7 +53,9 @@ opts = {}
 ```lua
 {
   "luckasRanarison/tree-sitter-hypr",
-  enabled = have("hypr"),
+  enabled = function()
+    return have("hypr")
+  end,
   event = "BufRead */hypr/*.conf",
   build = ":TSUpdate hypr",
   config = function()

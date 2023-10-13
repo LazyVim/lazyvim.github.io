@@ -185,30 +185,4 @@ opts = nil
 
 </Tabs>
 
-## [flash.nvim](https://github.com/folke/flash.nvim) _(optional)_
-
- disable flash
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "folke/flash.nvim", enabled = false, optional = true }
-```
-
-</TabItem>
-
-</Tabs>
-
 <!-- plugins:end -->

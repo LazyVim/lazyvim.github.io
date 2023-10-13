@@ -32,52 +32,6 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "glepnir/dashboard-nvim", enabled = false }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mini.starter](https://github.com/echasnovski/mini.starter)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "echasnovski/mini.starter", enabled = false }
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [alpha-nvim](https://github.com/goolord/alpha-nvim)
 
  Dashboard. This runs when neovim starts, and is what displays
