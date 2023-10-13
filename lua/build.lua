@@ -179,6 +179,7 @@ end
 function M.update()
   local Plugin = require("lazy.core.plugin")
   --- include all specs
+  ---
   Plugin.Spec.fix_disabled = function() end
   local docs = vim.fs.normalize(root .. "/docs")
 
