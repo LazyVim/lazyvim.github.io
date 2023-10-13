@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "LazyVim",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "LazyVim Logo",
+    "description": "The alt text of navbar logo"
+  }
+}
