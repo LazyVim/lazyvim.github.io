@@ -153,7 +153,7 @@ end
 
 </Tabs>
 
-## [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) _(optional)_
+## [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) _(optional)_
 
 <Tabs>
 
@@ -178,7 +178,7 @@ end
 
 ```lua
 {
-  "glepnir/dashboard-nvim",
+  "nvimdev/dashboard-nvim",
   optional = true,
   opts = function(_, opts)
     local projects = {

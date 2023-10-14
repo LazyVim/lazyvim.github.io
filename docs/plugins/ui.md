@@ -723,7 +723,7 @@ opts = nil
 
 </Tabs>
 
-## [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)
+## [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
 
 <Tabs>
 
@@ -797,7 +797,7 @@ end
 
 ```lua
 {
-  "glepnir/dashboard-nvim",
+  "nvimdev/dashboard-nvim",
   event = "VimEnter",
   opts = function()
     local logo = [[
