@@ -199,6 +199,12 @@ possible keymaps starting with `<space>`.
 | <code>&lt;c-space&gt;</code> | Increment selection | **n** |
 | <code>&lt;bs&gt;</code> | Decrement selection | **x** |
 
+## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ut</code> | Toggle Treesitter Context | **n** |
+
 ## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
 
 | Key | Description | Mode |
