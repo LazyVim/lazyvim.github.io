@@ -1,4 +1,4 @@
-# `coding.codeium`
+# `coding.tabnine`
 
 <!-- plugins:start -->
 
@@ -14,7 +14,7 @@ Plugins marked as optional will only be configured if they are installed.
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.coding.codeium" },
+    { import = "lazyvim.plugins.extras.coding.tabnine" },
     { import = "plugins" },
   },
 })
@@ -32,9 +32,9 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
+## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 
- codeium
+ Add TabNine support, make sure you run :CmpTabnineHub after installation.
 
 
 <Tabs>
@@ -42,7 +42,11 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = {
+  max_lines = 1000,
+  max_num_results = 3,
+  sort = true,
+}
 ```
 
 </TabItem>
@@ -52,10 +56,18 @@ opts = {}
 
 ```lua
 {
-  "Exafunction/codeium.nvim",
-  cmd = "Codeium",
-  build = ":Codeium Auth",
-  opts = {},
+  "tzachar/cmp-tabnine",
+  build = "./install.sh",
+  dependencies = "hrsh7th/nvim-cmp",
+  opts = {
+    max_lines = 1000,
+    max_num_results = 3,
+    sort = true,
+  },
+  config = function(_, opts)
+    local tabnine = require("cmp_tabnine.config")
+    tabnine:setup(opts)
+  end,
 }
 ```
 
@@ -65,13 +77,17 @@ opts = {}
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
+ Show TabNine status in lualine
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
 opts = function(_, opts)
-  table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
+  local icon = require("lazyvim.config").icons.kinds.TabNine
+  table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("cmp_tabnine", icon))
 end
 ```
 
@@ -86,7 +102,8 @@ end
   optional = true,
   event = "VeryLazy",
   opts = function(_, opts)
-    table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
+    local icon = require("lazyvim.config").icons.kinds.TabNine
+    table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("cmp_tabnine", icon))
   end,
 }
 ```

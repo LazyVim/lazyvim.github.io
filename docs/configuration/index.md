@@ -124,6 +124,7 @@ return {
       Snippet       = " ",
       String        = " ",
       Struct        = "󰆼 ",
+      TabNine       = "󰏚 ",
       Text          = " ",
       TypeParameter = " ",
       Unit          = " ",
