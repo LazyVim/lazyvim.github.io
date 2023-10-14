@@ -76,7 +76,23 @@ end
 opts = {
   servers = {
     pyright = {},
-    ruff_lsp = {},
+    ruff_lsp = {
+      keys = {
+        {
+          "<leader>co",
+          function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = {
+                only = { "source.organizeImports" },
+                diagnostics = {},
+              },
+            })
+          end,
+          desc = "Organize Imports",
+        },
+      },
+    },
   },
   setup = {
     ruff_lsp = function()
@@ -102,7 +118,23 @@ opts = {
   opts = {
     servers = {
       pyright = {},
-      ruff_lsp = {},
+      ruff_lsp = {
+        keys = {
+          {
+            "<leader>co",
+            function()
+              vim.lsp.buf.code_action({
+                apply = true,
+                context = {
+                  only = { "source.organizeImports" },
+                  diagnostics = {},
+                },
+              })
+            end,
+            desc = "Organize Imports",
+          },
+        },
+      },
     },
     setup = {
       ruff_lsp = function()

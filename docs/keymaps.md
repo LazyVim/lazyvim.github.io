@@ -384,6 +384,13 @@ Part of [lazyvim.plugins.extras.editor.symbols-outline](/extras/editor/symbols-o
 | --- | --- | --- |
 | <code>&lt;leader&gt;cs</code> | Symbols Outline | **n** |
 
+## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
+Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cp</code> | Peek (Markdown Preview) | **n** |
+
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
 Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 
