@@ -389,7 +389,7 @@ Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cp</code> | Peek (Markdown Preview) | **n** |
+| <code>&lt;leader&gt;cp</code> | Markdown Preview | **n** |
 
 ## [nvim-dap-python](https://github.com/mfussenegger/nvim-dap-python.git)
 Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
