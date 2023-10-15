@@ -234,7 +234,9 @@ opts = function()
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch" },
+
       lualine_c = {
+        Util.lualine.root_dir(),
         {
           "diagnostics",
           symbols = {
@@ -245,11 +247,7 @@ opts = function()
           },
         },
         { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-        {
-          function()
-            return Util.root.pretty_path()
-          end,
-        },
+        { Util.lualine.pretty_path() },
       },
       lualine_x = {
         -- stylua: ignore
@@ -336,7 +334,9 @@ end
       sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
+
         lualine_c = {
+          Util.lualine.root_dir(),
           {
             "diagnostics",
             symbols = {
@@ -347,11 +347,7 @@ end
             },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-          {
-            function()
-              return Util.root.pretty_path()
-            end,
-          },
+          { Util.lualine.pretty_path() },
         },
         lualine_x = {
           -- stylua: ignore

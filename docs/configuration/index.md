@@ -132,7 +132,7 @@ return {
       Variable      = "󰀫 ",
     },
   },
-  ---@type table<string, string[]>?
+  ---@type table<string, string[]|boolean>?
   kind_filter = {
     default = {
       "Class",
@@ -149,6 +149,8 @@ return {
       "Struct",
       "Trait",
     },
+    markdown = false,
+    help = false,
     -- you can specify a different filter for each filetype
     lua = {
       "Class",
