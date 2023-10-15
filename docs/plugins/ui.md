@@ -60,7 +60,6 @@ opts = {
   },
   init = function()
     -- when noice is not enabled, install notify on VeryLazy
-    local Util = require("lazyvim.util")
     if not Util.has("noice.nvim") then
       Util.on_very_lazy(function()
         vim.notify = require("notify")
@@ -223,7 +222,6 @@ opts = function()
   lualine_require.require = require
 
   local icons = require("lazyvim.config").icons
-  local Util = require("lazyvim.util")
 
   vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -326,7 +324,6 @@ end
     lualine_require.require = require
 
     local icons = require("lazyvim.config").icons
-    local Util = require("lazyvim.util")
 
     vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -757,9 +754,9 @@ opts = function()
         { action = "ene | startinsert",                 desc = " New file",        icon = " ", key = "n" },
         { action = "Telescope oldfiles",                desc = " Recent files",    icon = " ", key = "r" },
         { action = "Telescope live_grep",               desc = " Find text",       icon = " ", key = "g" },
-        { action = "e $MYVIMRC",                        desc = " Config",          icon = " ", key = "c" },
+        { action = Util.telescope.config_files(),       desc = " Config",          icon = " ", key = "c" },
         { action = 'lua require("persistence").load()', desc = " Restore Session", icon = " ", key = "s" },
-        { action = "LazyExtras",                        desc = " Lazy Extras",     icon = " ", key = "e" },
+        { action = "LazyExtras",                        desc = " Lazy Extras",     icon = " ", key = "x" },
         { action = "Lazy",                              desc = " Lazy",            icon = "󰒲 ", key = "l" },
         { action = "qa",                                desc = " Quit",            icon = " ", key = "q" },
       },
@@ -826,9 +823,9 @@ end
           { action = "ene | startinsert",                 desc = " New file",        icon = " ", key = "n" },
           { action = "Telescope oldfiles",                desc = " Recent files",    icon = " ", key = "r" },
           { action = "Telescope live_grep",               desc = " Find text",       icon = " ", key = "g" },
-          { action = "e $MYVIMRC",                        desc = " Config",          icon = " ", key = "c" },
+          { action = Util.telescope.config_files(),       desc = " Config",          icon = " ", key = "c" },
           { action = 'lua require("persistence").load()', desc = " Restore Session", icon = " ", key = "s" },
-          { action = "LazyExtras",                        desc = " Lazy Extras",     icon = " ", key = "e" },
+          { action = "LazyExtras",                        desc = " Lazy Extras",     icon = " ", key = "x" },
           { action = "Lazy",                              desc = " Lazy",            icon = "󰒲 ", key = "l" },
           { action = "qa",                                desc = " Quit",            icon = " ", key = "q" },
         },

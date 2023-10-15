@@ -222,6 +222,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;:</code> | Command History | **n** |
 | <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fb</code> | Buffers | **n** |
+| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
 | <code>&lt;leader&gt;ff</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
