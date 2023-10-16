@@ -29,10 +29,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;C-Right&gt;</code> | Increase window width | **n** |
 | <code>&lt;A-j&gt;</code> | Move down | **n**, **i**, **v** |
 | <code>&lt;A-k&gt;</code> | Move up | **n**, **i**, **v** |
-| <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
-| <code>&lt;S-l&gt;</code> | Next buffer | **n** |
-| <code>[b</code> | Prev buffer | **n** |
-| <code>]b</code> | Next buffer | **n** |
 | <code>&lt;leader&gt;bb</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;esc&gt;</code> | Escape and clear hlsearch | **i**, **n** |
@@ -62,6 +58,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
 | <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
+| <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
 | <code>&lt;leader&gt;gg</code> | Lazygit (root dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit all | **n** |
@@ -109,6 +106,13 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
+| <code>&lt;leader&gt;bo</code> | Delete other buffers | **n** |
+| <code>&lt;leader&gt;br</code> | Delete buffers to the right | **n** |
+| <code>&lt;leader&gt;bl</code> | Delete buffers to the left | **n** |
+| <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
+| <code>&lt;S-l&gt;</code> | Next buffer | **n** |
+| <code>[b</code> | Prev buffer | **n** |
+| <code>]b</code> | Next buffer | **n** |
 
 ## [conform.nvim](https://github.com/stevearc/conform.nvim.git)
 

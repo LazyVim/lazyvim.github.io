@@ -35,11 +35,14 @@ opts = function()
     }, { title = "LazyVim" })
   end
   ---@class ConformOpts
-  return {
+  local opts = {
     -- LazyVim will use these options when formatting with the conform.nvim formatter
     format = {
-      timeout_ms = 1000,
+      timeout_ms = 3000,
+      async = false, -- not recommended to change
+      quiet = false, -- not recommended to change
     },
+    ---@type table<string, conform.FormatterUnit[]>
     formatters_by_ft = {
       lua = { "stylua" },
       fish = { "fish_indent" },
@@ -47,7 +50,7 @@ opts = function()
     },
     -- LazyVim will merge the options you set here with builtin formatters.
     -- You can also define any custom formatters here.
-    ---@type table<string,table>
+    ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
     formatters = {
       injected = { options = { ignore_errors = true } },
       -- # Example of using dprint only when a dprint.json file is present
@@ -63,6 +66,7 @@ opts = function()
       -- },
     },
   }
+  return opts
 end
 ```
 
@@ -96,10 +100,15 @@ end
         priority = 100,
         primary = true,
         format = function(buf)
-          require("conform").format(Util.merge(format_opts, { bufnr = buf }))
+          require("conform").format(Util.merge({
+            timeout_ms = conform_opts.format.timeout_ms,
+            async = conform_opts.format.async,
+            quiet = conform_opts.format.quiet,
+          }, { bufnr = buf }))
         end,
         sources = function(buf)
           local ret = require("conform").list_formatters(buf)
+          ---@param v conform.FormatterInfo
           return vim.tbl_map(function(v)
             return v.name
           end, ret)
@@ -117,11 +126,14 @@ end
       }, { title = "LazyVim" })
     end
     ---@class ConformOpts
-    return {
+    local opts = {
       -- LazyVim will use these options when formatting with the conform.nvim formatter
       format = {
-        timeout_ms = 1000,
+        timeout_ms = 3000,
+        async = false, -- not recommended to change
+        quiet = false, -- not recommended to change
       },
+      ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
         lua = { "stylua" },
         fish = { "fish_indent" },
@@ -129,7 +141,7 @@ end
       },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
-      ---@type table<string,table>
+      ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
         injected = { options = { ignore_errors = true } },
         -- # Example of using dprint only when a dprint.json file is present
@@ -145,6 +157,7 @@ end
         -- },
       },
     }
+    return opts
   end,
   config = M.setup,
 }
