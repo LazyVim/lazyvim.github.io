@@ -1,6 +1,8 @@
 -- Ugly code to generate some things for the readme
 local Docs = require("lazy.docs")
 local Util = require("lazy.util")
+local Handler = require("lazy.core.handler")
+Handler.init()
 
 local M = {}
 local root = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h")
@@ -47,11 +49,12 @@ function M.keymaps()
 
   local core = require("lazy.core.plugin").Spec.new({ import = "lazyvim.plugins" }, { optional = true })
   Util.foreach(core.plugins, function(name, plugin)
+    Handler.load(plugin)
     group = ("[%s](%s)"):format(plugin.name, plugin.url)
-    for _, key in ipairs(plugin.keys or {}) do
+    for _, key in pairs(plugin._.handlers.keys or {}) do
       if type(key) == "table" and key.desc then
         local desc = key.desc or ""
-        map(key.mode or "n", key[1], key[2], { desc = desc })
+        map(key.mode or "n", key.lhs, key.rhs, { desc = desc })
       end
     end
   end)
@@ -63,10 +66,11 @@ function M.keymaps()
       local extra = require("lazy.core.plugin").Spec.new({ import = modname }, { optional = true })
       Util.foreach(extra.plugins, function(name, plugin)
         group = ("[%s](%s)\nPart of [%s](%s)"):format(plugin.name, plugin.url, modname, extra_doc)
-        for _, key in ipairs(plugin.keys or {}) do
+        Handler.load(plugin)
+        for _, key in pairs(plugin._.handlers.keys or {}) do
           if type(key) == "table" and key.desc then
             local desc = key.desc or ""
-            map(key.mode or "n", key[1], key[2], { desc = desc })
+            map(key.mode or "n", key.lhs, key.rhs, { desc = desc })
           end
         end
       end)

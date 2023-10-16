@@ -29,6 +29,10 @@ possible keymaps starting with `<space>`.
 | <code>&lt;C-Right&gt;</code> | Increase window width | **n** |
 | <code>&lt;A-j&gt;</code> | Move down | **n**, **i**, **v** |
 | <code>&lt;A-k&gt;</code> | Move up | **n**, **i**, **v** |
+| <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
+| <code>&lt;S-l&gt;</code> | Next buffer | **n** |
+| <code>[b</code> | Prev buffer | **n** |
+| <code>]b</code> | Next buffer | **n** |
 | <code>&lt;leader&gt;bb</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;esc&gt;</code> | Escape and clear hlsearch | **i**, **n** |
@@ -41,6 +45,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fn</code> | New File | **n** |
 | <code>&lt;leader&gt;xl</code> | Location List | **n** |
 | <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
+| <code>[q</code> | Previous quickfix | **n** |
+| <code>]q</code> | Next quickfix | **n** |
 | <code>&lt;leader&gt;cf</code> | Format | **n**, **v** |
 | <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
 | <code>]d</code> | Next Diagnostic | **n** |
@@ -104,6 +110,8 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>]b</code> | Next buffer | **n** |
+| <code>[b</code> | Prev buffer | **n** |
 | <code>&lt;leader&gt;bp</code> | Toggle pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete non-pinned buffers | **n** |
 | <code>&lt;leader&gt;bo</code> | Delete other buffers | **n** |
@@ -111,24 +119,22 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bl</code> | Delete buffers to the left | **n** |
 | <code>&lt;S-h&gt;</code> | Prev buffer | **n** |
 | <code>&lt;S-l&gt;</code> | Next buffer | **n** |
-| <code>[b</code> | Prev buffer | **n** |
-| <code>]b</code> | Next buffer | **n** |
 
 ## [conform.nvim](https://github.com/stevearc/conform.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **v** |
+| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **v**, **n** |
 
 ## [flash.nvim](https://github.com/folke/flash.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;c-s&gt;</code> | Toggle Flash Search | **c** |
 | <code>s</code> | Flash | **n**, **x**, **o** |
 | <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
 | <code>r</code> | Remote Flash | **o** |
 | <code>R</code> | Treesitter Search | **o**, **x** |
-| <code>&lt;c-s&gt;</code> | Toggle Flash Search | **c** |
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 
@@ -153,36 +159,36 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>gsa</code> | Add surrounding | **n**, **v** |
+| <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
 | <code>gsd</code> | Delete surrounding | **n** |
 | <code>gsf</code> | Find right surrounding | **n** |
-| <code>gsF</code> | Find left surrounding | **n** |
+| <code>gsa</code> | Add surrounding | **v**, **n** |
 | <code>gsh</code> | Highlight surrounding | **n** |
+| <code>gsF</code> | Find left surrounding | **n** |
 | <code>gsr</code> | Replace surrounding | **n** |
-| <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
 
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;fe</code> | Explorer NeoTree (root dir) | **n** |
-| <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
-| <code>&lt;leader&gt;e</code> | Explorer NeoTree (root dir) | **n** |
 | <code>&lt;leader&gt;E</code> | Explorer NeoTree (cwd) | **n** |
 | <code>&lt;leader&gt;ge</code> | Git explorer | **n** |
 | <code>&lt;leader&gt;be</code> | Buffer explorer | **n** |
+| <code>&lt;leader&gt;fe</code> | Explorer NeoTree (root dir) | **n** |
+| <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
+| <code>&lt;leader&gt;e</code> | Explorer NeoTree (root dir) | **n** |
 
 ## [noice.nvim](https://github.com/folke/noice.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;snd</code> | Dismiss All | **n** |
+| <code>&lt;c-f&gt;</code> | Scroll forward | **i**, **s**, **n** |
+| <code>&lt;c-b&gt;</code> | Scroll backward | **i**, **s**, **n** |
 | <code>&lt;S-Enter&gt;</code> | Redirect Cmdline | **c** |
 | <code>&lt;leader&gt;snl</code> | Noice Last Message | **n** |
 | <code>&lt;leader&gt;snh</code> | Noice History | **n** |
 | <code>&lt;leader&gt;sna</code> | Noice All | **n** |
-| <code>&lt;leader&gt;snd</code> | Dismiss All | **n** |
-| <code>&lt;c-f&gt;</code> | Scroll forward | **i**, **n**, **s** |
-| <code>&lt;c-b&gt;</code> | Scroll backward | **i**, **n**, **s** |
 
 ## [nvim-notify](https://github.com/rcarriga/nvim-notify.git)
 
@@ -200,8 +206,8 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;c-space&gt;</code> | Increment selection | **n** |
 | <code>&lt;bs&gt;</code> | Decrement selection | **x** |
+| <code>&lt;c-space&gt;</code> | Increment selection | **n** |
 
 ## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context.git)
 
@@ -224,7 +230,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
 | <code>&lt;leader&gt;/</code> | Grep (root dir) | **n** |
 | <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fb</code> | Buffers | **n** |
 | <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
 | <code>&lt;leader&gt;ff</code> | Find Files (root dir) | **n** |
@@ -256,28 +261,29 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uC</code> | Colorscheme with preview | **n** |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
 | <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
+| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (root dir) | **n** |
 
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>]t</code> | Next todo comment | **n** |
-| <code>[t</code> | Previous todo comment | **n** |
+| <code>&lt;leader&gt;st</code> | Todo | **n** |
 | <code>&lt;leader&gt;xt</code> | Todo (Trouble) | **n** |
 | <code>&lt;leader&gt;xT</code> | Todo/Fix/Fixme (Trouble) | **n** |
-| <code>&lt;leader&gt;st</code> | Todo | **n** |
+| <code>[t</code> | Previous todo comment | **n** |
 | <code>&lt;leader&gt;sT</code> | Todo/Fix/Fixme | **n** |
+| <code>]t</code> | Next todo comment | **n** |
 
 ## [trouble.nvim](https://github.com/folke/trouble.nvim.git)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;xx</code> | Document Diagnostics (Trouble) | **n** |
-| <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
 | <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
 | <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
-| <code>[q</code> | Previous trouble/quickfix item | **n** |
 | <code>]q</code> | Next trouble/quickfix item | **n** |
+| <code>[q</code> | Previous trouble/quickfix item | **n** |
+| <code>&lt;leader&gt;xx</code> | Document Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
 
 ## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
 
@@ -291,24 +297,24 @@ Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;p</code> | Open Yank History | **n** |
-| <code>y</code> | Yank text | **n**, **x** |
-| <code>p</code> | Put yanked text after cursor | **n**, **x** |
-| <code>P</code> | Put yanked text before cursor | **n**, **x** |
-| <code>gp</code> | Put yanked text after selection | **n**, **x** |
-| <code>gP</code> | Put yanked text before selection | **n**, **x** |
-| <code>[y</code> | Cycle forward through yank history | **n** |
-| <code>]y</code> | Cycle backward through yank history | **n** |
-| <code>]p</code> | Put indented after cursor (linewise) | **n** |
-| <code>[p</code> | Put indented before cursor (linewise) | **n** |
-| <code>]P</code> | Put indented after cursor (linewise) | **n** |
-| <code>[P</code> | Put indented before cursor (linewise) | **n** |
-| <code>&gt;p</code> | Put and indent right | **n** |
+| <code>p</code> | Put yanked text after cursor | **x**, **n** |
+| <code>P</code> | Put yanked text before cursor | **x**, **n** |
+| <code>gp</code> | Put yanked text after selection | **x**, **n** |
+| <code>gP</code> | Put yanked text before selection | **x**, **n** |
 | <code>&lt;p</code> | Put and indent left | **n** |
-| <code>&gt;P</code> | Put before and indent right | **n** |
-| <code>&lt;P</code> | Put before and indent left | **n** |
-| <code>=p</code> | Put after applying a filter | **n** |
+| <code>&gt;p</code> | Put and indent right | **n** |
+| <code>]P</code> | Put indented after cursor (linewise) | **n** |
+| <code>[p</code> | Put indented before cursor (linewise) | **n** |
+| <code>]p</code> | Put indented after cursor (linewise) | **n** |
+| <code>]y</code> | Cycle backward through yank history | **n** |
+| <code>y</code> | Yank text | **n**, **x** |
+| <code>[y</code> | Cycle forward through yank history | **n** |
 | <code>=P</code> | Put before applying a filter | **n** |
+| <code>=p</code> | Put after applying a filter | **n** |
+| <code>&lt;P</code> | Put before and indent left | **n** |
+| <code>&gt;P</code> | Put before and indent right | **n** |
+| <code>[P</code> | Put indented before cursor (linewise) | **n** |
+| <code>&lt;leader&gt;p</code> | Open Yank History | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
 Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
@@ -338,8 +344,8 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;de</code> | Eval | **v**, **n** |
 | <code>&lt;leader&gt;du</code> | Dap UI | **n** |
-| <code>&lt;leader&gt;de</code> | Eval | **n**, **v** |
 
 ## [aerial.nvim](https://github.com/stevearc/aerial.nvim.git)
 Part of [lazyvim.plugins.extras.editor.aerial](/extras/editor/aerial)
@@ -360,10 +366,10 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>f</code> | f | **n**, **x**, **o** |
+| <code>t</code> | t | **o**, **n**, **x** |
+| <code>T</code> | T | **o**, **n**, **x** |
 | <code>F</code> | F | **n**, **x**, **o** |
-| <code>t</code> | t | **n**, **x**, **o** |
-| <code>T</code> | T | **n**, **x**, **o** |
+| <code>f</code> | f | **n**, **x**, **o** |
 
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
@@ -371,16 +377,16 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>s</code> | Leap forward to | **n**, **x**, **o** |
-| <code>S</code> | Leap backward to | **n**, **x**, **o** |
-| <code>gs</code> | Leap from windows | **n**, **x**, **o** |
+| <code>S</code> | Leap backward to | **n**, **o**, **x** |
+| <code>gs</code> | Leap from windows | **x**, **n**, **o** |
 
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
+| <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
 
 ## [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim.git)
 Part of [lazyvim.plugins.extras.editor.symbols-outline](/extras/editor/symbols-outline)
@@ -401,8 +407,8 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;dPt</code> | Debug Method | **n** |
 | <code>&lt;leader&gt;dPc</code> | Debug Class | **n** |
+| <code>&lt;leader&gt;dPt</code> | Debug Method | **n** |
 
 ## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim.git)
 Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
@@ -416,13 +422,13 @@ Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;tt</code> | Run File | **n** |
 | <code>&lt;leader&gt;tT</code> | Run All Test Files | **n** |
 | <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
 | <code>&lt;leader&gt;ts</code> | Toggle Summary | **n** |
 | <code>&lt;leader&gt;to</code> | Show Output | **n** |
 | <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |
 | <code>&lt;leader&gt;tS</code> | Stop | **n** |
+| <code>&lt;leader&gt;tt</code> | Run File | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
