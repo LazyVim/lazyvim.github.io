@@ -49,7 +49,7 @@ opts = function()
       fish = { "fish_indent" },
       sh = { "shfmt" },
     },
-    -- LazyVim will merge the options you set here with builtin formatters.
+    -- The options you set here will be merged with the builtin formatters.
     -- You can also define any custom formatters here.
     ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
     formatters = {
@@ -63,7 +63,7 @@ opts = function()
       --
       -- # Example of using shfmt with extra args
       -- shfmt = {
-      --   extra_args = { "-i", "2", "-ci" },
+      --   prepend_args = { "-i", "2", "-ci" },
       -- },
     },
   }
@@ -72,6 +72,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -138,7 +139,7 @@ end
         fish = { "fish_indent" },
         sh = { "shfmt" },
       },
-      -- LazyVim will merge the options you set here with builtin formatters.
+      -- The options you set here will be merged with the builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
@@ -152,7 +153,7 @@ end
         --
         -- # Example of using shfmt with extra args
         -- shfmt = {
-        --   extra_args = { "-i", "2", "-ci" },
+        --   prepend_args = { "-i", "2", "-ci" },
         -- },
       },
     }
