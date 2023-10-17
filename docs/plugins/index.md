@@ -1,4 +1,4 @@
-# Base Plugins
+# Core Plugins
 
 **LazyVim** provides a set of preconfigured plugins enabled by default.
 All you need to do to utilize these plugins is install the **LazyVim** starter template.
