@@ -9,6 +9,37 @@ local root = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h")
 local rootLazyVim = root .. "/.nvim/plugins/LazyVim"
 local rootStarter = root .. "/.nvim/plugins/starter"
 
+---@generic V
+---@param t table<string, V>
+---@param fn fun(key:string, value:V)
+function M.foreach(t, fn)
+  ---@type string[]
+  local keys = vim.tbl_keys(t)
+  pcall(table.sort, keys, function(a, b)
+    local swappedA = a:gsub(".", function(ch)
+      return ch:upper() == ch and ch:lower() or ch:upper()
+    end)
+
+    local swappedB = b:gsub(".", function(ch)
+      return ch:upper() == ch and ch:lower() or ch:upper()
+    end)
+
+    local la = a:lower()
+    local lb = b:lower()
+
+    if la == lb then
+      return swappedA < swappedB
+    end
+
+    return la < lb
+  end)
+  for _, key in ipairs(keys) do
+    fn(key, t[key])
+  end
+end
+
+-- prints: aB, ab
+
 ---@return ReadmeBlock
 function M.keymaps()
   local keymap_set = vim.keymap.set
@@ -49,14 +80,14 @@ function M.keymaps()
 
   local core = require("lazy.core.plugin").Spec.new({ import = "lazyvim.plugins" }, { optional = true })
   Util.foreach(core.plugins, function(name, plugin)
-    Handler.load(plugin)
+    Handler.resolve(plugin)
     group = ("[%s](%s)"):format(plugin.name, plugin.url)
-    for _, key in pairs(plugin._.handlers.keys or {}) do
+    M.foreach(plugin._.handlers.keys or {}, function(_, key)
       if type(key) == "table" and key.desc then
         local desc = key.desc or ""
         map(key.mode or "n", key.lhs, key.rhs, { desc = desc })
       end
-    end
+    end)
   end)
 
   Util.walk(rootLazyVim .. "/lua/lazyvim/plugins/extras", function(path, name, t)
@@ -66,13 +97,13 @@ function M.keymaps()
       local extra = require("lazy.core.plugin").Spec.new({ import = modname }, { optional = true })
       Util.foreach(extra.plugins, function(name, plugin)
         group = ("[%s](%s)\nPart of [%s](%s)"):format(plugin.name, plugin.url, modname, extra_doc)
-        Handler.load(plugin)
-        for _, key in pairs(plugin._.handlers.keys or {}) do
+        Handler.resolve(plugin)
+        M.foreach(plugin._.handlers.keys or {}, function(_, key)
           if type(key) == "table" and key.desc then
             local desc = key.desc or ""
             map(key.mode or "n", key.lhs, key.rhs, { desc = desc })
           end
-        end
+        end)
       end)
     end
   end)
