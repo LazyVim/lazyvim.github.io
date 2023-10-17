@@ -34,7 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)
 
-none-ls
+ none-ls
+
 
 <Tabs>
 
@@ -55,6 +56,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

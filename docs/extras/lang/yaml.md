@@ -34,7 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-add yaml specific modules to treesitter
+ add yaml specific modules to treesitter
+
 
 <Tabs>
 
@@ -49,6 +50,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -69,7 +71,8 @@ end
 
 ## [SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim)
 
-yaml schema support
+ yaml schema support
+
 
 <Tabs>
 
@@ -80,6 +83,7 @@ opts = nil
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -97,7 +101,8 @@ opts = nil
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-correctly setup lspconfig
+ correctly setup lspconfig
+
 
 <Tabs>
 
@@ -160,6 +165,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

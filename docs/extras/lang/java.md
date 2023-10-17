@@ -34,7 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-Add java to treesitter.
+ Add java to treesitter.
+
 
 <Tabs>
 
@@ -48,6 +49,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -80,6 +82,7 @@ end
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -98,8 +101,9 @@ end
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
-Configure nvim-lspconfig to install the server automatically via mason, but
-defer actually starting it to our configuration of nvim-jtdls below.
+ Configure nvim-lspconfig to install the server automatically via mason, but
+ defer actually starting it to our configuration of nvim-jtdls below.
+
 
 <Tabs>
 
@@ -120,6 +124,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -146,7 +151,8 @@ opts = {
 
 ## [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
 
-Set up nvim-jdtls to attach to java files.
+ Set up nvim-jdtls to attach to java files.
+
 
 <Tabs>
 
@@ -199,6 +205,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -385,6 +392,7 @@ opts = nil
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -397,7 +405,8 @@ opts = nil
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
 
-Ensure java debugger and test packages are installed.
+ Ensure java debugger and test packages are installed.
+
 
 <Tabs>
 
@@ -408,6 +417,7 @@ opts = nil
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 

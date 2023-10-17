@@ -34,7 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
-Add BibTeX/LaTeX to treesitter
+ Add BibTeX/LaTeX to treesitter
+
 
 <Tabs>
 
@@ -54,6 +55,7 @@ end
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -88,6 +90,7 @@ opts = {}
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
@@ -130,6 +133,7 @@ opts = {
 
 </TabItem>
 
+
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -150,7 +154,8 @@ opts = {
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) _(optional)_
 
-Correctly setup lspconfig for LaTeX 🚀
+ Correctly setup lspconfig for LaTeX 🚀
+
 
 <Tabs>
 
@@ -169,6 +174,7 @@ opts = {
 ```
 
 </TabItem>
+
 
 <TabItem value="code" label="Full Spec">
 
