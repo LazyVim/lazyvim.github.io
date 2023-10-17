@@ -1,14 +1,17 @@
-# Included Plugins
+# Base Plugins
 
-**LazyNvim** comes with some preconfigured plugins that are enabled by default. You don't need to do anything to set these up besides installing LazyNvim starter template. These are broken up into the following lua configuration files:
+**LazyVim** provides a set of preconfigured plugins enabled by default.
+All you need to do to utilize these plugins is install the **LazyVim** starter template.
 
-- [Coding](./coding.md) - configures plugins that help general coding. E.g. snippets, autocompletion, language server protocol, etc.
-- [Colorscheme](./colorscheme.md) - adds some default color schemes (tokyonight and catppuccin).
-- [Editor](./editor.md) - adds plugins that configure file explore, global search and replace, fuzzy finding, key binding seach, git integration, and highlighting.
-- [LSP](./lsp.md) - configures the Language Server Protocol tools and formatters.
-- [TreeSitter](./treesitter.md) - configures plugins for syntax highlighting.
-- [UI](./ui.md) - configures plugins that affect the way that the nvim UI works. E.g. status lines, tabs, indentation lines, icons, and other UI components.
-- [Util](./util.md) - some util plugins for measuring startup time, handling session persistance, and general shared functionality
+- [Coding](./coding.md): faster coding with features such snippets, autocompletion, and more.
+- [Colorscheme](./colorscheme.md): default color schemes (**TokyoNight** and **Catppuccin**).
+- [Editor](./editor.md): provides functionality like a file explorer, search and replace, fuzzy finding, git integration.
+- [Formatting](./formatting.md): Set up formatters using **conform.nvim**.
+- [Linting](./linting.md): Manage linters with the **nvim-lint** plugin.
+- [LSP](./lsp.md): configure the Language Server Protocol (LSP) client.
+- [TreeSitter](./treesitter.md): advanced syntax highlighting and plugins that use **Treesitter** parsers
+- [UI](./ui.md): Enhance the user interface with features such as status line, buffer line, indentation guides, dashboard, and icons.
+- [Util](./util.md): Contains utilities for session management, shared functionality, and other handy tools.
 
-See each of the above docs for information on the defaults for each set of plugins and how to override the options.
-
+For detailed information on the default configurations of each plugin set and
+instructions on customizing them, refer to the respective documentation linked above.
