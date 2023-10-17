@@ -1,4 +1,4 @@
-# `lang.python-semshi`
+# Python Semshi
 
 <!-- plugins:start -->
 
@@ -43,7 +43,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

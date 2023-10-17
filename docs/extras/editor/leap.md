@@ -1,4 +1,4 @@
-# `editor.leap`
+# Leap
 
 <!-- plugins:start -->
 
@@ -34,8 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ## [flit.nvim](https://github.com/ggandor/flit.nvim)
 
- easily jump to any location and enhanced f/t motions for Leap
-
+easily jump to any location and enhanced f/t motions for Leap
 
 <Tabs>
 
@@ -46,7 +45,6 @@ opts = { labeled_modes = "nx" }
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -82,7 +80,6 @@ opts = {}
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -112,8 +109,7 @@ opts = {}
 
 ## [mini.surround](https://github.com/echasnovski/mini.surround)
 
- rename surround mappings from gs to gz to prevent conflict with leap
-
+rename surround mappings from gs to gz to prevent conflict with leap
 
 <Tabs>
 
@@ -134,7 +130,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -161,8 +156,7 @@ opts = {
 
 ## [vim-repeat](https://github.com/tpope/vim-repeat)
 
- makes some plugins dot-repeatable like leap
-
+makes some plugins dot-repeatable like leap
 
 <Tabs>
 
@@ -173,7 +167,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

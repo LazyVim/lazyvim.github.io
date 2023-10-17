@@ -1,4 +1,4 @@
-# `editor.navic`
+# Navic
 
 <!-- plugins:start -->
 
@@ -34,10 +34,9 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-navic](https://github.com/SmiteshP/nvim-navic)
 
- lsp symbol navigation for lualine. This shows where
- in the code structure you are - within functions, classes,
- etc - in the statusline.
-
+lsp symbol navigation for lualine. This shows where
+in the code structure you are - within functions, classes,
+etc - in the statusline.
 
 <Tabs>
 
@@ -56,7 +55,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -90,8 +88,7 @@ end
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
- lualine integration
-
+lualine integration
 
 <Tabs>
 
@@ -111,7 +108,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

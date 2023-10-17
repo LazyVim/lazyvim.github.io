@@ -1,4 +1,4 @@
-# `editor.symbols-outline`
+# Symbols Outline
 
 <!-- plugins:start -->
 
@@ -68,7 +68,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -110,8 +109,7 @@ end
 
 ## [edgy.nvim](https://github.com/folke/edgy.nvim) _(optional)_
 
- edgy integration
-
+edgy integration
 
 <Tabs>
 
@@ -142,7 +140,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

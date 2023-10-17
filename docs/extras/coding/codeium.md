@@ -1,4 +1,4 @@
-# `coding.codeium`
+# Codeium
 
 <!-- plugins:start -->
 
@@ -34,8 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-cmp](https://github.com/nvim-cmp)
 
- codeium cmp source
-
+codeium cmp source
 
 <Tabs>
 
@@ -52,7 +51,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -85,8 +83,7 @@ end
 
 ## [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
 
- codeium
-
+codeium
 
 <Tabs>
 
@@ -97,7 +94,6 @@ opts = {}
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -127,7 +123,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

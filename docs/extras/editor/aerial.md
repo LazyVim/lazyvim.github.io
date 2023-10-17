@@ -1,4 +1,4 @@
-# `editor.aerial`
+# Aerial
 
 <!-- plugins:start -->
 
@@ -82,7 +82,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -140,8 +139,7 @@ end
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
 
- Telescope integration
-
+Telescope integration
 
 <Tabs>
 
@@ -156,7 +154,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -185,8 +182,7 @@ end
 
 ## [edgy.nvim](https://github.com/folke/edgy.nvim) _(optional)_
 
- edgy integration
-
+edgy integration
 
 <Tabs>
 
@@ -214,7 +210,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -249,8 +244,7 @@ end
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
- lualine integration
-
+lualine integration
 
 <Tabs>
 
@@ -283,7 +277,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

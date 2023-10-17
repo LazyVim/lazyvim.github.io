@@ -1,4 +1,4 @@
-# `coding.tabnine`
+# TabNine
 
 <!-- plugins:start -->
 
@@ -34,8 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-cmp](https://github.com/nvim-cmp)
 
- Tabnine cmp source
-
+Tabnine cmp source
 
 <Tabs>
 
@@ -59,7 +58,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -106,8 +104,7 @@ end
 
 ## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 
- Add TabNine support, make sure you run :CmpTabnineHub after installation.
-
+Add TabNine support, make sure you run :CmpTabnineHub after installation.
 
 <Tabs>
 
@@ -122,7 +119,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -148,8 +144,7 @@ opts = {
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
- Show TabNine status in lualine
-
+Show TabNine status in lualine
 
 <Tabs>
 
@@ -163,7 +158,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

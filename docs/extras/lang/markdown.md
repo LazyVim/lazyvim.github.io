@@ -1,4 +1,4 @@
-# `lang.markdown`
+# Markdown
 
 <!-- plugins:start -->
 
@@ -48,7 +48,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -80,7 +79,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -114,7 +112,6 @@ opts = {
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -134,8 +131,7 @@ opts = {
 
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 
- Markdown preview
-
+Markdown preview
 
 <Tabs>
 
@@ -146,7 +142,6 @@ opts = {}
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -196,7 +191,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -237,7 +231,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -272,7 +265,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

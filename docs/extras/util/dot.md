@@ -1,4 +1,4 @@
-# `util.dot`
+# Dot Files
 
 <!-- plugins:start -->
 
@@ -34,8 +34,7 @@ import TabItem from '@theme/TabItem';
 
 ## [tree-sitter-hypr](https://github.com/luckasRanarison/tree-sitter-hypr)
 
- Add Hyprland Parser
-
+Add Hyprland Parser
 
 <Tabs>
 
@@ -46,7 +45,6 @@ opts = {}
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -81,8 +79,7 @@ opts = {}
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
- add some stuff to treesitter
-
+add some stuff to treesitter
 
 <Tabs>
 
@@ -118,7 +115,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
