@@ -2,12 +2,13 @@
 
 **LazyVim** uses `conform.nvim` for formatting.
 
-To make configuration easier, we added some extra options to `conform.nvim`:
+Configuring `conform.nvim`:
 
 - `opts.format`: extra options passed to `require("conform").format(options)`
-- `opts.formatters`: instead of just adding new formatters, you can also override the default options for any formatter
-- `opts.formatters[NAME].extra_args`: extra arguments passed to the formatter command.
-  If you want to fully override the `args`, just use `args` instead of `extra_args`.
+- `opts.formatters`: options will be merged with builtin formatters, or you can specify a new formatter.
+- `opts.formatters[NAME].prepend_args`: extra arguments passed to the formatter command.
+  If you want to fully override the `args`, just use `args` instead of `prepend_args`.
+- `opts.formatters_by_ft`: specify which formatters to use for each filetype.
 
 :::caution
 Don't override `plugin.config` directly, since this **will** break LazyVim formatting.
@@ -71,7 +72,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
