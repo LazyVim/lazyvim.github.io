@@ -91,7 +91,7 @@ opts = {}
 ```lua
 opts = function(_, opts)
   local function add(lang)
-    if type(opts.ensure_installed) ~= "table" then
+    if type(opts.ensure_installed) == "table" then
       table.insert(opts.ensure_installed, lang)
     end
   end
@@ -127,7 +127,7 @@ end
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
     local function add(lang)
-      if type(opts.ensure_installed) ~= "table" then
+      if type(opts.ensure_installed) == "table" then
         table.insert(opts.ensure_installed, lang)
       end
     end
