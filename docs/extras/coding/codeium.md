@@ -32,6 +32,57 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [nvim-cmp](https://github.com/nvim-cmp)
+
+ codeium cmp source
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, 1, {
+    name = "codeium",
+    group_index = 1,
+    priority = 100,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  dependencies = {
+    -- codeium
+    {
+      "Exafunction/codeium.nvim",
+      cmd = "Codeium",
+      build = ":Codeium Auth",
+      opts = {},
+    },
+  },
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    table.insert(opts.sources, 1, {
+      name = "codeium",
+      group_index = 1,
+      priority = 100,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [codeium.nvim](https://github.com/Exafunction/codeium.nvim)
 
  codeium

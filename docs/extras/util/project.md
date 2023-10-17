@@ -32,6 +32,48 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [telescope.nvim](https://github.com/telescope.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "telescope.nvim",
+  dependencies = {
+    -- project management
+    {
+      "ahmedkhalf/project.nvim",
+      opts = {},
+      event = "VeryLazy",
+      config = function(_, opts)
+        require("project_nvim").setup(opts)
+        require("lazyvim.util").on_load("telescope.nvim", function()
+          require("telescope").load_extension("projects")
+        end)
+      end,
+      keys = {
+        { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim)
 
  project management

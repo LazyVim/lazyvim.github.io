@@ -77,6 +77,66 @@ opts = {
 
 </Tabs>
 
+## [nvim-cmp](https://github.com/nvim-cmp)
+
+ copilot cmp source
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, 1, {
+    name = "copilot",
+    group_index = 1,
+    priority = 100,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  dependencies = {
+    {
+      "zbirenbaum/copilot-cmp",
+      dependencies = "copilot.lua",
+      opts = {},
+      config = function(_, opts)
+        local copilot_cmp = require("copilot_cmp")
+        copilot_cmp.setup(opts)
+        -- attach cmp source whenever copilot attaches
+        -- fixes lazy-loading issues with the copilot cmp source
+        require("lazyvim.util").lsp.on_attach(function(client)
+          if client.name == "copilot" then
+            copilot_cmp._on_insert_enter({})
+          end
+        end)
+      end,
+    },
+  },
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    table.insert(opts.sources, 1, {
+      name = "copilot",
+      group_index = 1,
+      priority = 100,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
 <Tabs>

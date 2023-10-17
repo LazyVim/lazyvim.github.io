@@ -266,6 +266,36 @@ opts = {
 
 </Tabs>
 
+## [nvim-cmp](https://github.com/nvim-cmp)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  opts = function(_, opts)
+    table.insert(opts.sorting.comparators, 1, require("clangd_extensions.cmp_scores"))
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
 
 <Tabs>

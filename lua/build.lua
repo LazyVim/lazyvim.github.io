@@ -255,6 +255,8 @@ function M.update()
     if type == "file" and name:find("%.lua$") then
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
       local lines = {} ---@type string[]
+      local title = modname:match("%.([^%.]+)$")
+      title = title:sub(1, 1):upper() .. title:sub(2)
       vim.list_extend(lines, {
         "",
         ([[
@@ -299,7 +301,7 @@ They are only shown here for reference.
 
 <!-- plugins:start -->
 <!-- plugins:end -->
-]]):format(modname:gsub(".*extras%.", ""))
+]]):format(title)
         )
       end
 
@@ -330,9 +332,12 @@ function M.plugins(path)
   local spec = require("lazy.core.plugin").Spec.new(dofile(test), { optional = true })
   local source = Util.read_file(test)
   local parser = vim.treesitter.get_string_parser(source, "lua")
+  parser:parse()
+  local query = vim.treesitter.query.parse("lua", [[(table_constructor (field value: ( (string))@plugin !name))]])
 
   ---@type {code: string, opts: string, name: string, comment?:string, url: string, optional?: boolean, idx:number}[]
   local plugins = {}
+  local found = {} ---@type table<string, boolean>
 
   local function get_text(node)
     return Docs.fix_indent(vim.treesitter.get_node_text(node, source))
@@ -352,7 +357,7 @@ function M.plugins(path)
   local function find_plugins(node)
     if node:type() == "string" then
       local text = vim.treesitter.get_node_text(node, source):sub(2, -2)
-      if text:find("/") and #node:parent():field("name") == 0 then
+      if #node:parent():field("name") == 0 then
         local plugin_node = node:parent():parent()
         local first_child = plugin_node:named_child(0)
         if first_child and first_child:field("value")[1] and first_child:field("value")[1]:id() ~= node:id() then
@@ -370,9 +375,10 @@ function M.plugins(path)
         local opts_node = get_field(plugin_node, "opts")
 
         local name_node = get_field(plugin_node, "name")
-        local name = name_node and get_text(name_node):sub(2, -2) or text:match("/(.*)$")
+        local name = name_node and get_text(name_node):sub(2, -2) or text:match("([^/]*)$")
 
         if spec.plugins[name] then
+          found[name] = true
           plugins[#plugins + 1] = {
             idx = #plugins + 1,
             name = name,
@@ -385,19 +391,19 @@ function M.plugins(path)
         end
       end
     end
-    for child in node:iter_children() do
-      find_plugins(child)
-    end
   end
 
-  parser:parse()
-  -- if path ~= "extras/vscode.lua" then
-  parser:for_each_tree(function(tree)
-    local node = tree:root()
-    find_plugins(node)
-    -- print(vim.treesitter.query.get_node_text(node, str))
-  end)
-  -- end
+  for id, node in query:iter_captures(parser:trees()[1]:root(), source) do
+    local capture_name = query.captures[id]
+    if capture_name == "plugin" then
+      find_plugins(node)
+    end
+  end
+  for name in pairs(spec.plugins) do
+    if not found[name] then
+      error("Missing plugins in " .. path .. ": " .. name)
+    end
+  end
 
   ---@type string[]
   local lines = {
