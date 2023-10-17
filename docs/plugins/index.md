@@ -3,9 +3,9 @@
 **LazyVim** provides a set of preconfigured plugins enabled by default.
 All you need to do to utilize these plugins is install the **LazyVim** starter template.
 
-- [Coding](./coding.md): faster coding with features such snippets, autocompletion, and more.
-- [Colorscheme](./colorscheme.md): default color schemes (**TokyoNight** and **Catppuccin**).
-- [Editor](./editor.md): provides functionality like a file explorer, search and replace, fuzzy finding, git integration.
+- [Coding](./coding.md): Faster coding with features such as snippets, autocompletion, and more.
+- [Colorscheme](./colorscheme.md): Default color schemes (**TokyoNight** and **Catppuccin**).
+- [Editor](./editor.md): Provides functionality like a file explorer, search and replace, fuzzy finding, git integration.
 - [Formatting](./formatting.md): Set up formatters using **conform.nvim**.
 - [Linting](./linting.md): Manage linters with the **nvim-lint** plugin.
 - [LSP](./lsp.md): configure the Language Server Protocol (LSP) client.
