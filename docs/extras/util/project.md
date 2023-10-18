@@ -54,7 +54,9 @@ opts = nil
     -- project management
     {
       "ahmedkhalf/project.nvim",
-      opts = {},
+      opts = {
+        manual_mode = true,
+      },
       event = "VeryLazy",
       config = function(_, opts)
         require("project_nvim").setup(opts)
@@ -84,7 +86,9 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = {
+  manual_mode = true,
+}
 ```
 
 </TabItem>
@@ -95,7 +99,9 @@ opts = {}
 ```lua
 {
   "ahmedkhalf/project.nvim",
-  opts = {},
+  opts = {
+    manual_mode = true,
+  },
   event = "VeryLazy",
   config = function(_, opts)
     require("project_nvim").setup(opts)
