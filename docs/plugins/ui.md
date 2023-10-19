@@ -839,6 +839,7 @@ opts = function()
 
   for _, button in ipairs(opts.config.center) do
     button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
+    button.key_format = "  %s"
   end
 
   -- close Lazy and re-open when the dashboard is ready
@@ -908,6 +909,7 @@ end
 
     for _, button in ipairs(opts.config.center) do
       button.desc = button.desc .. string.rep(" ", 43 - #button.desc)
+      button.key_format = "  %s"
     end
 
     -- close Lazy and re-open when the dashboard is ready
