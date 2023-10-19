@@ -293,7 +293,7 @@ opts = {}
 ```lua
 {
   "windwp/nvim-ts-autotag",
-  event = "InsertEnter",
+  event = "LazyFile",
   opts = {},
 }
 ```

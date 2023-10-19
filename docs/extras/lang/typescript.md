@@ -98,6 +98,19 @@ opts = {
           end,
           desc = "Organize Imports",
         },
+        {
+          "<leader>cR",
+          function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = {
+                only = { "source.removeUnused.ts" },
+                diagnostics = {},
+              },
+            })
+          end,
+          desc = "Remove Unused Imports",
+        },
       },
       settings = {
         typescript = {
@@ -149,6 +162,19 @@ opts = {
               })
             end,
             desc = "Organize Imports",
+          },
+          {
+            "<leader>cR",
+            function()
+              vim.lsp.buf.code_action({
+                apply = true,
+                context = {
+                  only = { "source.removeUnused.ts" },
+                  diagnostics = {},
+                },
+              })
+            end,
+            desc = "Remove Unused Imports",
           },
         },
         settings = {
