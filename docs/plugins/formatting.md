@@ -1,6 +1,6 @@
 # Formatting
 
-**LazyVim** uses `conform.nvim` for formatting.
+**LazyVim** uses `conform.nvim` for formatting. Note that Conform does _not_ use formatters installed via Mason. Formatters must be installed as standard command line tools.
 
 Configuring `conform.nvim`:
 
