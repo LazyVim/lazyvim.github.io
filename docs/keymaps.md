@@ -159,13 +159,13 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>gsa</code> | Add surrounding | **n**, **v** |
-| <code>gsd</code> | Delete surrounding | **n** |
-| <code>gsf</code> | Find right surrounding | **n** |
-| <code>gsF</code> | Find left surrounding | **n** |
-| <code>gsh</code> | Highlight surrounding | **n** |
-| <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
-| <code>gsr</code> | Replace surrounding | **n** |
+| <code>gza</code> | Add surrounding | **n**, **v** |
+| <code>gzd</code> | Delete surrounding | **n** |
+| <code>gzf</code> | Find right surrounding | **n** |
+| <code>gzF</code> | Find left surrounding | **n** |
+| <code>gzh</code> | Highlight surrounding | **n** |
+| <code>gzn</code> | Update `MiniSurround.config.n_lines` | **n** |
+| <code>gzr</code> | Replace surrounding | **n** |
 
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
 
