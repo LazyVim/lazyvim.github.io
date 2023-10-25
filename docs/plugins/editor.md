@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   sources = { "filesystem", "buffers", "git_status", "document_symbols" },
-  open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
+  open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
   filesystem = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
@@ -94,7 +94,7 @@ opts = {
   end,
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
-    open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
+    open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
@@ -736,12 +736,16 @@ end
     },
   },
   keys = {
-    { "<leader>,", "<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "Switch Buffer" },
+    {
+      "<leader>,",
+      "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+      desc = "Switch Buffer",
+    },
     { "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
     { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
     -- find
-    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+    { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
     { "<leader>fc", Util.telescope.config_files(), desc = "Find Config File" },
     { "<leader>ff", Util.telescope("files"), desc = "Find Files (root dir)" },
     { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },

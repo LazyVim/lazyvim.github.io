@@ -71,6 +71,7 @@ opts = {
     illuminate = true,
     indent_blankline = { enabled = true },
     lsp_trouble = true,
+    trouble = true,
     mason = true,
     mini = true,
     native_lsp = {
@@ -114,6 +115,7 @@ opts = {
       illuminate = true,
       indent_blankline = { enabled = true },
       lsp_trouble = true,
+      trouble = true,
       mason = true,
       mini = true,
       native_lsp = {
