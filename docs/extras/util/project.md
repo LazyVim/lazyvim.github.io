@@ -32,7 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [telescope.nvim](https://github.com/telescope.nvim)
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 <Tabs>
 
