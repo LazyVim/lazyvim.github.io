@@ -32,7 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [telescope.nvim](https://github.com/telescope.nvim)
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 <Tabs>
 
@@ -43,7 +43,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -78,8 +77,7 @@ opts = nil
 
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim)
 
- project management
-
+project management
 
 <Tabs>
 
@@ -92,7 +90,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -136,7 +133,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -176,7 +172,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -224,7 +219,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
