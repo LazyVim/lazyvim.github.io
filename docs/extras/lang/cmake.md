@@ -66,7 +66,7 @@ end
 
 </Tabs>
 
-## [mason.nvim](https://github.com/mason.nvim)
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 <Tabs>
 
