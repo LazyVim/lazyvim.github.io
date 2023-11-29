@@ -114,6 +114,27 @@ opts = nil
 
 </Tabs>
 
+## [dressing.nvim](https://github.com/dressing.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "dressing.nvim" }
+```
+
+</TabItem>
+
 ## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
 
  This is what powers LazyVim's fancy-looking
