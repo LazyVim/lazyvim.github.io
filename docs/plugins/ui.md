@@ -114,7 +114,7 @@ opts = nil
 
 </Tabs>
 
-## [dressing.nvim](https://github.com/dressing.nvim)
+## [dressing.nvim](https://github.com/stevearc/dressing.nvim)
 
 <Tabs>
 
