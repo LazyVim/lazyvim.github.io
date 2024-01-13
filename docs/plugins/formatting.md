@@ -77,6 +77,8 @@ end
 <TabItem value="code" label="Full Spec">
 
 ```lua
+local Util = require("lazyvim.util")
+local M = require("lazy.core.config").plugins["conform.nvim"]
 {
   "stevearc/conform.nvim",
   dependencies = { "mason.nvim" },
