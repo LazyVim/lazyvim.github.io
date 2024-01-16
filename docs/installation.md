@@ -29,7 +29,7 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 - Clone the starter
 
   ```sh
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  git clone --depth 1 https://github.com/LazyVim/starter ~/.config/nvim
   ```
 
 - Remove the `.git` folder, so you can add it to your own repo later
@@ -66,7 +66,7 @@ with [PowerShell](https://github.com/PowerShell/PowerShell)
 - Clone the starter
 
   ```powershell
-  git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
+  git clone --depth 1 https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
   ```
 
 - Remove the `.git` folder, so you can add it to your own repo later
@@ -90,7 +90,7 @@ with [PowerShell](https://github.com/PowerShell/PowerShell)
 ```sh
 docker run -w /root -it --rm alpine:edge sh -uelic '
   apk add git lazygit neovim ripgrep alpine-sdk --update
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  git clone --depth 1 https://github.com/LazyVim/starter ~/.config/nvim
   cd ~/.config/nvim
   nvim
 '
