@@ -333,29 +333,6 @@ opts = {}
 
 </Tabs>
 
-## [nvim-lspconfig](https://github.com/nvim-lspconfig)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "nvim-lspconfig" }
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [neodev.nvim](https://github.com/folke/neodev.nvim)
 
 <Tabs>
@@ -373,29 +350,6 @@ opts = {}
 
 ```lua
 { "folke/neodev.nvim", opts = {} }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mason.nvim](https://github.com/mason.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-"mason.nvim"
 ```
 
 </TabItem>
