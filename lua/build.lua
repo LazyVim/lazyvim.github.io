@@ -377,6 +377,10 @@ function M.plugins(path)
         local name_node = get_field(plugin_node, "name")
         local name = name_node and get_text(name_node):sub(2, -2) or text:match("([^/]*)$")
 
+        if name == "dressing.nvim" and name == text then
+          name = "ignore_this"
+        end
+
         local plugin = spec.plugins[name]
         if plugin then
           local url = plugin.url or require("lazy.core.config").plugins[name].url
