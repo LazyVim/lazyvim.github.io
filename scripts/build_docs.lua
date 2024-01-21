@@ -20,7 +20,7 @@ local plugins = {
   { "LazyVim/LazyVim", import = "lazyvim.plugins" },
   { "LazyVim/LazyVim", version = false },
   { "folke/lazy.nvim", version = false },
-  { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
+  { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = { "lua" } } },
 }
 
 print("Installing plugins")
@@ -38,6 +38,7 @@ require("lazy").update({ wait = true, show = false })
 -- require("lazy.core.cache").reset()
 
 vim.opt.rtp:append(".")
+-- vim.cmd([[TSUpdate lua]])
 
 print("Building docs")
 
