@@ -39,7 +39,7 @@ local function main()
   -- require("lazy.core.cache").reset()
 
   vim.opt.rtp:append(".")
-  vim.cmd([[TSUpdate lua]])
+  vim.cmd([[TSUpdateSync lua]])
 
   print("Building docs")
 
