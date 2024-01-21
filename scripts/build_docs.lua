@@ -23,26 +23,36 @@ local plugins = {
   { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = { "lua" } } },
 }
 
-print("Installing plugins")
-require("lazy").setup(plugins, {
-  root = root .. "/plugins",
-})
+local function main()
+  print("Installing plugins")
+  require("lazy").setup(plugins, {
+    root = root .. "/plugins",
+  })
 
-if vim.o.filetype == "lazy" then
-  vim.cmd.close()
+  if vim.o.filetype == "lazy" then
+    vim.cmd.close()
+  end
+
+  print("Updating plugins")
+  -- update plugins, wait for it to finish and don't show the output
+  require("lazy").update({ wait = true, show = false })
+  -- require("lazy.core.cache").reset()
+
+  vim.opt.rtp:append(".")
+  vim.cmd([[TSUpdate lua]])
+
+  print("Building docs")
+
+  require("build").update()
+
+  print("Done!\n")
 end
 
-print("Updating plugins")
--- update plugins, wait for it to finish and don't show the output
-require("lazy").update({ wait = true, show = false })
--- require("lazy.core.cache").reset()
+local ok, err = pcall(main)
 
-vim.opt.rtp:append(".")
--- vim.cmd([[TSUpdate lua]])
-
-print("Building docs")
-
-require("build").update()
-
-print("Done!\n")
-vim.cmd([[:qa]])
+if ok then
+  os.exit(0)
+else
+  print("Error: " .. err .. "\n")
+  os.exit(1)
+end
