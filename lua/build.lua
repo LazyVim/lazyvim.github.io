@@ -377,13 +377,19 @@ function M.plugins(path)
         local name_node = get_field(plugin_node, "name")
         local name = name_node and get_text(name_node):sub(2, -2) or text:match("([^/]*)$")
 
-        if spec.plugins[name] then
+        local plugin = spec.plugins[name]
+        if plugin then
+          local url = plugin.url or require("lazy.core.config").plugins[name].url
+          if not url then
+            error("Missing url for plugin " .. name)
+          end
+          url = url:gsub("%.git$", "")
           found[name] = true
           plugins[#plugins + 1] = {
             idx = #plugins + 1,
             name = name,
             optional = spec.plugins[name].optional,
-            url = "https://github.com/" .. text,
+            url = url,
             code = get_text(plugin_node),
             comment = #comments > 0 and table.concat(comments, "\n") or nil,
             opts = opts_node and get_text(opts_node) or get_field(plugin_node, "config") and "{}" or nil,
