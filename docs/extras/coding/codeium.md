@@ -32,7 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-cmp](https://github.com/nvim-cmp)
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
  codeium cmp source
 

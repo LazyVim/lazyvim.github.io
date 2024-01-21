@@ -266,7 +266,7 @@ opts = {
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/nvim-cmp)
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 <Tabs>
 

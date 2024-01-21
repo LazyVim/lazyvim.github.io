@@ -333,7 +333,7 @@ opts = {}
 
 </Tabs>
 
-## [nvim-lspconfig](https://github.com/nvim-lspconfig)
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 <Tabs>
 
@@ -379,7 +379,7 @@ opts = {}
 
 </Tabs>
 
-## [mason.nvim](https://github.com/mason.nvim)
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 <Tabs>
 
