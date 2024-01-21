@@ -22,10 +22,17 @@ opts = {
     bind_to_cwd = false,
     follow_current_file = { enabled = true },
     use_libuv_file_watcher = true,
+    commands = {
+      copy_file_name = function(state)
+        local node = state.tree:get_node()
+        vim.fn.setreg("*", node.name, "c")
+      end,
+    },
   },
   window = {
     mappings = {
       ["<space>"] = "none",
+      ["Y"] = "copy_file_name",
     },
   },
   default_component_configs = {
@@ -99,10 +106,17 @@ opts = {
       bind_to_cwd = false,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
+      commands = {
+        copy_file_name = function(state)
+          local node = state.tree:get_node()
+          vim.fn.setreg("*", node.name, "c")
+        end,
+      },
     },
     window = {
       mappings = {
         ["<space>"] = "none",
+        ["Y"] = "copy_file_name",
       },
     },
     default_component_configs = {
@@ -363,7 +377,7 @@ opts = {
     map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
     map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
     map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
-    map("n", "<leader>ghp", gs.preview_hunk, "Preview Hunk")
+    map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
     map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
     map("n", "<leader>ghd", gs.diffthis, "Diff This")
     map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
@@ -405,7 +419,7 @@ opts = {
       map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
       map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
       map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
-      map("n", "<leader>ghp", gs.preview_hunk, "Preview Hunk")
+      map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
       map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
       map("n", "<leader>ghd", gs.diffthis, "Diff This")
       map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")

@@ -65,6 +65,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
+| <code>&lt;leader&gt;ub</code> | Toggle Background | **n** |
 | <code>&lt;leader&gt;gg</code> | Lazygit (root dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit all | **n** |
@@ -422,6 +423,7 @@ Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;tl</code> | Run Last | **n** |
 | <code>&lt;leader&gt;to</code> | Show Output | **n** |
 | <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |
 | <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
