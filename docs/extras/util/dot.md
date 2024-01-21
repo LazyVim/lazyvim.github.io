@@ -32,7 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [tree-sitter-hypr](https://github.com/luckasRanarison/tree-sitter-hypr)
+## [tree-sitter-hyprlang](https://github.com/luckasRanarison/tree-sitter-hyprlang)
 
  Add Hyprland Parser
 
@@ -52,7 +52,7 @@ opts = {}
 
 ```lua
 {
-  "luckasRanarison/tree-sitter-hypr",
+  "luckasRanarison/tree-sitter-hyprlang",
   enabled = function()
     return have("hypr")
   end,
@@ -61,11 +61,11 @@ opts = {}
   config = function()
     -- Fix ft detection for hyprland
     vim.filetype.add({
-      pattern = { [".*/hypr/.*%.conf"] = "hypr" },
+      pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
     })
-    require("nvim-treesitter.parsers").get_parser_configs().hypr = {
+    require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
       install_info = {
-        url = "https://github.com/luckasRanarison/tree-sitter-hypr",
+        url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
         files = { "src/parser.c" },
         branch = "master",
       },
