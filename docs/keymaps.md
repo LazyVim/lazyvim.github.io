@@ -236,6 +236,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
 | <code>&lt;leader&gt;ff</code> | Find Files (root dir) | **n** |
 | <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
+| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gc</code> | commits | **n** |
