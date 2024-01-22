@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = nil
 ```
 
 </TabItem>
@@ -53,24 +53,75 @@ opts = {}
 ```lua
 {
   "luckasRanarison/tree-sitter-hyprlang",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
+        install_info = {
+          url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
+          files = { "src/parser.c" },
+          branch = "master",
+        },
+        filetype = "hyprlang",
+      }
+
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, { "hyprlang" })
+    end,
+  },
   enabled = function()
     return have("hypr")
   end,
   event = "BufRead */hypr/*.conf",
-  build = ":TSUpdate hypr",
-  config = function()
-    -- Fix ft detection for hyprland
-    vim.filetype.add({
-      pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
-    })
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
+    install_info = {
+      url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
+      files = { "src/parser.c" },
+      branch = "master",
+    },
+    filetype = "hyprlang",
+  }
+
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "hyprlang" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-treesitter/nvim-treesitter",
+  opts = function(_, opts)
     require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
       install_info = {
         url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
         files = { "src/parser.c" },
         branch = "master",
       },
-      filetype = "hypr",
+      filetype = "hyprlang",
     }
+
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "hyprlang" })
   end,
 }
 ```
