@@ -25,7 +25,7 @@ so you don't need to require those files manually.
 ```
 
 :::danger
-Do not `require` `autocmds`, `keymaps`, `lazy` or `options` under `lua/config/` or `lazyvim.config` manually.
+Do not put `require` `autocmds`, `keymaps`, `lazy` or `options` files under `lua/config/` or `lazyvim.config` manually.
 **LazyVim** will load those files automatically.
 :::
 
