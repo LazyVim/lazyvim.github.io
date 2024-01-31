@@ -109,6 +109,8 @@ Use `<tab>` and `<S-tab>` to jump out of surrounds.
 ```lua
 {
   "L3MON4D3/LuaSnip",
+  -- stylua: ignore
+  -- disable default key mappings from LuaSnip in favor of tabout + cmp fallback
   keys = function()
     return {}
   end,
