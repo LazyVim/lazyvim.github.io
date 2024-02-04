@@ -368,10 +368,10 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>f</code> | f | **n**, **o**, **x** |
-| <code>F</code> | F | **n**, **o**, **x** |
-| <code>t</code> | t | **n**, **o**, **x** |
-| <code>T</code> | T | **n**, **o**, **x** |
+| <code>f</code> | f - find{char} forward  | **n**, **o**, **x** |
+| <code>F</code> | F - find{char} backwards | **n**, **o**, **x** |
+| <code>t</code> | t - find{char} un<ins>t</ins>il forward | **n**, **o**, **x** |
+| <code>T</code> | T - find{char} un<ins>t</ins>il backwards | **n**, **o**, **x** |
 
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
