@@ -520,6 +520,7 @@ opts = {
     ["neotest-go"] = {
       -- Here we can set options for neotest-go, e.g.
       -- args = { "-tags=integration" }
+      recursive_run = true,
     },
   },
 }
@@ -542,6 +543,7 @@ opts = {
       ["neotest-go"] = {
         -- Here we can set options for neotest-go, e.g.
         -- args = { "-tags=integration" }
+        recursive_run = true,
       },
     },
   },
