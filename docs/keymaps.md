@@ -104,6 +104,8 @@ possible keymaps starting with `<space>`.
 | <code>gK</code> | Signature Help | **n** |
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
 | <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
+| <code>&lt;leader&gt;cc</code> | Run Codelens | **n**, **v** |
+| <code>&lt;leader&gt;cC</code> | Refresh & Display Codelens | **n** |
 | <code>&lt;leader&gt;cA</code> | Source Action | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
 
