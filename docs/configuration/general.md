@@ -101,7 +101,9 @@ opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
-opt.timeoutlen = 300
+if not vim.g.vscode then
+  opt.timeoutlen = 300 -- Lower than default (1000) to quickly trigger which-key
+end
 opt.undofile = true
 opt.undolevels = 10000
 opt.updatetime = 200 -- Save swap file and trigger CursorHold
@@ -368,10 +370,10 @@ end
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   group = augroup("checktime"),
   callback = function()
-    if vim.o.buftype ~= 'nofile' then
-      vim.cmd('checktime')
+    if vim.o.buftype ~= "nofile" then
+      vim.cmd("checktime")
     end
-  end
+  end,
 })
 
 -- Highlight on yank
@@ -417,7 +419,6 @@ vim.api.nvim_create_autocmd("FileType", {
     "PlenaryTestPopup",
     "help",
     "lspinfo",
-    "man",
     "notify",
     "qf",
     "query",
@@ -432,6 +433,15 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- make it easier to close man-files when opened inline
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("man_unlisted"),
+  pattern = { "man" },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
   end,
 })
 
@@ -465,6 +475,29 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+-- Copy/Paste when using ssh on a remote server
+-- Only works on Neovim >= 0.10.0
+if vim.clipboard and vim.clipboard.osc52 then
+  vim.api.nvim_create_autocmd("VimEnter", {
+    group = augroup("ssh_clipboard"),
+    callback = function()
+      if vim.env.SSH_CONNECTION and vim.clipboard.osc52 then
+        vim.g.clipboard = {
+          name = "OSC 52",
+          copy = {
+            ["+"] = require("vim.clipboard.osc52").copy,
+            ["*"] = require("vim.clipboard.osc52").copy,
+          },
+          paste = {
+            ["+"] = require("vim.clipboard.osc52").paste,
+            ["*"] = require("vim.clipboard.osc52").paste,
+          },
+        }
+      end
+    end,
+  })
+end
 
 ```
 

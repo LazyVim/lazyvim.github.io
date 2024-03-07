@@ -363,6 +363,19 @@ Part of [lazyvim.plugins.extras.editor.aerial](/extras/editor/aerial)
 | --- | --- | --- |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol (Aerial) | **n** |
 
+## [harpoon](https://github.com/ThePrimeagen/harpoon.git)
+Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;1</code> | Harpoon to file 1 | **n** |
+| <code>&lt;leader&gt;2</code> | Harpoon to file 2 | **n** |
+| <code>&lt;leader&gt;3</code> | Harpoon to file 3 | **n** |
+| <code>&lt;leader&gt;4</code> | Harpoon to file 4 | **n** |
+| <code>&lt;leader&gt;5</code> | Harpoon to file 5 | **n** |
+| <code>&lt;leader&gt;h</code> | Harpoon quick menu | **n** |
+| <code>&lt;leader&gt;H</code> | Harpoon file | **n** |
+
 ## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
@@ -390,12 +403,12 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 | <code>&lt;leader&gt;fm</code> | Open mini.files (directory of current file) | **n** |
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
-## [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim.git)
-Part of [lazyvim.plugins.extras.editor.symbols-outline](/extras/editor/symbols-outline)
+## [outline.nvim](https://github.com/hedyhli/outline.nvim.git)
+Part of [lazyvim.plugins.extras.editor.outline](/extras/editor/outline)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cs</code> | Symbols Outline | **n** |
+| <code>&lt;leader&gt;cs</code> | Toggle Outline | **n** |
 
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
 Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
@@ -447,6 +460,14 @@ Part of [lazyvim.plugins.extras.ui.edgy](/extras/ui/edgy)
 | --- | --- | --- |
 | <code>&lt;leader&gt;ue</code> | Edgy Toggle | **n** |
 | <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
+Part of [lazyvim.plugins.extras.util.gitui](/extras/util/gitui)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;gg</code> | gitui (root dir) | **n** |
+| <code>&lt;leader&gt;gG</code> | gitui (cwd) | **n** |
 
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)

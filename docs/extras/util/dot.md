@@ -32,104 +32,6 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [tree-sitter-hyprlang](https://github.com/luckasRanarison/tree-sitter-hyprlang)
-
- Add Hyprland Parser
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "luckasRanarison/tree-sitter-hyprlang",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
-        install_info = {
-          url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
-          files = { "src/parser.c" },
-          branch = "master",
-        },
-        filetype = "hyprlang",
-      }
-
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, { "hyprlang" })
-    end,
-  },
-  enabled = function()
-    return have("hypr")
-  end,
-  event = "BufRead */hypr/*.conf",
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
-    install_info = {
-      url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
-      files = { "src/parser.c" },
-      branch = "master",
-    },
-    filetype = "hyprlang",
-  }
-
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "hyprlang" })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    require("nvim-treesitter.parsers").get_parser_configs().hyprlang = {
-      install_info = {
-        url = "https://github.com/luckasRanarison/tree-sitter-hyprlang",
-        files = { "src/parser.c" },
-        branch = "master",
-      },
-      filetype = "hyprlang",
-    }
-
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "hyprlang" })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
  add some stuff to treesitter
@@ -153,10 +55,15 @@ opts = function(_, opts)
       [".*/waybar/config"] = "jsonc",
       [".*/mako/config"] = "dosini",
       [".*/kitty/*.conf"] = "bash",
+      [".*/hypr/.*%.conf"] = "hyprlang",
     },
   })
 
   add("git_config")
+
+  if have("hypr") then
+    add("hyprlang")
+  end
 
   if have("fish") then
     add("fish")
@@ -189,10 +96,15 @@ end
         [".*/waybar/config"] = "jsonc",
         [".*/mako/config"] = "dosini",
         [".*/kitty/*.conf"] = "bash",
+        [".*/hypr/.*%.conf"] = "hyprlang",
       },
     })
 
     add("git_config")
+
+    if have("hypr") then
+      add("hyprlang")
+    end
 
     if have("fish") then
       add("fish")

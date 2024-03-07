@@ -58,7 +58,7 @@ opts = {
 ```lua
 {
   "gbprod/yanky.nvim",
-  dependencies = { { "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") } },
+  dependencies = not jit.os:find("Windows") and { "kkharji/sqlite.lua" } or {},
   opts = {
     highlight = { timer = 250 },
     ring = { storage = jit.os:find("Windows") and "shada" or "sqlite" },
@@ -107,7 +107,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "kkharji/sqlite.lua", enabled = not jit.os:find("Windows") }
+{ "kkharji/sqlite.lua" }
 ```
 
 </TabItem>
