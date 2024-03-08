@@ -88,14 +88,14 @@ opts = {}
 {
   "mrcjkb/haskell-tools.nvim",
   version = "^3",
-  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
   dependencies = {
     { "nvim-telescope/telescope.nvim", optional = true },
   },
   config = function()
-    local ok, telescope = pcall(require, 'telescope')
+    local ok, telescope = pcall(require, "telescope")
     if ok then
-      telescope.load_extension('ht')
+      telescope.load_extension("ht")
     end
   end,
 }
@@ -185,7 +185,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "mrcjkb/neotest-haskell", }
+{ "mrcjkb/neotest-haskell" }
 ```
 
 </TabItem>
@@ -210,10 +210,11 @@ opts = {}
 ```lua
 {
   "mrcjkb/haskell-snippets.nvim",
-  dependencies = { "L3MON4D3/LuaSnip", },
+  dependencies = { "L3MON4D3/LuaSnip" },
+  ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
   config = function()
-    local haskell_snippets = require('haskell-snippets').all
-    require('luasnip').add_snippets('haskell', haskell_snippets, { key = 'haskell' })
+    local haskell_snippets = require("haskell-snippets").all
+    require("luasnip").add_snippets("haskell", haskell_snippets, { key = "haskell" })
   end,
 }
 ```
@@ -238,7 +239,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "L3MON4D3/LuaSnip", }
+{ "L3MON4D3/LuaSnip" }
 ```
 
 </TabItem>
@@ -263,14 +264,14 @@ opts = {}
 ```lua
 {
   "luc-tielen/telescope_hoogle",
-  ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
+  ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
   dependencies = {
     { "nvim-telescope/telescope.nvim" },
   },
   config = function()
-    local ok, telescope = pcall(require, 'telescope')
+    local ok, telescope = pcall(require, "telescope")
     if ok then
-      telescope.load_extension('hoogle')
+      telescope.load_extension("hoogle")
     end
   end,
 }
@@ -294,7 +295,7 @@ opts = {}
 opts = {
   setup = {
     hls = function()
-      return true 
+      return true
     end,
   },
 }
@@ -311,7 +312,7 @@ opts = {
   opts = {
     setup = {
       hls = function()
-        return true 
+        return true
       end,
     },
   },
@@ -361,8 +362,8 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ 
-  "mfussenegger/nvim-dap", 
+{
+  "mfussenegger/nvim-dap",
   optional = true,
   dependencies = {
     {
@@ -404,7 +405,7 @@ opts = {
   "nvim-neotest/neotest",
   optional = true,
   dependencies = {
-    { "mrcjkb/neotest-haskell", }
+    { "mrcjkb/neotest-haskell" },
   },
   opts = {
     adapters = {
