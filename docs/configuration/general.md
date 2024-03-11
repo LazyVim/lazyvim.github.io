@@ -67,7 +67,13 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 local opt = vim.opt
 
 opt.autowrite = true -- Enable auto write
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
+
+if not vim.env.SSH_TTY then
+  -- only set clipboard if not in ssh, to make sure the OSC 52
+  -- integration works automatically. Requires Neovim >= 0.10.0
+  opt.clipboard = "unnamedplus" -- Sync with system clipboard
+end
+
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
@@ -475,29 +481,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
-
--- Copy/Paste when using ssh on a remote server
--- Only works on Neovim >= 0.10.0
-if vim.clipboard and vim.clipboard.osc52 then
-  vim.api.nvim_create_autocmd("VimEnter", {
-    group = augroup("ssh_clipboard"),
-    callback = function()
-      if vim.env.SSH_CONNECTION and vim.clipboard.osc52 then
-        vim.g.clipboard = {
-          name = "OSC 52",
-          copy = {
-            ["+"] = require("vim.clipboard.osc52").copy,
-            ["*"] = require("vim.clipboard.osc52").copy,
-          },
-          paste = {
-            ["+"] = require("vim.clipboard.osc52").paste,
-            ["*"] = require("vim.clipboard.osc52").paste,
-          },
-        }
-      end
-    end,
-  })
-end
 
 ```
 
