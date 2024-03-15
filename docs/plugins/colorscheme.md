@@ -156,7 +156,6 @@ opts = {
       colorscheme = "catppuccin",
     },
   },
-
 }
 ```
 
