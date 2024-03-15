@@ -148,6 +148,15 @@ opts = {
       which_key = true,
     },
   },
+
+-- Configure LazyVim to load the above settings
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
+
 }
 ```
 
