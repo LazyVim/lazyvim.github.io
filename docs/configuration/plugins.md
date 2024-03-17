@@ -25,7 +25,7 @@ or a separate file containing all the plugin specs for some functionality.
 return {
   -- add symbols-outline
   {
-    "simrat39/symbols-outline.nvim",
+    "hedyhli/outline.nvim",
     cmd = "SymbolsOutline",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     opts = {

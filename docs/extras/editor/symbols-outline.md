@@ -2,6 +2,13 @@
 
 <!-- plugins:start -->
 
+:::caution
+This plugin is now migrated to a new Github repository and managed by another plugin inside Lazyvim.
+Please check out the new plugin document [outline.nvim](./outline.md).
+For compatability, we are still keeping the old plugin document here, [as well as automatically maintaining the old configuration to the new plugin.](https://github.com/LazyVim/LazyVim/commit/ee2e876252c82458d47617b6d87d827ea442ddcd)
+However, for the latest information, please refer to the new plugin document.
+:::
+
 :::info
 You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
@@ -68,7 +75,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -112,7 +118,6 @@ end
 
  edgy integration
 
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -142,7 +147,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
