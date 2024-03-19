@@ -56,6 +56,7 @@ opts = {}
     -- fancy UI for the debugger
     {
       "rcarriga/nvim-dap-ui",
+      dependencies = { "nvim-neotest/nvim-nio" },
       -- stylua: ignore
       keys = {
         { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
@@ -181,6 +182,7 @@ opts = {}
 ```lua
 {
   "rcarriga/nvim-dap-ui",
+  dependencies = { "nvim-neotest/nvim-nio" },
   -- stylua: ignore
   keys = {
     { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
@@ -204,6 +206,29 @@ opts = {}
     end
   end,
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-nio](https://github.com/nvim-neotest/nvim-nio)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "nvim-neotest/nvim-nio" }
 ```
 
 </TabItem>

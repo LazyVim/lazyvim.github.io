@@ -87,6 +87,7 @@ opts = {
 ```lua
 {
   "nvim-neotest/neotest",
+  dependencies = { "nvim-neotest/nvim-nio" },
   opts = {
     -- Can be a list of adapters like what neotest expects,
     -- or a list of adapter names,
@@ -194,6 +195,29 @@ opts = {
     { "<leader>tS", function() require("neotest").run.stop() end, desc = "Stop" },
   },
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-nio](https://github.com/nvim-neotest/nvim-nio)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "nvim-neotest/nvim-nio" }
 ```
 
 </TabItem>
