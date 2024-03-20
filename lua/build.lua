@@ -211,6 +211,24 @@ function M.recipes()
   return { content = table.concat(ret, "\n") }
 end
 
+function M.extract_options(extra_file)
+  local contents = Util.read_file(extra_file)
+  local lines = vim.split(contents, "\n")
+  ---@type string[]
+  local ret = {}
+  local options = false
+  for _, line in ipairs(lines) do
+    if line == [[if lazyvim_docs then]] then
+      options = true
+    elseif line == [[end]] then
+      options = false
+    elseif options then
+      ret[#ret + 1] = vim.trim(line)
+    end
+  end
+  return #ret > 0 and table.concat(ret, "\n") or nil
+end
+
 function M.update()
   local Plugin = require("lazy.core.plugin")
   --- include all specs
@@ -257,6 +275,19 @@ function M.update()
       local lines = {} ---@type string[]
       local title = modname:match("%.([^%.]+)$")
       title = title:sub(1, 1):upper() .. title:sub(2)
+      local options = M.extract_options(path)
+      if options then
+        options = ([[
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+%s
+```
+
+]]):format(options)
+      end
       vim.list_extend(lines, {
         "",
         ([[
@@ -280,13 +311,13 @@ require("lazy").setup({
 
 </details>
 
-Below you can find a list of included plugins and their default settings.
+%sBelow you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.
 They are only shown here for reference.
 :::
-]]):format(modname),
+]]):format(modname, options or ""),
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
       })
