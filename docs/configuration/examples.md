@@ -35,14 +35,6 @@ return {
   -- disable trouble
   { "folke/trouble.nvim", enabled = false },
 
-  -- add symbols-outline
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
-  },
-
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
@@ -73,18 +65,6 @@ return {
         sorting_strategy = "ascending",
         winblend = 0,
       },
-    },
-  },
-
-  -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
     },
   },
 
