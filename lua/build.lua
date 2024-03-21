@@ -275,6 +275,7 @@ function M.update()
       local lines = {} ---@type string[]
       local title = modname:match("%.([^%.]+)$")
       title = title:sub(1, 1):upper() .. title:sub(2)
+      print(path)
       local options = M.extract_options(path)
       if options then
         options = ([[
