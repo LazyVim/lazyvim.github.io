@@ -275,47 +275,6 @@ end
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim) _(optional)_
-
- basedpyright support.
- Remove when merged: https://github.com/williamboman/mason-lspconfig.nvim/pull/379
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  if vim.g.lazyvim_python_lsp == "basedpyright" then
-    opts.ensure_installed = opts.ensure_installed or {}
-    table.insert(opts.ensure_installed, "basedpyright")
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "williamboman/mason.nvim",
-  optional = true,
-  opts = function(_, opts)
-    if vim.g.lazyvim_python_lsp == "basedpyright" then
-      opts.ensure_installed = opts.ensure_installed or {}
-      table.insert(opts.ensure_installed, "basedpyright")
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
 
 <Tabs>
