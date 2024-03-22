@@ -49,7 +49,7 @@ opts = function(_, opts)
     priority = 100,
   })
 
-  opts.formatting.format = Util.inject.args(opts.formatting.format, function(entry, item)
+  opts.formatting.format = LazyVim.inject.args(opts.formatting.format, function(entry, item)
     -- Hide percentage in the menu
     if entry.source.name == "cmp_tabnine" then
       item.menu = ""
@@ -70,7 +70,7 @@ end
     {
       "tzachar/cmp-tabnine",
       build = {
-        Util.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
+        LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
         ":CmpTabnineHub",
       },
       dependencies = "hrsh7th/nvim-cmp",
@@ -92,7 +92,7 @@ end
       priority = 100,
     })
 
-    opts.formatting.format = Util.inject.args(opts.formatting.format, function(entry, item)
+    opts.formatting.format = LazyVim.inject.args(opts.formatting.format, function(entry, item)
       -- Hide percentage in the menu
       if entry.source.name == "cmp_tabnine" then
         item.menu = ""
@@ -129,7 +129,7 @@ opts = {
 {
   "tzachar/cmp-tabnine",
   build = {
-    Util.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
+    LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
     ":CmpTabnineHub",
   },
   dependencies = "hrsh7th/nvim-cmp",
@@ -160,7 +160,7 @@ opts = {
 ```lua
 opts = function(_, opts)
   local icon = require("lazyvim.config").icons.kinds.TabNine
-  table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("cmp_tabnine", icon))
+  table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("cmp_tabnine", icon))
 end
 ```
 
@@ -176,7 +176,7 @@ end
   event = "VeryLazy",
   opts = function(_, opts)
     local icon = require("lazyvim.config").icons.kinds.TabNine
-    table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("cmp_tabnine", icon))
+    table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("cmp_tabnine", icon))
   end,
 }
 ```

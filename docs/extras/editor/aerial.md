@@ -149,7 +149,7 @@ end
 
 ```lua
 opts = function()
-  Util.on_load("telescope.nvim", function()
+  LazyVim.on_load("telescope.nvim", function()
     require("telescope").load_extension("aerial")
   end)
 end
@@ -165,7 +165,7 @@ end
   "nvim-telescope/telescope.nvim",
   optional = true,
   opts = function()
-    Util.on_load("telescope.nvim", function()
+    LazyVim.on_load("telescope.nvim", function()
       require("telescope").load_extension("aerial")
     end)
   end,
@@ -194,11 +194,11 @@ end
 
 ```lua
 opts = function(_, opts)
-  local edgy_idx = Util.plugin.extra_idx("ui.edgy")
-  local aerial_idx = Util.plugin.extra_idx("editor.aerial")
+  local edgy_idx = LazyVim.plugin.extra_idx("ui.edgy")
+  local aerial_idx = LazyVim.plugin.extra_idx("editor.aerial")
 
   if edgy_idx and edgy_idx > aerial_idx then
-    Util.warn("The `edgy.nvim` extra must be **imported** before the `aerial.nvim` extra to work properly.", {
+    LazyVim.warn("The `edgy.nvim` extra must be **imported** before the `aerial.nvim` extra to work properly.", {
       title = "LazyVim",
     })
   end
@@ -223,11 +223,11 @@ end
   "folke/edgy.nvim",
   optional = true,
   opts = function(_, opts)
-    local edgy_idx = Util.plugin.extra_idx("ui.edgy")
-    local aerial_idx = Util.plugin.extra_idx("editor.aerial")
+    local edgy_idx = LazyVim.plugin.extra_idx("ui.edgy")
+    local aerial_idx = LazyVim.plugin.extra_idx("editor.aerial")
 
     if edgy_idx and edgy_idx > aerial_idx then
-      Util.warn("The `edgy.nvim` extra must be **imported** before the `aerial.nvim` extra to work properly.", {
+      LazyVim.warn("The `edgy.nvim` extra must be **imported** before the `aerial.nvim` extra to work properly.", {
         title = "LazyVim",
       })
     end

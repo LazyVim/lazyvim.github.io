@@ -111,7 +111,7 @@ opts = {
   },
   setup = {
     ruff_lsp = function()
-      require("lazyvim.util").lsp.on_attach(function(client, _)
+      LazyVim.lsp.on_attach(function(client, _)
         if client.name == "ruff_lsp" then
           -- Disable hover in favor of Pyright
           client.server_capabilities.hoverProvider = false
@@ -158,7 +158,7 @@ opts = {
     },
     setup = {
       ruff_lsp = function()
-        require("lazyvim.util").lsp.on_attach(function(client, _)
+        LazyVim.lsp.on_attach(function(client, _)
           if client.name == "ruff_lsp" then
             -- Disable hover in favor of Pyright
             client.server_capabilities.hoverProvider = false
@@ -241,7 +241,7 @@ opts = {}
 
 ```lua
 opts = function(_, opts)
-  if require("lazyvim.util").has("nvim-dap-python") then
+  if LazyVim.has("nvim-dap-python") then
     opts.dap_enabled = true
   end
   return vim.tbl_deep_extend("force", opts, {
@@ -265,7 +265,7 @@ end
   "linux-cultist/venv-selector.nvim",
   cmd = "VenvSelect",
   opts = function(_, opts)
-    if require("lazyvim.util").has("nvim-dap-python") then
+    if LazyVim.has("nvim-dap-python") then
       opts.dap_enabled = true
     end
     return vim.tbl_deep_extend("force", opts, {

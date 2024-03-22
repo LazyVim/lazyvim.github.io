@@ -72,8 +72,6 @@ opts = {
     },
   },
   config = function(_, opts)
-    local Util = require("lazyvim.util")
-
     local M = {}
 
     local lint = require("lint")
@@ -87,7 +85,7 @@ opts = {
     lint.linters_by_ft = opts.linters_by_ft
 
     function M.debounce(ms, fn)
-      local timer = vim.loop.new_timer()
+      local timer = vim.uv.new_timer()
       return function(...)
         local argv = { ... }
         timer:start(ms, 0, function()
@@ -118,7 +116,7 @@ opts = {
       names = vim.tbl_filter(function(name)
         local linter = lint.linters[name]
         if not linter then
-          Util.warn("Linter not found: " .. name, { title = "nvim-lint" })
+          LazyVim.warn("Linter not found: " .. name, { title = "nvim-lint" })
         end
         return linter and not (type(linter) == "table" and linter.condition and not linter.condition(ctx))
       end, names)

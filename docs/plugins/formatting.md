@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
 opts = function()
   local plugin = require("lazy.core.config").plugins["conform.nvim"]
   if plugin.config ~= M.setup then
-    Util.error({
+    LazyVim.error({
       "Don't set `plugin.config` for `conform.nvim`.\n",
       "This will break **LazyVim** formatting.\n",
       "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
@@ -95,8 +95,8 @@ end
   },
   init = function()
     -- Install the conform formatter on VeryLazy
-    require("lazyvim.util").on_very_lazy(function()
-      require("lazyvim.util").format.register({
+    LazyVim.on_very_lazy(function()
+      LazyVim.format.register({
         name = "conform.nvim",
         priority = 100,
         primary = true,
@@ -104,7 +104,7 @@ end
           local plugin = require("lazy.core.config").plugins["conform.nvim"]
           local Plugin = require("lazy.core.plugin")
           local opts = Plugin.values(plugin, "opts", false)
-          require("conform").format(Util.merge({}, opts.format, { bufnr = buf }))
+          require("conform").format(LazyVim.merge({}, opts.format, { bufnr = buf }))
         end,
         sources = function(buf)
           local ret = require("conform").list_formatters(buf)
@@ -119,7 +119,7 @@ end
   opts = function()
     local plugin = require("lazy.core.config").plugins["conform.nvim"]
     if plugin.config ~= M.setup then
-      Util.error({
+      LazyVim.error({
         "Don't set `plugin.config` for `conform.nvim`.\n",
         "This will break **LazyVim** formatting.\n",
         "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",

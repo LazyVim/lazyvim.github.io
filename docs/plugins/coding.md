@@ -410,12 +410,11 @@ opts = {}
     {
       "<leader>up",
       function()
-        local Util = require("lazy.core.util")
         vim.g.minipairs_disable = not vim.g.minipairs_disable
         if vim.g.minipairs_disable then
-          Util.warn("Disabled auto pairs", { title = "Option" })
+          LazyVim.warn("Disabled auto pairs", { title = "Option" })
         else
-          Util.info("Enabled auto pairs", { title = "Option" })
+          LazyVim.info("Enabled auto pairs", { title = "Option" })
         end
       end,
       desc = "Toggle auto pairs",
@@ -669,7 +668,7 @@ end
   config = function(_, opts)
     require("mini.ai").setup(opts)
     -- register all text objects with which-key
-    require("lazyvim.util").on_load("which-key.nvim", function()
+    LazyVim.on_load("which-key.nvim", function()
       ---@type table<string, string|table>
       local i = {
         [" "] = "Whitespace",

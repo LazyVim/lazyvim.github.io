@@ -59,12 +59,12 @@ end
   keys = {
     { "<leader>gG",
       function()
-        require("lazyvim.util").terminal.open({ "gitui" }, { esc_esc = false, ctrl_hjkl = false })
+        LazyVim.terminal.open({ "gitui" }, { esc_esc = false, ctrl_hjkl = false })
       end,
       desc = "gitui (cwd)" },
     { "<leader>gg",
       function()
-        require("lazyvim.util").terminal.open({ "gitui" }, { cwd = require("lazyvim.util").root.get(), esc_esc = false, ctrl_hjkl = false })
+        LazyVim.terminal.open({ "gitui" }, { cwd = LazyVim.root.get(), esc_esc = false, ctrl_hjkl = false })
       end,
       desc = "gitui (root dir)" }
   },

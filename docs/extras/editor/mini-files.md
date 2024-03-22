@@ -84,7 +84,7 @@ opts = {
     {
       "<leader>fM",
       function()
-        require("mini.files").open(vim.loop.cwd(), true)
+        require("mini.files").open(vim.uv.cwd(), true)
       end,
       desc = "Open mini.files (cwd)",
     },
@@ -118,7 +118,7 @@ opts = {
     vim.api.nvim_create_autocmd("User", {
       pattern = "MiniFilesActionRename",
       callback = function(event)
-        require("lazyvim.util").lsp.on_rename(event.data.from, event.data.to)
+        LazyVim.lsp.on_rename(event.data.from, event.data.to)
       end,
     })
   end,

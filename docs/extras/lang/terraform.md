@@ -128,7 +128,7 @@ opts = nil
     {
       "ANGkeith/telescope-terraform-doc.nvim",
       config = function()
-        Util.on_load("telescope.nvim", function()
+        LazyVim.on_load("telescope.nvim", function()
           require("telescope").load_extension("terraform_doc")
         end)
       end,
@@ -136,7 +136,7 @@ opts = nil
     {
       "cappyzawa/telescope-terraform.nvim",
       config = function()
-        Util.on_load("telescope.nvim", function()
+        LazyVim.on_load("telescope.nvim", function()
           require("telescope").load_extension("terraform")
         end)
       end,
@@ -168,7 +168,7 @@ opts = {}
 {
   "ANGkeith/telescope-terraform-doc.nvim",
   config = function()
-    Util.on_load("telescope.nvim", function()
+    LazyVim.on_load("telescope.nvim", function()
       require("telescope").load_extension("terraform_doc")
     end)
   end,
@@ -198,7 +198,7 @@ opts = {}
 {
   "cappyzawa/telescope-terraform.nvim",
   config = function()
-    Util.on_load("telescope.nvim", function()
+    LazyVim.on_load("telescope.nvim", function()
       require("telescope").load_extension("terraform")
     end)
   end,
