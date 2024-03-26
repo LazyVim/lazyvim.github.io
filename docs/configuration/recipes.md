@@ -96,6 +96,66 @@ Use `<tab>` for completion and snippets (supertab).
 }
 ```
 
+## Tabout
+
+Use `<tab>` and `<S-tab>` to jump out of surrounds.
+
+1. Disable default `<tab>` and `<s-tab>` behavior in LuaSnip
+
+```lua
+{
+  "L3MON4D3/LuaSnip",
+  -- stylua: ignore
+  -- disable default key mappings from LuaSnip in favor of tabout + cmp fallback
+  keys = function()
+    return {}
+  end,
+}
+```
+
+2. Add tabout
+
+```lua
+{
+  "abecodes/tabout.nvim",
+  event = "VeryLazy",
+  opts = ""
+},
+```
+
+3. Setup cmp fallback to tabout
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  opts = function(_, opts)
+    local luasnip = require("luasnip")
+    local cmp = require("cmp")
+
+    opts.mapping = vim.tbl_extend("force", opts.mapping or {}, {
+      ["<Tab>"] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        elseif luasnip.expand_or_jumpable() then
+          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+        else
+          fallback()
+        end
+      end,
+      ["<S-Tab>"] = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif luasnip.jumpable(-1) then
+          vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+        else
+          fallback()
+        end
+      end,
+    })
+  end
+},
+```
+
 ## Change surround mappings
 
 ```lua
