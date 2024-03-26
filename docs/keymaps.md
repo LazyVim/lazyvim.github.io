@@ -366,6 +366,16 @@ Part of [lazyvim.plugins.extras.editor.aerial](/extras/editor/aerial)
 | --- | --- | --- |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol (Aerial) | **n** |
 
+## [dial.nvim](https://github.com/monaqa/dial.nvim.git)
+Part of [lazyvim.plugins.extras.editor.dial](/extras/editor/dial)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;C-a&gt;</code> | Increment | **n**, **v** |
+| <code>&lt;C-x&gt;</code> | Decrement | **n**, **v** |
+| <code>g&lt;C-a&gt;</code> | Increment | **n**, **v** |
+| <code>g&lt;C-x&gt;</code> | Decrement | **n**, **v** |
+
 ## [harpoon](https://github.com/ThePrimeagen/harpoon.git)
 Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
 
