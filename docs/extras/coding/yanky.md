@@ -1,5 +1,7 @@
 # yanky.nvim
 
+Enable this extra to use the yanky.nvim plugin which provides better yank/paste functionality.
+
 > The default LazyVim mappings to cycle yank history are `[y` and `]y`
 
 <!-- plugins:start -->
@@ -36,8 +38,7 @@ import TabItem from '@theme/TabItem';
 
 ## [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
- better yank/paste
-
+better yank/paste
 
 <Tabs>
 
@@ -51,7 +52,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -102,7 +102,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

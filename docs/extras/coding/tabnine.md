@@ -1,5 +1,7 @@
 # TabNine
 
+Enable this extra to use the TabNine LLM for code completion.
+
 <!-- plugins:start -->
 
 :::info
@@ -34,8 +36,7 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
- Tabnine cmp source
-
+Tabnine cmp source
 
 <Tabs>
 
@@ -59,7 +60,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -122,7 +122,6 @@ opts = {
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -150,8 +149,7 @@ opts = {
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
- Show TabNine status in lualine
-
+Show TabNine status in lualine
 
 <Tabs>
 
@@ -165,7 +163,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 

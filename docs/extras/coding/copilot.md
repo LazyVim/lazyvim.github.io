@@ -1,5 +1,7 @@
 # Copilot
 
+Enable this extra to use the Copilot LLM for code completion.
+
 <!-- plugins:start -->
 
 :::info
@@ -34,8 +36,7 @@ import TabItem from '@theme/TabItem';
 
 ## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 
- copilot
-
+copilot
 
 <Tabs>
 
@@ -53,7 +54,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -79,8 +79,7 @@ opts = {
 
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
- copilot cmp source
-
+copilot cmp source
 
 <Tabs>
 
@@ -97,7 +96,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -148,7 +146,6 @@ opts = {}
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -217,7 +214,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
