@@ -86,10 +86,13 @@ end
 opts = {
   servers = {
     pyright = {
-      enabled = vim.g.lazyvim_python_lsp ~= "basedpyright",
+      enabled = lsp == "pyright",
     },
     basedpyright = {
-      enabled = vim.g.lazyvim_python_lsp == "basedpyright",
+      enabled = lsp == "basedpyright",
+    },
+    [lsp] = {
+      enabled = true,
     },
     ruff_lsp = {
       keys = {
@@ -133,10 +136,13 @@ opts = {
   opts = {
     servers = {
       pyright = {
-        enabled = vim.g.lazyvim_python_lsp ~= "basedpyright",
+        enabled = lsp == "pyright",
       },
       basedpyright = {
-        enabled = vim.g.lazyvim_python_lsp == "basedpyright",
+        enabled = lsp == "basedpyright",
+      },
+      [lsp] = {
+        enabled = true,
       },
       ruff_lsp = {
         keys = {
