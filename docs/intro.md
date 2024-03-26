@@ -24,12 +24,15 @@ to make it easy to customize and extend your config.
 
 ## ⚡️ Requirements
 
+### Mandatory
 - Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
 - Git >= **2.19.0** (for partial clones support)
-- a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(optional, but needed to display some icons)_**
-- [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
 - a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-- for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) **_(optional)_**
+
+### _Optional_
+- a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(needed to display some icons)_**
+- [lazygit](https://github.com/jesseduffield/lazygit)
+- for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
 - a terminal that support true color and _undercurl_:
