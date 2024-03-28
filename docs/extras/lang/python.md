@@ -291,6 +291,38 @@ end
 
 </Tabs>
 
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.auto_brackets = opts.auto_brackets or {}
+  table.insert(opts.auto_brackets, "python")
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  opts = function(_, opts)
+    opts.auto_brackets = opts.auto_brackets or {}
+    table.insert(opts.auto_brackets, "python")
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
 
 <Tabs>

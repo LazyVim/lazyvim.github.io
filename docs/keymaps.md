@@ -423,6 +423,17 @@ Part of [lazyvim.plugins.extras.editor.outline](/extras/editor/outline)
 | --- | --- | --- |
 | <code>&lt;leader&gt;cs</code> | Toggle Outline | **n** |
 
+## [trouble.nvim](https://github.com/folke/trouble.nvim.git)
+Part of [lazyvim.plugins.extras.editor.trouble-v3](/extras/editor/trouble-v3)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cs</code> | Symbols (Trouble) | **n** |
+| <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
+| <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
+| <code>&lt;leader&gt;xx</code> | Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xX</code> | Buffer Diagnostics (Trouble) | **n** |
+
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
 Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
 

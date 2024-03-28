@@ -68,12 +68,6 @@ opts = function()
         end,
       },
       "Trouble",
-      {
-        ft = "trouble",
-        filter = function(buf, win)
-          return vim.api.nvim_win_get_config(win).relative == ""
-        end,
-      },
       { ft = "qf", title = "QuickFix" },
       {
         ft = "help",
@@ -189,12 +183,6 @@ end
           end,
         },
         "Trouble",
-        {
-          ft = "trouble",
-          filter = function(buf, win)
-            return vim.api.nvim_win_get_config(win).relative == ""
-          end,
-        },
         { ft = "qf", title = "QuickFix" },
         {
           ft = "help",
