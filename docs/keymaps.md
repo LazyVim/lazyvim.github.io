@@ -436,6 +436,7 @@ Part of [lazyvim.plugins.extras.editor.trouble-v3](/extras/editor/trouble-v3)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cs</code> | Symbols (Trouble) | **n** |
+| <code>&lt;leader&gt;cS</code> | LSP references/definitions/... (Trouble) | **n** |
 | <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
 | <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
 | <code>&lt;leader&gt;xx</code> | Diagnostics (Trouble) | **n** |
