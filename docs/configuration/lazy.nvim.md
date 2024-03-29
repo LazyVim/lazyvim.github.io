@@ -43,7 +43,8 @@ be forced to install the latest development version. To override that, specify
 
 ```lua title="lua/config/lazy.lua"
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   -- bootstrap lazy.nvim
   -- stylua: ignore
   vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
