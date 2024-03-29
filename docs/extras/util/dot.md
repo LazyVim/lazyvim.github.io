@@ -32,6 +32,76 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  servers = {
+    bashls = {},
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      bashls = {},
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  vim.list_extend(opts.ensure_installed or {}, {
+    "shfmt",
+    "shellcheck",
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = function(_, opts)
+    vim.list_extend(opts.ensure_installed or {}, {
+      "shfmt",
+      "shellcheck",
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
  add some stuff to treesitter
