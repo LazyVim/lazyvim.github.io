@@ -408,6 +408,13 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 | <code>s</code> | Leap Forward to | **n**, **o**, **x** |
 | <code>S</code> | Leap Backward to | **n**, **o**, **x** |
 
+## [mini.diff](https://github.com/echasnovski/mini.diff.git)
+Part of [lazyvim.plugins.extras.editor.mini-diff](/extras/editor/mini-diff)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;go</code> | Toggle mini.diff overlay | **n** |
+
 ## [mini.files](https://github.com/echasnovski/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 
