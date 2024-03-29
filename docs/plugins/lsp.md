@@ -39,6 +39,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   -- options for vim.diagnostic.config()
+  ---@type vim.diagnostic.Opts
   diagnostics = {
     underline = true,
     update_in_insert = false,
@@ -53,10 +54,10 @@ opts = {
     severity_sort = true,
     signs = {
       text = {
-        [vim.diagnostic.severity.ERROR] = require("lazyvim.config").icons.diagnostics.Error,
-        [vim.diagnostic.severity.WARN] = require("lazyvim.config").icons.diagnostics.Warn,
-        [vim.diagnostic.severity.HINT] = require("lazyvim.config").icons.diagnostics.Hint,
-        [vim.diagnostic.severity.INFO] = require("lazyvim.config").icons.diagnostics.Info,
+        [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+        [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+        [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+        [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
       },
     },
   },
@@ -138,6 +139,7 @@ opts = {
   ---@class PluginLspOpts
   opts = {
     -- options for vim.diagnostic.config()
+    ---@type vim.diagnostic.Opts
     diagnostics = {
       underline = true,
       update_in_insert = false,
@@ -152,10 +154,10 @@ opts = {
       severity_sort = true,
       signs = {
         text = {
-          [vim.diagnostic.severity.ERROR] = require("lazyvim.config").icons.diagnostics.Error,
-          [vim.diagnostic.severity.WARN] = require("lazyvim.config").icons.diagnostics.Warn,
-          [vim.diagnostic.severity.HINT] = require("lazyvim.config").icons.diagnostics.Hint,
-          [vim.diagnostic.severity.INFO] = require("lazyvim.config").icons.diagnostics.Info,
+          [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+          [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+          [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+          [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
         },
       },
     },
@@ -227,12 +229,6 @@ opts = {
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
-    -- deprecated options
-    if opts.autoformat ~= nil then
-      vim.g.autoformat = opts.autoformat
-      LazyVim.deprecate("nvim-lspconfig.opts.autoformat", "vim.g.autoformat")
-    end
-
     -- setup keymaps
     LazyVim.lsp.on_attach(function(client, buffer)
       require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
@@ -241,19 +237,21 @@ opts = {
     local register_capability = vim.lsp.handlers["client/registerCapability"]
 
     vim.lsp.handlers["client/registerCapability"] = function(err, res, ctx)
+      ---@diagnostic disable-next-line: no-unknown
       local ret = register_capability(err, res, ctx)
-      local client_id = ctx.client_id
-      ---@type lsp.Client
-      local client = vim.lsp.get_client_by_id(client_id)
+      local client = vim.lsp.get_client_by_id(ctx.client_id)
       local buffer = vim.api.nvim_get_current_buf()
       require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
       return ret
     end
 
-    -- diagnostics
-    for name, icon in pairs(require("lazyvim.config").icons.diagnostics) do
-      name = "DiagnosticSign" .. name
-      vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+    -- diagnostics signs
+    if vim.fn.has("nvim-0.10.0") == 0 then
+      for severity, icon in pairs(opts.diagnostics.signs.text) do
+        local name = vim.diagnostic.severity[severity]:lower():gsub("^%l", string.upper)
+        name = "DiagnosticSign" .. name
+        vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
+      end
     end
 
     -- inlay hints
