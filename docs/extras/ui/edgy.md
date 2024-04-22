@@ -89,7 +89,7 @@ opts = function()
         end,
         pinned = true,
         open = function()
-          vim.api.nvim_input("<esc><space>e")
+          require("neo-tree.command").execute({ dir = LazyVim.root() })
         end,
         size = { height = 0.5 },
       },
@@ -204,7 +204,7 @@ end
           end,
           pinned = true,
           open = function()
-            vim.api.nvim_input("<esc><space>e")
+            require("neo-tree.command").execute({ dir = LazyVim.root() })
           end,
           size = { height = 0.5 },
         },

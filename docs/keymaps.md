@@ -442,6 +442,7 @@ Part of [lazyvim.plugins.extras.editor.trouble-v3](/extras/editor/trouble-v3)
 | <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
 | <code>&lt;leader&gt;xx</code> | Diagnostics (Trouble) | **n** |
 | <code>&lt;leader&gt;xX</code> | Buffer Diagnostics (Trouble) | **n** |
+| <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
 Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)

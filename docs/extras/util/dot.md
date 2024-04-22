@@ -120,12 +120,17 @@ opts = function(_, opts)
   end
 
   vim.filetype.add({
-    extension = { rasi = "rasi" },
+    extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
+    filename = {
+      [".env"] = "dotenv",
+      ["vifmrc"] = "vim",
+    },
     pattern = {
       [".*/waybar/config"] = "jsonc",
       [".*/mako/config"] = "dosini",
       [".*/kitty/*.conf"] = "bash",
       [".*/hypr/.*%.conf"] = "hyprlang",
+      ["%.env%.[%w_.-]+"] = "dotenv",
     },
   })
 
@@ -161,12 +166,17 @@ end
     end
 
     vim.filetype.add({
-      extension = { rasi = "rasi" },
+      extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
+      filename = {
+        [".env"] = "dotenv",
+        ["vifmrc"] = "vim",
+      },
       pattern = {
         [".*/waybar/config"] = "jsonc",
         [".*/mako/config"] = "dosini",
         [".*/kitty/*.conf"] = "bash",
         [".*/hypr/.*%.conf"] = "hyprlang",
+        ["%.env%.[%w_.-]+"] = "dotenv",
       },
     })
 
