@@ -128,8 +128,8 @@ opts = function(_, opts)
     pattern = {
       [".*/waybar/config"] = "jsonc",
       [".*/mako/config"] = "dosini",
-      [".*/kitty/*.conf"] = "bash",
-      [".*/hypr/.*%.conf"] = "hyprlang",
+      [".*/kitty/.+%.conf"] = "bash",
+      [".*/hypr/.+%.conf"] = "hyprlang",
       ["%.env%.[%w_.-]+"] = "dotenv",
     },
   })
@@ -174,8 +174,8 @@ end
       pattern = {
         [".*/waybar/config"] = "jsonc",
         [".*/mako/config"] = "dosini",
-        [".*/kitty/*.conf"] = "bash",
-        [".*/hypr/.*%.conf"] = "hyprlang",
+        [".*/kitty/.+%.conf"] = "bash",
+        [".*/hypr/.+%.conf"] = "hyprlang",
         ["%.env%.[%w_.-]+"] = "dotenv",
       },
     })
