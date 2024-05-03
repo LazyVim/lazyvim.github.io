@@ -172,7 +172,9 @@ opts = {
         cargo = {
           allFeatures = true,
           loadOutDirsFromCheck = true,
-          runBuildScripts = true,
+          buildScripts = {
+            enable = true,
+          },
         },
         -- Add clippy lints for Rust.
         checkOnSave = {
@@ -220,7 +222,9 @@ opts = {
           cargo = {
             allFeatures = true,
             loadOutDirsFromCheck = true,
-            runBuildScripts = true,
+            buildScripts = {
+              enable = true,
+            },
           },
           -- Add clippy lints for Rust.
           checkOnSave = {

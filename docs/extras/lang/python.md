@@ -30,6 +30,7 @@ Additional options for this extra can be configured in your [lua/config/options.
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
 vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_ruff = "ruff_lsp"
 ```
 
 Below you can find a list of included plugins and their default settings.
@@ -94,7 +95,13 @@ opts = {
     [lsp] = {
       enabled = true,
     },
+    ruff_lsp = {
+      enabled = ruff == "ruff_lsp",
+    },
     ruff = {
+      enabled = ruff == "ruff",
+    },
+    [ruff] = {
       keys = {
         {
           "<leader>co",
@@ -113,9 +120,9 @@ opts = {
     },
   },
   setup = {
-    ruff = function()
+    [ruff] = function()
       LazyVim.lsp.on_attach(function(client, _)
-        if client.name == "ruff" then
+        if client.name == ruff then
           -- Disable hover in favor of Pyright
           client.server_capabilities.hoverProvider = false
         end
@@ -144,7 +151,13 @@ opts = {
       [lsp] = {
         enabled = true,
       },
+      ruff_lsp = {
+        enabled = ruff == "ruff_lsp",
+      },
       ruff = {
+        enabled = ruff == "ruff",
+      },
+      [ruff] = {
         keys = {
           {
             "<leader>co",
@@ -163,9 +176,9 @@ opts = {
       },
     },
     setup = {
-      ruff = function()
+      [ruff] = function()
         LazyVim.lsp.on_attach(function(client, _)
-          if client.name == "ruff" then
+          if client.name == ruff then
             -- Disable hover in favor of Pyright
             client.server_capabilities.hoverProvider = false
           end
