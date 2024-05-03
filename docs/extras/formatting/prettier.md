@@ -1,5 +1,7 @@
 # Prettier
 
+Enable this extra to use the Prettier formatter for JavaScript and TypeScript file formatting.
+
 <!-- plugins:start -->
 
 :::info
@@ -46,7 +48,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -77,7 +78,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -127,7 +127,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
