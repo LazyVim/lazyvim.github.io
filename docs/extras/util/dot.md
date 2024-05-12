@@ -118,7 +118,7 @@ opts = function(_, opts)
   vim.filetype.add({
     extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
     filename = {
-      [".env"] = "dotenv",
+      [".env"] = "sh",
       ["vifmrc"] = "vim",
     },
     pattern = {
@@ -126,7 +126,7 @@ opts = function(_, opts)
       [".*/mako/config"] = "dosini",
       [".*/kitty/.+%.conf"] = "bash",
       [".*/hypr/.+%.conf"] = "hyprlang",
-      ["%.env%.[%w_.-]+"] = "dotenv",
+      ["%.env%.[%w_.-]+"] = "sh",
     },
   })
 
@@ -164,7 +164,7 @@ end
     vim.filetype.add({
       extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
       filename = {
-        [".env"] = "dotenv",
+        [".env"] = "sh",
         ["vifmrc"] = "vim",
       },
       pattern = {
@@ -172,7 +172,7 @@ end
         [".*/mako/config"] = "dosini",
         [".*/kitty/.+%.conf"] = "bash",
         [".*/hypr/.+%.conf"] = "hyprlang",
-        ["%.env%.[%w_.-]+"] = "dotenv",
+        ["%.env%.[%w_.-]+"] = "sh",
       },
     })
 
