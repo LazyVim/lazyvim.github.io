@@ -118,7 +118,6 @@ opts = function(_, opts)
   vim.filetype.add({
     extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
     filename = {
-      [".env"] = "sh",
       ["vifmrc"] = "vim",
     },
     pattern = {
@@ -164,7 +163,6 @@ end
     vim.filetype.add({
       extension = { rasi = "rasi", rofi = "rasi", wofi = "rasi" },
       filename = {
-        [".env"] = "sh",
         ["vifmrc"] = "vim",
       },
       pattern = {
