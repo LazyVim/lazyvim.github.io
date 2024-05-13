@@ -61,7 +61,7 @@ end
       "Saecki/crates.nvim",
       event = { "BufRead Cargo.toml" },
       opts = {
-        src = {
+        completion = {
           cmp = { enabled = true },
         },
       },
@@ -87,7 +87,7 @@ end
 
 ```lua
 opts = {
-  src = {
+  completion = {
     cmp = { enabled = true },
   },
 }
@@ -103,7 +103,7 @@ opts = {
   "Saecki/crates.nvim",
   event = { "BufRead Cargo.toml" },
   opts = {
-    src = {
+    completion = {
       cmp = { enabled = true },
     },
   },
