@@ -152,12 +152,14 @@ opts = nil
 ```lua
 {
   "mfussenegger/nvim-ansible",
+  ft = {},
   keys = {
     {
-      "<leader>tr",
+      "<leader>ta",
       function()
         require("ansible").run()
       end,
+      desc = "Ansible Run Playbook/Role",
       silent = true,
     },
   },

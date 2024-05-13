@@ -460,6 +460,13 @@ Part of [lazyvim.plugins.extras.editor.trouble-v3](/extras/editor/trouble-v3)
 | <code>&lt;leader&gt;xX</code> | Buffer Diagnostics (Trouble) | **n** |
 | <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 
+## [nvim-ansible](https://github.com/mfussenegger/nvim-ansible.git)
+Part of [lazyvim.plugins.extras.lang.ansible](/extras/lang/ansible)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ta</code> | Ansible Run Playbook/Role | **n** |
+
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
 Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
 
