@@ -334,7 +334,7 @@ opts = function()
         type = "codelldb",
         request = "attach",
         name = "Attach to process",
-        processId = require("dap.utils").pick_process,
+        pid = require("dap.utils").pick_process,
         cwd = "${workspaceFolder}",
       },
     }
@@ -392,7 +392,7 @@ end
           type = "codelldb",
           request = "attach",
           name = "Attach to process",
-          processId = require("dap.utils").pick_process,
+          pid = require("dap.utils").pick_process,
           cwd = "${workspaceFolder}",
         },
       }
