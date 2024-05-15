@@ -84,12 +84,6 @@ opts = {
     { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put After Applying a Filter" },
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put Before Applying a Filter" },
   },
-  config = function(_, opts)
-    require("yanky").setup(opts)
-    local sqlite = require("yanky.storage.sqlite")
-    local push = sqlite.push
-    sqlite.push = vim.schedule_wrap(push)
-  end,
 }
 ```
 
