@@ -39,13 +39,14 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  snippet = {
+opts = function(_, opts)
+  opts.snippet = {
     expand = function(args)
       vim.snippet.expand(args.body)
     end,
-  },
-}
+  }
+  table.insert(opts.sources, { name = "snippets" })
+end
 ```
 
 </TabItem>
@@ -56,13 +57,18 @@ opts = {
 ```lua
 {
   "nvim-cmp",
-  opts = {
-    snippet = {
+  dependencies = {
+    { "rafamadriz/friendly-snippets" },
+    { "garymjr/nvim-snippets", opts = { friendly_snippets = true } },
+  },
+  opts = function(_, opts)
+    opts.snippet = {
       expand = function(args)
         vim.snippet.expand(args.body)
       end,
-    },
-  },
+    }
+    table.insert(opts.sources, { name = "snippets" })
+  end,
   keys = {
     {
       "<Tab>",
@@ -106,6 +112,52 @@ opts = {
     },
   },
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "rafamadriz/friendly-snippets" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-snippets](https://github.com/garymjr/nvim-snippets)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { friendly_snippets = true }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "garymjr/nvim-snippets", opts = { friendly_snippets = true } }
 ```
 
 </TabItem>
