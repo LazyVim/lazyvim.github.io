@@ -112,8 +112,13 @@ opts = {
           desc = "Remove Unused Imports",
         },
       },
-      ---@diagnostic disable-next-line: missing-fields
       settings = {
+        typescript = {
+          inlayHints = inlay_hints_settings,
+        },
+        javascript = {
+          inlayHints = inlay_hints_settings,
+        },
         completions = {
           completeFunctionCalls = true,
         },
@@ -164,8 +169,13 @@ opts = {
             desc = "Remove Unused Imports",
           },
         },
-        ---@diagnostic disable-next-line: missing-fields
         settings = {
+          typescript = {
+            inlayHints = inlay_hints_settings,
+          },
+          javascript = {
+            inlayHints = inlay_hints_settings,
+          },
           completions = {
             completeFunctionCalls = true,
           },
@@ -237,6 +247,20 @@ opts = function()
       },
     }
   end
+  if not dap.adapters["node"] then
+    dap.adapters["node"] = function(cb, config)
+      if config.type == "node" then
+        config.type = "pwa-node"
+      end
+      local nativeAdapter = dap.adapters["pwa-node"]
+      if type(nativeAdapter) == "function" then
+        nativeAdapter(cb, config)
+      else
+        cb(nativeAdapter)
+      end
+    end
+  end
+
   for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
     if not dap.configurations[language] then
       dap.configurations[language] = {
@@ -296,6 +320,20 @@ end
         },
       }
     end
+    if not dap.adapters["node"] then
+      dap.adapters["node"] = function(cb, config)
+        if config.type == "node" then
+          config.type = "pwa-node"
+        end
+        local nativeAdapter = dap.adapters["pwa-node"]
+        if type(nativeAdapter) == "function" then
+          nativeAdapter(cb, config)
+        else
+          cb(nativeAdapter)
+        end
+      end
+    end
+
     for _, language in ipairs({ "typescript", "javascript", "typescriptreact", "javascriptreact" }) do
       if not dap.configurations[language] then
         dap.configurations[language] = {

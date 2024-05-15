@@ -106,6 +106,41 @@ opts = {
 
 </Tabs>
 
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+ ensure terraform tools are installed
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "tflint" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "tflint" })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 <Tabs>

@@ -193,6 +193,31 @@ opts = {
 
 </Tabs>
 
+## [neotest-dotnet](https://github.com/Issafalcon/neotest-dotnet)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "Issafalcon/neotest-dotnet",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
 
 <Tabs>
@@ -345,6 +370,48 @@ end
       end
     end
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  adapters = {
+    ["neotest-dotnet"] = {
+      -- Here we can set options for neotest-dotnet
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-neotest/neotest",
+  optional = true,
+  dependencies = {
+    "Issafalcon/neotest-dotnet",
+  },
+  opts = {
+    adapters = {
+      ["neotest-dotnet"] = {
+        -- Here we can set options for neotest-dotnet
+      },
+    },
+  },
 }
 ```
 
