@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = {
-  highlight = { timer = 250 },
+  highlight = { timer = 150 },
   ring = { storage = LazyVim.is_win() and "shada" or "sqlite" },
 }
 ```
@@ -60,7 +60,7 @@ opts = {
   "gbprod/yanky.nvim",
   dependencies = not LazyVim.is_win() and { "kkharji/sqlite.lua" } or {},
   opts = {
-    highlight = { timer = 250 },
+    highlight = { timer = 150 },
     ring = { storage = LazyVim.is_win() and "shada" or "sqlite" },
   },
   keys = {
@@ -84,6 +84,12 @@ opts = {
     { "=p", "<Plug>(YankyPutAfterFilter)", desc = "Put After Applying a Filter" },
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put Before Applying a Filter" },
   },
+  config = function(_, opts)
+    require("yanky").setup(opts)
+    local sqlite = require("yanky.storage.sqlite")
+    local push = sqlite.push
+    sqlite.push = vim.schedule_wrap(push)
+  end,
 }
 ```
 
