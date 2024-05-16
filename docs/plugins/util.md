@@ -5,38 +5,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [vim-startuptime](https://github.com/dstein64/vim-startuptime)
-
- measure startuptime
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "dstein64/vim-startuptime",
-  cmd = "StartupTime",
-  config = function()
-    vim.g.startuptime_tries = 10
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [persistence.nvim](https://github.com/folke/persistence.nvim)
 
  Session management. This saves your session in the background,

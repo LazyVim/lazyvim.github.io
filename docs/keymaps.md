@@ -76,6 +76,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;gf</code> | Lazygit Current File History | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
+| <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
 | <code>&lt;leader&gt;L</code> | LazyVim Changelog | **n** |
 | <code>&lt;leader&gt;ft</code> | Terminal (Root Dir) | **n** |
 | <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
@@ -164,18 +165,6 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;up</code> | Toggle Auto Pairs | **n** |
 
-## [mini.surround](https://github.com/echasnovski/mini.surround.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>gsa</code> | Add Surrounding | **n**, **v** |
-| <code>gsd</code> | Delete Surrounding | **n** |
-| <code>gsf</code> | Find Right Surrounding | **n** |
-| <code>gsF</code> | Find Left Surrounding | **n** |
-| <code>gsh</code> | Highlight Surrounding | **n** |
-| <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
-| <code>gsr</code> | Replace Surrounding | **n** |
-
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
 
 | Key | Description | Mode |
@@ -218,12 +207,6 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;bs&gt;</code> | Decrement Selection | **x** |
 | <code>&lt;c-space&gt;</code> | Increment Selection | **n** |
-
-## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;ut</code> | Toggle Treesitter Context | **n** |
 
 ## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
 
@@ -302,6 +285,19 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>[[</code> | Prev Reference | **n** |
 | <code>]]</code> | Next Reference | **n** |
+
+## [mini.surround](https://github.com/echasnovski/mini.surround.git)
+Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>gsa</code> | Add Surrounding | **n**, **v** |
+| <code>gsd</code> | Delete Surrounding | **n** |
+| <code>gsf</code> | Find Right Surrounding | **n** |
+| <code>gsF</code> | Find Left Surrounding | **n** |
+| <code>gsh</code> | Highlight Surrounding | **n** |
+| <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
+| <code>gsr</code> | Replace Surrounding | **n** |
 
 ## [yanky.nvim](https://github.com/gbprod/yanky.nvim.git)
 Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
@@ -522,6 +518,13 @@ Part of [lazyvim.plugins.extras.ui.edgy](/extras/ui/edgy)
 | --- | --- | --- |
 | <code>&lt;leader&gt;ue</code> | Edgy Toggle | **n** |
 | <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
+
+## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context.git)
+Part of [lazyvim.plugins.extras.ui.treesitter-context](/extras/ui/treesitter-context)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ut</code> | Toggle Treesitter Context | **n** |
 
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 Part of [lazyvim.plugins.extras.util.gitui](/extras/util/gitui)

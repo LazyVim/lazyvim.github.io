@@ -566,7 +566,6 @@ opts = nil
 ```lua
 {
   "echasnovski/mini.bufremove",
-
   keys = {
     {
       "<leader>bd",

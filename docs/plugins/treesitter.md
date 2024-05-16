@@ -237,52 +237,6 @@ opts = {}
 
 </Tabs>
 
-## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
-
- Show context of the current function
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { mode = "cursor", max_lines = 3 }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-treesitter/nvim-treesitter-context",
-  event = "LazyFile",
-  enabled = true,
-  opts = { mode = "cursor", max_lines = 3 },
-  keys = {
-    {
-      "<leader>ut",
-      function()
-        local tsc = require("treesitter-context")
-        tsc.toggle()
-        if LazyVim.inject.get_upvalue(tsc.toggle, "enabled") then
-          LazyVim.info("Enabled Treesitter Context", { title = "Option" })
-        else
-          LazyVim.warn("Disabled Treesitter Context", { title = "Option" })
-        end
-      end,
-      desc = "Toggle Treesitter Context",
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)
 
  Automatically add closing tags for HTML and JSX
