@@ -164,7 +164,10 @@ opts = {}
       ["node"] = { "javascriptreact", "typescriptreact", "typescript", "javascript" },
       ["pwa-node"] = { "javascriptreact", "typescriptreact", "typescript", "javascript" },
     })
-    vscode.json_decode = require("neoconf.json.jsonc").decode_jsonc
+    local json = require("plenary.json")
+    vscode.json_decode = function(str)
+      return vim.json.decode(json.json_strip_comments(str))
+    end
     vscode.load_launchjs(nil, filetypes)
   end,
 }
