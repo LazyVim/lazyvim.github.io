@@ -20,7 +20,7 @@ local plugins = {
   { "LazyVim/LazyVim", import = "lazyvim.plugins" },
   { "LazyVim/LazyVim", version = false },
   { "folke/lazy.nvim", version = false },
-  { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = { "lua" } } },
+  { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
 }
 
 local function main()
@@ -48,11 +48,11 @@ local function main()
   print("Done!\n")
 end
 
-local ok, err = pcall(main)
-
-if ok then
-  os.exit(0)
-else
-  print("Error: " .. err .. "\n")
-  os.exit(1)
-end
+local Util = require("lazy.core.util")
+Util.try(main, {
+  on_error = function(err)
+    print(err)
+    os.exit(1)
+  end,
+})
+os.exit(0)

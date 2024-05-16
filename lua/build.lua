@@ -95,6 +95,8 @@ function M.keymaps()
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
       local extra_doc = "/extras/" .. modname:gsub("lazyvim%.plugins%.extras%.", ""):gsub("%.", "/")
       local extra = require("lazy.core.plugin").Spec.new({ import = modname }, { optional = true })
+      local orig_spec = require("lazy.core.config").spec
+      require("lazy.core.config").spec = extra
       Util.foreach(extra.plugins, function(name, plugin)
         group = ("[%s](%s)\nPart of [%s](%s)"):format(plugin.name, plugin.url, modname, extra_doc)
         Handler.resolve(plugin)
@@ -105,6 +107,7 @@ function M.keymaps()
           end
         end)
       end)
+      require("lazy.core.config").spec = orig_spec
     end
   end)
 
