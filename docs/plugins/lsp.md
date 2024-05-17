@@ -73,6 +73,10 @@ opts = {
   codelens = {
     enabled = false,
   },
+  -- Enable lsp cursor word highlighting
+  document_highlight = {
+    enabled = true,
+  },
   -- add any global capabilities here
   capabilities = {},
   -- options for vim.lsp.buf.format
@@ -184,6 +188,10 @@ opts = {
     codelens = {
       enabled = false,
     },
+    -- Enable lsp cursor word highlighting
+    document_highlight = {
+      enabled = true,
+    },
     -- add any global capabilities here
     capabilities = {},
     -- options for vim.lsp.buf.format
@@ -265,6 +273,8 @@ opts = {
       require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
       return ret
     end
+
+    LazyVim.lsp.words.setup(opts.document_highlight)
 
     -- diagnostics signs
     if vim.fn.has("nvim-0.10.0") == 0 then

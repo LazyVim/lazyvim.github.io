@@ -39,6 +39,8 @@ possible keymaps starting with `<space>`.
 | <code>]b</code> | Next Buffer | **n** |
 | <code>&lt;leader&gt;bb</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
+| <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
+| <code>&lt;leader&gt;bD</code> | Delete Buffer and Window | **n** |
 | <code>&lt;esc&gt;</code> | Escape and Clear hlsearch | **i**, **n** |
 | <code>&lt;leader&gt;ur</code> | Redraw / Clear hlsearch / Diff Update | **n** |
 | <code>n</code> | Next Search Result | **n**, **x**, **o** |
@@ -151,13 +153,6 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cm</code> | Mason | **n** |
-
-## [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
-| <code>&lt;leader&gt;bD</code> | Delete Buffer (Force) | **n** |
 
 ## [mini.pairs](https://github.com/echasnovski/mini.pairs.git)
 
@@ -279,13 +274,6 @@ possible keymaps starting with `<space>`.
 | <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 | <code>]q</code> | Next Trouble/Quickfix Item | **n** |
 
-## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>[[</code> | Prev Reference | **n** |
-| <code>]]</code> | Next Reference | **n** |
-
 ## [mini.surround](https://github.com/echasnovski/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
 
@@ -390,6 +378,14 @@ Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
 | <code>&lt;leader&gt;5</code> | Harpoon to File 5 | **n** |
 | <code>&lt;leader&gt;h</code> | Harpoon Quick Menu | **n** |
 | <code>&lt;leader&gt;H</code> | Harpoon File | **n** |
+
+## [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
+Part of [lazyvim.plugins.extras.editor.illuminate](/extras/editor/illuminate)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>[[</code> | Prev Reference | **n** |
+| <code>]]</code> | Next Reference | **n** |
 
 ## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
