@@ -247,4 +247,42 @@ opts = nil
 
 </Tabs>
 
+## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
+
+ which key integration
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  defaults = {
+    ["<leader>r"] = { name = "+refactor" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/which-key.nvim",
+  optional = true,
+  opts = {
+    defaults = {
+      ["<leader>r"] = { name = "+refactor" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
