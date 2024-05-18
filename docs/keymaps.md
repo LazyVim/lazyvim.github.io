@@ -116,6 +116,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;cc</code> | Run Codelens | **n**, **v** |
 | <code>&lt;leader&gt;cC</code> | Refresh & Display Codelens | **n** |
 | <code>&lt;leader&gt;cA</code> | Source Action | **n** |
+| <code>]]</code> | Next Reference | **n** |
+| <code>[[</code> | Next Reference | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
 
 ## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git)
