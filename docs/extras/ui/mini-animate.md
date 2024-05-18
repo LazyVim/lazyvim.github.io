@@ -34,9 +34,6 @@ import TabItem from '@theme/TabItem';
 
 ## [mini.animate](https://github.com/echasnovski/mini.animate)
 
- animations
-
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -82,6 +79,7 @@ end
 ```lua
 {
   "echasnovski/mini.animate",
+  recommended = true,
   event = "VeryLazy",
   opts = function()
     -- don't use animate when scrolling with the mouse

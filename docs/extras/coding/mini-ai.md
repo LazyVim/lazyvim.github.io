@@ -85,6 +85,7 @@ end
 {
   "echasnovski/mini.ai",
   desc = "Enhanced text objects",
+  recommended = true,
   -- keys = {
   --   { "a", mode = { "x", "o" } },
   --   { "i", mode = { "x", "o" } },
