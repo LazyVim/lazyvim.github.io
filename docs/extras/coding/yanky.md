@@ -46,7 +46,6 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   highlight = { timer = 150 },
-  ring = { storage = LazyVim.is_win() and "shada" or "sqlite" },
 }
 ```
 
@@ -58,10 +57,8 @@ opts = {
 ```lua
 {
   "gbprod/yanky.nvim",
-  dependencies = not LazyVim.is_win() and { "kkharji/sqlite.lua" } or {},
   opts = {
     highlight = { timer = 150 },
-    ring = { storage = LazyVim.is_win() and "shada" or "sqlite" },
   },
   keys = {
       -- stylua: ignore
@@ -85,29 +82,6 @@ opts = {
     { "=P", "<Plug>(YankyPutBeforeFilter)", desc = "Put Before Applying a Filter" },
   },
 }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [sqlite.lua](https://github.com/kkharji/sqlite.lua)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "kkharji/sqlite.lua" }
 ```
 
 </TabItem>
