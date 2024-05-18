@@ -285,38 +285,16 @@ end
     {
       "<Tab>",
       function()
-        if vim.snippet.active({ direction = 1 }) then
-          vim.schedule(function()
-            vim.snippet.jump(1)
-          end)
-          return
-        end
-        return "<Tab>"
+        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
       end,
       expr = true,
       silent = true,
-      mode = "i",
-    },
-    {
-      "<Tab>",
-      function()
-        vim.schedule(function()
-          vim.snippet.jump(1)
-        end)
-      end,
-      silent = true,
-      mode = "s",
+      mode = { "i", "s" },
     },
     {
       "<S-Tab>",
       function()
-        if vim.snippet.active({ direction = -1 }) then
-          vim.schedule(function()
-            vim.snippet.jump(-1)
-          end)
-          return
-        end
-        return "<S-Tab>"
+        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<Tab>"
       end,
       expr = true,
       silent = true,
@@ -465,6 +443,88 @@ opts = {
         end
       end)
     end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mini.ai](https://github.com/echasnovski/mini.ai)
+
+ Better text-objects
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  LazyVim.on_load("which-key.nvim", function()
+    vim.schedule(LazyVim.mini.ai_whichkey)
+  end)
+  local ai = require("mini.ai")
+  return {
+    n_lines = 500,
+    custom_textobjects = {
+      o = ai.gen_spec.treesitter({ -- code block
+        a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+        i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+      }),
+      f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
+      c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
+      t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" }, -- tags
+      d = { "%f[%d]%d+" }, -- digits
+      e = { -- Word with case
+        { "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
+        "^().*()$",
+      },
+      i = LazyVim.mini.ai_indent, -- indent
+      g = LazyVim.mini.ai_buffer, -- buffer
+      u = ai.gen_spec.function_call(), -- u for "Usage"
+      U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
+    },
+  }
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "echasnovski/mini.ai",
+  event = "VeryLazy",
+  opts = function()
+    LazyVim.on_load("which-key.nvim", function()
+      vim.schedule(LazyVim.mini.ai_whichkey)
+    end)
+    local ai = require("mini.ai")
+    return {
+      n_lines = 500,
+      custom_textobjects = {
+        o = ai.gen_spec.treesitter({ -- code block
+          a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+          i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+        }),
+        f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
+        c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
+        t = { "<([%p%w]-)%f[^<%w][^<>]->.-</%1>", "^<.->().*()</[^/]->$" }, -- tags
+        d = { "%f[%d]%d+" }, -- digits
+        e = { -- Word with case
+          { "%u[%l%d]+%f[^%l%d]", "%f[%S][%l%d]+%f[^%l%d]", "%f[%P][%l%d]+%f[^%l%d]", "^[%l%d]+%f[^%l%d]" },
+          "^().*()$",
+        },
+        i = LazyVim.mini.ai_indent, -- indent
+        g = LazyVim.mini.ai_buffer, -- buffer
+        u = ai.gen_spec.function_call(), -- u for "Usage"
+        U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
+      },
+    }
   end,
 }
 ```
