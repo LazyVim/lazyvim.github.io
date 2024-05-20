@@ -313,6 +313,7 @@ end
         init_options = {
           bundles = bundles,
         },
+        settings = opts.settings,
         -- enable CMP capabilities
         capabilities = LazyVim.has("cmp-nvim-lsp") and require("cmp_nvim_lsp").default_capabilities() or nil,
       }, opts.jdtls)
