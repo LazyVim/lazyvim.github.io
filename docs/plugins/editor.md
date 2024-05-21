@@ -49,6 +49,12 @@ opts = {
       expander_expanded = "",
       expander_highlight = "NeoTreeExpander",
     },
+    git_status = {
+      symbols = {
+        unstaged = "󰄱",
+        staged = "󰱒",
+      },
+    },
   },
 }
 ```
@@ -150,6 +156,12 @@ opts = {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
+      },
+      git_status = {
+        symbols = {
+          unstaged = "󰄱",
+          staged = "󰱒",
+        },
       },
     },
   },
