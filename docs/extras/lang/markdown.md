@@ -239,6 +239,41 @@ end
 
 </Tabs>
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
 
 <Tabs>

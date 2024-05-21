@@ -241,6 +241,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
 | <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
+| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
 | <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
 | <code>&lt;leader&gt;sl</code> | Location List | **n** |
 | <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
