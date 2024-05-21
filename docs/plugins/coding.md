@@ -268,9 +268,6 @@ end
   dependencies = {
     {
       "garymjr/nvim-snippets",
-      -- Use my branch till PR is merged.
-      -- https://github.com/garymjr/nvim-snippets/pull/10
-      url = "https://github.com/folke/nvim-snippets",
       opts = {
         friendly_snippets = true,
         global_snippets = { "all", "global" },
@@ -313,7 +310,7 @@ end
 
 </Tabs>
 
-## [nvim-snippets](https://github.com/folke/nvim-snippets)
+## [nvim-snippets](https://github.com/garymjr/nvim-snippets)
 
 <Tabs>
 
@@ -334,9 +331,6 @@ opts = {
 ```lua
 {
   "garymjr/nvim-snippets",
-  -- Use my branch till PR is merged.
-  -- https://github.com/garymjr/nvim-snippets/pull/10
-  url = "https://github.com/folke/nvim-snippets",
   opts = {
     friendly_snippets = true,
     global_snippets = { "all", "global" },

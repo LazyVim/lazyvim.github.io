@@ -242,9 +242,11 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
 | <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
 | <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
+| <code>&lt;leader&gt;sl</code> | Location List | **n** |
 | <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
 | <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
 | <code>&lt;leader&gt;so</code> | Options | **n** |
+| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;sR</code> | Resume | **n** |
 | <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
 | <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
