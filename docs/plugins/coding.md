@@ -139,6 +139,16 @@ end
     for _, source in ipairs(opts.sources) do
       source.group_index = source.group_index or 1
     end
+
+    local parse = require("cmp.utils.snippet").parse
+    require("cmp.utils.snippet").parse = function(input)
+      local ok, ret = pcall(parse, input)
+      if ok then
+        return ret
+      end
+      return LazyVim.cmp.snippet_preview(input)
+    end
+
     local cmp = require("cmp")
     cmp.setup(opts)
     cmp.event:on("confirm_done", function(event)
@@ -256,8 +266,17 @@ end
 {
   "nvim-cmp",
   dependencies = {
-    { "rafamadriz/friendly-snippets" },
-    { "garymjr/nvim-snippets", opts = { friendly_snippets = true } },
+    {
+      "garymjr/nvim-snippets",
+      -- Use my branch till PR is merged.
+      -- https://github.com/garymjr/nvim-snippets/pull/10
+      url = "https://github.com/folke/nvim-snippets",
+      opts = {
+        friendly_snippets = true,
+        global_snippets = { "all", "global" },
+      },
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
   },
   opts = function(_, opts)
     opts.snippet = {
@@ -294,6 +313,42 @@ end
 
 </Tabs>
 
+## [nvim-snippets](https://github.com/folke/nvim-snippets)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  friendly_snippets = true,
+  global_snippets = { "all", "global" },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "garymjr/nvim-snippets",
+  -- Use my branch till PR is merged.
+  -- https://github.com/garymjr/nvim-snippets/pull/10
+  url = "https://github.com/folke/nvim-snippets",
+  opts = {
+    friendly_snippets = true,
+    global_snippets = { "all", "global" },
+  },
+  dependencies = { "rafamadriz/friendly-snippets" },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)
 
 <Tabs>
@@ -311,29 +366,6 @@ opts = nil
 
 ```lua
 { "rafamadriz/friendly-snippets" }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-snippets](https://github.com/garymjr/nvim-snippets)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { friendly_snippets = true }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "garymjr/nvim-snippets", opts = { friendly_snippets = true } }
 ```
 
 </TabItem>
@@ -392,7 +424,7 @@ opts = {
 
 </Tabs>
 
-## [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+## [ts-comments.nvim](https://github.com/folke/ts-comments.nvim)
 
  comments
 
@@ -402,9 +434,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  enable_autocmd = false,
-}
+opts = {}
 ```
 
 </TabItem>
@@ -414,22 +444,10 @@ opts = {
 
 ```lua
 {
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  lazy = true,
-  opts = {
-    enable_autocmd = false,
-  },
-  init = function()
-    if vim.fn.has("nvim-0.10") == 1 then
-      vim.schedule(function()
-        local get_option = vim.filetype.get_option
-        vim.filetype.get_option = function(filetype, option)
-          return option == "commentstring" and require("ts_context_commentstring.internal").calculate_commentstring()
-            or get_option(filetype, option)
-        end
-      end)
-    end
-  end,
+  "folke/ts-comments.nvim",
+  event = "VeryLazy",
+  opts = {},
+  enabled = vim.fn.has("nvim-0.10") == 1,
 }
 ```
 

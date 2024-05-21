@@ -71,4 +71,35 @@ opts = {
 
 </Tabs>
 
+## [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  enable_autocmd = false,
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "JoosepAlviste/nvim-ts-context-commentstring",
+  lazy = true,
+  opts = {
+    enable_autocmd = false,
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
