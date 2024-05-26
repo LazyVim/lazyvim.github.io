@@ -36,7 +36,7 @@ const config = {
         docs: {
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          editUrl: "https://github.com/LazyVim/lazyvim.github.io/tree/master/",
+          editUrl: "https://github.com/LazyVim/lazyvim.github.io/tree/main/",
         },
         blog: false,
         theme: {
