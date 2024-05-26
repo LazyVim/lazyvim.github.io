@@ -103,7 +103,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { document_highlight = { enabed = false } }
+opts = { document_highlight = { enabled = false } }
 ```
 
 </TabItem>
@@ -114,7 +114,7 @@ opts = { document_highlight = { enabed = false } }
 ```lua
 {
   "neovim/nvim-lspconfig",
-  opts = { document_highlight = { enabed = false } },
+  opts = { document_highlight = { enabled = false } },
 }
 ```
 
