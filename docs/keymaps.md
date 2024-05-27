@@ -76,6 +76,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
 | <code>&lt;leader&gt;gf</code> | Lazygit Current File History | **n** |
+| <code>&lt;leader&gt;gl</code> | Lazygit Log | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
