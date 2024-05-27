@@ -287,17 +287,17 @@ Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n** |
-| <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n** |
-| <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n** |
+| <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
+| <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
+| <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
 Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;ad</code> | Diagnostic Help (CopilotChat) | **n** |
-| <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n** |
+| <code>&lt;leader&gt;ad</code> | Diagnostic Help (CopilotChat) | **n**, **v** |
+| <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n**, **v** |
 
 ## [mini.surround](https://github.com/echasnovski/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
