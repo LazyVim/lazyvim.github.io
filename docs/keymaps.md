@@ -282,6 +282,23 @@ possible keymaps starting with `<space>`.
 | <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 | <code>]q</code> | Next Trouble/Quickfix Item | **n** |
 
+## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
+Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n** |
+| <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n** |
+| <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n** |
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
+Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;ad</code> | Diagnostic Help (CopilotChat) | **n** |
+| <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n** |
+
 ## [mini.surround](https://github.com/echasnovski/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
 
