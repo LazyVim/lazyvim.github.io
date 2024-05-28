@@ -270,7 +270,6 @@ end
       "garymjr/nvim-snippets",
       opts = {
         friendly_snippets = true,
-        global_snippets = { "all", "global" },
       },
       dependencies = { "rafamadriz/friendly-snippets" },
     },
@@ -319,7 +318,6 @@ end
 ```lua
 opts = {
   friendly_snippets = true,
-  global_snippets = { "all", "global" },
 }
 ```
 
@@ -333,7 +331,6 @@ opts = {
   "garymjr/nvim-snippets",
   opts = {
     friendly_snippets = true,
-    global_snippets = { "all", "global" },
   },
   dependencies = { "rafamadriz/friendly-snippets" },
 }
