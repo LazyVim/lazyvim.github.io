@@ -47,6 +47,8 @@ possible keymaps starting with `<space>`.
 | <code>N</code> | Prev Search Result | **n**, **x**, **o** |
 | <code>&lt;C-s&gt;</code> | Save File | **i**, **x**, **n**, **s** |
 | <code>&lt;leader&gt;K</code> | Keywordprg | **n** |
+| <code>gco</code> | Add Comment Below | **n** |
+| <code>gcO</code> | Add Comment Above | **n** |
 | <code>&lt;leader&gt;l</code> | Lazy | **n** |
 | <code>&lt;leader&gt;fn</code> | New File | **n** |
 | <code>&lt;leader&gt;xl</code> | Location List | **n** |
