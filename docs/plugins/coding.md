@@ -271,11 +271,6 @@ end
       opts = {
         friendly_snippets = true,
         global_snippets = { "all", "global" },
-        extended_filetypes = {
-          typescript = { "javascript" },
-          typescriptreact = { "javascript" },
-          javascriptreact = { "javascript" },
-        },
       },
       dependencies = { "rafamadriz/friendly-snippets" },
     },
@@ -325,11 +320,6 @@ end
 opts = {
   friendly_snippets = true,
   global_snippets = { "all", "global" },
-  extended_filetypes = {
-    typescript = { "javascript" },
-    typescriptreact = { "javascript" },
-    javascriptreact = { "javascript" },
-  },
 }
 ```
 
@@ -344,11 +334,6 @@ opts = {
   opts = {
     friendly_snippets = true,
     global_snippets = { "all", "global" },
-    extended_filetypes = {
-      typescript = { "javascript" },
-      typescriptreact = { "javascript" },
-      javascriptreact = { "javascript" },
-    },
   },
   dependencies = { "rafamadriz/friendly-snippets" },
 }
