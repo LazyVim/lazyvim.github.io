@@ -513,6 +513,14 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | --- | --- | --- |
 | <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
 
+## [nvim-metals](https://github.com/scalameta/nvim-metals.git)
+Part of [lazyvim.plugins.extras.lang.scala](/extras/lang/scala)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;mc</code> | Metals compile cascade | **n** |
+| <code>&lt;leader&gt;me</code> | Metals commands | **n** |
+
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
