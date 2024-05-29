@@ -117,8 +117,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
 | <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
 | <code>&lt;leader&gt;cc</code> | Run Codelens | **n**, **v** |
-| <code>&lt;leader&gt;cC</code> | Refresh & Display Codelens | **n**, **n** |
-| <code>&lt;leader&gt;cR</code> | Rename File | **n**, **n** |
+| <code>&lt;leader&gt;cC</code> | Refresh & Display Codelens | **n** |
+| <code>&lt;leader&gt;cR</code> | Rename File | **n** |
 | <code>&lt;leader&gt;cA</code> | Source Action | **n** |
 | <code>]]</code> | Next Reference | **n** |
 | <code>[[</code> | Prev Reference | **n** |
