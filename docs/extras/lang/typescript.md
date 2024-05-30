@@ -134,6 +134,13 @@ opts = {
           desc = "Add missing imports",
         },
         {
+          "<leader>cu",
+          function()
+            require("vtsls").commands.remove_unused_imports(0)
+          end,
+          desc = "Remove unused imports",
+        },
+        {
           "<leader>cD",
           function()
             require("vtsls").commands.fix_all(0)
@@ -238,6 +245,13 @@ opts = {
               require("vtsls").commands.add_missing_imports(0)
             end,
             desc = "Add missing imports",
+          },
+          {
+            "<leader>cu",
+            function()
+              require("vtsls").commands.remove_unused_imports(0)
+            end,
+            desc = "Remove unused imports",
           },
           {
             "<leader>cD",
