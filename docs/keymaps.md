@@ -280,10 +280,12 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;cs</code> | Symbols (Trouble) | **n** |
+| <code>&lt;leader&gt;cS</code> | LSP references/definitions/... (Trouble) | **n** |
 | <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
 | <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
-| <code>&lt;leader&gt;xx</code> | Document Diagnostics (Trouble) | **n** |
-| <code>&lt;leader&gt;xX</code> | Workspace Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xx</code> | Diagnostics (Trouble) | **n** |
+| <code>&lt;leader&gt;xX</code> | Buffer Diagnostics (Trouble) | **n** |
 | <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 | <code>]q</code> | Next Trouble/Quickfix Item | **n** |
 
@@ -473,19 +475,6 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 | <code>&lt;leader&gt;rP</code> | Debug Print | **n** |
 | <code>&lt;leader&gt;rs</code> | Refactor | **v** |
 | <code>&lt;leader&gt;rx</code> | Extract Variable | **v** |
-
-## [trouble.nvim](https://github.com/folke/trouble.nvim.git)
-Part of [lazyvim.plugins.extras.editor.trouble-v3](/extras/editor/trouble-v3)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;cs</code> | Symbols (Trouble) | **n** |
-| <code>&lt;leader&gt;cS</code> | LSP references/definitions/... (Trouble) | **n** |
-| <code>&lt;leader&gt;xL</code> | Location List (Trouble) | **n** |
-| <code>&lt;leader&gt;xQ</code> | Quickfix List (Trouble) | **n** |
-| <code>&lt;leader&gt;xx</code> | Diagnostics (Trouble) | **n** |
-| <code>&lt;leader&gt;xX</code> | Buffer Diagnostics (Trouble) | **n** |
-| <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 
 ## [nvim-ansible](https://github.com/mfussenegger/nvim-ansible.git)
 Part of [lazyvim.plugins.extras.lang.ansible](/extras/lang/ansible)
