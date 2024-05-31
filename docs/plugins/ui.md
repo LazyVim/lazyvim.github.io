@@ -871,39 +871,4 @@ end
 
 </Tabs>
 
-## [alpha-nvim](https://github.com/goolord/alpha-nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "goolord/alpha-nvim",
-  optional = true,
-  enabled = function()
-    LazyVim.warn({
-      "`dashboard.nvim` is now the default LazyVim starter plugin.",
-      "",
-      "To keep using `alpha.nvim`, please enable the `lazyvim.plugins.extras.ui.alpha` extra.",
-      "Or to hide this message, remove the alpha spec from your config.",
-    })
-    return false
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 <!-- plugins:end -->
