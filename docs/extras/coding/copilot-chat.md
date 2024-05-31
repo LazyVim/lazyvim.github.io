@@ -116,13 +116,6 @@ end
       mode = { "n", "v" },
     },
   },
-  init = function()
-    LazyVim.on_load("which-key.nvim", function()
-      vim.schedule(function()
-        require("which-key").register({ a = { name = "+ai" } }, { prefix = "<leader>" })
-      end)
-    end)
-  end,
   config = function(_, opts)
     local chat = require("CopilotChat")
     require("CopilotChat.integrations.cmp").setup()
@@ -137,6 +130,41 @@ end
 
     chat.setup(opts)
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  defaults = {
+    ["<leader>a"] = { name = "+ai" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/which-key.nvim",
+  optional = true,
+  opts = {
+    defaults = {
+      ["<leader>a"] = { name = "+ai" },
+    },
+  },
 }
 ```
 
