@@ -138,6 +138,35 @@ end
 
 </Tabs>
 
+## [trouble.nvim](https://github.com/folke/trouble.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/trouble.nvim",
+  optional = true,
+  keys = {
+    { "<leader>cs", false },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
 
  Telescope integration
