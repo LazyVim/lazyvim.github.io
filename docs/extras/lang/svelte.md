@@ -1,4 +1,4 @@
-# `Astro`
+# `Svelte`
 
 <!-- plugins:start -->
 
@@ -14,7 +14,7 @@ Plugins marked as optional will only be configured if they are installed.
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.lang.astro" },
+    { import = "lazyvim.plugins.extras.lang.svelte" },
     { import = "plugins" },
   },
 })
@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = function(_, opts)
   if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "astro" })
+    vim.list_extend(opts.ensure_installed, { "svelte" })
   end
 end
 ```
@@ -60,7 +60,7 @@ end
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
     if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "astro" })
+      vim.list_extend(opts.ensure_installed, { "svelte" })
     end
   end,
 }
@@ -82,7 +82,7 @@ end
 ```lua
 opts = {
   servers = {
-    astro = {},
+    svelte = {},
   },
 }
 ```
@@ -97,7 +97,7 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      astro = {},
+      svelte = {},
     },
   },
 }
@@ -120,10 +120,10 @@ opts = {
 opts = function(_, opts)
   LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
     {
-      name = "@astrojs/ts-plugin",
+      name = "typescript-svelte-plugin",
       location = LazyVim.get_pkg_path(
-        "astro-language-server",
-        "/node_modules/@astrojs/ts-plugin",
+        "svelte-language-server",
+        "/node_modules/typescript-svelte-plugin",
         { warn = false }
       ),
       enableForWorkspaceTypeScriptVersions = true,
@@ -143,10 +143,10 @@ end
   opts = function(_, opts)
     LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
       {
-        name = "@astrojs/ts-plugin",
+        name = "typescript-svelte-plugin",
         location = LazyVim.get_pkg_path(
-          "astro-language-server",
-          "/node_modules/@astrojs/ts-plugin",
+          "svelte-language-server",
+          "/node_modules/typescript-svelte-plugin",
           { warn = false }
         ),
         enableForWorkspaceTypeScriptVersions = true,

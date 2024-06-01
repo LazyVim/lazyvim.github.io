@@ -32,6 +32,10 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+### Includes the following extras
+
+- [lang.typescript](/extras/lang/typescript)
+
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 <Tabs>
@@ -68,37 +72,63 @@ end
 
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
+ Add LSP servers
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  servers = {
+    volar = {},
+    vtsls = {},
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      volar = {},
+      vtsls = {},
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+ Configure tsserver plugin
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
 opts = function(_, opts)
-  local vue_typescript_plugin = require("mason-registry").get_package("vue-language-server"):get_install_path()
-    .. "/node_modules/@vue/language-server"
-    .. "/node_modules/@vue/typescript-plugin"
-
-  opts.servers = vim.tbl_deep_extend("force", opts.servers, {
-    volar = {},
-    -- Volar 2.0 has discontinued their "take over mode" which in previous version provided support for typescript in vue files.
-    -- The new approach to get typescript support involves using the typescript language server along side volar.
-    vtsls = {
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-        "vue",
-      },
-    },
-  })
+  table.insert(opts.servers.vtsls.filetypes, "vue")
   LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
-    name = "@vue/typescript-plugin",
-    location = vue_typescript_plugin,
-    languages = { "vue" },
-    configNamespace = "typescript",
+    {
+      name = "@vue/typescript-plugin",
+      location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
+      languages = { "vue" },
+      configNamespace = "typescript",
+      enableForWorkspaceTypeScriptVersions = true,
+    },
   })
 end
 ```
@@ -112,31 +142,15 @@ end
 {
   "neovim/nvim-lspconfig",
   opts = function(_, opts)
-    local vue_typescript_plugin = require("mason-registry").get_package("vue-language-server"):get_install_path()
-      .. "/node_modules/@vue/language-server"
-      .. "/node_modules/@vue/typescript-plugin"
-
-    opts.servers = vim.tbl_deep_extend("force", opts.servers, {
-      volar = {},
-      -- Volar 2.0 has discontinued their "take over mode" which in previous version provided support for typescript in vue files.
-      -- The new approach to get typescript support involves using the typescript language server along side volar.
-      vtsls = {
-        filetypes = {
-          "javascript",
-          "javascriptreact",
-          "javascript.jsx",
-          "typescript",
-          "typescriptreact",
-          "typescript.tsx",
-          "vue",
-        },
-      },
-    })
+    table.insert(opts.servers.vtsls.filetypes, "vue")
     LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
-      name = "@vue/typescript-plugin",
-      location = vue_typescript_plugin,
-      languages = { "vue" },
-      configNamespace = "typescript",
+      {
+        name = "@vue/typescript-plugin",
+        location = LazyVim.get_pkg_path("vue-language-server", "/node_modules/@vue/language-server"),
+        languages = { "vue" },
+        configNamespace = "typescript",
+        enableForWorkspaceTypeScriptVersions = true,
+      },
     })
   end,
 }
