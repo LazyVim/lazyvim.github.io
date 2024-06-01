@@ -364,7 +364,15 @@ end
 
 function M.plugins(path)
   local test = rootLazyVim .. "/lua/lazyvim/plugins/" .. path
-  local spec = require("lazy.core.plugin").Spec.new(dofile(test), { optional = true })
+  local mod = dofile(test)
+  local imports = {}
+  for k, v in pairs(mod) do
+    if type(v) == "table" and v.import then
+      imports[k] = v.import
+      mod[k] = {}
+    end
+  end
+  local spec = require("lazy.core.plugin").Spec.new(mod, { optional = true })
   local source = Util.read_file(test)
   local parser = vim.treesitter.get_string_parser(source, "lua")
   parser:parse()
@@ -457,6 +465,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ]],
   }
+
+  table.sort(imports)
+  if #imports > 0 then
+    lines[#lines + 1] = "### Includes the following extras"
+    lines[#lines + 1] = ""
+    for _, x in ipairs(imports) do
+      x = x:gsub("lazyvim%.plugins%.extras%.", "")
+      lines[#lines + 1] = ("- [%s](/extras/%s)"):format(x, x:gsub("%.", "/"))
+    end
+    lines[#lines + 1] = ""
+  end
 
   -- sort by optional and idx
   table.sort(plugins, function(a, b)
