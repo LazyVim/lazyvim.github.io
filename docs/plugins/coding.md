@@ -242,6 +242,9 @@ opts = nil
 
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
+ snippets
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -438,7 +441,6 @@ opts = {}
   "folke/ts-comments.nvim",
   event = "VeryLazy",
   opts = {},
-  enabled = vim.fn.has("nvim-0.10") == 1,
 }
 ```
 
