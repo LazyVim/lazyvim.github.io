@@ -119,11 +119,6 @@ opts = {}
         },
       },
     },
-
-    -- VsCode launch.json parser
-    {
-      "folke/neoconf.nvim",
-    },
   },
 
   -- stylua: ignore
@@ -332,34 +327,6 @@ opts = {
       -- Update this to ensure that you have the debuggers for the langs you want
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [neoconf.nvim](https://github.com/folke/neoconf.nvim)
-
- VsCode launch.json parser
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/neoconf.nvim",
 }
 ```
 

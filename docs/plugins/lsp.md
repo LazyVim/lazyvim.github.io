@@ -156,8 +156,6 @@ end
   "neovim/nvim-lspconfig",
   event = "LazyFile",
   dependencies = {
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
-    { "folke/neodev.nvim", opts = {} },
     "mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   },
@@ -271,10 +269,6 @@ end
   end,
   ---@param opts PluginLspOpts
   config = function(_, opts)
-    if LazyVim.has("neoconf.nvim") then
-      require("neoconf").setup(LazyVim.opts("neoconf.nvim"))
-    end
-
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
@@ -414,75 +408,6 @@ end
 
 </Tabs>
 
-## [neoconf.nvim](https://github.com/folke/neoconf.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "nvim-lspconfig" }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [neodev.nvim](https://github.com/folke/neodev.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "folke/neodev.nvim", opts = {} }
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 <Tabs>
@@ -499,7 +424,10 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-"mason.nvim"
+{
+  "mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+}
 ```
 
 </TabItem>

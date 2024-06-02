@@ -530,4 +530,104 @@ end
 
 </Tabs>
 
+## [lazydev.nvim](https://github.com/folke/lazydev.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  return {
+    library = {
+      uv = LazyVim.get_plugin_path("luvit-meta", "library"),
+      lazyvim = LazyVim.get_plugin_path("LazyVim"),
+    },
+  }
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/lazydev.nvim",
+  ft = "lua",
+  opts = function()
+    return {
+      library = {
+        uv = LazyVim.get_plugin_path("luvit-meta", "library"),
+        lazyvim = LazyVim.get_plugin_path("LazyVim"),
+      },
+    }
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [luvit-meta](https://github.com/Bilal2453/luvit-meta)
+
+ Manage libuv types with lazy. Plugin will never be loaded
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "Bilal2453/luvit-meta", lazy = true }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
+ Add lazydev source to cmp
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, { name = "lazydev", group_index = 0 })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  opts = function(_, opts)
+    table.insert(opts.sources, { name = "lazydev", group_index = 0 })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
