@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = function(_, opts)
   if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "bibtex", "latex" })
+    vim.list_extend(opts.ensure_installed, { "bibtex" })
   end
   if type(opts.highlight.disable) == "table" then
     vim.list_extend(opts.highlight.disable, { "latex" })
@@ -64,7 +64,7 @@ end
   "nvim-treesitter/nvim-treesitter",
   opts = function(_, opts)
     if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "bibtex", "latex" })
+      vim.list_extend(opts.ensure_installed, { "bibtex" })
     end
     if type(opts.highlight.disable) == "table" then
       vim.list_extend(opts.highlight.disable, { "latex" })
