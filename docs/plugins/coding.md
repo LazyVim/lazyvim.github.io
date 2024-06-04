@@ -537,14 +537,13 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function()
-  return {
-    library = {
-      uv = "luvit-meta/library",
-      lazyvim = "LazyVim",
-    },
-  }
-end
+opts = {
+  library = {
+    { path = "luvit-meta/library", words = { "vim%.uv" } },
+    { path = "LazyVim", words = { "LazyVim" } },
+    { path = "lazy.nvim", words = { "LazyVim" } },
+  },
+}
 ```
 
 </TabItem>
@@ -556,14 +555,13 @@ end
 {
   "folke/lazydev.nvim",
   ft = "lua",
-  opts = function()
-    return {
-      library = {
-        uv = "luvit-meta/library",
-        lazyvim = "LazyVim",
-      },
-    }
-  end,
+  opts = {
+    library = {
+      { path = "luvit-meta/library", words = { "vim%.uv" } },
+      { path = "LazyVim", words = { "LazyVim" } },
+      { path = "lazy.nvim", words = { "LazyVim" } },
+    },
+  },
 }
 ```
 
