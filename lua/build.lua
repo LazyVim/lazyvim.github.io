@@ -368,8 +368,8 @@ function M.plugins(path)
   local imports = {}
   for k, v in pairs(mod) do
     if type(v) == "table" and v.import then
-      imports[k] = v.import
-      mod[k] = {}
+      table.insert(imports, v.import)
+      table.remove(mod, k)
     end
   end
   local spec = require("lazy.core.plugin").Spec.new(mod, { optional = true })
