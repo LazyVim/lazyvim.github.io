@@ -32,36 +32,6 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-vtsls](https://github.com/yioneko/nvim-vtsls)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "yioneko/nvim-vtsls",
-  lazy = true,
-  opts = {},
-  config = function(_, opts)
-    require("vtsls").config(opts)
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
  correctly setup lspconfig
@@ -119,49 +89,50 @@ opts = {
         {
           "gD",
           function()
-            require("vtsls").commands.goto_source_definition(0)
+            local params = vim.lsp.util.make_position_params()
+            LazyVim.lsp.execute({
+              command = "typescript.goToSourceDefinition",
+              arguments = { params.textDocument.uri, params.position },
+              open = true,
+            })
           end,
           desc = "Goto Source Definition",
         },
         {
           "gR",
           function()
-            require("vtsls").commands.file_references(0)
+            LazyVim.lsp.execute({
+              command = "typescript.findAllFileReferences",
+              arguments = { vim.uri_from_bufnr(0) },
+              open = true,
+            })
           end,
           desc = "File References",
         },
         {
           "<leader>co",
-          function()
-            require("vtsls").commands.organize_imports(0)
-          end,
+          LazyVim.lsp.action["source.organizeImports"],
           desc = "Organize Imports",
         },
         {
           "<leader>cM",
-          function()
-            require("vtsls").commands.add_missing_imports(0)
-          end,
+          LazyVim.lsp.action["source.addMissingImports.ts"],
           desc = "Add missing imports",
         },
         {
           "<leader>cu",
-          function()
-            require("vtsls").commands.remove_unused_imports(0)
-          end,
+          LazyVim.lsp.action["source.removeUnused.ts"],
           desc = "Remove unused imports",
         },
         {
           "<leader>cD",
-          function()
-            require("vtsls").commands.fix_all(0)
-          end,
+          LazyVim.lsp.action["source.fixAll.ts"],
           desc = "Fix all diagnostics",
         },
         {
           "<leader>cV",
           function()
-            require("vtsls").commands.select_ts_version(0)
+            LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
           end,
           desc = "Select TS workspace version",
         },
@@ -237,49 +208,50 @@ opts = {
           {
             "gD",
             function()
-              require("vtsls").commands.goto_source_definition(0)
+              local params = vim.lsp.util.make_position_params()
+              LazyVim.lsp.execute({
+                command = "typescript.goToSourceDefinition",
+                arguments = { params.textDocument.uri, params.position },
+                open = true,
+              })
             end,
             desc = "Goto Source Definition",
           },
           {
             "gR",
             function()
-              require("vtsls").commands.file_references(0)
+              LazyVim.lsp.execute({
+                command = "typescript.findAllFileReferences",
+                arguments = { vim.uri_from_bufnr(0) },
+                open = true,
+              })
             end,
             desc = "File References",
           },
           {
             "<leader>co",
-            function()
-              require("vtsls").commands.organize_imports(0)
-            end,
+            LazyVim.lsp.action["source.organizeImports"],
             desc = "Organize Imports",
           },
           {
             "<leader>cM",
-            function()
-              require("vtsls").commands.add_missing_imports(0)
-            end,
+            LazyVim.lsp.action["source.addMissingImports.ts"],
             desc = "Add missing imports",
           },
           {
             "<leader>cu",
-            function()
-              require("vtsls").commands.remove_unused_imports(0)
-            end,
+            LazyVim.lsp.action["source.removeUnused.ts"],
             desc = "Remove unused imports",
           },
           {
             "<leader>cD",
-            function()
-              require("vtsls").commands.fix_all(0)
-            end,
+            LazyVim.lsp.action["source.fixAll.ts"],
             desc = "Fix all diagnostics",
           },
           {
             "<leader>cV",
             function()
-              require("vtsls").commands.select_ts_version(0)
+              LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
             end,
             desc = "Select TS workspace version",
           },

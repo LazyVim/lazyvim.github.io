@@ -22,6 +22,17 @@ require("lazy").setup({
 
 </details>
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- By default, prettier will only be used for formatting
+-- if a prettier configuration file is found in the project.
+-- Set to `false` to always use prettier for supported filetypes.
+vim.g.lazyvim_prettier_needs_config = true
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -122,6 +133,22 @@ opts = {
     ["markdown.mdx"] = { "prettier" },
     ["graphql"] = { "prettier" },
     ["handlebars"] = { "prettier" },
+    ["svelte"] = { "prettier" },
+  },
+  formatters = {
+    prettier = {
+      condition = function(_, ctx)
+        if not needs_config then
+          return true
+        end
+        if enabled[ctx.filename] == nil then
+          enabled[ctx.filename] = vim.fs.find(function(name, path)
+            return name:match("^%.prettierrc%.") or name:match("^prettier%.config%.")
+          end, { path = ctx.filename, upward = true })[1] ~= nil
+        end
+        return enabled[ctx.filename]
+      end,
+    },
   },
 }
 ```
@@ -153,6 +180,22 @@ opts = {
       ["markdown.mdx"] = { "prettier" },
       ["graphql"] = { "prettier" },
       ["handlebars"] = { "prettier" },
+      ["svelte"] = { "prettier" },
+    },
+    formatters = {
+      prettier = {
+        condition = function(_, ctx)
+          if not needs_config then
+            return true
+          end
+          if enabled[ctx.filename] == nil then
+            enabled[ctx.filename] = vim.fs.find(function(name, path)
+              return name:match("^%.prettierrc%.") or name:match("^prettier%.config%.")
+            end, { path = ctx.filename, upward = true })[1] ~= nil
+          end
+          return enabled[ctx.filename]
+        end,
+      },
     },
   },
 }
