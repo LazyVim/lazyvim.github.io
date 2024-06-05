@@ -121,11 +121,7 @@ opts = function(_, opts)
   LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
     {
       name = "typescript-svelte-plugin",
-      location = LazyVim.get_pkg_path(
-        "svelte-language-server",
-        "/node_modules/typescript-svelte-plugin",
-        { warn = false }
-      ),
+      location = LazyVim.get_pkg_path("svelte-language-server", "/node_modules/typescript-svelte-plugin"),
       enableForWorkspaceTypeScriptVersions = true,
     },
   })
@@ -144,11 +140,7 @@ end
     LazyVim.extend(opts.servers.vtsls, "settings.vtsls.tsserver.globalPlugins", {
       {
         name = "typescript-svelte-plugin",
-        location = LazyVim.get_pkg_path(
-          "svelte-language-server",
-          "/node_modules/typescript-svelte-plugin",
-          { warn = false }
-        ),
+        location = LazyVim.get_pkg_path("svelte-language-server", "/node_modules/typescript-svelte-plugin"),
         enableForWorkspaceTypeScriptVersions = true,
       },
     })
