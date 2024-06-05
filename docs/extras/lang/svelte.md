@@ -82,7 +82,28 @@ end
 ```lua
 opts = {
   servers = {
-    svelte = {},
+    svelte = {
+      keys = {
+        {
+          "<leader>co",
+          function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = {
+                only = { "source.organizeImports" },
+                diagnostics = {},
+              },
+            })
+          end,
+          desc = "Organize Imports",
+        },
+      },
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
+        },
+      },
+    },
   },
 }
 ```
@@ -97,7 +118,28 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      svelte = {},
+      svelte = {
+        keys = {
+          {
+            "<leader>co",
+            function()
+              vim.lsp.buf.code_action({
+                apply = true,
+                context = {
+                  only = { "source.organizeImports" },
+                  diagnostics = {},
+                },
+              })
+            end,
+            desc = "Organize Imports",
+          },
+        },
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
+          },
+        },
+      },
     },
   },
 }
@@ -145,6 +187,41 @@ end
       },
     })
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    ["svelte"] = { "prettier" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      ["svelte"] = { "prettier" },
+    },
+  },
 }
 ```
 
