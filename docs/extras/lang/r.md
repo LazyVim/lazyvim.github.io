@@ -71,7 +71,7 @@ opts = {
       })
     end,
   },
-  pdfviewer = ""
+  pdfviewer = "",
 }
 ```
 
@@ -116,7 +116,7 @@ opts = {
         })
       end,
     },
-    pdfviewer = ""
+    pdfviewer = "",
   },
   config = function(_, opts)
     vim.g.rout_follow_colorscheme = true

@@ -99,6 +99,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;wm</code> | Maximize Toggle | **n** |
 | <code>&lt;leader&gt;m</code> | Maximize Toggle | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
+| <code>&lt;leader&gt;&lt;tab&gt;o</code> | Close Other Tabs | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;&lt;tab&gt;</code> | New Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;]</code> | Next Tab | **n** |
@@ -139,7 +140,9 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bP</code> | Delete Non-Pinned Buffers | **n** |
 | <code>&lt;leader&gt;br</code> | Delete Buffers to the Right | **n** |
 | <code>[b</code> | Prev Buffer | **n** |
+| <code>[B</code> | Move buffer prev | **n** |
 | <code>]b</code> | Next Buffer | **n** |
+| <code>]B</code> | Move buffer next | **n** |
 | <code>&lt;S-h&gt;</code> | Prev Buffer | **n** |
 | <code>&lt;S-l&gt;</code> | Next Buffer | **n** |
 
