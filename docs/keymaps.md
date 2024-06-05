@@ -522,6 +522,7 @@ Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 | <code>&lt;leader&gt;tS</code> | Stop | **n** |
 | <code>&lt;leader&gt;tt</code> | Run File | **n** |
 | <code>&lt;leader&gt;tT</code> | Run All Test Files | **n** |
+| <code>&lt;leader&gt;tw</code> | Toggle Watch | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)

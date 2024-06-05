@@ -47,6 +47,13 @@ opts = function(_, opts)
   if type(opts.ensure_installed) == "table" then
     vim.list_extend(opts.ensure_installed, { "angular", "scss" })
   end
+  vim.filetype.add({
+    pattern = {
+      [".*%.component%.html"] = "angular.html",
+      [".*%.container%.html"] = "angular.html",
+    },
+  })
+  vim.treesitter.language.register("angular", "angular.html")
 end
 ```
 
@@ -62,6 +69,13 @@ end
     if type(opts.ensure_installed) == "table" then
       vim.list_extend(opts.ensure_installed, { "angular", "scss" })
     end
+    vim.filetype.add({
+      pattern = {
+        [".*%.component%.html"] = "angular.html",
+        [".*%.container%.html"] = "angular.html",
+      },
+    })
+    vim.treesitter.language.register("angular", "angular.html")
   end,
 }
 ```
