@@ -258,19 +258,13 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if LazyVim.has("nvim-dap-python") then
-    opts.dap_enabled = true
-  end
-  return vim.tbl_deep_extend("force", opts, {
-    name = {
-      "venv",
-      ".venv",
-      "env",
-      ".env",
+opts = {
+  settings = {
+    options = {
+      notify_user_on_venv_activation = true,
     },
-  })
-end
+  },
+}
 ```
 
 </TabItem>
@@ -281,20 +275,17 @@ end
 ```lua
 {
   "linux-cultist/venv-selector.nvim",
+  branch = "regexp", -- Use this branch for the new version
   cmd = "VenvSelect",
-  opts = function(_, opts)
-    if LazyVim.has("nvim-dap-python") then
-      opts.dap_enabled = true
-    end
-    return vim.tbl_deep_extend("force", opts, {
-      name = {
-        "venv",
-        ".venv",
-        "env",
-        ".env",
+  opts = {
+    settings = {
+      options = {
+        notify_user_on_venv_activation = true,
       },
-    })
-  end,
+    },
+  },
+  --  Call config for python files and load the cached venv automatically
+  ft = "python",
   keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
 }
 ```
