@@ -66,40 +66,6 @@ end
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed, {
-    "solargraph",
-  })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "williamboman/mason.nvim",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed, {
-      "solargraph",
-    })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 <Tabs>

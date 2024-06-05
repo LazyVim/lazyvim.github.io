@@ -32,40 +32,6 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "yaml" })
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "yaml" })
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 <Tabs>
