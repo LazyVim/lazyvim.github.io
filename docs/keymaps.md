@@ -528,6 +528,13 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | --- | --- | --- |
 | <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
 
+## [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui.git)
+Part of [lazyvim.plugins.extras.lang.sql](/extras/lang/sql)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;D</code> | Toggle DBUI | **n** |
+
 ## [vimtex](https://github.com/lervag/vimtex.git)
 Part of [lazyvim.plugins.extras.lang.tex](/extras/lang/tex)
 
