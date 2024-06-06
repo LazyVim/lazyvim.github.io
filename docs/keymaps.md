@@ -574,6 +574,25 @@ Part of [lazyvim.plugins.extras.util.gitui](/extras/util/gitui)
 | <code>&lt;leader&gt;gg</code> | GitUi (Root Dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | GitUi (cwd) | **n** |
 
+## [octo.nvim](https://github.com/pwntester/octo.nvim.git)
+Part of [lazyvim.plugins.extras.util.octo](/extras/util/octo)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;a</code> | +assignee (Otco) | **n** |
+| <code>&lt;leader&gt;c</code> | +comment/code (Otco) | **n** |
+| <code>&lt;leader&gt;gi</code> | List Isues (Octo) | **n** |
+| <code>&lt;leader&gt;gI</code> | Search Isues (Octo) | **n** |
+| <code>&lt;leader&gt;gp</code> | List PRs (Octo) | **n** |
+| <code>&lt;leader&gt;gP</code> | Search PRs (Octo) | **n** |
+| <code>&lt;leader&gt;gr</code> | List Repos (Octo) | **n** |
+| <code>&lt;leader&gt;gS</code> | Search (Octo) | **n** |
+| <code>&lt;leader&gt;i</code> | +issue (Otco) | **n** |
+| <code>&lt;leader&gt;l</code> | +label (Otco) | **n** |
+| <code>&lt;leader&gt;p</code> | +pr (Otco) | **n** |
+| <code>&lt;leader&gt;r</code> | +react (Otco) | **n** |
+| <code>&lt;leader&gt;v</code> | +review (Otco) | **n** |
+
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 
