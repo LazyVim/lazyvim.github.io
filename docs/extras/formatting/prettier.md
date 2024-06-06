@@ -142,9 +142,8 @@ opts = {
           return true
         end
         if enabled[ctx.filename] == nil then
-          enabled[ctx.filename] = vim.fs.find(function(name, path)
-            return name:match("^%.prettierrc%.?") or name:match("^prettier%.config%.")
-          end, { path = ctx.filename, upward = true })[1] ~= nil
+          vim.fn.system({ "prettier", "--find-config-path", ctx.filename })
+          enabled[ctx.filename] = vim.v.shell_error == 0
         end
         return enabled[ctx.filename]
       end,
@@ -189,9 +188,8 @@ opts = {
             return true
           end
           if enabled[ctx.filename] == nil then
-            enabled[ctx.filename] = vim.fs.find(function(name, path)
-              return name:match("^%.prettierrc%.?") or name:match("^prettier%.config%.")
-            end, { path = ctx.filename, upward = true })[1] ~= nil
+            vim.fn.system({ "prettier", "--find-config-path", ctx.filename })
+            enabled[ctx.filename] = vim.v.shell_error == 0
           end
           return enabled[ctx.filename]
         end,
