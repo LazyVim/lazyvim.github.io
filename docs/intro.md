@@ -37,3 +37,14 @@ to make it easy to customize and extend your config.
   - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
+
+## 🎓 Learn
+
+There's a great video created by [@elijahmanor](https://github.com/elijahmanor)
+with a walkthrough to get started.
+
+[![Watch the video](https://img.youtube.com/vi/N93cTbtLCIM/hqdefault.jpg)](https://www.youtube.com/watch?v=N93cTbtLCIM)
+
+[@dusty-phillips](https://github.com/dusty-phillips) is working on a book called
+[LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes)
+available for free online.
