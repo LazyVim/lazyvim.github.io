@@ -326,6 +326,13 @@ Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surrou
 | <code>gsn</code> | Update `MiniSurround.config.n_lines` | **n** |
 | <code>gsr</code> | Replace Surrounding | **n** |
 
+## [neogen](https://github.com/danymat/neogen.git)
+Part of [lazyvim.plugins.extras.coding.neogen](/extras/coding/neogen)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cn</code> | Generate Annotations (Neogen) | **n** |
+
 ## [yanky.nvim](https://github.com/gbprod/yanky.nvim.git)
 Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
 
