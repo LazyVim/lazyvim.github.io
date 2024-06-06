@@ -104,40 +104,8 @@ opts = {}
     vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
     vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["<localLeader>l"] = { name = "+vimtex" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["<localLeader>l"] = { name = "+vimtex" },
-    },
+  keys = {
+    { "<localLeader>l", "", desc = "+vimtext" },
   },
 }
 ```

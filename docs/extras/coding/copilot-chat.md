@@ -88,6 +88,7 @@ end
     }
   end,
   keys = {
+    { "<leader>a", "", desc = "+ai" },
     {
       "<leader>aa",
       function()
@@ -130,41 +131,6 @@ end
 
     chat.setup(opts)
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["<leader>a"] = { name = "+ai" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["<leader>a"] = { name = "+ai" },
-    },
-  },
 }
 ```
 

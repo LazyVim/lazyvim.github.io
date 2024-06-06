@@ -149,6 +149,10 @@ opts = {
         text_align = "left",
       },
     },
+    ---@param opts bufferline.IconFetcherOpts
+    get_element_icon = function(opts)
+      return LazyVim.config.icons.ft[opts.filetype]
+    end,
   },
 }
 ```
@@ -197,6 +201,10 @@ opts = {
           text_align = "left",
         },
       },
+      ---@param opts bufferline.IconFetcherOpts
+      get_element_icon = function(opts)
+        return LazyVim.config.icons.ft[opts.filetype]
+      end,
     },
   },
   config = function(_, opts)
@@ -239,7 +247,7 @@ opts = function()
   local opts = {
     options = {
       theme = "auto",
-      globalstatus = true,
+      globalstatus = vim.o.laststatus == 3,
       disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
     },
     sections = {
@@ -370,7 +378,7 @@ end
     local opts = {
       options = {
         theme = "auto",
-        globalstatus = true,
+        globalstatus = vim.o.laststatus == 3,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
       },
       sections = {
@@ -548,43 +556,6 @@ opts = {
 
 </Tabs>
 
-## [which-key.nvim](https://github.com/folke/which-key.nvim)
-
- Displays a popup with possible key bindings of the command you started typing
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  if LazyVim.has("noice.nvim") then
-    opts.defaults["<leader>sn"] = { name = "+noice" }
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  opts = function(_, opts)
-    if LazyVim.has("noice.nvim") then
-      opts.defaults["<leader>sn"] = { name = "+noice" }
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [noice.nvim](https://github.com/folke/noice.nvim)
 
  Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
@@ -662,6 +633,7 @@ opts = {
   },
   -- stylua: ignore
   keys = {
+    { "<leader>sn", "", desc = "+noice"},
     { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
     { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
     { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },

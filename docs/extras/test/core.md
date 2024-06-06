@@ -185,6 +185,7 @@ opts = {
   end,
   -- stylua: ignore
   keys = {
+    {"<leader>t", "", desc = "+test"},
     { "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
     { "<leader>tT", function() require("neotest").run.run(vim.uv.cwd()) end, desc = "Run All Test Files" },
     { "<leader>tr", function() require("neotest").run.run() end, desc = "Run Nearest" },
@@ -219,41 +220,6 @@ opts = nil
 
 ```lua
 { "nvim-neotest/nvim-nio" }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["<leader>t"] = { name = "+test" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["<leader>t"] = { name = "+test" },
-    },
-  },
-}
 ```
 
 </TabItem>

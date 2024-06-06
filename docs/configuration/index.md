@@ -72,6 +72,9 @@ return {
     misc = {
       dots = "󰇘",
     },
+    ft = {
+      octo = "",
+    },
     dap = {
       Stopped             = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
       Breakpoint          = " ",

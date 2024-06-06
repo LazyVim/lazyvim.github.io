@@ -179,40 +179,8 @@ opts = {
       update_n_lines = "gzn", -- Update `n_lines`
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["gz"] = { name = "+surround" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["gz"] = { name = "+surround" },
-    },
+  keys = {
+    { "gz", "", desc = "+surround" },
   },
 }
 ```

@@ -77,6 +77,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
+| <code>&lt;leader&gt;gB</code> | Git Browse | **n** |
 | <code>&lt;leader&gt;gf</code> | Lazygit Current File History | **n** |
 | <code>&lt;leader&gt;gl</code> | Lazygit Log | **n** |
 | <code>&lt;leader&gt;gL</code> | Lazygit Log (cwd) | **n** |
@@ -191,6 +192,7 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;c-b&gt;</code> | Scroll Backward | **n**, **i**, **s** |
 | <code>&lt;c-f&gt;</code> | Scroll Forward | **n**, **i**, **s** |
+| <code>&lt;leader&gt;sn</code> | +noice | **n** |
 | <code>&lt;leader&gt;sna</code> | Noice All | **n** |
 | <code>&lt;leader&gt;snd</code> | Dismiss All | **n** |
 | <code>&lt;leader&gt;snh</code> | Noice History | **n** |
@@ -298,6 +300,7 @@ Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;a</code> | +ai | **n** |
 | <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
@@ -352,6 +355,7 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;d</code> | +debug | **n** |
 | <code>&lt;leader&gt;da</code> | Run with Args | **n** |
 | <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
@@ -442,6 +446,13 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 | <code>s</code> | Leap Forward to | **n**, **o**, **x** |
 | <code>S</code> | Leap Backward to | **n**, **o**, **x** |
 
+## [mini.surround](https://github.com/echasnovski/mini.surround.git)
+Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>gz</code> | +surround | **n** |
+
 ## [mini.diff](https://github.com/echasnovski/mini.diff.git)
 Part of [lazyvim.plugins.extras.editor.mini-diff](/extras/editor/mini-diff)
 
@@ -469,6 +480,7 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;r</code> | +refactor | **n** |
 | <code>&lt;leader&gt;rb</code> | Extract Block | **n** |
 | <code>&lt;leader&gt;rc</code> | Debug Cleanup | **n** |
 | <code>&lt;leader&gt;rf</code> | Extract Block To File | **n** |
@@ -509,11 +521,19 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | --- | --- | --- |
 | <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
 
+## [vimtex](https://github.com/lervag/vimtex.git)
+Part of [lazyvim.plugins.extras.lang.tex](/extras/lang/tex)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;localLeader&gt;l</code> | +vimtext | **n** |
+
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;t</code> | +test | **n** |
 | <code>&lt;leader&gt;tl</code> | Run Last | **n** |
 | <code>&lt;leader&gt;to</code> | Show Output | **n** |
 | <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |

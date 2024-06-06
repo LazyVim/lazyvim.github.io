@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed or {}, { "ktlint", "kotlin-debug-adapter" })
+  vim.list_extend(opts.ensure_installed or {}, { "ktlint" })
 end
 ```
 
@@ -56,7 +56,7 @@ end
 {
   "williamboman/mason.nvim",
   opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed or {}, { "ktlint", "kotlin-debug-adapter" })
+    vim.list_extend(opts.ensure_installed or {}, { "ktlint" })
   end,
 }
 ```
@@ -137,7 +137,7 @@ opts = {
 
 ## [nvim-lint](https://github.com/mfussenegger/nvim-lint) _(optional)_
 
- Add linting as optional
+ Add linting
 
 
 <Tabs>
@@ -172,7 +172,7 @@ opts = {
 
 ## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
 
- Add formatting as optional
+ Add formatting
 
 
 <Tabs>
@@ -206,7 +206,7 @@ opts = {
 
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
 
- Add formatting and linting as optional
+ Add formatting and linting
 
 
 <Tabs>
@@ -259,7 +259,7 @@ end
 opts = function()
   local dap = require("dap")
   if not dap.adapters.kotlin then
-    require("dap").adapters.kotlin = {
+    dap.adapters.kotlin = {
       type = "executable",
       command = "kotlin-debug-adapter",
       options = { auto_continue_if_many_stopped = false },
@@ -315,7 +315,7 @@ end
   opts = function()
     local dap = require("dap")
     if not dap.adapters.kotlin then
-      require("dap").adapters.kotlin = {
+      dap.adapters.kotlin = {
         type = "executable",
         command = "kotlin-debug-adapter",
         options = { auto_continue_if_many_stopped = false },

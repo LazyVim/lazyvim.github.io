@@ -87,17 +87,6 @@ opts = {}
       opts = {},
     },
 
-    -- which key integration
-    {
-      "folke/which-key.nvim",
-      optional = true,
-      opts = {
-        defaults = {
-          ["<leader>d"] = { name = "+debug" },
-        },
-      },
-    },
-
     -- mason.nvim integration
     {
       "jay-babu/mason-nvim-dap.nvim",
@@ -123,6 +112,7 @@ opts = {}
 
   -- stylua: ignore
   keys = {
+    { "<leader>d", "", desc = "+debug" },
     { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
     { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
@@ -325,44 +315,6 @@ opts = {
     -- online, please don't ask me how to install them :)
     ensure_installed = {
       -- Update this to ensure that you have the debuggers for the langs you want
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [which-key.nvim](https://github.com/folke/which-key.nvim) _(optional)_
-
- which key integration
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  defaults = {
-    ["<leader>d"] = { name = "+debug" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "folke/which-key.nvim",
-  optional = true,
-  opts = {
-    defaults = {
-      ["<leader>d"] = { name = "+debug" },
     },
   },
 }
