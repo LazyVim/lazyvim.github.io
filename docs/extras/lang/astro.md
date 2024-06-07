@@ -144,4 +144,40 @@ end
 
 </Tabs>
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  if LazyVim.has_extra("formatting.prettier") then
+    opts.formatters_by_ft = opts.formatters_by_ft or {}
+    opts.formatters_by_ft.astro = { "prettier" }
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "conform.nvim",
+  opts = function(_, opts)
+    if LazyVim.has_extra("formatting.prettier") then
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      opts.formatters_by_ft.astro = { "prettier" }
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->

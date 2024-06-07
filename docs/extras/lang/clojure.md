@@ -86,61 +86,9 @@ opts = nil
 
 </Tabs>
 
-## [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)
-
- Enable rainbow parenthesis
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "HiPhish/rainbow-delimiters.nvim" }
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-treesitter-sexp](https://github.com/PaterJason/nvim-treesitter-sexp)
 
  Add s-exp mappings
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "PaterJason/nvim-treesitter-sexp" }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [baleia.nvim](https://github.com/m00qek/baleia.nvim)
-
- Colorize the output of the log buffer
 
 
 <Tabs>
@@ -157,10 +105,41 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
+{ "PaterJason/nvim-treesitter-sexp", opts = {}, event = "LazyFile" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [baleia.nvim](https://github.com/m00qek/baleia.nvim)
+
+ Colorize the output of the log buffer
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  line_starts_at = 3,
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
 {
   "m00qek/baleia.nvim",
-  config = function()
-    vim.g.conjure_baleia = require("baleia").setup({ line_starts_at = 3 })
+  opts = {
+    line_starts_at = 3,
+  },
+  config = function(_, opts)
+    vim.g.conjure_baleia = require("baleia").setup(opts)
 
     vim.api.nvim_create_user_command("BaleiaColorize", function()
       vim.g.conjure_baleia.once(vim.api.nvim_get_current_buf())
@@ -196,6 +175,7 @@ opts = {}
 ```lua
 {
   "Olical/conjure",
+  event = "LazyFile",
   config = function(_, _)
     require("conjure.main").main()
     require("conjure.mapping")["on-filetype"]()

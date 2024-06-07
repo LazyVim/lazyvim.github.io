@@ -27,10 +27,9 @@ require("lazy").setup({
 Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
 
 ```lua title="lua/config/options.lua"
--- By default, prettier will only be used for formatting
--- if a prettier configuration file is found in the project.
--- Set to `false` to always use prettier for supported filetypes.
-vim.g.lazyvim_prettier_needs_config = true
+-- Enable the option to require a Prettier config file
+-- If no prettier config file is found, the formatter will not be used
+vim.g.lazyvim_prettier_needs_config = false
 ```
 
 Below you can find a list of included plugins and their default settings.
@@ -50,9 +49,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  table.insert(opts.ensure_installed, "prettier")
-end
+opts = { ensure_installed = { "prettier" } }
 ```
 
 </TabItem>
@@ -63,8 +60,63 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
+  opts = { ensure_installed = { "prettier" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+ conform
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.formatters_by_ft = opts.formatters_by_ft or {}
+  for _, ft in ipairs(supported) do
+    opts.formatters_by_ft[ft] = { "prettier" }
+  end
+
+  opts.formatters = {
+    prettier = {
+      condition = function(_, ctx)
+        return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
+      end,
+    },
+  }
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  ---@param opts ConformOpts
   opts = function(_, opts)
-    table.insert(opts.ensure_installed, "prettier")
+    opts.formatters_by_ft = opts.formatters_by_ft or {}
+    for _, ft in ipairs(supported) do
+      opts.formatters_by_ft[ft] = { "prettier" }
+    end
+
+    opts.formatters = {
+      prettier = {
+        condition = function(_, ctx)
+          return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
+        end,
+      },
+    }
   end,
 }
 ```
@@ -74,6 +126,9 @@ end
 </Tabs>
 
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
+
+ none-ls support
+
 
 <Tabs>
 
@@ -101,101 +156,6 @@ end
     opts.sources = opts.sources or {}
     table.insert(opts.sources, nls.builtins.formatting.prettier)
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  formatters_by_ft = {
-    ["javascript"] = { "prettier" },
-    ["javascriptreact"] = { "prettier" },
-    ["typescript"] = { "prettier" },
-    ["typescriptreact"] = { "prettier" },
-    ["vue"] = { "prettier" },
-    ["css"] = { "prettier" },
-    ["scss"] = { "prettier" },
-    ["less"] = { "prettier" },
-    ["html"] = { "prettier" },
-    ["json"] = { "prettier" },
-    ["jsonc"] = { "prettier" },
-    ["yaml"] = { "prettier" },
-    ["markdown"] = { "prettier" },
-    ["markdown.mdx"] = { "prettier" },
-    ["graphql"] = { "prettier" },
-    ["handlebars"] = { "prettier" },
-    ["svelte"] = { "prettier" },
-  },
-  formatters = {
-    prettier = {
-      condition = function(_, ctx)
-        if not needs_config then
-          return true
-        end
-        if enabled[ctx.filename] == nil then
-          vim.fn.system({ "prettier", "--find-config-path", ctx.filename })
-          enabled[ctx.filename] = vim.v.shell_error == 0
-        end
-        return enabled[ctx.filename]
-      end,
-    },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "stevearc/conform.nvim",
-  optional = true,
-  opts = {
-    formatters_by_ft = {
-      ["javascript"] = { "prettier" },
-      ["javascriptreact"] = { "prettier" },
-      ["typescript"] = { "prettier" },
-      ["typescriptreact"] = { "prettier" },
-      ["vue"] = { "prettier" },
-      ["css"] = { "prettier" },
-      ["scss"] = { "prettier" },
-      ["less"] = { "prettier" },
-      ["html"] = { "prettier" },
-      ["json"] = { "prettier" },
-      ["jsonc"] = { "prettier" },
-      ["yaml"] = { "prettier" },
-      ["markdown"] = { "prettier" },
-      ["markdown.mdx"] = { "prettier" },
-      ["graphql"] = { "prettier" },
-      ["handlebars"] = { "prettier" },
-      ["svelte"] = { "prettier" },
-    },
-    formatters = {
-      prettier = {
-        condition = function(_, ctx)
-          if not needs_config then
-            return true
-          end
-          if enabled[ctx.filename] == nil then
-            vim.fn.system({ "prettier", "--find-config-path", ctx.filename })
-            enabled[ctx.filename] = vim.v.shell_error == 0
-          end
-          return enabled[ctx.filename]
-        end,
-      },
-    },
-  },
 }
 ```
 
