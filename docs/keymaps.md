@@ -594,8 +594,8 @@ Part of [lazyvim.plugins.extras.util.octo](/extras/util/octo)
 | --- | --- | --- |
 | <code>&lt;leader&gt;a</code> | +assignee (Otco) | **n** |
 | <code>&lt;leader&gt;c</code> | +comment/code (Otco) | **n** |
-| <code>&lt;leader&gt;gi</code> | List Isues (Octo) | **n** |
-| <code>&lt;leader&gt;gI</code> | Search Isues (Octo) | **n** |
+| <code>&lt;leader&gt;gi</code> | List Issues (Octo) | **n** |
+| <code>&lt;leader&gt;gI</code> | Search Issues (Octo) | **n** |
 | <code>&lt;leader&gt;gp</code> | List PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gP</code> | Search PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gr</code> | List Repos (Octo) | **n** |
