@@ -233,6 +233,11 @@ function M.extract_options(extra_file)
 end
 
 function M.update()
+  local news = Util.read_file(rootLazyVim .. "/NEWS.md")
+  news = "---\nsidebar_position: 2\n---\n\n" .. news
+  news = news:gsub("# What's new", "# 📰 What's new")
+  Util.write_file("docs/news.md", news)
+
   local Plugin = require("lazy.core.plugin")
   --- include all specs
   ---
