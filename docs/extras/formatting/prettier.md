@@ -84,12 +84,11 @@ opts = function(_, opts)
     opts.formatters_by_ft[ft] = { "prettier" }
   end
 
-  opts.formatters = {
-    prettier = {
-      condition = function(_, ctx)
-        return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
-      end,
-    },
+  opts.formatters = opts.formatters or {}
+  opts.formatters.prettier = {
+    condition = function(_, ctx)
+      return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
+    end,
   }
 end
 ```
@@ -110,12 +109,11 @@ end
       opts.formatters_by_ft[ft] = { "prettier" }
     end
 
-    opts.formatters = {
-      prettier = {
-        condition = function(_, ctx)
-          return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
-        end,
-      },
+    opts.formatters = opts.formatters or {}
+    opts.formatters.prettier = {
+      condition = function(_, ctx)
+        return M.has_parser(ctx) and (vim.g.lazyvim_prettier_needs_config ~= true or M.has_config(ctx))
+      end,
     }
   end,
 }

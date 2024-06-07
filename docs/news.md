@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 🗞️What's new?
+# 📰 What's new?
 
 ## 11.x
 
