@@ -42,10 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "gitui" })
-end
+opts = { ensure_installed = { "gitui" } }
 ```
 
 </TabItem>
@@ -56,6 +53,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
+  opts = { ensure_installed = { "gitui" } },
   keys = {
     {
       "<leader>gG",
@@ -82,10 +80,6 @@ end
         pcall(vim.keymap.del, "n", "<leader>gl")
       end,
     })
-  end,
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "gitui" })
   end,
 }
 ```

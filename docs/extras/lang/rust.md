@@ -124,10 +124,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "ron", "rust" })
-end
+opts = { ensure_installed = { "rust", "ron" } }
 ```
 
 </TabItem>
@@ -138,10 +135,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "ron", "rust" })
-  end,
+  opts = { ensure_installed = { "rust", "ron" } },
 }
 ```
 
@@ -335,10 +329,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "codelldb" })
-end
+opts = { ensure_installed = { "codelldb" } }
 ```
 
 </TabItem>
@@ -350,10 +341,7 @@ end
 {
   "williamboman/mason.nvim",
   optional = true,
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "codelldb" })
-  end,
+  opts = { ensure_installed = { "codelldb" } },
 }
 ```
 

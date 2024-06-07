@@ -42,9 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed or {}, { "ktlint" })
-end
+opts = { ensure_installed = { "ktlint" } }
 ```
 
 </TabItem>
@@ -55,9 +53,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed or {}, { "ktlint" })
-  end,
+  opts = { ensure_installed = { "ktlint" } },
 }
 ```
 
@@ -75,9 +71,7 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed or {}, { "kotlin" })
-end
+opts = { ensure_installed = { "kotlin" } }
 ```
 
 </TabItem>
@@ -88,9 +82,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed or {}, { "kotlin" })
-  end,
+  opts = { ensure_installed = { "kotlin" } },
 }
 ```
 

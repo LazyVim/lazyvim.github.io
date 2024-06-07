@@ -43,11 +43,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "svelte" })
-  end
-end
+opts = { ensure_installed = { "svelte" } }
 ```
 
 </TabItem>
@@ -58,11 +54,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "svelte" })
-    end
-  end,
+  opts = { ensure_installed = { "svelte" } },
 }
 ```
 

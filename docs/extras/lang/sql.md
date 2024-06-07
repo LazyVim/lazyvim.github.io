@@ -161,10 +161,7 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "sqlfluff" })
-end
+opts = { ensure_installed = { "sqlfluff" } }
 ```
 
 </TabItem>
@@ -175,10 +172,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "sqlfluff" })
-  end,
+  opts = { ensure_installed = { "sqlfluff" } },
 }
 ```
 
@@ -196,11 +190,7 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "sql" })
-  end
-end
+opts = { ensure_installed = { "sql" } }
 ```
 
 </TabItem>
@@ -212,11 +202,7 @@ end
 {
   "nvim-treesitter/nvim-treesitter",
   optional = true,
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "sql" })
-    end
-  end,
+  opts = { ensure_installed = { "sql" } },
 }
 ```
 

@@ -39,14 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, {
-      "terraform",
-      "hcl",
-    })
-  end
-end
+opts = { ensure_installed = { "terraform", "hcl" } }
 ```
 
 </TabItem>
@@ -57,14 +50,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, {
-        "terraform",
-        "hcl",
-      })
-    end
-  end,
+  opts = { ensure_installed = { "terraform", "hcl" } },
 }
 ```
 
@@ -116,10 +102,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "tflint" })
-end
+opts = { ensure_installed = { "tflint" } }
 ```
 
 </TabItem>
@@ -130,10 +113,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "tflint" })
-  end,
+  opts = { ensure_installed = { "tflint" } },
 }
 ```
 

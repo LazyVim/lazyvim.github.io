@@ -42,11 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    vim.list_extend(opts.ensure_installed, { "haskell" })
-  end
-end
+opts = { ensure_installed = { "haskell" } }
 ```
 
 </TabItem>
@@ -57,11 +53,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      vim.list_extend(opts.ensure_installed, { "haskell" })
-    end
-  end,
+  opts = { ensure_installed = { "haskell" } },
 }
 ```
 
@@ -112,10 +104,7 @@ opts = {}
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "haskell-language-server" })
-end
+opts = { ensure_installed = { "haskell-language-server" } }
 ```
 
 </TabItem>
@@ -126,10 +115,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "haskell-language-server" })
-  end,
+  opts = { ensure_installed = { "haskell-language-server" } },
 }
 ```
 
@@ -144,10 +130,7 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "haskell-debug-adapter" })
-end
+opts = { ensure_installed = { "haskell-debug-adapter" } }
 ```
 
 </TabItem>
@@ -158,10 +141,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "haskell-debug-adapter" })
-  end,
+  opts = { ensure_installed = { "haskell-debug-adapter" } },
 }
 ```
 
@@ -368,10 +348,7 @@ opts = nil
   dependencies = {
     {
       "williamboman/mason.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "haskell-debug-adapter" })
-      end,
+      opts = { ensure_installed = { "haskell-debug-adapter" } },
     },
   },
 }

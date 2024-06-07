@@ -32,17 +32,14 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) _(optional)_
+## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "thrift" })
-end
+opts = { ensure_installed = { "thrift" } }
 ```
 
 </TabItem>
@@ -53,11 +50,7 @@ end
 ```lua
 {
   "nvim-treesitter",
-  optional = true,
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "thrift" })
-  end,
+  opts = { ensure_installed = { "thrift" } },
 }
 ```
 

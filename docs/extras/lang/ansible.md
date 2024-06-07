@@ -39,11 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  -- for ansiblels validation
-  vim.list_extend(opts.ensure_installed, { "ansible-lint" })
-end
+opts = { ensure_installed = { "ansible-lint" } }
 ```
 
 </TabItem>
@@ -54,11 +50,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    -- for ansiblels validation
-    vim.list_extend(opts.ensure_installed, { "ansible-lint" })
-  end,
+  opts = { ensure_installed = { "ansible-lint" } },
 }
 ```
 

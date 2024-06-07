@@ -39,13 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed, {
-    "elixir",
-    "heex",
-    "eex",
-  })
-end
+opts = { ensure_installed = { "elixir", "heex", "eex" } }
 ```
 
 </TabItem>
@@ -56,13 +50,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed, {
-      "elixir",
-      "heex",
-      "eex",
-    })
-  end,
+  opts = { ensure_installed = { "elixir", "heex", "eex" } },
 }
 ```
 

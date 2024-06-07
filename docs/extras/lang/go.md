@@ -39,14 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed, {
-    "go",
-    "gomod",
-    "gowork",
-    "gosum",
-  })
-end
+opts = { ensure_installed = { "go", "gomod", "gowork", "gosum" } }
 ```
 
 </TabItem>
@@ -57,14 +50,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed, {
-      "go",
-      "gomod",
-      "gowork",
-      "gosum",
-    })
-  end,
+  opts = { ensure_installed = { "go", "gomod", "gowork", "gosum" } },
 }
 ```
 
@@ -242,10 +228,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "goimports", "gofumpt" })
-end
+opts = { ensure_installed = { "goimports", "gofumpt" } }
 ```
 
 </TabItem>
@@ -256,10 +239,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "goimports", "gofumpt" })
-  end,
+  opts = { ensure_installed = { "goimports", "gofumpt" } },
 }
 ```
 
@@ -274,10 +254,7 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
-end
+opts = { ensure_installed = { "gomodifytags", "impl" } }
 ```
 
 </TabItem>
@@ -288,10 +265,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
-  end,
+  opts = { ensure_installed = { "gomodifytags", "impl" } },
 }
 ```
 
@@ -306,10 +280,7 @@ end
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "delve" })
-end
+opts = { ensure_installed = { "delve" } }
 ```
 
 </TabItem>
@@ -320,10 +291,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "delve" })
-  end,
+  opts = { ensure_installed = { "delve" } },
 }
 ```
 
@@ -412,10 +380,7 @@ end
   dependencies = {
     {
       "williamboman/mason.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "gomodifytags", "impl" })
-      end,
+      opts = { ensure_installed = { "gomodifytags", "impl" } },
     },
   },
   opts = function(_, opts)
@@ -491,10 +456,7 @@ opts = nil
   dependencies = {
     {
       "williamboman/mason.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        vim.list_extend(opts.ensure_installed, { "delve" })
-      end,
+      opts = { ensure_installed = { "delve" } },
     },
     {
       "leoluz/nvim-dap-go",

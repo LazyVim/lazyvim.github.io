@@ -87,7 +87,6 @@ end
   --   auto_brackets = { "python" }
   -- }
   -- ```
-
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
     local cmp = require("cmp")

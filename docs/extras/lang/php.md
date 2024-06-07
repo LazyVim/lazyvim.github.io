@@ -39,9 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  vim.list_extend(opts.ensure_installed, { "php" })
-end
+opts = { ensure_installed = { "php" } }
 ```
 
 </TabItem>
@@ -52,9 +50,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    vim.list_extend(opts.ensure_installed, { "php" })
-  end,
+  opts = { ensure_installed = { "php" } },
 }
 ```
 
@@ -103,11 +99,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  if type(opts.ensure_installed) == "table" then
-    table.insert(opts.ensure_installed, "php-debug-adapter")
-  end
-end
+opts = { ensure_installed = { "php-debug-adapter" } }
 ```
 
 </TabItem>
@@ -118,11 +110,7 @@ end
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    if type(opts.ensure_installed) == "table" then
-      table.insert(opts.ensure_installed, "php-debug-adapter")
-    end
-  end,
+  opts = { ensure_installed = { "php-debug-adapter" } },
 }
 ```
 
@@ -159,11 +147,7 @@ end
   optional = true,
   dependencies = {
     "williamboman/mason.nvim",
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        table.insert(opts.ensure_installed, "php-debug-adapter")
-      end
-    end,
+    opts = { ensure_installed = { "php-debug-adapter" } },
   },
   opts = function()
     local dap = require("dap")

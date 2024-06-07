@@ -42,10 +42,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  vim.list_extend(opts.ensure_installed, { "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes" })
-end
+opts = { ensure_installed = { "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes" } }
 ```
 
 </TabItem>
@@ -56,10 +53,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    vim.list_extend(opts.ensure_installed, { "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes" })
-  end,
+  opts = { ensure_installed = { "git_config", "gitcommit", "git_rebase", "gitignore", "gitattributes" } },
 }
 ```
 
@@ -88,10 +82,7 @@ end
 {
   "nvim-cmp",
   dependencies = {
-    {
-      "petertriho/cmp-git",
-      opts = {},
-    },
+    { "petertriho/cmp-git", opts = {} },
   },
   ---@module 'cmp'
   ---@param opts cmp.ConfigSchema
@@ -121,10 +112,7 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{
-  "petertriho/cmp-git",
-  opts = {},
-}
+{ "petertriho/cmp-git", opts = {} }
 ```
 
 </TabItem>
