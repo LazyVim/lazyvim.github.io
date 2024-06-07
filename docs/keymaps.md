@@ -592,19 +592,19 @@ Part of [lazyvim.plugins.extras.util.octo](/extras/util/octo)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;a</code> | +assignee (Otco) | **n** |
-| <code>&lt;leader&gt;c</code> | +comment/code (Otco) | **n** |
+| <code>&lt;leader&gt;a</code> | +assignee (Octo) | **n** |
+| <code>&lt;leader&gt;c</code> | +comment/code (Octo) | **n** |
 | <code>&lt;leader&gt;gi</code> | List Issues (Octo) | **n** |
 | <code>&lt;leader&gt;gI</code> | Search Issues (Octo) | **n** |
 | <code>&lt;leader&gt;gp</code> | List PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gP</code> | Search PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gr</code> | List Repos (Octo) | **n** |
 | <code>&lt;leader&gt;gS</code> | Search (Octo) | **n** |
-| <code>&lt;leader&gt;i</code> | +issue (Otco) | **n** |
-| <code>&lt;leader&gt;l</code> | +label (Otco) | **n** |
-| <code>&lt;leader&gt;p</code> | +pr (Otco) | **n** |
-| <code>&lt;leader&gt;r</code> | +react (Otco) | **n** |
-| <code>&lt;leader&gt;v</code> | +review (Otco) | **n** |
+| <code>&lt;leader&gt;i</code> | +issue (Octo) | **n** |
+| <code>&lt;leader&gt;l</code> | +label (Octo) | **n** |
+| <code>&lt;leader&gt;p</code> | +pr (Octo) | **n** |
+| <code>&lt;leader&gt;r</code> | +react (Octo) | **n** |
+| <code>&lt;leader&gt;v</code> | +review (Octo) | **n** |
 
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
