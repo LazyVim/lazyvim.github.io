@@ -79,7 +79,7 @@ opts = {
     "nvim-treesitter/nvim-treesitter",
   },
   keys = {
-    { "<leader>r", "", desc = "+refactor" },
+    { "<leader>r", "", desc = "+refactor", mode = { "n", "v" } },
     {
       "<leader>rs",
       function()

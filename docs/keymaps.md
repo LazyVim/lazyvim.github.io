@@ -361,7 +361,7 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;d</code> | +debug | **n** |
+| <code>&lt;leader&gt;d</code> | +debug | **n**, **v** |
 | <code>&lt;leader&gt;da</code> | Run with Args | **n** |
 | <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
@@ -486,7 +486,7 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;r</code> | +refactor | **n** |
+| <code>&lt;leader&gt;r</code> | +refactor | **n**, **v** |
 | <code>&lt;leader&gt;rb</code> | Extract Block | **n** |
 | <code>&lt;leader&gt;rc</code> | Debug Cleanup | **n** |
 | <code>&lt;leader&gt;rf</code> | Extract Block To File | **n** |
