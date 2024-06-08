@@ -106,11 +106,9 @@ opts = {
   setup = {
     [ruff] = function()
       LazyVim.lsp.on_attach(function(client, _)
-        if client.name == ruff then
-          -- Disable hover in favor of Pyright
-          client.server_capabilities.hoverProvider = false
-        end
-      end)
+        -- Disable hover in favor of Pyright
+        client.server_capabilities.hoverProvider = false
+      end, ruff)
     end,
   },
 }
@@ -154,11 +152,9 @@ opts = {
     setup = {
       [ruff] = function()
         LazyVim.lsp.on_attach(function(client, _)
-          if client.name == ruff then
-            -- Disable hover in favor of Pyright
-            client.server_capabilities.hoverProvider = false
-          end
-        end)
+          -- Disable hover in favor of Pyright
+          client.server_capabilities.hoverProvider = false
+        end, ruff)
       end,
     },
   },

@@ -115,10 +115,8 @@ end
         -- attach cmp source whenever copilot attaches
         -- fixes lazy-loading issues with the copilot cmp source
         LazyVim.lsp.on_attach(function(client)
-          if client.name == "copilot" then
-            copilot_cmp._on_insert_enter({})
-          end
-        end)
+          copilot_cmp._on_insert_enter({})
+        end, "copilot")
       end,
     },
   },
@@ -163,10 +161,8 @@ opts = {}
     -- attach cmp source whenever copilot attaches
     -- fixes lazy-loading issues with the copilot cmp source
     LazyVim.lsp.on_attach(function(client)
-      if client.name == "copilot" then
-        copilot_cmp._on_insert_enter({})
-      end
-    end)
+      copilot_cmp._on_insert_enter({})
+    end, "copilot")
   end,
 }
 ```

@@ -99,11 +99,9 @@ opts = {
   setup = {
     angularls = function()
       LazyVim.lsp.on_attach(function(client)
-        if client.name == "angularls" then
-          --HACK: disable angular renaming capability due to duplicate rename popping up
-          client.server_capabilities.renameProvider = false
-        end
-      end)
+        --HACK: disable angular renaming capability due to duplicate rename popping up
+        client.server_capabilities.renameProvider = false
+      end, "angularls")
     end,
   },
 }
@@ -124,11 +122,9 @@ opts = {
     setup = {
       angularls = function()
         LazyVim.lsp.on_attach(function(client)
-          if client.name == "angularls" then
-            --HACK: disable angular renaming capability due to duplicate rename popping up
-            client.server_capabilities.renameProvider = false
-          end
-        end)
+          --HACK: disable angular renaming capability due to duplicate rename popping up
+          client.server_capabilities.renameProvider = false
+        end, "angularls")
       end,
     },
   },
