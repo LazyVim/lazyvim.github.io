@@ -319,40 +319,6 @@ opts = {
 
 </Tabs>
 
-## [neotest](https://github.com/nvim-neotest/neotest)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  adapters = {
-    ["rustaceanvim.neotest"] = {},
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-neotest/neotest",
-  opts = {
-    adapters = {
-      ["rustaceanvim.neotest"] = {},
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [mason.nvim](https://github.com/williamboman/mason.nvim) _(optional)_
 
  Ensure Rust debugger is installed
@@ -376,6 +342,41 @@ opts = { ensure_installed = { "codelldb" } }
   "williamboman/mason.nvim",
   optional = true,
   opts = { ensure_installed = { "codelldb" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  adapters = {
+    ["rustaceanvim.neotest"] = {},
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-neotest/neotest",
+  optional = true,
+  opts = {
+    adapters = {
+      ["rustaceanvim.neotest"] = {},
+    },
+  },
 }
 ```
 
