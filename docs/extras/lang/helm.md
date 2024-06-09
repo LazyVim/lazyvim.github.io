@@ -32,6 +32,29 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [vim-helm](https://github.com/towolf/vim-helm)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "towolf/vim-helm", ft = "helm" }
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 <Tabs>
