@@ -99,7 +99,12 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "php-debug-adapter" } }
+opts = {
+  ensure_installed = {
+    "phpcs",
+    "php-cs-fixer",
+  },
+}
 ```
 
 </TabItem>
@@ -110,7 +115,86 @@ opts = { ensure_installed = { "php-debug-adapter" } }
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = { ensure_installed = { "php-debug-adapter" } },
+  opts = {
+    ensure_installed = {
+      "phpcs",
+      "php-cs-fixer",
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { ensure_installed = {
+  "php-debug-adapter",
+} }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "williamboman/mason.nvim",
+  opts = { ensure_installed = {
+    "php-debug-adapter",
+  } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    php = { "phpcs" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      php = { "phpcs" },
+    },
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        php = { "php-cs-fixer" },
+      },
+    },
+  },
 }
 ```
 
@@ -147,7 +231,9 @@ end
   optional = true,
   dependencies = {
     "williamboman/mason.nvim",
-    opts = { ensure_installed = { "php-debug-adapter" } },
+    opts = { ensure_installed = {
+      "php-debug-adapter",
+    } },
   },
   opts = function()
     local dap = require("dap")
@@ -158,6 +244,78 @@ end
       args = { path .. "/extension/out/phpDebug.js" },
     }
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local nls = require("null-ls")
+  opts.sources = opts.sources or {}
+  table.insert(opts.sources, nls.builtins.formatting.phpcsfixer)
+  table.insert(opts.sources, nls.builtins.diagnostics.phpcs)
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvimtools/none-ls.nvim",
+  optional = true,
+  opts = function(_, opts)
+    local nls = require("null-ls")
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, nls.builtins.formatting.phpcsfixer)
+    table.insert(opts.sources, nls.builtins.diagnostics.phpcs)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    php = { "php-cs-fixer" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      php = { "php-cs-fixer" },
+    },
+  },
 }
 ```
 
