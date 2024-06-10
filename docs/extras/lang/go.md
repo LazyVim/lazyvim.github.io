@@ -313,7 +313,7 @@ opts = {}
 ```lua
 {
   "leoluz/nvim-dap-go",
-  config = true,
+  opts = {},
 }
 ```
 
@@ -456,7 +456,7 @@ opts = nil
     },
     {
       "leoluz/nvim-dap-go",
-      config = true,
+      opts = {},
     },
   },
 }

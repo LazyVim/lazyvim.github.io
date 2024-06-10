@@ -142,7 +142,7 @@ end
 {
   "hrsh7th/nvim-cmp",
   dependencies = {
-    { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
   },
   opts = function(_, opts)
     -- original LazyVim kind icon formatter
@@ -175,7 +175,7 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "roobert/tailwindcss-colorizer-cmp.nvim", config = true }
+{ "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} }
 ```
 
 </TabItem>
