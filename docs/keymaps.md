@@ -299,7 +299,7 @@ Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;a</code> | +ai | **n** |
+| <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
 | <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
