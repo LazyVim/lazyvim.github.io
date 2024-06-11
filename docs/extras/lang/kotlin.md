@@ -287,7 +287,7 @@ opts = function()
       port = 5005,
       args = {},
       projectRoot = vim.fn.getcwd,
-      hostName = "localhost",
+      hostName = "127.0.0.1",
       timeout = 2000,
     },
   }
@@ -343,7 +343,7 @@ end
         port = 5005,
         args = {},
         projectRoot = vim.fn.getcwd,
-        hostName = "localhost",
+        hostName = "127.0.0.1",
         timeout = 2000,
       },
     }
