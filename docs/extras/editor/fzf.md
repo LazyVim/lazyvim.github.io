@@ -245,7 +245,7 @@ end
     { "<leader>fF", LazyVim.pick("auto", { root = false }), desc = "Find Files (cwd)" },
     { "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
     { "<leader>fr", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
-    { "<leader>fR", LazyVim.pick("oldfiles", { root = false }), desc = "Recent (cwd)" },
+    { "<leader>fR", LazyVim.pick("oldfiles", { cwd = vim.uv.cwd() }), desc = "Recent (cwd)" },
     -- git
     { "<leader>gc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
     { "<leader>gs", "<cmd>FzfLua git_status<CR>", desc = "Status" },
