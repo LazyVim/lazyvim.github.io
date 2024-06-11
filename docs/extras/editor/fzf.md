@@ -91,6 +91,17 @@ opts = function(_, opts)
         ["alt-h"] = { actions.toggle_hidden },
       },
     },
+    lsp = {
+      symbols = {
+        symbol_hl = function(s)
+          return "TroubleIcon" .. s
+        end,
+        symbol_fmt = function(s)
+          return s:lower() .. "\t"
+        end,
+        child_prefix = false,
+      },
+    },
     formatters = {
       path = {
         hl = {
@@ -169,6 +180,17 @@ end
         actions = {
           ["alt-i"] = { actions.toggle_ignore },
           ["alt-h"] = { actions.toggle_hidden },
+        },
+      },
+      lsp = {
+        symbols = {
+          symbol_hl = function(s)
+            return "TroubleIcon" .. s
+          end,
+          symbol_fmt = function(s)
+            return s:lower() .. "\t"
+          end,
+          child_prefix = false,
         },
       },
       formatters = {
