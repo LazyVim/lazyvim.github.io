@@ -51,7 +51,6 @@ opts = function(_, opts)
   actions.open_with_trouble = require("trouble.sources.fzf").actions.open
   -- Trouble
   config.defaults.actions.files["ctrl-t"] = require("trouble.sources.fzf").actions.open
-  config.set_action_helpstr(config.defaults.actions.files["ctrl-t"].fn, "open-with-trouble")
 
   -- Toggle root dir / cwd
   config.defaults.actions.files["ctrl-r"] = function(_, ctx)
@@ -153,7 +152,6 @@ end
     actions.open_with_trouble = require("trouble.sources.fzf").actions.open
     -- Trouble
     config.defaults.actions.files["ctrl-t"] = require("trouble.sources.fzf").actions.open
-    config.set_action_helpstr(config.defaults.actions.files["ctrl-t"].fn, "open-with-trouble")
 
     -- Toggle root dir / cwd
     config.defaults.actions.files["ctrl-r"] = function(_, ctx)
@@ -291,7 +289,7 @@ end
     {
       "<leader>sS",
       function()
-        require("fzf-lua").lsp_dynamic_workspace_symbols({
+        require("fzf-lua").lsp_live_workspace_symbols({
           regex_filter = symbols_filter,
         })
       end,
