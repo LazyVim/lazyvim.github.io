@@ -221,6 +221,7 @@ opts = { ensure_installed = { "sql" } }
 
 ```lua
 opts = function(_, opts)
+  opts.right = opts.right or {}
   table.insert(opts.right, {
     title = "Database",
     ft = "dbui",
@@ -231,6 +232,7 @@ opts = function(_, opts)
     end,
   })
 
+  opts.bottom = opts.bottom or {}
   table.insert(opts.bottom, {
     title = "DB Query Result",
     ft = "dbout",
@@ -248,6 +250,7 @@ end
   "folke/edgy.nvim",
   optional = true,
   opts = function(_, opts)
+    opts.right = opts.right or {}
     table.insert(opts.right, {
       title = "Database",
       ft = "dbui",
@@ -258,6 +261,7 @@ end
       end,
     })
 
+    opts.bottom = opts.bottom or {}
     table.insert(opts.bottom, {
       title = "DB Query Result",
       ft = "dbout",

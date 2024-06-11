@@ -77,6 +77,14 @@ opts = function(_, opts)
 
   return vim.tbl_deep_extend("force", opts, defaults, {
     fzf_colors = true,
+    fzf_opts = {
+      ["--no-scrollbar"] = true,
+    },
+    winopts = {
+      preview = {
+        scrollchars = { "┃", "" },
+      },
+    },
     files = {
       cwd_prompt = false,
       actions = {
@@ -168,6 +176,14 @@ end
 
     return vim.tbl_deep_extend("force", opts, defaults, {
       fzf_colors = true,
+      fzf_opts = {
+        ["--no-scrollbar"] = true,
+      },
+      winopts = {
+        preview = {
+          scrollchars = { "┃", "" },
+        },
+      },
       files = {
         cwd_prompt = false,
         actions = {
@@ -292,16 +308,12 @@ end
 ```lua
 opts = function()
   local Keys = require("lazyvim.plugins.lsp.keymaps").get()
+  -- stylua: ignore
   vim.list_extend(Keys, {
-    {
-      "gd",
-      "<cmd>FzfLua lsp_definitions     jump_to_single_result=true<cr>",
-      desc = "Goto Definition",
-      has = "definition",
-    },
-    { "gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true<cr>", desc = "References", nowait = true },
-    { "gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true<cr>", desc = "Goto Implementation" },
-    { "gy", "<cmd>FzfLua lsp_typedefs        jump_to_single_result=true<cr>", desc = "Goto T[y]pe Definition" },
+    { "gd", "<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto Definition", has = "definition" },
+    { "gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", desc = "References", nowait = true },
+    { "gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto Implementation" },
+    { "gy", "<cmd>FzfLua lsp_typedefs        jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto T[y]pe Definition" },
   })
 end
 ```
@@ -316,16 +328,12 @@ end
   "neovim/nvim-lspconfig",
   opts = function()
     local Keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- stylua: ignore
     vim.list_extend(Keys, {
-      {
-        "gd",
-        "<cmd>FzfLua lsp_definitions     jump_to_single_result=true<cr>",
-        desc = "Goto Definition",
-        has = "definition",
-      },
-      { "gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true<cr>", desc = "References", nowait = true },
-      { "gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true<cr>", desc = "Goto Implementation" },
-      { "gy", "<cmd>FzfLua lsp_typedefs        jump_to_single_result=true<cr>", desc = "Goto T[y]pe Definition" },
+      { "gd", "<cmd>FzfLua lsp_definitions     jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto Definition", has = "definition" },
+      { "gr", "<cmd>FzfLua lsp_references      jump_to_single_result=true ignore_current_line=true<cr>", desc = "References", nowait = true },
+      { "gI", "<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto Implementation" },
+      { "gy", "<cmd>FzfLua lsp_typedefs        jump_to_single_result=true ignore_current_line=true<cr>", desc = "Goto T[y]pe Definition" },
     })
   end,
 }
