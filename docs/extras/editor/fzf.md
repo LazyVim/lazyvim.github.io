@@ -86,6 +86,10 @@ opts = function(_, opts)
       ["--no-scrollbar"] = true,
     },
     winopts = {
+      width = 0.8,
+      height = 0.8,
+      row = 0.5,
+      col = 0.5,
       preview = {
         scrollchars = { "┃", "" },
       },
@@ -193,6 +197,10 @@ end
         ["--no-scrollbar"] = true,
       },
       winopts = {
+        width = 0.8,
+        height = 0.8,
+        row = 0.5,
+        col = 0.5,
         preview = {
           scrollchars = { "┃", "" },
         },
