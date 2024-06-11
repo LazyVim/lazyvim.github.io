@@ -69,17 +69,18 @@ opts = {
   init = function()
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
-        "help",
         "alpha",
         "dashboard",
-        "neo-tree",
-        "Trouble",
-        "trouble",
+        "fzf",
+        "help",
         "lazy",
+        "lazyterm",
         "mason",
+        "neo-tree",
         "notify",
         "toggleterm",
-        "lazyterm",
+        "Trouble",
+        "trouble",
       },
       callback = function()
         vim.b.miniindentscope_disable = true
