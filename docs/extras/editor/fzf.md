@@ -114,6 +114,9 @@ opts = function(_, opts)
         end,
         child_prefix = false,
       },
+      code_actions = {
+        previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
+      },
     },
     formatters = {
       path = {
@@ -217,6 +220,9 @@ end
             return s:lower() .. "\t"
           end,
           child_prefix = false,
+        },
+        code_actions = {
+          previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
         },
       },
       formatters = {
