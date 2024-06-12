@@ -32,54 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "telescope.nvim",
-  dependencies = {
-    -- project management
-    {
-      "ahmedkhalf/project.nvim",
-      opts = {
-        manual_mode = true,
-      },
-      event = "VeryLazy",
-      config = function(_, opts)
-        require("project_nvim").setup(opts)
-        LazyVim.on_load("telescope.nvim", function()
-          require("telescope").load_extension("projects")
-        end)
-      end,
-      keys = {
-        { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [project.nvim](https://github.com/ahmedkhalf/project.nvim)
-
- project management
-
 
 <Tabs>
 
@@ -109,8 +62,63 @@ opts = {
       require("telescope").load_extension("projects")
     end)
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "telescope.nvim",
+  optional = true,
   keys = {
-    { "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "Projects" },
+    { "<leader>fp", pick, desc = "Projects" },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [fzf-lua](https://github.com/ibhagwan/fzf-lua) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "ibhagwan/fzf-lua",
+  optional = true,
+  keys = {
+    { "<leader>fp", pick, desc = "Projects" },
   },
 }
 ```
@@ -127,7 +135,7 @@ opts = {
 
 ```lua
 opts = function(_, dashboard)
-  local button = dashboard.button("p", " " .. " Projects", ":Telescope projects <CR>")
+  local button = dashboard.button("p", " " .. " Projects", pick)
   button.opts.hl = "AlphaButtons"
   button.opts.hl_shortcut = "AlphaShortcut"
   table.insert(dashboard.section.buttons.val, 4, button)
@@ -144,7 +152,7 @@ end
   "goolord/alpha-nvim",
   optional = true,
   opts = function(_, dashboard)
-    local button = dashboard.button("p", " " .. " Projects", ":Telescope projects <CR>")
+    local button = dashboard.button("p", " " .. " Projects", pick)
     button.opts.hl = "AlphaButtons"
     button.opts.hl_shortcut = "AlphaShortcut"
     table.insert(dashboard.section.buttons.val, 4, button)
@@ -167,7 +175,7 @@ opts = function(_, opts)
   local items = {
     {
       name = "Projects",
-      action = "Telescope projects",
+      action = pick,
       section = string.rep(" ", 22) .. "Telescope",
     },
   }
@@ -188,7 +196,7 @@ end
     local items = {
       {
         name = "Projects",
-        action = "Telescope projects",
+        action = pick,
         section = string.rep(" ", 22) .. "Telescope",
       },
     }
@@ -210,7 +218,7 @@ end
 ```lua
 opts = function(_, opts)
   local projects = {
-    action = "Telescope projects",
+    action = pick,
     desc = " Projects",
     icon = " ",
     key = "p",
@@ -234,7 +242,7 @@ end
   optional = true,
   opts = function(_, opts)
     local projects = {
-      action = "Telescope projects",
+      action = pick,
       desc = " Projects",
       icon = " ",
       key = "p",

@@ -652,7 +652,14 @@ Part of [lazyvim.plugins.extras.util.octo](/extras/util/octo)
 | <code>&lt;leader&gt;r</code> | +react (Octo) | **n** |
 | <code>&lt;leader&gt;v</code> | +review (Octo) | **n** |
 
-## [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
+## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
+Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;fp</code> | Projects | **n** |
+
+## [telescope.nvim](nil)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 
 | Key | Description | Mode |
