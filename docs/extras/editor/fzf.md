@@ -51,7 +51,6 @@ opts = function(_, opts)
   config.defaults.keymap.builtin["<c-f>"] = "preview-page-down"
   config.defaults.keymap.builtin["<c-b>"] = "preview-page-up"
 
-  actions.open_with_trouble = require("trouble.sources.fzf").actions.open
   -- Trouble
   config.defaults.actions.files["ctrl-t"] = require("trouble.sources.fzf").actions.open
 
@@ -78,13 +77,31 @@ opts = function(_, opts)
   end
   fix(defaults)
 
-  vim.api.nvim_set_hl(0, "FzfLuaPath", { link = "Directory", default = true })
-
   return vim.tbl_deep_extend("force", opts, defaults, {
     fzf_colors = true,
     fzf_opts = {
       ["--no-scrollbar"] = true,
     },
+    defaults = {
+      formatter = "path.filename_first",
+    },
+    -- Custom LazyVim option to configure vim.ui.select
+    ui_select = function(fzf_opts, items)
+      local title = vim.trim((fzf_opts.prompt or "Select"):gsub("%s*:%s*$", ""))
+      local width, height ---@type number?, number?
+      if fzf_opts.kind ~= "codeaction" then
+        width, height = 0.5, math.floor(math.min(vim.o.lines * 0.8, #items + 2) + 0.5)
+      end
+      return vim.tbl_deep_extend("force", fzf_opts, {
+        prompt = " ",
+        winopts = {
+          title = " " .. title .. " ",
+          title_pos = "center",
+          width = width,
+          height = height,
+        },
+      })
+    end,
     winopts = {
       width = 0.8,
       height = 0.8,
@@ -102,7 +119,6 @@ opts = function(_, opts)
       },
     },
     grep = {
-      formatter = "path.hl",
       actions = {
         ["alt-i"] = { actions.toggle_ignore },
         ["alt-h"] = { actions.toggle_hidden },
@@ -120,21 +136,6 @@ opts = function(_, opts)
       },
       code_actions = {
         previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
-      },
-    },
-    formatters = {
-      path = {
-        hl = {
-          _to = function()
-            local _, escseq = require("fzf-lua.utils").ansi_from_hl("FzfLuaPath", "foo")
-            return [[
-                return function(s, _, m)
-                  return "]] .. (escseq or "") .. [["
-                    .. s .. m.utils.ansi_escseq.clear
-                end
-              ]]
-          end,
-        },
       },
     },
   })
@@ -162,7 +163,6 @@ end
     config.defaults.keymap.builtin["<c-f>"] = "preview-page-down"
     config.defaults.keymap.builtin["<c-b>"] = "preview-page-up"
 
-    actions.open_with_trouble = require("trouble.sources.fzf").actions.open
     -- Trouble
     config.defaults.actions.files["ctrl-t"] = require("trouble.sources.fzf").actions.open
 
@@ -189,13 +189,31 @@ end
     end
     fix(defaults)
 
-    vim.api.nvim_set_hl(0, "FzfLuaPath", { link = "Directory", default = true })
-
     return vim.tbl_deep_extend("force", opts, defaults, {
       fzf_colors = true,
       fzf_opts = {
         ["--no-scrollbar"] = true,
       },
+      defaults = {
+        formatter = "path.filename_first",
+      },
+      -- Custom LazyVim option to configure vim.ui.select
+      ui_select = function(fzf_opts, items)
+        local title = vim.trim((fzf_opts.prompt or "Select"):gsub("%s*:%s*$", ""))
+        local width, height ---@type number?, number?
+        if fzf_opts.kind ~= "codeaction" then
+          width, height = 0.5, math.floor(math.min(vim.o.lines * 0.8, #items + 2) + 0.5)
+        end
+        return vim.tbl_deep_extend("force", fzf_opts, {
+          prompt = " ",
+          winopts = {
+            title = " " .. title .. " ",
+            title_pos = "center",
+            width = width,
+            height = height,
+          },
+        })
+      end,
       winopts = {
         width = 0.8,
         height = 0.8,
@@ -213,7 +231,6 @@ end
         },
       },
       grep = {
-        formatter = "path.hl",
         actions = {
           ["alt-i"] = { actions.toggle_ignore },
           ["alt-h"] = { actions.toggle_hidden },
@@ -233,22 +250,11 @@ end
           previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
         },
       },
-      formatters = {
-        path = {
-          hl = {
-            _to = function()
-              local _, escseq = require("fzf-lua.utils").ansi_from_hl("FzfLuaPath", "foo")
-              return [[
-                  return function(s, _, m)
-                    return "]] .. (escseq or "") .. [["
-                      .. s .. m.utils.ansi_escseq.clear
-                  end
-                ]]
-            end,
-          },
-        },
-      },
     })
+  end,
+  config = function(_, opts)
+    require("fzf-lua").setup(opts)
+    require("fzf-lua").register_ui_select(opts.ui_select or nil)
   end,
   keys = {
     { "<esc>", "<cmd>close<cr>", ft = "fzf", mode = "t", nowait = true },

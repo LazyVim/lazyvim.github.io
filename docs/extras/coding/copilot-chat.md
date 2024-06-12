@@ -116,6 +116,10 @@ end
       desc = "Quick Chat (CopilotChat)",
       mode = { "n", "v" },
     },
+    -- Show help actions with telescope
+    { "<leader>ad", M.pick("help"), desc = "Diagnostic Help (CopilotChat)", mode = { "n", "v" } },
+    -- Show prompts actions with telescope
+    { "<leader>ap", M.pick("prompt"), desc = "Prompt Actions (CopilotChat)", mode = { "n", "v" } },
   },
   config = function(_, opts)
     local chat = require("CopilotChat")
@@ -131,113 +135,6 @@ end
 
     chat.setup(opts)
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
-
- Telescope integration
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-telescope/telescope.nvim",
-  optional = true,
-  keys = {
-    -- Show help actions with telescope
-    {
-      "<leader>ad",
-      function()
-        local actions = require("CopilotChat.actions")
-        local help = actions.help_actions()
-        if not help then
-          LazyVim.warn("No diagnostics found on the current line")
-          return
-        end
-        require("CopilotChat.integrations.telescope").pick(help)
-      end,
-      desc = "Diagnostic Help (CopilotChat)",
-      mode = { "n", "v" },
-    },
-    -- Show prompts actions with telescope
-    {
-      "<leader>ap",
-      function()
-        local actions = require("CopilotChat.actions")
-        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-      end,
-      desc = "Prompt Actions (CopilotChat)",
-      mode = { "n", "v" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [fzf-lua](https://github.com/ibhagwan/fzf-lua) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "ibhagwan/fzf-lua",
-  optional = true,
-  keys = {
-    -- Show help actions with fzf-lua (if installed in extras)
-    {
-      "<leader>ad",
-      function()
-        local actions = require("CopilotChat.actions")
-        local help = actions.help_actions()
-        if not help then
-          LazyVim.warn("No diagnostics found on the current line")
-          return
-        end
-        require("CopilotChat.integrations.fzflua").pick(help)
-      end,
-      desc = "Diagnostic Help (CopilotChat)",
-    },
-    -- Show prompts actions with fzf-lua (if installed in extras)
-    {
-      "<leader>ap",
-      function()
-        local actions = require("CopilotChat.actions")
-        require("CopilotChat.integrations.fzflua").pick(actions.prompt_actions())
-      end,
-      desc = "Prompt Actions (CopilotChat)",
-    },
-  },
 }
 ```
 
