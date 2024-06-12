@@ -659,7 +659,7 @@ Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 | --- | --- | --- |
 | <code>&lt;leader&gt;fp</code> | Projects | **n** |
 
-## [telescope.nvim](nil)
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 
 | Key | Description | Mode |
