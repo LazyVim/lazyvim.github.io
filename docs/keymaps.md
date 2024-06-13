@@ -113,9 +113,9 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;cl</code> | Lsp Info | **n** |
 | <code>gd</code> | Goto Definition | **n** |
 | <code>gr</code> | References | **n** |
-| <code>gD</code> | Goto Declaration | **n** |
 | <code>gI</code> | Goto Implementation | **n** |
 | <code>gy</code> | Goto T[y]pe Definition | **n** |
+| <code>gD</code> | Goto Declaration | **n** |
 | <code>K</code> | Hover | **n** |
 | <code>gK</code> | Signature Help | **n** |
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
