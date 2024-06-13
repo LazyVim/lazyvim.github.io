@@ -121,49 +121,6 @@ opts = { ensure_installed = { "tflint" } }
 
 </Tabs>
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-telescope/telescope.nvim",
-  dependencies = {
-    {
-      "ANGkeith/telescope-terraform-doc.nvim",
-      config = function()
-        LazyVim.on_load("telescope.nvim", function()
-          require("telescope").load_extension("terraform_doc")
-        end)
-      end,
-    },
-    {
-      "cappyzawa/telescope-terraform.nvim",
-      config = function()
-        LazyVim.on_load("telescope.nvim", function()
-          require("telescope").load_extension("terraform")
-        end)
-      end,
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [telescope-terraform-doc.nvim](https://github.com/ANGkeith/telescope-terraform-doc.nvim)
 
 <Tabs>
@@ -330,6 +287,50 @@ opts = {
       terraform = { "terraform_fmt" },
       tf = { "terraform_fmt" },
       ["terraform-vars"] = { "terraform_fmt" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-telescope/telescope.nvim",
+  optional = true,
+  dependencies = {
+    {
+      "ANGkeith/telescope-terraform-doc.nvim",
+      config = function()
+        LazyVim.on_load("telescope.nvim", function()
+          require("telescope").load_extension("terraform_doc")
+        end)
+      end,
+    },
+    {
+      "cappyzawa/telescope-terraform.nvim",
+      config = function()
+        LazyVim.on_load("telescope.nvim", function()
+          require("telescope").load_extension("terraform")
+        end)
+      end,
     },
   },
 }

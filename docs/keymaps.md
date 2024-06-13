@@ -226,50 +226,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ql</code> | Restore Last Session | **n** |
 | <code>&lt;leader&gt;qs</code> | Restore Session | **n** |
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;so</code> | Options | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
-
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
 
 | Key | Description | Mode |
@@ -405,58 +361,6 @@ Part of [lazyvim.plugins.extras.editor.dial](/extras/editor/dial)
 | <code>&lt;C-x&gt;</code> | Decrement | **n**, **v** |
 | <code>g&lt;C-a&gt;</code> | Increment | **n**, **v** |
 | <code>g&lt;C-x&gt;</code> | Decrement | **n**, **v** |
-
-## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
-Part of [lazyvim.plugins.extras.editor.fzf](/extras/editor/fzf)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
-
-## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
-Part of [lazyvim.plugins.extras.editor.fzf](/extras/editor/fzf)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;st</code> | Todo | **n** |
-| <code>&lt;leader&gt;sT</code> | Todo/Fix/Fixme | **n** |
 
 ## [harpoon](https://github.com/ThePrimeagen/harpoon.git)
 Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)

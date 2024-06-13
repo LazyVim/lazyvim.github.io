@@ -1,4 +1,4 @@
-# `Fzf`
+# `Telescope`
 
 <!-- plugins:start -->
 
@@ -14,7 +14,7 @@ Plugins marked as optional will only be configured if they are installed.
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.editor.fzf" },
+    { import = "lazyvim.plugins.extras.editor.telescope" },
     { import = "plugins" },
   },
 })
