@@ -368,6 +368,7 @@ They are only shown here for reference.
 end
 
 function M.plugins(path)
+  LazyVim.pick.picker = nil
   local test = rootLazyVim .. "/lua/lazyvim/plugins/" .. path
   local mod = dofile(test)
   local imports = {}
