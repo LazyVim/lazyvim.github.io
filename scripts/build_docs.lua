@@ -17,8 +17,7 @@ vim.opt.runtimepath:prepend(lazypath)
 -- install plugins
 local plugins = {
   "LazyVim/starter",
-  { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-  { "LazyVim/LazyVim", version = false },
+  { "LazyVim/LazyVim", import = "lazyvim.plugins", dev = true, version = false },
   { "folke/lazy.nvim", version = false },
   { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
 }
@@ -27,6 +26,7 @@ local function main()
   print("Installing plugins")
   require("lazy").setup(plugins, {
     root = root .. "/plugins",
+    dev = { fallback = true },
   })
 
   if vim.o.filetype == "lazy" then

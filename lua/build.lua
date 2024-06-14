@@ -6,7 +6,7 @@ Handler.init()
 
 local M = {}
 local root = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h")
-local rootLazyVim = root .. "/.nvim/plugins/LazyVim"
+local rootLazyVim = require("lazy.core.config").plugins.LazyVim.dir
 local rootStarter = root .. "/.nvim/plugins/starter"
 
 ---@generic V
@@ -279,6 +279,7 @@ function M.update()
     keymaps = M.keymaps(),
   }, docs .. "/keymaps.md")
 
+  local keep = {} ---@type string[]
   Util.walk(rootLazyVim .. "/lua/lazyvim/plugins/extras", function(path, name, type)
     if type == "file" and name:find("%.lua$") then
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
@@ -333,6 +334,7 @@ They are only shown here for reference.
         "",
       })
       local md_file = docs .. "/extras/" .. modname:gsub(".*extras%.", ""):gsub("%.", "/", 1) .. ".md"
+      keep[#keep + 1] = "docs" .. md_file:sub(#docs + 1)
       if not vim.loop.fs_stat(md_file) then
         local dir = vim.fn.fnamemodify(md_file, ":h")
         vim.fn.mkdir(dir, "p")
@@ -350,6 +352,17 @@ They are only shown here for reference.
       Docs.save({
         plugins = { content = table.concat(lines, "\n") },
       }, md_file)
+    end
+  end)
+
+  -- vim.print(keep)
+  Util.walk("docs/extras", function(path, name, type)
+    if name == "index.md" or not name:find("%.md$") then
+      return
+    end
+    if type == "file" and not vim.tbl_contains(keep, path) then
+      print("del: " .. path)
+      vim.loop.fs_unlink(path)
     end
   end)
 
@@ -442,7 +455,11 @@ function M.plugins(path)
 
         local plugin = spec.plugins[name]
         if plugin then
-          local url = plugin.url or require("lazy.core.config").plugins[name].url
+          local url = plugin.url
+          if not url then
+            local p = require("lazy.core.config").plugins[name]
+            url = p and p.url
+          end
           if not url then
             error("Missing url for plugin " .. name)
           end
