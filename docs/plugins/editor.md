@@ -465,7 +465,7 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = { use_diagnostic_signs = true }
 ```
 
 </TabItem>
@@ -476,8 +476,8 @@ opts = {}
 ```lua
 {
   "folke/trouble.nvim",
-  cmd = { "Trouble" },
-  opts = {},
+  cmd = { "TroubleToggle", "Trouble" },
+  opts = { use_diagnostic_signs = true },
   keys = {
     { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
     { "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
