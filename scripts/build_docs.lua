@@ -18,6 +18,7 @@ vim.opt.runtimepath:prepend(lazypath)
 local plugins = {
   "LazyVim/starter",
   { "LazyVim/LazyVim", import = "lazyvim.plugins", dev = true, version = false },
+  { "LazyVim/LazyVim", dev = true, version = false },
   { "folke/lazy.nvim", version = false },
   { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
 }
