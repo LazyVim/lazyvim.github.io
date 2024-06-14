@@ -22,16 +22,6 @@ require("lazy").setup({
 
 </details>
 
-### Options
-
-Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
-
-```lua title="lua/config/options.lua"
--- In case you don't want to use `:LazyExtras`,
--- then you need to set the option below.
-vim.g.lazyvim_picker = "fzf"
-```
-
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -87,7 +77,7 @@ opts = function(_, opts)
   end
   fix(defaults)
 
-  return vim.tbl_deep_extend("force", defaults, {
+  return vim.tbl_deep_extend("force", opts, defaults, {
     fzf_colors = true,
     fzf_opts = {
       ["--no-scrollbar"] = true,
@@ -210,7 +200,7 @@ end
     end
     fix(defaults)
 
-    return vim.tbl_deep_extend("force", defaults, {
+    return vim.tbl_deep_extend("force", opts, defaults, {
       fzf_colors = true,
       fzf_opts = {
         ["--no-scrollbar"] = true,
@@ -289,8 +279,9 @@ end
     require("fzf-lua").register_ui_select(opts.ui_select or nil)
   end,
   keys = {
-    { "<c-j>", "<c-j>", ft = "fzf", mode = "t", nowait = true },
-    { "<c-k>", "<c-k>", ft = "fzf", mode = "t", nowait = true },
+    { "<esc>", "<cmd>close<cr>", ft = "fzf", mode = "t", nowait = true },
+    { "<c-j>", "<Down>", ft = "fzf", mode = "t", nowait = true },
+    { "<c-k>", "<Up>", ft = "fzf", mode = "t", nowait = true },
     {
       "<leader>,",
       "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>",
