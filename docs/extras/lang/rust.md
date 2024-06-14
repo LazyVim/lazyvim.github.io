@@ -171,11 +171,7 @@ opts = {
           },
         },
         -- Add clippy lints for Rust.
-        checkOnSave = {
-          allFeatures = true,
-          command = "clippy",
-          extraArgs = { "--no-deps" },
-        },
+        checkOnSave = true,
         procMacro = {
           enable = true,
           ignored = {
@@ -221,11 +217,7 @@ opts = {
             },
           },
           -- Add clippy lints for Rust.
-          checkOnSave = {
-            allFeatures = true,
-            command = "clippy",
-            extraArgs = { "--no-deps" },
-          },
+          checkOnSave = true,
           procMacro = {
             enable = true,
             ignored = {
