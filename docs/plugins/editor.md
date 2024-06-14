@@ -8,6 +8,7 @@ import TabItem from '@theme/TabItem';
 ### Includes the following extras
 
 - [editor.fzf](/extras/editor/fzf)
+- [editor.telescope](/extras/editor/telescope)
 
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 
