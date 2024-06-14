@@ -22,6 +22,16 @@ require("lazy").setup({
 
 </details>
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- In case you don't want to use `:LazyExtras`,
+-- then you need to set the option below.
+vim.g.lazyvim_picker = "telescope"
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -98,6 +108,9 @@ opts = nil
 {
   "stevearc/dressing.nvim",
   lazy = true,
+  enabled = function()
+    return LazyVim.pick.want() == "telescope"
+  end,
   init = function()
     ---@diagnostic disable-next-line: duplicate-set-field
     vim.ui.select = function(...)
@@ -125,6 +138,9 @@ opts = nil
 
 ```lua
 opts = function()
+  if LazyVim.pick.want() ~= "telescope" then
+    return
+  end
   local Keys = require("lazyvim.plugins.lsp.keymaps").get()
   -- stylua: ignore
   vim.list_extend(Keys, {
@@ -145,6 +161,9 @@ end
 {
   "neovim/nvim-lspconfig",
   opts = function()
+    if LazyVim.pick.want() ~= "telescope" then
+      return
+    end
     local Keys = require("lazyvim.plugins.lsp.keymaps").get()
     -- stylua: ignore
     vim.list_extend(Keys, {
@@ -237,6 +256,9 @@ end
 {
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
+  enabled = function()
+    return LazyVim.pick.want() == "telescope"
+  end,
   version = false, -- telescope did only one release, so use HEAD for now
   dependencies = {
     {
