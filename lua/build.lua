@@ -59,6 +59,7 @@ function M.keymaps()
     mode = mode == nil and { "n", "v", "o" } or type(mode) == "string" and { mode } or mode
     local desc = opts and opts.desc or ""
     local key = lhs .. desc .. group
+    -- print(group, lhs, desc)
     if keymaps[key] then
       vim.list_extend(keymaps[key].mode, mode)
     else
@@ -94,6 +95,7 @@ function M.keymaps()
     if t == "file" and name:find("%.lua$") then
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
       local extra_doc = "/extras/" .. modname:gsub("lazyvim%.plugins%.extras%.", ""):gsub("%.", "/")
+      LazyVim.pick.picker = nil
       local extra = require("lazy.core.plugin").Spec.new({ import = modname }, { optional = true })
       local orig_spec = require("lazy.core.config").spec
       require("lazy.core.config").spec = extra
