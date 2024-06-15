@@ -95,24 +95,6 @@ opts = function()
       },
       { title = "Neotest Summary", ft = "neotest-summary" },
       {
-        title = "Neo-Tree Git",
-        ft = "neo-tree",
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == "git_status"
-        end,
-        pinned = true,
-        open = "Neotree position=right git_status",
-      },
-      {
-        title = "Neo-Tree Buffers",
-        ft = "neo-tree",
-        filter = function(buf)
-          return vim.b[buf].neo_tree_source == "buffers"
-        end,
-        pinned = true,
-        open = "Neotree position=top buffers",
-      },
-      {
         title = "Neo-Tree Other",
         ft = "neo-tree",
         filter = function(buf)
@@ -140,6 +122,32 @@ opts = function()
       end,
     },
   }
+
+  -- only add neo-tree sources if they are enabled in config
+  if vim.list_contains(LazyVim.opts("neo-tree").sources, "buffers") then
+    table.insert(opts.left, 3, {
+      title = "Neo-Tree Buffers",
+      ft = "neo-tree",
+      filter = function(buf)
+        return vim.b[buf].neo_tree_source == "buffers"
+      end,
+      pinned = true,
+      open = "Neotree position=top buffers",
+    })
+  end
+
+  if vim.list_contains(LazyVim.opts("neo-tree").sources, "git_status") then
+    table.insert(opts.left, 3, {
+      title = "Neo-Tree Git",
+      ft = "neo-tree",
+      filter = function(buf)
+        return vim.b[buf].neo_tree_source == "git_status"
+      end,
+      pinned = true,
+      open = "Neotree position=right git_status",
+    })
+  end
+
   for _, pos in ipairs({ "top", "bottom", "left", "right" }) do
     opts[pos] = opts[pos] or {}
     table.insert(opts[pos], {
@@ -230,24 +238,6 @@ end
         },
         { title = "Neotest Summary", ft = "neotest-summary" },
         {
-          title = "Neo-Tree Git",
-          ft = "neo-tree",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "git_status"
-          end,
-          pinned = true,
-          open = "Neotree position=right git_status",
-        },
-        {
-          title = "Neo-Tree Buffers",
-          ft = "neo-tree",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "buffers"
-          end,
-          pinned = true,
-          open = "Neotree position=top buffers",
-        },
-        {
           title = "Neo-Tree Other",
           ft = "neo-tree",
           filter = function(buf)
@@ -275,6 +265,32 @@ end
         end,
       },
     }
+
+    -- only add neo-tree sources if they are enabled in config
+    if vim.list_contains(LazyVim.opts("neo-tree").sources, "buffers") then
+      table.insert(opts.left, 3, {
+        title = "Neo-Tree Buffers",
+        ft = "neo-tree",
+        filter = function(buf)
+          return vim.b[buf].neo_tree_source == "buffers"
+        end,
+        pinned = true,
+        open = "Neotree position=top buffers",
+      })
+    end
+
+    if vim.list_contains(LazyVim.opts("neo-tree").sources, "git_status") then
+      table.insert(opts.left, 3, {
+        title = "Neo-Tree Git",
+        ft = "neo-tree",
+        filter = function(buf)
+          return vim.b[buf].neo_tree_source == "git_status"
+        end,
+        pinned = true,
+        open = "Neotree position=right git_status",
+      })
+    end
+
     for _, pos in ipairs({ "top", "bottom", "left", "right" }) do
       opts[pos] = opts[pos] or {}
       table.insert(opts[pos], {
