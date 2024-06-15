@@ -128,36 +128,6 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { ensure_installed = {
-  "php-debug-adapter",
-} }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "williamboman/mason.nvim",
-  opts = { ensure_installed = {
-    "php-debug-adapter",
-  } },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
 
 <Tabs>
@@ -229,12 +199,6 @@ end
 {
   "mfussenegger/nvim-dap",
   optional = true,
-  dependencies = {
-    "williamboman/mason.nvim",
-    opts = { ensure_installed = {
-      "php-debug-adapter",
-    } },
-  },
   opts = function()
     local dap = require("dap")
     local path = require("mason-registry").get_package("php-debug-adapter"):get_install_path()

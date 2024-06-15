@@ -54,33 +54,7 @@ opts = {}
   desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
   dependencies = {
-
-    -- fancy UI for the debugger
-    {
-      "rcarriga/nvim-dap-ui",
-      dependencies = { "nvim-neotest/nvim-nio" },
-      -- stylua: ignore
-      keys = {
-        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-        { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
-      },
-      opts = {},
-      config = function(_, opts)
-        local dap = require("dap")
-        local dapui = require("dapui")
-        dapui.setup(opts)
-        dap.listeners.after.event_initialized["dapui_config"] = function()
-          dapui.open({})
-        end
-        dap.listeners.before.event_terminated["dapui_config"] = function()
-          dapui.close({})
-        end
-        dap.listeners.before.event_exited["dapui_config"] = function()
-          dapui.close({})
-        end
-      end,
-    },
-
+    "rcarriga/nvim-dap-ui",
     -- virtual text for the debugger
     {
       "theHamsta/nvim-dap-virtual-text",
@@ -111,10 +85,12 @@ opts = {}
   },
 
   config = function()
-    local Config = require("lazyvim.config")
+    -- load mason-nvim-dap here, after all adapters have been setup
+    require("mason-nvim-dap").setup(LazyVim.opts("mason-nvim-dap.nvim"))
+
     vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
-    for name, sign in pairs(Config.icons.dap) do
+    for name, sign in pairs(LazyVim.config.icons.dap) do
       sign = type(sign) == "table" and sign or { sign }
       vim.fn.sign_define(
         "Dap" .. name,
@@ -129,6 +105,65 @@ opts = {}
       return vim.json.decode(json.json_strip_comments(str))
     end
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "rcarriga/nvim-dap-ui",
+  -- virtual text for the debugger
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    opts = {},
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
+
+ virtual text for the debugger
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "theHamsta/nvim-dap-virtual-text",
+  opts = {},
 }
 ```
 
@@ -208,35 +243,6 @@ opts = nil
 
 </Tabs>
 
-## [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
-
- virtual text for the debugger
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "theHamsta/nvim-dap-virtual-text",
-  opts = {},
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim)
 
  mason.nvim integration
@@ -289,6 +295,8 @@ opts = {
       -- Update this to ensure that you have the debuggers for the langs you want
     },
   },
+  -- mason-nvim-dap is loaded when nvim-dap loads
+  config = function() end,
 }
 ```
 
