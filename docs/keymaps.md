@@ -299,6 +299,7 @@ Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;c-s&gt;</code> | Submit Prompt | **n** |
 | <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
 | <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ad</code> | Diagnostic Help (CopilotChat) | **n**, **v** |
