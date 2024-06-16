@@ -159,7 +159,7 @@ opts = {
 
 ```lua
 opts = function(_, opts)
-  local icon = require("lazyvim.config").icons.kinds.TabNine
+  local icon = LazyVim.config.icons.kinds.TabNine
   table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("cmp_tabnine", icon))
 end
 ```
@@ -175,7 +175,7 @@ end
   optional = true,
   event = "VeryLazy",
   opts = function(_, opts)
-    local icon = require("lazyvim.config").icons.kinds.TabNine
+    local icon = LazyVim.config.icons.kinds.TabNine
     table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("cmp_tabnine", icon))
   end,
 }

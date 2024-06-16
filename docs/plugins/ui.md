@@ -95,7 +95,7 @@ opts = {
     diagnostics = "nvim_lsp",
     always_show_bufferline = false,
     diagnostics_indicator = function(_, _, diag)
-      local icons = require("lazyvim.config").icons.diagnostics
+      local icons = LazyVim.config.icons.diagnostics
       local ret = (diag.error and icons.Error .. diag.error .. " " or "")
         .. (diag.warning and icons.Warn .. diag.warning or "")
       return vim.trim(ret)
@@ -147,7 +147,7 @@ opts = {
       diagnostics = "nvim_lsp",
       always_show_bufferline = false,
       diagnostics_indicator = function(_, _, diag)
-        local icons = require("lazyvim.config").icons.diagnostics
+        local icons = LazyVim.config.icons.diagnostics
         local ret = (diag.error and icons.Error .. diag.error .. " " or "")
           .. (diag.warning and icons.Warn .. diag.warning or "")
         return vim.trim(ret)
@@ -199,7 +199,7 @@ opts = function()
   local lualine_require = require("lualine_require")
   lualine_require.require = require
 
-  local icons = require("lazyvim.config").icons
+  local icons = LazyVim.config.icons
 
   vim.o.laststatus = vim.g.lualine_laststatus
 
@@ -330,7 +330,7 @@ end
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
-    local icons = require("lazyvim.config").icons
+    local icons = LazyVim.config.icons
 
     vim.o.laststatus = vim.g.lualine_laststatus
 

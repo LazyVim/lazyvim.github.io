@@ -40,7 +40,7 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = function()
-  local icons = vim.deepcopy(Config.icons.kinds)
+  local icons = vim.deepcopy(LazyVim.config.icons.kinds)
 
   -- HACK: fix lua's weird choice for `Package` for control
   -- structures like if/else/for/etc.
@@ -48,8 +48,8 @@ opts = function()
 
   ---@type table<string, string[]>|false
   local filter_kind = false
-  if Config.kind_filter then
-    filter_kind = assert(vim.deepcopy(Config.kind_filter))
+  if LazyVim.config.kind_filter then
+    filter_kind = assert(vim.deepcopy(LazyVim.config.kind_filter))
     filter_kind._ = filter_kind.default
     filter_kind.default = nil
   end
@@ -90,7 +90,7 @@ end
   "stevearc/aerial.nvim",
   event = "LazyFile",
   opts = function()
-    local icons = vim.deepcopy(Config.icons.kinds)
+    local icons = vim.deepcopy(LazyVim.config.icons.kinds)
 
     -- HACK: fix lua's weird choice for `Package` for control
     -- structures like if/else/for/etc.
@@ -98,8 +98,8 @@ end
 
     ---@type table<string, string[]>|false
     local filter_kind = false
-    if Config.kind_filter then
-      filter_kind = assert(vim.deepcopy(Config.kind_filter))
+    if LazyVim.config.kind_filter then
+      filter_kind = assert(vim.deepcopy(LazyVim.config.kind_filter))
       filter_kind._ = filter_kind.default
       filter_kind.default = nil
     end

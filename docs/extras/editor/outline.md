@@ -40,7 +40,6 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = function()
-  local Config = require("lazyvim.config")
   local defaults = require("outline.config").defaults
   local opts = {
     symbols = {},
@@ -50,14 +49,14 @@ opts = function()
       down_and_jump = "<down>",
     },
   }
-  local filter = Config.kind_filter
+  local filter = LazyVim.config.kind_filter
 
   if type(filter) == "table" then
     filter = filter.default
     if type(filter) == "table" then
       for kind, symbol in pairs(defaults.symbols) do
         opts.symbols[kind] = {
-          icon = Config.icons.kinds[kind] or symbol.icon,
+          icon = LazyVim.config.icons.kinds[kind] or symbol.icon,
           hl = symbol.hl,
         }
         if not vim.tbl_contains(filter, kind) then
@@ -81,7 +80,6 @@ end
   keys = { { "<leader>cs", "<cmd>Outline<cr>", desc = "Toggle Outline" } },
   cmd = "Outline",
   opts = function()
-    local Config = require("lazyvim.config")
     local defaults = require("outline.config").defaults
     local opts = {
       symbols = {},
@@ -91,14 +89,14 @@ end
         down_and_jump = "<down>",
       },
     }
-    local filter = Config.kind_filter
+    local filter = LazyVim.config.kind_filter
 
     if type(filter) == "table" then
       filter = filter.default
       if type(filter) == "table" then
         for kind, symbol in pairs(defaults.symbols) do
           opts.symbols[kind] = {
-            icon = Config.icons.kinds[kind] or symbol.icon,
+            icon = LazyVim.config.icons.kinds[kind] or symbol.icon,
             hl = symbol.hl,
           }
           if not vim.tbl_contains(filter, kind) then
