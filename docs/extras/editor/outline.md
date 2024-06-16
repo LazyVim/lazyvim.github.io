@@ -45,6 +45,10 @@ opts = function()
   local opts = {
     symbols = {},
     symbol_blacklist = {},
+    keymaps = {
+      up_and_jump = "<up>",
+      down_and_jump = "<down>",
+    },
   }
   local filter = Config.kind_filter
 
@@ -82,6 +86,10 @@ end
     local opts = {
       symbols = {},
       symbol_blacklist = {},
+      keymaps = {
+        up_and_jump = "<up>",
+        down_and_jump = "<down>",
+      },
     }
     local filter = Config.kind_filter
 
