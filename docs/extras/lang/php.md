@@ -22,6 +22,16 @@ require("lazy").setup({
 
 </details>
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- LSP Server to use for PHP.
+-- Set to "intelephense" to use intelephense instead of phpactor.
+vim.g.lazyvim_php_lsp = "intelephense"
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -67,7 +77,15 @@ opts = { ensure_installed = { "php" } }
 ```lua
 opts = {
   servers = {
-    phpactor = {},
+    phpactor = {
+      enabled = lsp == "phpactor",
+    },
+    intelephense = {
+      enabled = lsp == "intelephense",
+    },
+    [lsp] = {
+      enabled = true,
+    },
   },
 }
 ```
@@ -82,7 +100,15 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      phpactor = {},
+      phpactor = {
+        enabled = lsp == "phpactor",
+      },
+      intelephense = {
+        enabled = lsp == "intelephense",
+      },
+      [lsp] = {
+        enabled = true,
+      },
     },
   },
 }
