@@ -82,9 +82,7 @@ opts = {
     { "<leader>r", "", desc = "+refactor", mode = { "n", "v" } },
     {
       "<leader>rs",
-      function()
-        require("telescope").extensions.refactoring.refactors()
-      end,
+      pick,
       mode = "v",
       desc = "Refactor",
     },
