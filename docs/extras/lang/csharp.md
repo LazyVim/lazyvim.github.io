@@ -1,4 +1,8 @@
-# OmniSharp
+---
+title: C#
+---
+
+# C#
 
 <!-- plugins:start -->
 
