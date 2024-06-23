@@ -1,8 +1,4 @@
----
-title: C#
----
-
-# C#
+# `Omnisharp`
 
 <!-- plugins:start -->
 
