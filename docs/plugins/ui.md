@@ -602,6 +602,15 @@ opts = {
     { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
     { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
   },
+  config = function(_, opts)
+    -- HACK: noice shows messages from before it was enabled,
+    -- but this is not ideal when Lazy is installing plugins,
+    -- so clear the messages in this case.
+    if vim.o.filetype == "lazy" then
+      vim.cmd([[messages clear]])
+    end
+    require("noice").setup(opts)
+  end,
 }
 ```
 
@@ -714,13 +723,15 @@ opts = function()
     button.key_format = "  %s"
   end
 
-  -- close Lazy and re-open when the dashboard is ready
+  -- open dashboard after closing lazy
   if vim.o.filetype == "lazy" then
-    vim.cmd.close()
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "DashboardLoaded",
+    vim.api.nvim_create_autocmd("WinClosed", {
+      pattern = tostring(vim.api.nvim_get_current_win()),
+      once = true,
       callback = function()
-        require("lazy").show()
+        vim.schedule(function()
+          vim.api.nvim_exec_autocmds("UIEnter", { group = "dashboard" })
+        end)
       end,
     })
   end
@@ -784,13 +795,15 @@ end
       button.key_format = "  %s"
     end
 
-    -- close Lazy and re-open when the dashboard is ready
+    -- open dashboard after closing lazy
     if vim.o.filetype == "lazy" then
-      vim.cmd.close()
-      vim.api.nvim_create_autocmd("User", {
-        pattern = "DashboardLoaded",
+      vim.api.nvim_create_autocmd("WinClosed", {
+        pattern = tostring(vim.api.nvim_get_current_win()),
+        once = true,
         callback = function()
-          require("lazy").show()
+          vim.schedule(function()
+            vim.api.nvim_exec_autocmds("UIEnter", { group = "dashboard" })
+          end)
         end,
       })
     end
