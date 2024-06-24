@@ -42,145 +42,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-telescope/telescope-fzf-native.nvim",
-  build = have_make and "make"
-    or "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-  enabled = have_make or have_cmake,
-  config = function(plugin)
-    LazyVim.on_load("telescope.nvim", function()
-      local ok, err = pcall(require("telescope").load_extension, "fzf")
-      if not ok then
-        local lib = plugin.dir .. "/build/libfzf." .. (LazyVim.is_win() and "dll" or "so")
-        if not vim.uv.fs_stat(lib) then
-          LazyVim.warn("`telescope-fzf-native.nvim` not built. Rebuilding...")
-          require("lazy").build({ plugins = { plugin }, show = false }):wait(function()
-            LazyVim.info("Rebuilding `telescope-fzf-native.nvim` done.\nPlease restart Neovim.")
-          end)
-        else
-          LazyVim.error("Failed to load `telescope-fzf-native.nvim`:\n" .. err)
-        end
-      end
-    end)
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [dressing.nvim](https://github.com/stevearc/dressing.nvim)
-
- better vim.ui with telescope
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "stevearc/dressing.nvim",
-  lazy = true,
-  enabled = function()
-    return LazyVim.pick.want() == "telescope"
-  end,
-  init = function()
-    ---@diagnostic disable-next-line: duplicate-set-field
-    vim.ui.select = function(...)
-      require("lazy").load({ plugins = { "dressing.nvim" } })
-      return vim.ui.select(...)
-    end
-    ---@diagnostic disable-next-line: duplicate-set-field
-    vim.ui.input = function(...)
-      require("lazy").load({ plugins = { "dressing.nvim" } })
-      return vim.ui.input(...)
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function()
-  if LazyVim.pick.want() ~= "telescope" then
-    return
-  end
-  local Keys = require("lazyvim.plugins.lsp.keymaps").get()
-  -- stylua: ignore
-  vim.list_extend(Keys, {
-    { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
-    { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
-    { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
-    { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
-  })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "neovim/nvim-lspconfig",
-  opts = function()
-    if LazyVim.pick.want() ~= "telescope" then
-      return
-    end
-    local Keys = require("lazyvim.plugins.lsp.keymaps").get()
-    -- stylua: ignore
-    vim.list_extend(Keys, {
-      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
-      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
-      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
-      { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
-    })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
  Fuzzy finder.
  The default key bindings to find files will use Telescope's
@@ -407,7 +269,51 @@ end
 
 </Tabs>
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+## [dressing.nvim](https://github.com/stevearc/dressing.nvim)
+
+ better vim.ui with telescope
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "stevearc/dressing.nvim",
+  lazy = true,
+  enabled = function()
+    return LazyVim.pick.want() == "telescope"
+  end,
+  init = function()
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.select = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.select(...)
+    end
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.input = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.input(...)
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
  Flash Telescope config
 
@@ -478,6 +384,100 @@ end
     end
     opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
       mappings = { n = { s = flash }, i = { ["<c-s>"] = flash } },
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-telescope/telescope-fzf-native.nvim",
+  build = have_make and "make"
+    or "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+  enabled = have_make or have_cmake,
+  config = function(plugin)
+    LazyVim.on_load("telescope.nvim", function()
+      local ok, err = pcall(require("telescope").load_extension, "fzf")
+      if not ok then
+        local lib = plugin.dir .. "/build/libfzf." .. (LazyVim.is_win() and "dll" or "so")
+        if not vim.uv.fs_stat(lib) then
+          LazyVim.warn("`telescope-fzf-native.nvim` not built. Rebuilding...")
+          require("lazy").build({ plugins = { plugin }, show = false }):wait(function()
+            LazyVim.info("Rebuilding `telescope-fzf-native.nvim` done.\nPlease restart Neovim.")
+          end)
+        else
+          LazyVim.error("Failed to load `telescope-fzf-native.nvim`:\n" .. err)
+        end
+      end
+    end)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  if LazyVim.pick.want() ~= "telescope" then
+    return
+  end
+  local Keys = require("lazyvim.plugins.lsp.keymaps").get()
+  -- stylua: ignore
+  vim.list_extend(Keys, {
+    { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
+    { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
+    { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
+    { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = function()
+    if LazyVim.pick.want() ~= "telescope" then
+      return
+    end
+    local Keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- stylua: ignore
+    vim.list_extend(Keys, {
+      { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
+      { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References", nowait = true },
+      { "gI", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, desc = "Goto Implementation" },
+      { "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, desc = "Goto T[y]pe Definition" },
     })
   end,
 }

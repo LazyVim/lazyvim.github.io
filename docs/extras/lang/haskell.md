@@ -303,7 +303,7 @@ opts = {
 
 </Tabs>
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 <Tabs>
 
@@ -320,6 +320,29 @@ opts = nil
 
 ```lua
 { "nvim-telescope/telescope.nvim", optional = true }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "nvim-telescope/telescope.nvim" }
 ```
 
 </TabItem>
@@ -390,29 +413,6 @@ opts = {
     },
   },
 }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "nvim-telescope/telescope.nvim" }
 ```
 
 </TabItem>

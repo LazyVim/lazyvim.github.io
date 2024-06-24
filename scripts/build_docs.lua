@@ -28,6 +28,7 @@ local function main()
   require("lazy").setup(plugins, {
     root = root .. "/plugins",
     dev = { fallback = true },
+    pkg = { enabled = false },
   })
 
   if vim.o.filetype == "lazy" then

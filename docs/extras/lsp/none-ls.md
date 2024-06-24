@@ -107,4 +107,27 @@ end
 
 </Tabs>
 
+## [mason.nvim](https://github.com/williamboman/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "mason.nvim" }
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->

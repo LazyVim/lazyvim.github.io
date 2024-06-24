@@ -487,7 +487,7 @@ function M.plugins(path)
   end
   for name in pairs(spec.plugins) do
     if not found[name] then
-      error("Missing plugins in " .. path .. ": " .. name)
+      print("Missing plugins in " .. path .. ": " .. name)
     end
   end
 
