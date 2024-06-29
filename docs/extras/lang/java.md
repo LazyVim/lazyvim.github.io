@@ -148,6 +148,8 @@ opts = {
 
 ```lua
 opts = function()
+  local mason_registry = require("mason-registry")
+  local lombok_jar = mason_registry.get_package("jdtls"):get_install_path() .. "/lombok.jar"
   return {
     -- How to find the root dir for a given filename. The default comes from
     -- lspconfig which provides a function specifically for java projects.
@@ -168,7 +170,10 @@ opts = function()
 
     -- How to run jdtls. This can be overridden to a full java command-line
     -- if the Python wrapper script doesn't suffice.
-    cmd = { vim.fn.exepath("jdtls") },
+    cmd = {
+      vim.fn.exepath("jdtls"),
+      string.format("--jvm-arg=-javaagent:%s", lombok_jar),
+    },
     full_cmd = function(opts)
       local fname = vim.api.nvim_buf_get_name(0)
       local root_dir = opts.root_dir(fname)
@@ -213,6 +218,8 @@ end
   dependencies = { "folke/which-key.nvim" },
   ft = java_filetypes,
   opts = function()
+    local mason_registry = require("mason-registry")
+    local lombok_jar = mason_registry.get_package("jdtls"):get_install_path() .. "/lombok.jar"
     return {
       -- How to find the root dir for a given filename. The default comes from
       -- lspconfig which provides a function specifically for java projects.
@@ -233,7 +240,10 @@ end
 
       -- How to run jdtls. This can be overridden to a full java command-line
       -- if the Python wrapper script doesn't suffice.
-      cmd = { vim.fn.exepath("jdtls") },
+      cmd = {
+        vim.fn.exepath("jdtls"),
+        string.format("--jvm-arg=-javaagent:%s", lombok_jar),
+      },
       full_cmd = function(opts)
         local fname = vim.api.nvim_buf_get_name(0)
         local root_dir = opts.root_dir(fname)
