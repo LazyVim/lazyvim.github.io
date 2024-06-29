@@ -157,7 +157,7 @@ end
   event = "LazyFile",
   dependencies = {
     "mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    { "williamboman/mason-lspconfig.nvim", config = function() end },
   },
   ---@class PluginLspOpts
   opts = function()
@@ -429,7 +429,7 @@ opts = nil
 ```lua
 {
   "mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  { "williamboman/mason-lspconfig.nvim", config = function() end },
 }
 ```
 
@@ -444,7 +444,7 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
+opts = {}
 ```
 
 </TabItem>
@@ -453,7 +453,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-"williamboman/mason-lspconfig.nvim"
+{ "williamboman/mason-lspconfig.nvim", config = function() end }
 ```
 
 </TabItem>

@@ -45,10 +45,13 @@ opts = function()
       { name = "buffer" },
     }),
     formatting = {
-      format = function(_, item)
+      format = function(entry, item)
         local icons = LazyVim.config.icons.kinds
         if icons[item.kind] then
           item.kind = icons[item.kind] .. item.kind
+        end
+        if entry.context.filetype == "rust" then
+          item.menu = nil
         end
         return item
       end,
@@ -117,10 +120,13 @@ end
         { name = "buffer" },
       }),
       formatting = {
-        format = function(_, item)
+        format = function(entry, item)
           local icons = LazyVim.config.icons.kinds
           if icons[item.kind] then
             item.kind = icons[item.kind] .. item.kind
+          end
+          if entry.context.filetype == "rust" then
+            item.menu = nil
           end
           return item
         end,
