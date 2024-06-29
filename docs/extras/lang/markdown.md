@@ -39,7 +39,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "markdownlint", "markdown-toc" } }
+opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } }
 ```
 
 </TabItem>
@@ -50,7 +50,7 @@ opts = { ensure_installed = { "markdownlint", "markdown-toc" } }
 ```lua
 {
   "williamboman/mason.nvim",
-  opts = { ensure_installed = { "markdownlint", "markdown-toc" } },
+  opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } },
 }
 ```
 
@@ -208,8 +208,8 @@ end
 ```lua
 opts = {
   formatters_by_ft = {
-    ["markdown"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
-    ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+    ["markdown"] = { { "prettierd", "prettier" }, "markdownlint-cli2", "markdown-toc" },
+    ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint-cli2", "markdown-toc" },
   },
 }
 ```
@@ -225,8 +225,8 @@ opts = {
   optional = true,
   opts = {
     formatters_by_ft = {
-      ["markdown"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
-      ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+      ["markdown"] = { { "prettierd", "prettier" }, "markdownlint-cli2", "markdown-toc" },
+      ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint-cli2", "markdown-toc" },
     },
   },
 }
@@ -246,7 +246,7 @@ opts = {
 opts = function(_, opts)
   local nls = require("null-ls")
   opts.sources = vim.list_extend(opts.sources or {}, {
-    nls.builtins.diagnostics.markdownlint,
+    nls.builtins.diagnostics.markdownlint_cli2,
   })
 end
 ```
@@ -263,7 +263,7 @@ end
   opts = function(_, opts)
     local nls = require("null-ls")
     opts.sources = vim.list_extend(opts.sources or {}, {
-      nls.builtins.diagnostics.markdownlint,
+      nls.builtins.diagnostics.markdownlint_cli2,
     })
   end,
 }
@@ -282,7 +282,7 @@ end
 ```lua
 opts = {
   linters_by_ft = {
-    markdown = { "markdownlint" },
+    markdown = { "markdownlint-cli2" },
   },
 }
 ```
@@ -298,7 +298,7 @@ opts = {
   optional = true,
   opts = {
     linters_by_ft = {
-      markdown = { "markdownlint" },
+      markdown = { "markdownlint-cli2" },
     },
   },
 }

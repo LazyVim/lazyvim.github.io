@@ -684,6 +684,13 @@ Part of [lazyvim.plugins.extras.ui.treesitter-context](/extras/ui/treesitter-con
 | --- | --- | --- |
 | <code>&lt;leader&gt;ut</code> | Toggle Treesitter Context | **n** |
 
+## [chezmoi.nvim](https://github.com/xvzc/chezmoi.nvim.git)
+Part of [lazyvim.plugins.extras.util.chezmoi](/extras/util/chezmoi)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;sz</code> | Chezmoi | **n** |
+
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 Part of [lazyvim.plugins.extras.util.gitui](/extras/util/gitui)
 
