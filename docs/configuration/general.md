@@ -180,19 +180,6 @@ vim.g.markdown_recommended_style = 0
 </TabItem>
 </Tabs>
 
-:::info`lazyvim.json`
-
-**LazyVim** stores some configuration like the enabled **extras** in the `lazyvim.json` file.
-
-This can be configured with `vim.g.lazyvim_json`, but you need to do this **before**
-loading `lazy.nvim`, so **not** in your `options.lua`.
-
-```lua title="lua/init.lua"
-vim.g.lazyvim_json = vim.fn.stdpath("config") .. "/lazyvim.json"
-```
-
-:::
-
 ## Keymaps
 
 <Tabs>
