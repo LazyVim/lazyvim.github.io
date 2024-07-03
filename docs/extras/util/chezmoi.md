@@ -96,9 +96,7 @@ opts = {
   keys = {
     {
       "<leader>sz",
-      function()
-        require("telescope").extensions.chezmoi.find_files()
-      end,
+      pick_chezmoi,
       desc = "Chezmoi",
     },
   },
@@ -141,7 +139,7 @@ opts = {
 ```lua
 opts = function(_, opts)
   local projects = {
-    action = "Telescope chezmoi find_files",
+    action = pick_chezmoi,
     desc = "  Config",
     icon = "",
     key = "c",
@@ -172,7 +170,7 @@ end
   optional = true,
   opts = function(_, opts)
     local projects = {
-      action = "Telescope chezmoi find_files",
+      action = pick_chezmoi,
       desc = "  Config",
       icon = "",
       key = "c",
