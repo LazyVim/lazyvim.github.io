@@ -201,7 +201,7 @@ end
 ```lua
 {
   "ibhagwan/fzf-lua",
-  event = "VeryLazy",
+  cmd = "FzfLua",
   opts = function(_, opts)
     local config = require("fzf-lua.config")
     local actions = require("fzf-lua.actions")
