@@ -732,4 +732,15 @@ Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
 | --- | --- | --- |
 | <code>&lt;leader&gt;fp</code> | Projects | **n** |
 
+## [kulala.nvim](https://github.com/mistweaverco/kulala.nvim.git)
+Part of [lazyvim.plugins.extras.util.rest](/extras/util/rest)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;R</code> | +Rest | **n** |
+| <code>&lt;leader&gt;Rn</code> | Jump to next request | **n** |
+| <code>&lt;leader&gt;Rp</code> | Jump to previous request | **n** |
+| <code>&lt;leader&gt;Rs</code> | Send the request | **n** |
+| <code>&lt;leader&gt;Rt</code> | Toggle headers/body | **n** |
+
 <!-- keymaps:end -->
