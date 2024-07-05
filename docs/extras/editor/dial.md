@@ -125,6 +125,7 @@ opts = function()
       scss = "css",
       typescript = "typescript",
       typescriptreact = "typescript",
+      yaml = "yaml",
     },
     groups = {
       default = {
@@ -140,6 +141,11 @@ opts = function()
         ordinal_numbers,
         weekdays,
         months,
+      },
+      yaml = {
+        augend.integer.alias.decimal, -- nonnegative and negative decimal number
+        augend.constant.alias.bool, -- boolean value (true <-> false)
+        ordinal_numbers,
       },
       css = {
         augend.integer.alias.decimal, -- nonnegative and negative decimal number
@@ -288,6 +294,7 @@ end
         scss = "css",
         typescript = "typescript",
         typescriptreact = "typescript",
+        yaml = "yaml",
       },
       groups = {
         default = {
@@ -303,6 +310,11 @@ end
           ordinal_numbers,
           weekdays,
           months,
+        },
+        yaml = {
+          augend.integer.alias.decimal, -- nonnegative and negative decimal number
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          ordinal_numbers,
         },
         css = {
           augend.integer.alias.decimal, -- nonnegative and negative decimal number
