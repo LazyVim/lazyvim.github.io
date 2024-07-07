@@ -350,12 +350,13 @@ end
   end,
   config = function(_, opts)
     require("fzf-lua").setup(opts)
-    require("fzf-lua").register_ui_select(opts.ui_select or nil)
   end,
   init = function()
     LazyVim.on_very_lazy(function()
       vim.ui.select = function(...)
-        require("fzf-lua")
+        require("lazy").load({ plugins = { "fzf-lua" } })
+        local opts = LazyVim.opts("fzf-lua") or {}
+        require("fzf-lua").register_ui_select(opts.ui_select or nil)
         return vim.ui.select(...)
       end
     end)
@@ -426,6 +427,29 @@ end
     },
   },
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [fzf-lua](https://github.com/ibhagwan/fzf-lua)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "fzf-lua" }
 ```
 
 </TabItem>
