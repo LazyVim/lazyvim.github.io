@@ -338,6 +338,49 @@ opts = nil
 
 </Tabs>
 
+## [mini.icons](https://github.com/echasnovski/mini.icons)
+
+ Filetype icons
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  file = {
+    [".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
+  },
+  filetype = {
+    gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "echasnovski/mini.icons",
+  opts = {
+    file = {
+      [".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
+    },
+    filetype = {
+      gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [none-ls.nvim](https://github.com/nvimtools/none-ls.nvim) _(optional)_
 
 <Tabs>

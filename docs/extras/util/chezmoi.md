@@ -130,6 +130,63 @@ opts = {
 
 </Tabs>
 
+## [mini.icons](https://github.com/echasnovski/mini.icons)
+
+ Filetype icons
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  file = {
+    [".chezmoiignore"] = { glyph = "", hl = "MiniIconsGrey" },
+    [".chezmoiremove"] = { glyph = "", hl = "MiniIconsGrey" },
+    [".chezmoiroot"] = { glyph = "", hl = "MiniIconsGrey" },
+    [".chezmoiversion"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["bash.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["json.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["ps1.tmpl"] = { glyph = "󰨊", hl = "MiniIconsGrey" },
+    ["sh.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["toml.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["yaml.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    ["zsh.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "echasnovski/mini.icons",
+  opts = {
+    file = {
+      [".chezmoiignore"] = { glyph = "", hl = "MiniIconsGrey" },
+      [".chezmoiremove"] = { glyph = "", hl = "MiniIconsGrey" },
+      [".chezmoiroot"] = { glyph = "", hl = "MiniIconsGrey" },
+      [".chezmoiversion"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["bash.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["json.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["ps1.tmpl"] = { glyph = "󰨊", hl = "MiniIconsGrey" },
+      ["sh.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["toml.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["yaml.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+      ["zsh.tmpl"] = { glyph = "", hl = "MiniIconsGrey" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) _(optional)_
 
 <Tabs>
