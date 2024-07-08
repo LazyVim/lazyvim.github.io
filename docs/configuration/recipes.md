@@ -168,7 +168,7 @@ Add the below to your `lua/config/autocmds.lua` file
 
 ```lua
 vim.api.nvim_create_autocmd("BufDelete", {
-  group = augroup("dashboard_on_empty", { clear = true }),
+  group = vim.api.nvim_create_augroup("dashboard_on_empty", { clear = true }),
   callback = function(args)
     local deleted_name = vim.api.nvim_buf_get_name(args.buf)
     local deleted_ft = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
