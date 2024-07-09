@@ -374,13 +374,17 @@ end
                 ["<leader>t"] = { name = "+test" },
                 ["<leader>tt"] = {
                   function()
-                    require("jdtls.dap").test_class({ config_overrides = opts.test.config_overrides })
+                    require("jdtls.dap").test_class({
+                      config_overrides = type(opts.test) ~= "boolean" and opts.test.config_overrides or nil,
+                    })
                   end,
                   "Run All Test",
                 },
                 ["<leader>tr"] = {
                   function()
-                    require("jdtls.dap").test_nearest_method({ config_overrides = opts.test.config_overrides })
+                    require("jdtls.dap").test_nearest_method({
+                      config_overrides = type(opts.test) ~= "boolean" and opts.test.config_overrides or nil,
+                    })
                   end,
                   "Run Nearest Test",
                 },
