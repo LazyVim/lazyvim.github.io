@@ -154,50 +154,6 @@ opts = {
 
 </Tabs>
 
-## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  linters_by_ft = {
-    php = { "phpcs" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "mfussenegger/nvim-lint",
-  optional = true,
-  opts = {
-    linters_by_ft = {
-      php = { "phpcs" },
-    },
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        php = { "php-cs-fixer" },
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
 
 <Tabs>
@@ -278,6 +234,41 @@ end
 
 </Tabs>
 
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    php = { "phpcs" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      php = { "phpcs" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
 
 <Tabs>
@@ -287,7 +278,7 @@ end
 ```lua
 opts = {
   formatters_by_ft = {
-    php = { "php-cs-fixer" },
+    php = { "php_cs_fixer" },
   },
 }
 ```
@@ -303,7 +294,7 @@ opts = {
   optional = true,
   opts = {
     formatters_by_ft = {
-      php = { "php-cs-fixer" },
+      php = { "php_cs_fixer" },
     },
   },
 }
