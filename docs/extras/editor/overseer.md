@@ -172,7 +172,9 @@ opts = {
 
 ```lua
 opts = {
-  defaults = { ["<leader>o"] = { name = "+overseer" } },
+  spec = {
+    { "<leader>o", group = "overseer" },
+  },
 }
 ```
 
@@ -186,7 +188,9 @@ opts = {
   "folke/which-key.nvim",
   optional = true,
   opts = {
-    defaults = { ["<leader>o"] = { name = "+overseer" } },
+    spec = {
+      { "<leader>o", group = "overseer" },
+    },
   },
 }
 ```

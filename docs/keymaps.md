@@ -294,6 +294,12 @@ possible keymaps starting with `<space>`.
 | <code>[q</code> | Previous Trouble/Quickfix Item | **n** |
 | <code>]q</code> | Next Trouble/Quickfix Item | **n** |
 
+## [which-key.nvim](https://github.com/folke/which-key.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;?</code> | Buffer Local Keymaps (which-key) | **n** |
+
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
 Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)
 
