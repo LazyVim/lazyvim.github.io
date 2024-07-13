@@ -486,16 +486,6 @@ Part of [lazyvim.plugins.extras.editor.illuminate](/extras/editor/illuminate)
 | <code>[[</code> | Prev Reference | **n** |
 | <code>]]</code> | Next Reference | **n** |
 
-## [flit.nvim](https://github.com/ggandor/flit.nvim.git)
-Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>f</code> | f | **n**, **o**, **x** |
-| <code>F</code> | F | **n**, **o**, **x** |
-| <code>t</code> | t | **n**, **o**, **x** |
-| <code>T</code> | T | **n**, **o**, **x** |
-
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
