@@ -96,7 +96,7 @@ opts = {
         local argv = { ... }
         timer:start(ms, 0, function()
           timer:stop()
-          vim.schedule_wrap(fn)(unpack(argv))
+          vim.schedule_wrap(fn)(table.unpack(argv))
         end)
       end
     end
