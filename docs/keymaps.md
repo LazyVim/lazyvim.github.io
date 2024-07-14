@@ -351,10 +351,10 @@ Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
 | <code>]p</code> | Put Indented After Cursor (Linewise) | **n** |
 | <code>]P</code> | Put Indented After Cursor (Linewise) | **n** |
 | <code>]y</code> | Cycle Backward Through Yank History | **n** |
-| <code>gp</code> | Put Yanked Text After Selection | **n**, **x** |
-| <code>gP</code> | Put Yanked Text Before Selection | **n**, **x** |
-| <code>p</code> | Put Yanked Text After Cursor | **n**, **x** |
-| <code>P</code> | Put Yanked Text Before Cursor | **n**, **x** |
+| <code>gp</code> | Put Text After Selection | **n**, **x** |
+| <code>gP</code> | Put Text Before Selection | **n**, **x** |
+| <code>p</code> | Put Text After Cursor | **n**, **x** |
+| <code>P</code> | Put Text Before Cursor | **n**, **x** |
 | <code>y</code> | Yank Text | **n**, **x** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
