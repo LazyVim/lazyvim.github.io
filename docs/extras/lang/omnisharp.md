@@ -298,6 +298,9 @@ opts = function()
       type = "executable",
       command = vim.fn.exepath("netcoredbg"),
       args = { "--interpreter=vscode" },
+      options = {
+        detached = false,
+      },
     }
   end
   for _, lang in ipairs({ "cs", "fsharp", "vb" }) do
@@ -335,6 +338,9 @@ end
         type = "executable",
         command = vim.fn.exepath("netcoredbg"),
         args = { "--interpreter=vscode" },
+        options = {
+          detached = false,
+        },
       }
     end
     for _, lang in ipairs({ "cs", "fsharp", "vb" }) do
