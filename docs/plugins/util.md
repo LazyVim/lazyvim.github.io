@@ -17,7 +17,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { options = vim.opt.sessionoptions:get() }
+opts = {}
 ```
 
 </TabItem>
@@ -29,7 +29,7 @@ opts = { options = vim.opt.sessionoptions:get() }
 {
   "folke/persistence.nvim",
   event = "BufReadPre",
-  opts = { options = vim.opt.sessionoptions:get() },
+  opts = {},
   -- stylua: ignore
   keys = {
     { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
