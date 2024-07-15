@@ -70,6 +70,7 @@ opts = {
           vim.cmd([[YankyRingHistory]])
         end
       end,
+      mode = { "n", "x" },
       desc = "Open Yank History",
     },
         -- stylua: ignore

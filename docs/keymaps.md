@@ -338,7 +338,7 @@ Part of [lazyvim.plugins.extras.coding.yanky](/extras/coding/yanky)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;p</code> | Open Yank History | **n** |
+| <code>&lt;leader&gt;p</code> | Open Yank History | **n**, **x** |
 | <code>&lt;p</code> | Put and Indent Left | **n** |
 | <code>&lt;P</code> | Put Before and Indent Left | **n** |
 | <code>=p</code> | Put After Applying a Filter | **n** |
