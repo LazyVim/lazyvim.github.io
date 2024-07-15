@@ -63,17 +63,17 @@ possible keymaps starting with `<space>`.
 | <code>[e</code> | Prev Error | **n** |
 | <code>]w</code> | Next Warning | **n** |
 | <code>[w</code> | Prev Warning | **n** |
-| <code>&lt;leader&gt;uf</code> | Toggle Auto Format (Global) | **n** |
-| <code>&lt;leader&gt;uF</code> | Toggle Auto Format (Buffer) | **n** |
-| <code>&lt;leader&gt;us</code> | Toggle Spelling | **n** |
-| <code>&lt;leader&gt;uw</code> | Toggle Word Wrap | **n** |
-| <code>&lt;leader&gt;uL</code> | Toggle Relative Line Numbers | **n** |
-| <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
-| <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
-| <code>&lt;leader&gt;uc</code> | Toggle Conceal | **n** |
-| <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
-| <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
-| <code>&lt;leader&gt;ub</code> | Toggle Background | **n** |
+| <code>&lt;leader&gt;uf</code> | ToggleAuto Format (Global) | **n** |
+| <code>&lt;leader&gt;uF</code> | ToggleAuto Format (Buffer) | **n** |
+| <code>&lt;leader&gt;us</code> | ToggleSpelling | **n** |
+| <code>&lt;leader&gt;uw</code> | ToggleWrap | **n** |
+| <code>&lt;leader&gt;uL</code> | ToggleRelative Number | **n** |
+| <code>&lt;leader&gt;ud</code> | ToggleDiagnostics | **n** |
+| <code>&lt;leader&gt;ul</code> | ToggleLine Numbers | **n** |
+| <code>&lt;leader&gt;uc</code> | Toggleconceallevel | **n** |
+| <code>&lt;leader&gt;uT</code> | ToggleTreesitter Highlight | **n** |
+| <code>&lt;leader&gt;ub</code> | ToggleBackground | **n** |
+| <code>&lt;leader&gt;uh</code> | ToggleInlay Hints | **n** |
 | <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
@@ -97,7 +97,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;w&vert;</code> | Split Window Right | **n** |
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
 | <code>&lt;leader&gt;&vert;</code> | Split Window Right | **n** |
-| <code>&lt;leader&gt;wm</code> | Maximize Toggle | **n** |
+| <code>&lt;leader&gt;wm</code> | ToggleMaximize | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;o</code> | Close Other Tabs | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
@@ -167,12 +167,6 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cm</code> | Mason | **n** |
-
-## [mini.pairs](https://github.com/echasnovski/mini.pairs.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;up</code> | Toggle Auto Pairs | **n** |
 
 ## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
 
@@ -298,7 +292,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;?</code> | Buffer Local Keymaps (which-key) | **n** |
+| <code>&lt;leader&gt;?</code> | Buffer Keymaps (which-key) | **n** |
 
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
 Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)

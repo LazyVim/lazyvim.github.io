@@ -5,6 +5,42 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [which-key.nvim](https://github.com/folke/which-key.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  spec = {
+    { "<BS>", desc = "Decrement Selection", mode = "x" },
+    { "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/which-key.nvim",
+  opts = {
+    spec = {
+      { "<BS>", desc = "Decrement Selection", mode = "x" },
+      { "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
  Treesitter is a new parser generator tool that we can

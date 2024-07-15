@@ -50,6 +50,16 @@ opts = function()
     end, { expr = true })
   end
 
+  LazyVim.toggle.map("<leader>ua", {
+    name = "Mini Animate",
+    get = function()
+      return not vim.g.minianimate_disable
+    end,
+    set = function(state)
+      vim.g.minianimate_disable = not state
+    end,
+  })
+
   local animate = require("mini.animate")
   return {
     resize = {
@@ -91,6 +101,16 @@ end
         return key
       end, { expr = true })
     end
+
+    LazyVim.toggle.map("<leader>ua", {
+      name = "Mini Animate",
+      get = function()
+        return not vim.g.minianimate_disable
+      end,
+      set = function(state)
+        vim.g.minianimate_disable = not state
+      end,
+    })
 
     local animate = require("mini.animate")
     return {
