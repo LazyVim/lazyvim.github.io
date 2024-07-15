@@ -478,9 +478,6 @@ opts = {}
 
 ```lua
 opts = function()
-  LazyVim.on_load("which-key.nvim", function()
-    vim.schedule(LazyVim.mini.ai_whichkey)
-  end)
   local ai = require("mini.ai")
   return {
     n_lines = 500,
@@ -516,9 +513,6 @@ end
   "echasnovski/mini.ai",
   event = "VeryLazy",
   opts = function()
-    LazyVim.on_load("which-key.nvim", function()
-      vim.schedule(LazyVim.mini.ai_whichkey)
-    end)
     local ai = require("mini.ai")
     return {
       n_lines = 500,
@@ -541,6 +535,14 @@ end
         U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
       },
     }
+  end,
+  config = function(_, opts)
+    require("mini.ai").setup(opts)
+    LazyVim.on_load("which-key.nvim", function()
+      vim.schedule(function()
+        LazyVim.mini.ai_whichkey(opts)
+      end)
+    end)
   end,
 }
 ```
