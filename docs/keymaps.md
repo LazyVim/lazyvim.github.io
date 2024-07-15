@@ -667,13 +667,6 @@ Part of [lazyvim.plugins.extras.ui.edgy](/extras/ui/edgy)
 | <code>&lt;leader&gt;ue</code> | Edgy Toggle | **n** |
 | <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
 
-## [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context.git)
-Part of [lazyvim.plugins.extras.ui.treesitter-context](/extras/ui/treesitter-context)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;ut</code> | Toggle Treesitter Context | **n** |
-
 ## [chezmoi.nvim](https://github.com/xvzc/chezmoi.nvim.git)
 Part of [lazyvim.plugins.extras.util.chezmoi](/extras/util/chezmoi)
 
