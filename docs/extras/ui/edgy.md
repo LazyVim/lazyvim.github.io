@@ -84,6 +84,9 @@ opts = function()
       { title = "Neotest Summary", ft = "neotest-summary" },
       -- "neo-tree",
     },
+    right = {
+      { title = "Grug Far", ft = "grug-far", size = { width = 0.4 } },
+    },
     keys = {
       -- increase width
       ["<c-Right>"] = function(win)
@@ -206,6 +209,9 @@ end
       left = {
         { title = "Neotest Summary", ft = "neotest-summary" },
         -- "neo-tree",
+      },
+      right = {
+        { title = "Grug Far", ft = "grug-far", size = { width = 0.4 } },
       },
       keys = {
         -- increase width
