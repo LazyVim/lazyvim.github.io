@@ -91,13 +91,11 @@ possible keymaps starting with `<space>`.
 | <code>&lt;c-_&gt;</code> | which_key_ignore | **n**, **t** |
 | <code>&lt;esc&gt;&lt;esc&gt;</code> | Enter Normal Mode | **t** |
 | <code>&lt;C-/&gt;</code> | Hide Terminal | **t** |
-| <code>&lt;leader&gt;ww</code> | Other Window | **n** |
-| <code>&lt;leader&gt;wd</code> | Delete Window | **n** |
-| <code>&lt;leader&gt;w-</code> | Split Window Below | **n** |
-| <code>&lt;leader&gt;w&vert;</code> | Split Window Right | **n** |
+| <code>&lt;leader&gt;w</code> | Windows | **n** |
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
 | <code>&lt;leader&gt;&vert;</code> | Split Window Right | **n** |
-| <code>&lt;leader&gt;wm</code> | Toggle Maximize | **n** |
+| <code>&lt;c-w&gt;d</code> | Delete Window | **n** |
+| <code>&lt;c-w&gt;m</code> | Toggle Maximize | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;o</code> | Close Other Tabs | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
@@ -292,6 +290,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;c-w&gt;&lt;space&gt;</code> | Window Hydra Mode (which-key) | **n** |
 | <code>&lt;leader&gt;?</code> | Buffer Keymaps (which-key) | **n** |
 
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
