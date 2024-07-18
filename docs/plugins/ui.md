@@ -285,7 +285,12 @@ opts = function()
   }
 
   -- do not add trouble symbols if aerial is enabled
-  if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+  -- And allow it to be overriden for some buffer types (see autocmds)
+  if
+    vim.g.trouble_luline_enabed ~= false
+    and vim.b.trouble_lualine_enabled ~= false
+    and LazyVim.has("trouble.nvim")
+  then
     local trouble = require("trouble")
     local symbols = trouble.statusline
       and trouble.statusline({
@@ -416,7 +421,12 @@ end
     }
 
     -- do not add trouble symbols if aerial is enabled
-    if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
+    -- And allow it to be overriden for some buffer types (see autocmds)
+    if
+      vim.g.trouble_luline_enabed ~= false
+      and vim.b.trouble_lualine_enabled ~= false
+      and LazyVim.has("trouble.nvim")
+    then
       local trouble = require("trouble")
       local symbols = trouble.statusline
         and trouble.statusline({
