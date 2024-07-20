@@ -35,16 +35,14 @@ opts = function()
       "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
     }, { title = "LazyVim" })
   end
-  ---@class ConformOpts
+  ---@type conform.setupOpts
   local opts = {
-    -- LazyVim will use these options when formatting with the conform.nvim formatter
-    format = {
+    default_format_opts = {
       timeout_ms = 3000,
       async = false, -- not recommended to change
       quiet = false, -- not recommended to change
       lsp_format = "fallback", -- not recommended to change
     },
-    ---@type table<string, conform.FormatterUnit[]>
     formatters_by_ft = {
       lua = { "stylua" },
       fish = { "fish_indent" },
@@ -101,8 +99,7 @@ end
         priority = 100,
         primary = true,
         format = function(buf)
-          local opts = LazyVim.opts("conform.nvim")
-          require("conform").format(LazyVim.merge({}, opts.format, { bufnr = buf }))
+          require("conform").format({ bufnr = buf })
         end,
         sources = function(buf)
           local ret = require("conform").list_formatters(buf)
@@ -123,16 +120,14 @@ end
         "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
       }, { title = "LazyVim" })
     end
-    ---@class ConformOpts
+    ---@type conform.setupOpts
     local opts = {
-      -- LazyVim will use these options when formatting with the conform.nvim formatter
-      format = {
+      default_format_opts = {
         timeout_ms = 3000,
         async = false, -- not recommended to change
         quiet = false, -- not recommended to change
         lsp_format = "fallback", -- not recommended to change
       },
-      ---@type table<string, conform.FormatterUnit[]>
       formatters_by_ft = {
         lua = { "stylua" },
         fish = { "fish_indent" },
