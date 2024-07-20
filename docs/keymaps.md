@@ -160,6 +160,12 @@ possible keymaps starting with `<space>`.
 | <code>s</code> | Flash | **n**, **o**, **x** |
 | <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
 
+## [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;sr</code> | Search and Replace | **n**, **v** |
+
 ## [mason.nvim](https://github.com/williamboman/mason.nvim.git)
 
 | Key | Description | Mode |
@@ -196,12 +202,6 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
-
-## [nvim-spectre](https://github.com/nvim-pack/nvim-spectre.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;sr</code> | Replace in Files (Spectre) | **n** |
 
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git)
 
