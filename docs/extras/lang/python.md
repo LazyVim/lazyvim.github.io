@@ -30,7 +30,8 @@ Additional options for this extra can be configured in your [lua/config/options.
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
 vim.g.lazyvim_python_lsp = "pyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+-- Set to "ruff_lsp" to use the old LSP implementation version.
+vim.g.lazyvim_python_ruff = "ruff"
 ```
 
 Below you can find a list of included plugins and their default settings.
@@ -78,22 +79,22 @@ opts = { ensure_installed = { "ninja", "rst" } }
 ```lua
 opts = {
   servers = {
-    pyright = {
-      enabled = lsp == "pyright",
-    },
-    basedpyright = {
-      enabled = lsp == "basedpyright",
-    },
-    [lsp] = {
-      enabled = true,
+    ruff = {
+      cmd_env = { RUFF_TRACE = "messages" },
+      init_options = {
+        settings = {
+          logLevel = "error",
+        },
+      },
+      keys = {
+        {
+          "<leader>co",
+          LazyVim.lsp.action["source.organizeImports"],
+          desc = "Organize Imports",
+        },
+      },
     },
     ruff_lsp = {
-      enabled = ruff == "ruff_lsp",
-    },
-    ruff = {
-      enabled = ruff == "ruff",
-    },
-    [ruff] = {
       keys = {
         {
           "<leader>co",
@@ -124,22 +125,22 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      pyright = {
-        enabled = lsp == "pyright",
-      },
-      basedpyright = {
-        enabled = lsp == "basedpyright",
-      },
-      [lsp] = {
-        enabled = true,
+      ruff = {
+        cmd_env = { RUFF_TRACE = "messages" },
+        init_options = {
+          settings = {
+            logLevel = "error",
+          },
+        },
+        keys = {
+          {
+            "<leader>co",
+            LazyVim.lsp.action["source.organizeImports"],
+            desc = "Organize Imports",
+          },
+        },
       },
       ruff_lsp = {
-        enabled = ruff == "ruff_lsp",
-      },
-      ruff = {
-        enabled = ruff == "ruff",
-      },
-      [ruff] = {
         keys = {
           {
             "<leader>co",
@@ -158,6 +159,44 @@ opts = {
       end,
     },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local servers = { "pyright", "basedpyright", "ruff", "ruff_lsp", ruff, lsp }
+  for _, server in ipairs(servers) do
+    opts.servers[server] = opts.servers[server] or {}
+    opts.servers[server].enabled = server == lsp or server == ruff
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = function(_, opts)
+    local servers = { "pyright", "basedpyright", "ruff", "ruff_lsp", ruff, lsp }
+    for _, server in ipairs(servers) do
+      opts.servers[server] = opts.servers[server] or {}
+      opts.servers[server].enabled = server == lsp or server == ruff
+    end
+  end,
 }
 ```
 
