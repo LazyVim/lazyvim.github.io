@@ -467,7 +467,6 @@ vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
     "PlenaryTestPopup",
-    "grug-far",
     "help",
     "lspinfo",
     "notify",
