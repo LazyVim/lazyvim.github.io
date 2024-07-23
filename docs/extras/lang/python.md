@@ -431,4 +431,42 @@ opts = nil
 
 </Tabs>
 
+## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim) _(optional)_
+
+ Don't mess up DAP adapters provided by nvim-dap-python
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  handlers = {
+    python = function() end,
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "jay-babu/mason-nvim-dap.nvim",
+  optional = true,
+  opts = {
+    handlers = {
+      python = function() end,
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
