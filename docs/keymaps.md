@@ -95,7 +95,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
 | <code>&lt;leader&gt;&vert;</code> | Split Window Right | **n** |
 | <code>&lt;leader&gt;wd</code> | Delete Window | **n** |
-| <code>&lt;c-w&gt;m</code> | Toggle Maximize | **n** |
+| <code>&lt;leader&gt;wm</code> | Toggle Maximize | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;o</code> | Close Other Tabs | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
