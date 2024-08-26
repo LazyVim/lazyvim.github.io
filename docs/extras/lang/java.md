@@ -36,7 +36,6 @@ import TabItem from '@theme/TabItem';
 
  Add java to treesitter.
 
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -46,7 +45,6 @@ opts = { ensure_installed = { "java" } }
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -73,7 +71,6 @@ opts = { ensure_installed = { "java-debug-adapter", "java-test" } }
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -91,7 +88,6 @@ opts = { ensure_installed = { "java-debug-adapter", "java-test" } }
 
  Configure nvim-lspconfig to install the server automatically via mason, but
  defer actually starting it to our configuration of nvim-jtdls below.
-
 
 <Tabs>
 
@@ -112,7 +108,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -140,7 +135,6 @@ opts = {
 ## [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)
 
  Set up nvim-jdtls to attach to java files.
-
 
 <Tabs>
 
@@ -208,7 +202,6 @@ end
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -305,7 +298,8 @@ end
       local fname = vim.api.nvim_buf_get_name(0)
 
       -- Configuration can be augmented and overridden by opts.jdtls
-      local config = extend_or_override({
+      local config = vim.tbl_deep_extend("force", {
+
         cmd = opts.full_cmd(opts),
         root_dir = opts.root_dir(fname),
         init_options = {
@@ -314,7 +308,7 @@ end
         settings = opts.settings,
         -- enable CMP capabilities
         capabilities = LazyVim.has("cmp-nvim-lsp") and require("cmp_nvim_lsp").default_capabilities() or nil,
-      }, opts.jdtls)
+      }, opts.jdtls or {})
 
       -- Existing server will be reused if the root_dir matches.
       require("jdtls").start_or_attach(config)
@@ -439,7 +433,6 @@ opts = nil
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -454,7 +447,6 @@ opts = nil
 
  Ensure java debugger and test packages are installed.
 
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -464,7 +456,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
