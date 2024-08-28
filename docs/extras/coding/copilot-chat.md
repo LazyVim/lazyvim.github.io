@@ -118,9 +118,25 @@ end
       mode = { "n", "v" },
     },
     -- Show help actions with telescope
-    { "<leader>ad", M.pick("help"), desc = "Diagnostic Help (CopilotChat)", mode = { "n", "v" } },
+    {
+      "<leader>ad",
+      function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+      end,
+      desc = "Diagnostic Help (CopilotChat)",
+      mode = { "n", "v" },
+    },
     -- Show prompts actions with telescope
-    { "<leader>ap", M.pick("prompt"), desc = "Prompt Actions (CopilotChat)", mode = { "n", "v" } },
+    {
+      "<leader>ap",
+      function()
+        local actions = require("CopilotChat.actions")
+        require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+      end,
+      desc = "Prompt Actions (CopilotChat)",
+      mode = { "n", "v" },
+    },
   },
   config = function(_, opts)
     local chat = require("CopilotChat")
