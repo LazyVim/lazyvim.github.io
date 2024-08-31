@@ -21,7 +21,7 @@ so you don't need to require those files manually.
 │       ├── spec1.lua
 │       ├── **
 │       └── spec2.lua
-└── init.toml
+└── init.lua
 ```
 
 :::danger
