@@ -135,7 +135,7 @@ opts = {}
 
 </Tabs>
 
-## [markdown.nvim](https://github.com/MeanderingProgrammer/markdown.nvim)
+## [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 
 <Tabs>
 
@@ -163,7 +163,7 @@ opts = {
 
 ```lua
 {
-  "MeanderingProgrammer/markdown.nvim",
+  "MeanderingProgrammer/render-markdown.nvim",
   opts = {
     file_types = { "markdown", "norg", "rmd", "org" },
     code = {

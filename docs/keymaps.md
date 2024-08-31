@@ -217,6 +217,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;qd</code> | Don't Save Current Session | **n** |
 | <code>&lt;leader&gt;ql</code> | Restore Last Session | **n** |
 | <code>&lt;leader&gt;qs</code> | Restore Session | **n** |
+| <code>&lt;leader&gt;qS</code> | Select Session | **n** |
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
 
