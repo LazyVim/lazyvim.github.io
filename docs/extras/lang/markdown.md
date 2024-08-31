@@ -115,6 +115,7 @@ opts = {}
   "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   build = function()
+    require("lazy").load({ plugins = { "markdown-preview.nvim" } })
     vim.fn["mkdp#util#install"]()
   end,
   keys = {
@@ -129,6 +130,29 @@ opts = {}
     vim.cmd([[do FileType]])
   end,
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "markdown-preview.nvim" }
 ```
 
 </TabItem>
