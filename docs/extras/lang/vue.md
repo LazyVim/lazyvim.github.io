@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "vue" } }
+opts = { ensure_installed = { "vue", "css" } }
 ```
 
 </TabItem>
@@ -54,7 +54,7 @@ opts = { ensure_installed = { "vue" } }
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = { ensure_installed = { "vue" } },
+  opts = { ensure_installed = { "vue", "css" } },
 }
 ```
 

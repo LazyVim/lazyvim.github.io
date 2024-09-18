@@ -76,9 +76,14 @@ end
 opts = {
   servers = {
     ocamllsp = {
-      get_language_id = function(_, ftype)
-        return language_id_of[ftype]
-      end,
+      filetypes = {
+        "ocaml",
+        "ocaml.menhir",
+        "ocaml.interface",
+        "ocaml.ocamllex",
+        "reason",
+        "dune",
+      },
       root_dir = function(fname)
         return require("lspconfig.util").root_pattern(
           "*.opam",
@@ -106,9 +111,14 @@ opts = {
   opts = {
     servers = {
       ocamllsp = {
-        get_language_id = function(_, ftype)
-          return language_id_of[ftype]
-        end,
+        filetypes = {
+          "ocaml",
+          "ocaml.menhir",
+          "ocaml.interface",
+          "ocaml.ocamllex",
+          "reason",
+          "dune",
+        },
         root_dir = function(fname)
           return require("lspconfig.util").root_pattern(
             "*.opam",
