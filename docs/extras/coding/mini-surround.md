@@ -34,6 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [mini.surround](https://github.com/echasnovski/mini.surround)
 
+Fast and feature-rich surround actions
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
