@@ -52,7 +52,7 @@ opts = {
   },
   setup = {
     tailwindcss = function(_, opts)
-      local tw = require("lspconfig.server_configurations.tailwindcss")
+      local tw = LazyVim.lsp.get_raw_config("tailwindcss")
       opts.filetypes = opts.filetypes or {}
 
       -- Add default filetypes
@@ -103,7 +103,7 @@ opts = {
     },
     setup = {
       tailwindcss = function(_, opts)
-        local tw = require("lspconfig.server_configurations.tailwindcss")
+        local tw = LazyVim.lsp.get_raw_config("tailwindcss")
         opts.filetypes = opts.filetypes or {}
 
         -- Add default filetypes

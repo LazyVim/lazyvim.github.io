@@ -167,7 +167,6 @@ opts = nil
 
 ```lua
 opts = {
-  file_types = { "markdown", "norg", "rmd", "org" },
   code = {
     sign = false,
     width = "block",
@@ -189,7 +188,6 @@ opts = {
 {
   "MeanderingProgrammer/render-markdown.nvim",
   opts = {
-    file_types = { "markdown", "norg", "rmd", "org" },
     code = {
       sign = false,
       width = "block",
