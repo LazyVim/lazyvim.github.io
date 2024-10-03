@@ -634,7 +634,7 @@ Part of [lazyvim.plugins.extras.lang.tex](/extras/lang/tex)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;localLeader&gt;l</code> | +vimtext | **n** |
+| <code>&lt;localLeader&gt;l</code> | +vimtex | **n** |
 
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
