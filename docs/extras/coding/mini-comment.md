@@ -34,6 +34,8 @@ import TabItem from '@theme/TabItem';
 
 ## [mini.comment](https://github.com/echasnovski/mini.comment)
 
+Fast and familiar per-line commenting
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
