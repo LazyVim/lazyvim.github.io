@@ -150,6 +150,52 @@ opts = {
       which_key = true,
     },
   },
+  specs = {
+    {
+      "akinsho/bufferline.nvim",
+      optional = true,
+      opts = function(_, opts)
+        if vim.g.colors_name:find("catppuccin") then
+          opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+        end
+      end,
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  if vim.g.colors_name:find("catppuccin") then
+    opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "akinsho/bufferline.nvim",
+  optional = true,
+  opts = function(_, opts)
+    if vim.g.colors_name:find("catppuccin") then
+      opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
+    end
+  end,
 }
 ```
 

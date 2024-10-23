@@ -138,7 +138,30 @@ opts = {
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+## [tailwindcss-colorizer-cmp.nvim](https://github.com/roobert/tailwindcss-colorizer-cmp.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
 <Tabs>
 
@@ -163,6 +186,7 @@ end
 ```lua
 {
   "hrsh7th/nvim-cmp",
+  optional = true,
   dependencies = {
     { "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} },
   },
@@ -175,29 +199,6 @@ end
     end
   end,
 }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [tailwindcss-colorizer-cmp.nvim](https://github.com/roobert/tailwindcss-colorizer-cmp.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "roobert/tailwindcss-colorizer-cmp.nvim", opts = {} }
 ```
 
 </TabItem>

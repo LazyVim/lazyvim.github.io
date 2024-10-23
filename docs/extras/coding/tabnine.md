@@ -66,6 +66,7 @@ end
 ```lua
 {
   "nvim-cmp",
+  optional = true,
   dependencies = {
     {
       "tzachar/cmp-tabnine",

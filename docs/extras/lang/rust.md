@@ -32,53 +32,6 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
- Extend auto completion
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  opts.sources = opts.sources or {}
-  table.insert(opts.sources, { name = "crates" })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "hrsh7th/nvim-cmp",
-  dependencies = {
-    {
-      "Saecki/crates.nvim",
-      event = { "BufRead Cargo.toml" },
-      opts = {
-        completion = {
-          cmp = { enabled = true },
-        },
-      },
-    },
-  },
-  ---@param opts cmp.ConfigSchema
-  opts = function(_, opts)
-    opts.sources = opts.sources or {}
-    table.insert(opts.sources, { name = "crates" })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [crates.nvim](https://github.com/Saecki/crates.nvim)
 
 <Tabs>
@@ -304,6 +257,54 @@ opts = {
       },
     },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
+
+ Extend auto completion
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.sources = opts.sources or {}
+  table.insert(opts.sources, { name = "crates" })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  optional = true,
+  dependencies = {
+    {
+      "Saecki/crates.nvim",
+      event = { "BufRead Cargo.toml" },
+      opts = {
+        completion = {
+          cmp = { enabled = true },
+        },
+      },
+    },
+  },
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    opts.sources = opts.sources or {}
+    table.insert(opts.sources, { name = "crates" })
+  end,
 }
 ```
 
