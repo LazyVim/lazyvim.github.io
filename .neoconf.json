@@ -1,0 +1,11 @@
+{
+  "neodev": {
+    "library": {
+      "plugins": [
+        "plenary.nvim",
+        "lazy.nvim",
+        "LazyVim"
+      ]
+    }
+  }
+}
