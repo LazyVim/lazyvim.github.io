@@ -171,6 +171,45 @@ opts = {}
 
 </Tabs>
 
+## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+    keymap = { accept = false },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot.lua",
+  event = "InsertEnter",
+  opts = {
+    suggestion = {
+      enabled = true,
+      auto_trigger = true,
+      keymap = { accept = false },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
 
 <Tabs>
@@ -254,6 +293,88 @@ end
       end,
     })
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  windows = {
+    ghost_text = {
+      enabled = false,
+    },
+  },
+  keymap = {
+    ["<Tab>"] = {
+      function(cmp)
+        if cmp.is_in_snippet() then
+          return cmp.accept()
+        elseif require("copilot.suggestion").is_visible() then
+          require("copilot.suggestion").accept()
+        else
+          return cmp.select_and_accept()
+        end
+      end,
+      "snippet_forward",
+      "fallback",
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  specs = {
+    {
+      "zbirenbaum/copilot.lua",
+      event = "InsertEnter",
+      opts = {
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          keymap = { accept = false },
+        },
+      },
+    },
+  },
+  opts = {
+    windows = {
+      ghost_text = {
+        enabled = false,
+      },
+    },
+    keymap = {
+      ["<Tab>"] = {
+        function(cmp)
+          if cmp.is_in_snippet() then
+            return cmp.accept()
+          elseif require("copilot.suggestion").is_visible() then
+            require("copilot.suggestion").accept()
+          else
+            return cmp.select_and_accept()
+          end
+        end,
+        "snippet_forward",
+        "fallback",
+      },
+    },
+  },
 }
 ```
 

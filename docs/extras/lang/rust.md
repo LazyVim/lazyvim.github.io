@@ -34,6 +34,9 @@ import TabItem from '@theme/TabItem';
 
 ## [crates.nvim](https://github.com/Saecki/crates.nvim)
 
+ LSP for Cargo.toml
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -41,7 +44,15 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   completion = {
-    cmp = { enabled = true },
+    crates = {
+      enabled = true,
+    },
+  },
+  lsp = {
+    enabled = true,
+    actions = true,
+    completion = true,
+    hover = true,
   },
 }
 ```
@@ -57,7 +68,15 @@ opts = {
   event = { "BufRead Cargo.toml" },
   opts = {
     completion = {
-      cmp = { enabled = true },
+      crates = {
+        enabled = true,
+      },
+    },
+    lsp = {
+      enabled = true,
+      actions = true,
+      completion = true,
+      hover = true,
     },
   },
 }
@@ -211,21 +230,7 @@ opts = {
 ```lua
 opts = {
   servers = {
-    taplo = {
-      keys = {
-        {
-          "K",
-          function()
-            if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
-              require("crates").show_popup()
-            else
-              vim.lsp.buf.hover()
-            end
-          end,
-          desc = "Show Crate Documentation",
-        },
-      },
-    },
+    rust_analyzer = { enabled = false },
   },
 }
 ```
@@ -240,71 +245,9 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      taplo = {
-        keys = {
-          {
-            "K",
-            function()
-              if vim.fn.expand("%:t") == "Cargo.toml" and require("crates").popup_available() then
-                require("crates").show_popup()
-              else
-                vim.lsp.buf.hover()
-              end
-            end,
-            desc = "Show Crate Documentation",
-          },
-        },
-      },
+      rust_analyzer = { enabled = false },
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
-
- Extend auto completion
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  opts.sources = opts.sources or {}
-  table.insert(opts.sources, { name = "crates" })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "hrsh7th/nvim-cmp",
-  optional = true,
-  dependencies = {
-    {
-      "Saecki/crates.nvim",
-      event = { "BufRead Cargo.toml" },
-      opts = {
-        completion = {
-          cmp = { enabled = true },
-        },
-      },
-    },
-  },
-  ---@param opts cmp.ConfigSchema
-  opts = function(_, opts)
-    opts.sources = opts.sources or {}
-    table.insert(opts.sources, { name = "crates" })
-  end,
 }
 ```
 
