@@ -58,6 +58,7 @@ opts = {
   windows = {
     autocomplete = {
       draw = "reversed",
+      winblend = vim.o.pumblend,
     },
     documentation = {
       auto_show = true,
@@ -95,6 +96,7 @@ opts = {
   "saghen/blink.cmp",
   -- TODO: use release version
   -- version = "*",
+  version = false,
   opts_extend = { "sources.completion.enabled_providers" },
   dependencies = {
     "rafamadriz/friendly-snippets",
@@ -124,6 +126,7 @@ opts = {
     windows = {
       autocomplete = {
         draw = "reversed",
+        winblend = vim.o.pumblend,
       },
       documentation = {
         auto_show = true,
