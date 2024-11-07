@@ -145,9 +145,9 @@ end
   dependencies = {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = have_make and "make"
+      build = (build_cmd ~= "cmake") and "make"
         or "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-      enabled = have_make or have_cmake,
+      enabled = build_cmd ~= nil,
       config = function(plugin)
         LazyVim.on_load("telescope.nvim", function()
           local ok, err = pcall(require("telescope").load_extension, "fzf")
@@ -451,9 +451,9 @@ opts = {}
 ```lua
 {
   "nvim-telescope/telescope-fzf-native.nvim",
-  build = have_make and "make"
+  build = (build_cmd ~= "cmake") and "make"
     or "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-  enabled = have_make or have_cmake,
+  enabled = build_cmd ~= nil,
   config = function(plugin)
     LazyVim.on_load("telescope.nvim", function()
       local ok, err = pcall(require("telescope").load_extension, "fzf")

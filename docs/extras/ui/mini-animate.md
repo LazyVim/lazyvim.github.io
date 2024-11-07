@@ -57,7 +57,7 @@ opts = function()
     end,
   })
 
-  LazyVim.toggle.map("<leader>ua", {
+  Snacks.toggle({
     name = "Mini Animate",
     get = function()
       return not vim.g.minianimate_disable
@@ -65,7 +65,7 @@ opts = function()
     set = function(state)
       vim.g.minianimate_disable = not state
     end,
-  })
+  }):map("<leader>ua")
 
   local animate = require("mini.animate")
   return {
@@ -116,7 +116,7 @@ end
       end,
     })
 
-    LazyVim.toggle.map("<leader>ua", {
+    Snacks.toggle({
       name = "Mini Animate",
       get = function()
         return not vim.g.minianimate_disable
@@ -124,7 +124,7 @@ end
       set = function(state)
         vim.g.minianimate_disable = not state
       end,
-    })
+    }):map("<leader>ua")
 
     local animate = require("mini.animate")
     return {

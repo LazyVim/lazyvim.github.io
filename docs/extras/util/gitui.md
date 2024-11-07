@@ -58,14 +58,14 @@ opts = { ensure_installed = { "gitui" } }
     {
       "<leader>gG",
       function()
-        LazyVim.terminal.open({ "gitui" }, { esc_esc = false, ctrl_hjkl = false })
+        Snacks.terminal({ "gitui" })
       end,
       desc = "GitUi (cwd)",
     },
     {
       "<leader>gg",
       function()
-        LazyVim.terminal.open({ "gitui" }, { cwd = LazyVim.root.get(), esc_esc = false, ctrl_hjkl = false })
+        Snacks.terminal({ "gitui" }, { cwd = LazyVim.root.get() })
       end,
       desc = "GitUi (Root Dir)",
     },

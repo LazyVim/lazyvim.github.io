@@ -69,17 +69,19 @@ opts = {
   init = function()
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
+        "Trouble",
         "alpha",
         "dashboard",
         "fzf",
         "help",
         "lazy",
-        "lazyterm",
         "mason",
         "neo-tree",
         "notify",
+        "snacks_notif",
+        "snacks_terminal",
+        "snacks_win",
         "toggleterm",
-        "Trouble",
         "trouble",
       },
       callback = function()

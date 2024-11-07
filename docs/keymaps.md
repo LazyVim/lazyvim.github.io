@@ -23,10 +23,10 @@ possible keymaps starting with `<space>`.
 | <code>&lt;Down&gt;</code> | Down | **n**, **x** |
 | <code>k</code> | Up | **n**, **x** |
 | <code>&lt;Up&gt;</code> | Up | **n**, **x** |
-| <code>&lt;C-h&gt;</code> | Go to Left Window | **n**, **t** |
-| <code>&lt;C-j&gt;</code> | Go to Lower Window | **n**, **t** |
-| <code>&lt;C-k&gt;</code> | Go to Upper Window | **n**, **t** |
-| <code>&lt;C-l&gt;</code> | Go to Right Window | **n**, **t** |
+| <code>&lt;C-h&gt;</code> | Go to Left Window | **n** |
+| <code>&lt;C-j&gt;</code> | Go to Lower Window | **n** |
+| <code>&lt;C-k&gt;</code> | Go to Upper Window | **n** |
+| <code>&lt;C-l&gt;</code> | Go to Right Window | **n** |
 | <code>&lt;C-Up&gt;</code> | Increase Window Height | **n** |
 | <code>&lt;C-Down&gt;</code> | Decrease Window Height | **n** |
 | <code>&lt;C-Left&gt;</code> | Decrease Window Width | **n** |
@@ -72,7 +72,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
 | <code>&lt;leader&gt;uc</code> | Toggle conceallevel | **n** |
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
-| <code>&lt;leader&gt;ub</code> | Toggle Background | **n** |
+| <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
 | <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
 | <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
@@ -85,11 +85,10 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
 | <code>&lt;leader&gt;L</code> | LazyVim Changelog | **n** |
-| <code>&lt;leader&gt;ft</code> | Terminal (Root Dir) | **n** |
 | <code>&lt;leader&gt;fT</code> | Terminal (cwd) | **n** |
+| <code>&lt;leader&gt;ft</code> | Terminal (Root Dir) | **n** |
 | <code>&lt;c-/&gt;</code> | Terminal (Root Dir) | **n** |
 | <code>&lt;c-_&gt;</code> | which_key_ignore | **n**, **t** |
-| <code>&lt;esc&gt;&lt;esc&gt;</code> | Enter Normal Mode | **t** |
 | <code>&lt;C-/&gt;</code> | Hide Terminal | **t** |
 | <code>&lt;leader&gt;w</code> | Windows | **n** |
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
@@ -197,12 +196,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;snt</code> | Noice Picker (Telescope/FzfLua) | **n** |
 | <code>&lt;S-Enter&gt;</code> | Redirect Cmdline | **c** |
 
-## [nvim-notify](https://github.com/rcarriga/nvim-notify.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
-
 ## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git)
 
 | Key | Description | Mode |
@@ -218,6 +211,12 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ql</code> | Restore Last Session | **n** |
 | <code>&lt;leader&gt;qs</code> | Restore Session | **n** |
 | <code>&lt;leader&gt;qS</code> | Select Session | **n** |
+
+## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
 
