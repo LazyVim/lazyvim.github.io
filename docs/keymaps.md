@@ -74,13 +74,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
 | <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
-| <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
-| <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
-| <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
-| <code>&lt;leader&gt;gB</code> | Git Browse | **n** |
-| <code>&lt;leader&gt;gf</code> | Lazygit Current File History | **n** |
-| <code>&lt;leader&gt;gl</code> | Lazygit Log | **n** |
-| <code>&lt;leader&gt;gL</code> | Lazygit Log (cwd) | **n** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
