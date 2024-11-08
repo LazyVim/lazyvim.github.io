@@ -139,6 +139,7 @@ opts = {}
 ```lua
 {
   "ANGkeith/telescope-terraform-doc.nvim",
+  ft = { "terraform", "hcl" },
   config = function()
     LazyVim.on_load("telescope.nvim", function()
       require("telescope").load_extension("terraform_doc")
@@ -169,6 +170,7 @@ opts = {}
 ```lua
 {
   "cappyzawa/telescope-terraform.nvim",
+  ft = { "terraform", "hcl" },
   config = function()
     LazyVim.on_load("telescope.nvim", function()
       require("telescope").load_extension("terraform")
@@ -191,6 +193,7 @@ opts = {}
 opts = function(_, opts)
   local null_ls = require("null-ls")
   opts.sources = vim.list_extend(opts.sources or {}, {
+    null_ls.builtins.formatting.packer,
     null_ls.builtins.formatting.terraform_fmt,
     null_ls.builtins.diagnostics.terraform_validate,
   })
@@ -209,6 +212,7 @@ end
   opts = function(_, opts)
     local null_ls = require("null-ls")
     opts.sources = vim.list_extend(opts.sources or {}, {
+      null_ls.builtins.formatting.packer,
       null_ls.builtins.formatting.terraform_fmt,
       null_ls.builtins.diagnostics.terraform_validate,
     })
@@ -266,6 +270,7 @@ opts = {
 ```lua
 opts = {
   formatters_by_ft = {
+    hcl = { "packer_fmt" },
     terraform = { "terraform_fmt" },
     tf = { "terraform_fmt" },
     ["terraform-vars"] = { "terraform_fmt" },
@@ -284,6 +289,7 @@ opts = {
   optional = true,
   opts = {
     formatters_by_ft = {
+      hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
       tf = { "terraform_fmt" },
       ["terraform-vars"] = { "terraform_fmt" },
@@ -315,9 +321,10 @@ opts = nil
 {
   "nvim-telescope/telescope.nvim",
   optional = true,
-  dependencies = {
+  specs = {
     {
       "ANGkeith/telescope-terraform-doc.nvim",
+      ft = { "terraform", "hcl" },
       config = function()
         LazyVim.on_load("telescope.nvim", function()
           require("telescope").load_extension("terraform_doc")
@@ -326,6 +333,7 @@ opts = nil
     },
     {
       "cappyzawa/telescope-terraform.nvim",
+      ft = { "terraform", "hcl" },
       config = function()
         LazyVim.on_load("telescope.nvim", function()
           require("telescope").load_extension("terraform")
