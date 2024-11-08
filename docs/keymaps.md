@@ -471,6 +471,7 @@ Part of [lazyvim.plugins.extras.editor.illuminate](/extras/editor/illuminate)
 | --- | --- | --- |
 | <code>[[</code> | Prev Reference | **n** |
 | <code>]]</code> | Next Reference | **n** |
+| <code><leader>ux</code> | Toggle Highlight | **n** |
 
 ## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
