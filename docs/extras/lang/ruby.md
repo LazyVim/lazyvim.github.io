@@ -86,7 +86,10 @@ opts = {
       enabled = lsp == "solargraph",
     },
     rubocop = {
-      enabled = formatter == "rubocop",
+      -- If Solargraph and Rubocop are both enabled as an LSP,
+      -- diagnostics will be duplicated because Solargraph
+      -- already calls Rubocop if it is installed
+      enabled = formatter == "rubocop" and lsp ~= "solargraph",
     },
     standardrb = {
       enabled = formatter == "standardrb",
@@ -114,7 +117,10 @@ opts = {
         enabled = lsp == "solargraph",
       },
       rubocop = {
-        enabled = formatter == "rubocop",
+        -- If Solargraph and Rubocop are both enabled as an LSP,
+        -- diagnostics will be duplicated because Solargraph
+        -- already calls Rubocop if it is installed
+        enabled = formatter == "rubocop" and lsp ~= "solargraph",
       },
       standardrb = {
         enabled = formatter == "standardrb",
@@ -249,7 +255,7 @@ opts = nil
 opts = {
   formatters_by_ft = {
     ruby = { formatter },
-    eruby = { "erb-format" },
+    eruby = { "erb_format" },
   },
 }
 ```
@@ -266,7 +272,7 @@ opts = {
   opts = {
     formatters_by_ft = {
       ruby = { formatter },
-      eruby = { "erb-format" },
+      eruby = { "erb_format" },
     },
   },
 }

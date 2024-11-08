@@ -634,15 +634,15 @@ Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;t</code> | +test | **n** |
-| <code>&lt;leader&gt;tl</code> | Run Last | **n** |
-| <code>&lt;leader&gt;to</code> | Show Output | **n** |
-| <code>&lt;leader&gt;tO</code> | Toggle Output Panel | **n** |
-| <code>&lt;leader&gt;tr</code> | Run Nearest | **n** |
-| <code>&lt;leader&gt;ts</code> | Toggle Summary | **n** |
-| <code>&lt;leader&gt;tS</code> | Stop | **n** |
-| <code>&lt;leader&gt;tt</code> | Run File | **n** |
-| <code>&lt;leader&gt;tT</code> | Run All Test Files | **n** |
-| <code>&lt;leader&gt;tw</code> | Toggle Watch | **n** |
+| <code>&lt;leader&gt;tl</code> | Run Last (Neotest) | **n** |
+| <code>&lt;leader&gt;to</code> | Show Output (Neotest) | **n** |
+| <code>&lt;leader&gt;tO</code> | Toggle Output Panel (Neotest) | **n** |
+| <code>&lt;leader&gt;tr</code> | Run Nearest (Neotest) | **n** |
+| <code>&lt;leader&gt;ts</code> | Toggle Summary (Neotest) | **n** |
+| <code>&lt;leader&gt;tS</code> | Stop (Neotest) | **n** |
+| <code>&lt;leader&gt;tt</code> | Run File (Neotest) | **n** |
+| <code>&lt;leader&gt;tT</code> | Run All Test Files (Neotest) | **n** |
+| <code>&lt;leader&gt;tw</code> | Toggle Watch (Neotest) | **n** |
 
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)

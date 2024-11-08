@@ -22,6 +22,15 @@ require("lazy").setup({
 
 </details>
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- Set to false to disable auto format
+vim.g.lazyvim_eslint_auto_format = true
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -46,11 +55,16 @@ opts = {
       settings = {
         -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
         workingDirectories = { mode = "auto" },
+        format = auto_format,
       },
     },
   },
   setup = {
     eslint = function()
+      if not auto_format then
+        return
+      end
+
       local function get_client(buf)
         return LazyVim.lsp.get_clients({ name = "eslint", bufnr = buf })[1]
       end
@@ -103,11 +117,16 @@ opts = {
         settings = {
           -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
           workingDirectories = { mode = "auto" },
+          format = auto_format,
         },
       },
     },
     setup = {
       eslint = function()
+        if not auto_format then
+          return
+        end
+
         local function get_client(buf)
           return LazyVim.lsp.get_clients({ name = "eslint", bufnr = buf })[1]
         end
