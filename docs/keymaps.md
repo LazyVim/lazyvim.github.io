@@ -352,7 +352,7 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 | <code>&lt;leader&gt;da</code> | Run with Args | **n** |
 | <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
-| <code>&lt;leader&gt;dc</code> | Continue | **n** |
+| <code>&lt;leader&gt;dc</code> | Run/Continue | **n** |
 | <code>&lt;leader&gt;dC</code> | Run to Cursor | **n** |
 | <code>&lt;leader&gt;dg</code> | Go to Line (No Execute) | **n** |
 | <code>&lt;leader&gt;di</code> | Step Into | **n** |
