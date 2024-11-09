@@ -40,6 +40,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;bb</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
+| <code>&lt;leader&gt;bo</code> | Delete Other Buffers | **n** |
 | <code>&lt;leader&gt;bD</code> | Delete Buffer and Window | **n** |
 | <code>&lt;esc&gt;</code> | Escape and Clear hlsearch | **i**, **n** |
 | <code>&lt;leader&gt;ur</code> | Redraw / Clear hlsearch / Diff Update | **n** |
@@ -125,7 +126,6 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;bl</code> | Delete Buffers to the Left | **n** |
-| <code>&lt;leader&gt;bo</code> | Delete Other Buffers | **n** |
 | <code>&lt;leader&gt;bp</code> | Toggle Pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete Non-Pinned Buffers | **n** |
 | <code>&lt;leader&gt;br</code> | Delete Buffers to the Right | **n** |
