@@ -1,4 +1,4 @@
-# TabNine
+# `Tabnine`
 
 <!-- plugins:start -->
 
@@ -14,7 +14,7 @@ Plugins marked as optional will only be configured if they are installed.
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.coding.tabnine" },
+    { import = "lazyvim.plugins.extras.ai.tabnine" },
     { import = "plugins" },
   },
 })

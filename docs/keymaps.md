@@ -287,7 +287,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;?</code> | Buffer Keymaps (which-key) | **n** |
 
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
-Part of [lazyvim.plugins.extras.coding.copilot-chat](/extras/coding/copilot-chat)
+Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 
 | Key | Description | Mode |
 | --- | --- | --- |
