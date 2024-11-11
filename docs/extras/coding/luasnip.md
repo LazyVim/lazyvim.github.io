@@ -34,6 +34,9 @@ import TabItem from '@theme/TabItem';
 
 ## [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 
+ add luasnip
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -62,20 +65,6 @@ opts = {
       "rafamadriz/friendly-snippets",
       config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
-    {
-      "nvim-cmp",
-      dependencies = {
-        "saadparwaiz1/cmp_luasnip",
-      },
-      opts = function(_, opts)
-        opts.snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        }
-        table.insert(opts.sources, { name = "luasnip" })
       end,
     },
   },
@@ -118,20 +107,23 @@ opts = {}
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+## [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
+
+ add snippet_forward action
+
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  }
-  table.insert(opts.sources, { name = "luasnip" })
+opts = function()
+  LazyVim.cmp.actions.snippet_forward = function()
+    if require("luasnip").jumpable(1) then
+      require("luasnip").jump(1)
+      return true
+    end
+  end
 end
 ```
 
@@ -142,17 +134,14 @@ end
 
 ```lua
 {
-  "nvim-cmp",
-  dependencies = {
-    "saadparwaiz1/cmp_luasnip",
-  },
-  opts = function(_, opts)
-    opts.snippet = {
-      expand = function(args)
-        require("luasnip").lsp_expand(args.body)
-      end,
-    }
-    table.insert(opts.sources, { name = "luasnip" })
+  "L3MON4D3/LuaSnip",
+  opts = function()
+    LazyVim.cmp.actions.snippet_forward = function()
+      if require("luasnip").jumpable(1) then
+        require("luasnip").jump(1)
+        return true
+      end
+    end
   end,
 }
 ```
@@ -177,23 +166,31 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{
-  "saadparwaiz1/cmp_luasnip",
-}
+{ "saadparwaiz1/cmp_luasnip" }
 ```
 
 </TabItem>
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
+
+ nvim-cmp integration
+
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
+opts = function(_, opts)
+  opts.snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  }
+  table.insert(opts.sources, { name = "luasnip" })
+end
 ```
 
 </TabItem>
@@ -204,17 +201,62 @@ opts = nil
 ```lua
 {
   "nvim-cmp",
+  optional = true,
+  dependencies = { "saadparwaiz1/cmp_luasnip" },
+  opts = function(_, opts)
+    opts.snippet = {
+      expand = function(args)
+        require("luasnip").lsp_expand(args.body)
+      end,
+    }
+    table.insert(opts.sources, { name = "luasnip" })
+  end,
   -- stylua: ignore
   keys = {
-    {
-      "<tab>",
-      function()
-        return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>"
-      end,
-      expr = true, silent = true, mode = "i",
-    },
     { "<tab>", function() require("luasnip").jump(1) end, mode = "s" },
     { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+ blink.cmp integration
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  accept = {
+    expand_snippet = function(...)
+      return require("luasnip").lsp_expand(...)
+    end,
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  opts = {
+    accept = {
+      expand_snippet = function(...)
+        return require("luasnip").lsp_expand(...)
+      end,
+    },
   },
 }
 ```

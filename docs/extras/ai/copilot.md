@@ -43,7 +43,15 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = {
-  suggestion = { enabled = false },
+  suggestion = {
+    enabled = not vim.g.ai_cmp,
+    auto_trigger = true,
+    keymap = {
+      accept = false, -- handled by nvim-cmp / blink.cmp
+      next = "<M-]>",
+      prev = "<M-[>",
+    },
+  },
   panel = { enabled = false },
   filetypes = {
     markdown = true,
@@ -62,8 +70,17 @@ opts = {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",
   build = ":Copilot auth",
+  event = "InsertEnter",
   opts = {
-    suggestion = { enabled = false },
+    suggestion = {
+      enabled = not vim.g.ai_cmp,
+      auto_trigger = true,
+      keymap = {
+        accept = false, -- handled by nvim-cmp / blink.cmp
+        next = "<M-]>",
+        prev = "<M-[>",
+      },
+    },
     panel = { enabled = false },
     filetypes = {
       markdown = true,
@@ -77,10 +94,191 @@ opts = {
 
 </Tabs>
 
+## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
+
+ this will only be evaluated if nvim-cmp is enabled
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot-cmp",
+  enabled = vim.g.ai_cmp, -- only enable if wanted
+  opts = {},
+  config = function(_, opts)
+    local copilot_cmp = require("copilot_cmp")
+    copilot_cmp.setup(opts)
+    -- attach cmp source whenever copilot attaches
+    -- fixes lazy-loading issues with the copilot cmp source
+    LazyVim.lsp.on_attach(function()
+      copilot_cmp._on_insert_enter({})
+    end, "copilot")
+  end,
+  specs = {
+    {
+      "nvim-cmp",
+      ---@param opts cmp.ConfigSchema
+      opts = function(_, opts)
+        table.insert(opts.sources, 1, {
+          name = "copilot",
+          group_index = 1,
+          priority = 100,
+        })
+      end,
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
  copilot cmp source
 
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  optional = true,
+  dependencies = { -- this will only be evaluated if nvim-cmp is enabled
+    {
+      "zbirenbaum/copilot-cmp",
+      enabled = vim.g.ai_cmp, -- only enable if wanted
+      opts = {},
+      config = function(_, opts)
+        local copilot_cmp = require("copilot_cmp")
+        copilot_cmp.setup(opts)
+        -- attach cmp source whenever copilot attaches
+        -- fixes lazy-loading issues with the copilot cmp source
+        LazyVim.lsp.on_attach(function()
+          copilot_cmp._on_insert_enter({})
+        end, "copilot")
+      end,
+      specs = {
+        {
+          "nvim-cmp",
+          ---@param opts cmp.ConfigSchema
+          opts = function(_, opts)
+            table.insert(opts.sources, 1, {
+              name = "copilot",
+              group_index = 1,
+              priority = 100,
+            })
+          end,
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+
+ add ai_accept action
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  LazyVim.cmp.actions.ai_accept = function()
+    if require("copilot.suggestion").is_visible() then
+      LazyVim.create_undo()
+      require("copilot.suggestion").accept()
+      return true
+    end
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot.lua",
+  opts = function()
+    LazyVim.cmp.actions.ai_accept = function()
+      if require("copilot.suggestion").is_visible() then
+        LazyVim.create_undo()
+        require("copilot.suggestion").accept()
+        return true
+      end
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+
+ blink has no copilot source, so force enable suggestions
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { suggestion = { enabled = true } }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot.lua",
+  opts = { suggestion = { enabled = true } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 <Tabs>
 
@@ -104,22 +302,6 @@ end
 ```lua
 {
   "nvim-cmp",
-  dependencies = {
-    {
-      "zbirenbaum/copilot-cmp",
-      dependencies = "copilot.lua",
-      opts = {},
-      config = function(_, opts)
-        local copilot_cmp = require("copilot_cmp")
-        copilot_cmp.setup(opts)
-        -- attach cmp source whenever copilot attaches
-        -- fixes lazy-loading issues with the copilot cmp source
-        LazyVim.lsp.on_attach(function(client)
-          copilot_cmp._on_insert_enter({})
-        end, "copilot")
-      end,
-    },
-  },
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     table.insert(opts.sources, 1, {
@@ -135,82 +317,10 @@ end
 
 </Tabs>
 
-## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "zbirenbaum/copilot-cmp",
-  dependencies = "copilot.lua",
-  opts = {},
-  config = function(_, opts)
-    local copilot_cmp = require("copilot_cmp")
-    copilot_cmp.setup(opts)
-    -- attach cmp source whenever copilot attaches
-    -- fixes lazy-loading issues with the copilot cmp source
-    LazyVim.lsp.on_attach(function(client)
-      copilot_cmp._on_insert_enter({})
-    end, "copilot")
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  suggestion = {
-    enabled = true,
-    auto_trigger = true,
-    keymap = { accept = false },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "zbirenbaum/copilot.lua",
-  event = "InsertEnter",
-  opts = {
-    suggestion = {
-      enabled = true,
-      auto_trigger = true,
-      keymap = { accept = false },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) _(optional)_
+
+ lualine
+
 
 <Tabs>
 
@@ -302,34 +412,16 @@ end
 
 ## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
 
+ blink.cmp
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
 opts = {
-  windows = {
-    ghost_text = {
-      enabled = false,
-    },
-  },
-  keymap = {
-    ["<Tab>"] = {
-      function(cmp)
-        if cmp.is_in_snippet() then
-          return cmp.accept()
-        elseif require("copilot.suggestion").is_visible() then
-          LazyVim.create_undo()
-          require("copilot.suggestion").accept()
-          return true
-        else
-          return cmp.select_and_accept()
-        end
-      end,
-      "snippet_forward",
-      "fallback",
-    },
-  },
+  windows = { ghost_text = { enabled = false } },
 }
 ```
 
@@ -342,41 +434,14 @@ opts = {
 {
   "saghen/blink.cmp",
   optional = true,
+  opts = {
+    windows = { ghost_text = { enabled = false } },
+  },
   specs = {
+    -- blink has no copilot source, so force enable suggestions
     {
       "zbirenbaum/copilot.lua",
-      event = "InsertEnter",
-      opts = {
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = { accept = false },
-        },
-      },
-    },
-  },
-  opts = {
-    windows = {
-      ghost_text = {
-        enabled = false,
-      },
-    },
-    keymap = {
-      ["<Tab>"] = {
-        function(cmp)
-          if cmp.is_in_snippet() then
-            return cmp.accept()
-          elseif require("copilot.suggestion").is_visible() then
-            LazyVim.create_undo()
-            require("copilot.suggestion").accept()
-            return true
-          else
-            return cmp.select_and_accept()
-          end
-        end,
-        "snippet_forward",
-        "fallback",
-      },
+      opts = { suggestion = { enabled = true } },
     },
   },
 }

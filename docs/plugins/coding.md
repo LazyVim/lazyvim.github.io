@@ -39,6 +39,9 @@ opts = function()
         cmp.abort()
         fallback()
       end,
+      ["<tab>"] = function(fallback)
+        return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+      end,
     }),
     sources = cmp.config.sources({
       { name = "nvim_lsp" },
@@ -68,9 +71,10 @@ opts = function()
       end,
     },
     experimental = {
-      ghost_text = {
+      -- only show ghost text when we show ai completions
+      ghost_text = vim.g.ai_cmp and {
         hl_group = "CmpGhostText",
-      },
+      } or false,
     },
     sorting = defaults.sorting,
   }
@@ -125,6 +129,9 @@ end
           cmp.abort()
           fallback()
         end,
+        ["<tab>"] = function(fallback)
+          return LazyVim.cmp.map({ "snippet_forward", "ai_accept" }, fallback)()
+        end,
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
@@ -154,9 +161,10 @@ end
         end,
       },
       experimental = {
-        ghost_text = {
+        -- only show ghost text when we show ai completions
+        ghost_text = vim.g.ai_cmp and {
           hl_group = "CmpGhostText",
-        },
+        } or false,
       },
       sorting = defaults.sorting,
     }
@@ -581,17 +589,6 @@ end
     }
     if LazyVim.has("nvim-snippets") then
       table.insert(opts.sources, { name = "snippets" })
-    end
-  end,
-  init = function()
-    -- Neovim enabled snippet navigation mappings by default in v0.11
-    if vim.fn.has("nvim-0.11") == 0 then
-      vim.keymap.set({ "i", "s" }, "<Tab>", function()
-        return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
-      end, { expr = true, silent = true })
-      vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
-        return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
-      end, { expr = true, silent = true })
     end
   end,
 }
