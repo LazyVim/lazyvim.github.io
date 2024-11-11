@@ -713,9 +713,17 @@ Part of [lazyvim.plugins.extras.util.rest](/extras/util/rest)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;R</code> | +Rest | **n** |
+| <code>&lt;leader&gt;Rb</code> | Open scratchpad | **n** |
+| <code>&lt;leader&gt;Rc</code> | Copy as cURL | **n** |
+| <code>&lt;leader&gt;RC</code> | Paste from curl | **n** |
+| <code>&lt;leader&gt;Rg</code> | Download GraphQL schema | **n** |
+| <code>&lt;leader&gt;Ri</code> | Inspect current request | **n** |
 | <code>&lt;leader&gt;Rn</code> | Jump to next request | **n** |
 | <code>&lt;leader&gt;Rp</code> | Jump to previous request | **n** |
+| <code>&lt;leader&gt;Rq</code> | Close window | **n** |
+| <code>&lt;leader&gt;Rr</code> | Replay the last request | **n** |
 | <code>&lt;leader&gt;Rs</code> | Send the request | **n** |
+| <code>&lt;leader&gt;RS</code> | Show stats | **n** |
 | <code>&lt;leader&gt;Rt</code> | Toggle headers/body | **n** |
 
 <!-- keymaps:end -->
