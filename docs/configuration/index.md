@@ -127,6 +127,7 @@ return {
       Snippet       = " ",
       String        = " ",
       Struct        = "󰆼 ",
+      Supermaven    = " ",
       TabNine       = "󰏚 ",
       Text          = " ",
       TypeParameter = " ",
