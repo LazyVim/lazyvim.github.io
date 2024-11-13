@@ -79,18 +79,6 @@ opts = function(_, opts)
   config.defaults.actions.files["alt-c"] = config.defaults.actions.files["ctrl-r"]
   config.set_action_helpstr(config.defaults.actions.files["ctrl-r"], "toggle-root-dir")
 
-  -- use the same prompt for all
-  local defaults = require("fzf-lua.profiles.default-title")
-  local function fix(t)
-    t.prompt = t.prompt ~= nil and " " or nil
-    for _, v in pairs(t) do
-      if type(v) == "table" then
-        fix(v)
-      end
-    end
-  end
-  fix(defaults)
-
   local img_previewer ---@type string[]?
   for _, v in ipairs({
     { cmd = "ueberzug", args = {} },
@@ -103,7 +91,8 @@ opts = function(_, opts)
     end
   end
 
-  return vim.tbl_deep_extend("force", defaults, {
+  return {
+    "default-title",
     fzf_colors = true,
     fzf_opts = {
       ["--no-scrollbar"] = true,
@@ -191,7 +180,7 @@ opts = function(_, opts)
         previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
       },
     },
-  })
+  }
 end
 ```
 
@@ -234,18 +223,6 @@ end
     config.defaults.actions.files["alt-c"] = config.defaults.actions.files["ctrl-r"]
     config.set_action_helpstr(config.defaults.actions.files["ctrl-r"], "toggle-root-dir")
 
-    -- use the same prompt for all
-    local defaults = require("fzf-lua.profiles.default-title")
-    local function fix(t)
-      t.prompt = t.prompt ~= nil and " " or nil
-      for _, v in pairs(t) do
-        if type(v) == "table" then
-          fix(v)
-        end
-      end
-    end
-    fix(defaults)
-
     local img_previewer ---@type string[]?
     for _, v in ipairs({
       { cmd = "ueberzug", args = {} },
@@ -258,7 +235,8 @@ end
       end
     end
 
-    return vim.tbl_deep_extend("force", defaults, {
+    return {
+      "default-title",
       fzf_colors = true,
       fzf_opts = {
         ["--no-scrollbar"] = true,
@@ -346,9 +324,24 @@ end
           previewer = vim.fn.executable("delta") == 1 and "codeaction_native" or nil,
         },
       },
-    })
+    }
   end,
   config = function(_, opts)
+    if opts[1] == "default-title" then
+      -- use the same prompt for all pickers for profile `default-title` and
+      -- profiles that use `default-title` as base profile
+      local function fix(t)
+        t.prompt = t.prompt ~= nil and " " or nil
+        for _, v in pairs(t) do
+          if type(v) == "table" then
+            fix(v)
+          end
+        end
+        return t
+      end
+      opts = vim.tbl_deep_extend("force", fix(require("fzf-lua.profiles.default-title")), opts)
+      opts[1] = nil
+    end
     require("fzf-lua").setup(opts)
   end,
   init = function()

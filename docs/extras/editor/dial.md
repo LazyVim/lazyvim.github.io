@@ -135,6 +135,9 @@ opts = function()
         ordinal_numbers,
         weekdays,
         months,
+        capitalized_boolean,
+        augend.constant.alias.bool, -- boolean value (true <-> false)
+        logical_alias,
       },
       typescript = {
         augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
@@ -294,6 +297,9 @@ end
           ordinal_numbers,
           weekdays,
           months,
+          capitalized_boolean,
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          logical_alias,
         },
         typescript = {
           augend.integer.alias.decimal_int, -- nonnegative and negative decimal number

@@ -94,6 +94,140 @@ opts = {
 
 </Tabs>
 
+## [blink.cmp](https://github.com/saghen/blink.cmp)
+
+ blink.cmp
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  dependencies = {
+    {
+      "giuxtaposition/blink-cmp-copilot",
+      enabled = vim.g.ai_cmp, -- only enable if needed
+      specs = {
+        {
+          "blink.cmp",
+          opts = {
+            sources = {
+              providers = {
+                copilot = { name = "copilot", module = "blink-cmp-copilot" },
+              },
+              completion = {
+                enabled_providers = { "copilot" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+
+ add ai_accept action
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  LazyVim.cmp.actions.ai_accept = function()
+    if require("copilot.suggestion").is_visible() then
+      LazyVim.create_undo()
+      require("copilot.suggestion").accept()
+      return true
+    end
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "zbirenbaum/copilot.lua",
+  opts = function()
+    LazyVim.cmp.actions.ai_accept = function()
+      if require("copilot.suggestion").is_visible() then
+        LazyVim.create_undo()
+        require("copilot.suggestion").accept()
+        return true
+      end
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, 1, {
+    name = "copilot",
+    group_index = 1,
+    priority = 100,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    table.insert(opts.sources, 1, {
+      name = "copilot",
+      group_index = 1,
+      priority = 100,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
  this will only be evaluated if nvim-cmp is enabled
@@ -204,25 +338,14 @@ opts = nil
 
 </Tabs>
 
-## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-
- add ai_accept action
-
+## [blink-cmp-copilot](https://github.com/giuxtaposition/blink-cmp-copilot)
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function()
-  LazyVim.cmp.actions.ai_accept = function()
-    if require("copilot.suggestion").is_visible() then
-      LazyVim.create_undo()
-      require("copilot.suggestion").accept()
-      return true
-    end
-  end
-end
+opts = nil
 ```
 
 </TabItem>
@@ -232,16 +355,23 @@ end
 
 ```lua
 {
-  "zbirenbaum/copilot.lua",
-  opts = function()
-    LazyVim.cmp.actions.ai_accept = function()
-      if require("copilot.suggestion").is_visible() then
-        LazyVim.create_undo()
-        require("copilot.suggestion").accept()
-        return true
-      end
-    end
-  end,
+  "giuxtaposition/blink-cmp-copilot",
+  enabled = vim.g.ai_cmp, -- only enable if needed
+  specs = {
+    {
+      "blink.cmp",
+      opts = {
+        sources = {
+          providers = {
+            copilot = { name = "copilot", module = "blink-cmp-copilot" },
+          },
+          completion = {
+            enabled_providers = { "copilot" },
+          },
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -249,67 +379,43 @@ end
 
 </Tabs>
 
-## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-
- blink has no copilot source, so force enable suggestions
-
+## [blink.cmp](https://github.com/saghen/blink.cmp)
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { suggestion = { enabled = true } }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "zbirenbaum/copilot.lua",
-  opts = { suggestion = { enabled = true } },
+opts = {
+  sources = {
+    providers = {
+      copilot = { name = "copilot", module = "blink-cmp-copilot" },
+    },
+    completion = {
+      enabled_providers = { "copilot" },
+    },
+  },
 }
 ```
 
 </TabItem>
 
-</Tabs>
-
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  table.insert(opts.sources, 1, {
-    name = "copilot",
-    group_index = 1,
-    priority = 100,
-  })
-end
-```
-
-</TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
 ```lua
 {
-  "nvim-cmp",
-  ---@param opts cmp.ConfigSchema
-  opts = function(_, opts)
-    table.insert(opts.sources, 1, {
-      name = "copilot",
-      group_index = 1,
-      priority = 100,
-    })
-  end,
+  "blink.cmp",
+  opts = {
+    sources = {
+      providers = {
+        copilot = { name = "copilot", module = "blink-cmp-copilot" },
+      },
+      completion = {
+        enabled_providers = { "copilot" },
+      },
+    },
+  },
 }
 ```
 
@@ -365,47 +471,6 @@ end
       end)
     )
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
-
- blink.cmp
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  windows = { ghost_text = { enabled = false } },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "saghen/blink.cmp",
-  optional = true,
-  opts = {
-    windows = { ghost_text = { enabled = false } },
-  },
-  specs = {
-    -- blink has no copilot source, so force enable suggestions
-    {
-      "zbirenbaum/copilot.lua",
-      opts = { suggestion = { enabled = true } },
-    },
-  },
 }
 ```
 
