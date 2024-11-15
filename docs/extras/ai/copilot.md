@@ -94,56 +94,6 @@ opts = {
 
 </Tabs>
 
-## [blink.cmp](https://github.com/saghen/blink.cmp)
-
- blink.cmp
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "saghen/blink.cmp",
-  optional = true,
-  dependencies = {
-    {
-      "giuxtaposition/blink-cmp-copilot",
-      enabled = vim.g.ai_cmp, -- only enable if needed
-      specs = {
-        {
-          "blink.cmp",
-          opts = {
-            sources = {
-              providers = {
-                copilot = { name = "copilot", module = "blink-cmp-copilot" },
-              },
-              completion = {
-                enabled_providers = { "copilot" },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 
  add ai_accept action
@@ -189,45 +139,6 @@ end
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  table.insert(opts.sources, 1, {
-    name = "copilot",
-    group_index = 1,
-    priority = 100,
-  })
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-cmp",
-  ---@param opts cmp.ConfigSchema
-  opts = function(_, opts)
-    table.insert(opts.sources, 1, {
-      name = "copilot",
-      group_index = 1,
-      priority = 100,
-    })
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 
  this will only be evaluated if nvim-cmp is enabled
@@ -263,6 +174,7 @@ opts = {}
   specs = {
     {
       "nvim-cmp",
+      optional = true,
       ---@param opts cmp.ConfigSchema
       opts = function(_, opts)
         table.insert(opts.sources, 1, {
@@ -271,64 +183,6 @@ opts = {}
           priority = 100,
         })
       end,
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
- copilot cmp source
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-cmp",
-  optional = true,
-  dependencies = { -- this will only be evaluated if nvim-cmp is enabled
-    {
-      "zbirenbaum/copilot-cmp",
-      enabled = vim.g.ai_cmp, -- only enable if wanted
-      opts = {},
-      config = function(_, opts)
-        local copilot_cmp = require("copilot_cmp")
-        copilot_cmp.setup(opts)
-        -- attach cmp source whenever copilot attaches
-        -- fixes lazy-loading issues with the copilot cmp source
-        LazyVim.lsp.on_attach(function()
-          copilot_cmp._on_insert_enter({})
-        end, "copilot")
-      end,
-      specs = {
-        {
-          "nvim-cmp",
-          ---@param opts cmp.ConfigSchema
-          opts = function(_, opts)
-            table.insert(opts.sources, 1, {
-              name = "copilot",
-              group_index = 1,
-              priority = 100,
-            })
-          end,
-        },
-      },
     },
   },
 }
@@ -360,6 +214,7 @@ opts = nil
   specs = {
     {
       "blink.cmp",
+      optional = true,
       opts = {
         sources = {
           providers = {
@@ -369,50 +224,6 @@ opts = nil
             enabled_providers = { "copilot" },
           },
         },
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [blink.cmp](https://github.com/saghen/blink.cmp)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  sources = {
-    providers = {
-      copilot = { name = "copilot", module = "blink-cmp-copilot" },
-    },
-    completion = {
-      enabled_providers = { "copilot" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "blink.cmp",
-  opts = {
-    sources = {
-      providers = {
-        copilot = { name = "copilot", module = "blink-cmp-copilot" },
-      },
-      completion = {
-        enabled_providers = { "copilot" },
       },
     },
   },
@@ -471,6 +282,201 @@ end
       end)
     )
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
+
+ copilot cmp source
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  optional = true,
+  dependencies = { -- this will only be evaluated if nvim-cmp is enabled
+    {
+      "zbirenbaum/copilot-cmp",
+      enabled = vim.g.ai_cmp, -- only enable if wanted
+      opts = {},
+      config = function(_, opts)
+        local copilot_cmp = require("copilot_cmp")
+        copilot_cmp.setup(opts)
+        -- attach cmp source whenever copilot attaches
+        -- fixes lazy-loading issues with the copilot cmp source
+        LazyVim.lsp.on_attach(function()
+          copilot_cmp._on_insert_enter({})
+        end, "copilot")
+      end,
+      specs = {
+        {
+          "nvim-cmp",
+          optional = true,
+          ---@param opts cmp.ConfigSchema
+          opts = function(_, opts)
+            table.insert(opts.sources, 1, {
+              name = "copilot",
+              group_index = 1,
+              priority = 100,
+            })
+          end,
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources, 1, {
+    name = "copilot",
+    group_index = 1,
+    priority = 100,
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  optional = true,
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    table.insert(opts.sources, 1, {
+      name = "copilot",
+      group_index = 1,
+      priority = 100,
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+ blink.cmp
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  dependencies = {
+    {
+      "giuxtaposition/blink-cmp-copilot",
+      enabled = vim.g.ai_cmp, -- only enable if needed
+      specs = {
+        {
+          "blink.cmp",
+          optional = true,
+          opts = {
+            sources = {
+              providers = {
+                copilot = { name = "copilot", module = "blink-cmp-copilot" },
+              },
+              completion = {
+                enabled_providers = { "copilot" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  sources = {
+    providers = {
+      copilot = { name = "copilot", module = "blink-cmp-copilot" },
+    },
+    completion = {
+      enabled_providers = { "copilot" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "blink.cmp",
+  optional = true,
+  opts = {
+    sources = {
+      providers = {
+        copilot = { name = "copilot", module = "blink-cmp-copilot" },
+      },
+      completion = {
+        enabled_providers = { "copilot" },
+      },
+    },
+  },
 }
 ```
 
