@@ -313,4 +313,38 @@ opts = {
 
 </Tabs>
 
+## [catppuccin](https://github.com/catppuccin/nvim) _(optional)_
+
+ catppuccin support
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  integrations = { blink_cmp = true },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "catppuccin",
+  optional = true,
+  opts = {
+    integrations = { blink_cmp = true },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->

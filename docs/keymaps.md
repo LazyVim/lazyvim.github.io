@@ -294,7 +294,6 @@ Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 | <code>&lt;c-s&gt;</code> | Submit Prompt | **n** |
 | <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
 | <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
-| <code>&lt;leader&gt;ad</code> | Diagnostic Help (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |

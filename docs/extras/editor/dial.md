@@ -115,7 +115,10 @@ opts = function()
   return {
     dials_by_ft = {
       css = "css",
+      vue = "vue",
       javascript = "typescript",
+      typescript = "typescript",
+      typescriptreact = "typescript",
       javascriptreact = "typescript",
       json = "json",
       lua = "lua",
@@ -123,8 +126,6 @@ opts = function()
       python = "python",
       sass = "css",
       scss = "css",
-      typescript = "typescript",
-      typescriptreact = "typescript",
       yaml = "yaml",
     },
     groups = {
@@ -138,6 +139,14 @@ opts = function()
         capitalized_boolean,
         augend.constant.alias.bool, -- boolean value (true <-> false)
         logical_alias,
+      },
+      vue = {
+        augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
+        augend.constant.alias.bool, -- boolean value (true <-> false)
+        logical_alias,
+        augend.constant.new({ elements = { "let", "const" } }),
+        augend.hexcolor.new({ case = "lower" }),
+        augend.hexcolor.new({ case = "upper" }),
       },
       typescript = {
         augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
@@ -277,7 +286,10 @@ end
     return {
       dials_by_ft = {
         css = "css",
+        vue = "vue",
         javascript = "typescript",
+        typescript = "typescript",
+        typescriptreact = "typescript",
         javascriptreact = "typescript",
         json = "json",
         lua = "lua",
@@ -285,8 +297,6 @@ end
         python = "python",
         sass = "css",
         scss = "css",
-        typescript = "typescript",
-        typescriptreact = "typescript",
         yaml = "yaml",
       },
       groups = {
@@ -300,6 +310,14 @@ end
           capitalized_boolean,
           augend.constant.alias.bool, -- boolean value (true <-> false)
           logical_alias,
+        },
+        vue = {
+          augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
+          augend.constant.alias.bool, -- boolean value (true <-> false)
+          logical_alias,
+          augend.constant.new({ elements = { "let", "const" } }),
+          augend.hexcolor.new({ case = "lower" }),
+          augend.hexcolor.new({ case = "upper" }),
         },
         typescript = {
           augend.integer.alias.decimal_int, -- nonnegative and negative decimal number
