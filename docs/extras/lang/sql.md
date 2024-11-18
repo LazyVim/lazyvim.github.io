@@ -183,6 +183,31 @@ opts = nil
 
 </Tabs>
 
+## [vim-dadbod-completion](https://github.com/kristijanhusak/vim-dadbod-completion)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "kristijanhusak/vim-dadbod-completion",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [mason.nvim](https://github.com/williamboman/mason.nvim)
 
  Linters & formatters
@@ -299,6 +324,57 @@ end
       ft = "dbout",
     })
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+ blink.cmp integration
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  sources = {
+    completion = {
+      enabled_providers = { "dadbod" },
+    },
+    providers = {
+      dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  opts = {
+    sources = {
+      completion = {
+        enabled_providers = { "dadbod" },
+      },
+      providers = {
+        dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+      },
+    },
+  },
+  dependencies = {
+    "kristijanhusak/vim-dadbod-completion",
+  },
 }
 ```
 

@@ -32,6 +32,32 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+ disable alpha
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { dashboard = { enabled = false } }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "folke/snacks.nvim", opts = { dashboard = { enabled = false } } }
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [mini.starter](https://github.com/echasnovski/mini.starter)
 
  enable mini.starter
