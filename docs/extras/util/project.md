@@ -226,6 +226,9 @@ end
 
 ```lua
 opts = function(_, opts)
+  if not vim.tbl_get(opts, "config", "center") then
+    return
+  end
   local projects = {
     action = pick,
     desc = " Projects",
@@ -250,6 +253,9 @@ end
   "nvimdev/dashboard-nvim",
   optional = true,
   opts = function(_, opts)
+    if not vim.tbl_get(opts, "config", "center") then
+      return
+    end
     local projects = {
       action = pick,
       desc = " Projects",
@@ -261,6 +267,47 @@ end
     projects.key_format = "  %s"
 
     table.insert(opts.config.center, 3, projects)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [snacks.nvim](https://github.com/folke/snacks.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.dashboard.preset.keys, 3, {
+    action = pick,
+    desc = "Projects",
+    icon = " ",
+    key = "p",
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/snacks.nvim",
+  optional = true,
+  opts = function(_, opts)
+    table.insert(opts.dashboard.preset.keys, 3, {
+      action = pick,
+      desc = "Projects",
+      icon = " ",
+      key = "p",
+    })
   end,
 }
 ```
