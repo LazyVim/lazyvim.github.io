@@ -87,6 +87,15 @@ opts = {
       help = true,
     },
   },
+  config = function(_, opts)
+    require("copilot").setup(opts)
+    -- HACK: work-around for https://github.com/neovim/neovim/issues/31262
+    local Util = require("copilot.util")
+    local language_for_file_type = Util.language_for_file_type
+    Util.language_for_file_type = function(ft)
+      return language_for_file_type(ft or "")
+    end
+  end,
 }
 ```
 
