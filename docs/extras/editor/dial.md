@@ -125,6 +125,7 @@ opts = function()
       markdown = "markdown",
       sass = "css",
       scss = "css",
+      python = "python",
     },
     groups = {
       default = {
@@ -166,6 +167,11 @@ opts = function()
           elements = { "and", "or" },
           word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
           cyclic = true, -- "or" is incremented into "and".
+        }),
+      },
+      python = {
+        augend.constant.new({
+          elements = { "and", "or" },
         }),
       },
     },
@@ -276,6 +282,7 @@ end
         markdown = "markdown",
         sass = "css",
         scss = "css",
+        python = "python",
       },
       groups = {
         default = {
@@ -317,6 +324,11 @@ end
             elements = { "and", "or" },
             word = true, -- if false, "sand" is incremented into "sor", "doctor" into "doctand", etc.
             cyclic = true, -- "or" is incremented into "and".
+          }),
+        },
+        python = {
+          augend.constant.new({
+            elements = { "and", "or" },
           }),
         },
       },
