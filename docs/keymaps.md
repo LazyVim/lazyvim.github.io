@@ -75,6 +75,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
 | <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
+| <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
+| <code>&lt;leader&gt;gB</code> | Git Browse | **n**, **x** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
