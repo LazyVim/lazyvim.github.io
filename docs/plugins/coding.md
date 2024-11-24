@@ -250,6 +250,63 @@ opts = nil
 
 </Tabs>
 
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
+ snippets
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  opts.snippet = {
+    expand = function(item)
+      return LazyVim.cmp.expand(item.body)
+    end,
+  }
+  if LazyVim.has("nvim-snippets") then
+    table.insert(opts.sources, { name = "snippets" })
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-cmp",
+  optional = true,
+  dependencies = {
+    {
+      "garymjr/nvim-snippets",
+      opts = {
+        friendly_snippets = true,
+      },
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
+  },
+  opts = function(_, opts)
+    opts.snippet = {
+      expand = function(item)
+        return LazyVim.cmp.expand(item.body)
+      end,
+    }
+    if LazyVim.has("nvim-snippets") then
+      table.insert(opts.sources, { name = "snippets" })
+    end
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-snippets](https://github.com/garymjr/nvim-snippets)
 
 <Tabs>
@@ -482,7 +539,7 @@ end
 ```lua
 opts = {
   library = {
-    { path = "luvit-meta/library", words = { "vim%.uv" } },
+    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
     { path = "LazyVim", words = { "LazyVim" } },
     { path = "snacks.nvim", words = { "Snacks" } },
     { path = "lazy.nvim", words = { "LazyVim" } },
@@ -502,95 +559,12 @@ opts = {
   cmd = "LazyDev",
   opts = {
     library = {
-      { path = "luvit-meta/library", words = { "vim%.uv" } },
+      { path = "${3rd}/luv/library", words = { "vim%.uv" } },
       { path = "LazyVim", words = { "LazyVim" } },
       { path = "snacks.nvim", words = { "Snacks" } },
       { path = "lazy.nvim", words = { "LazyVim" } },
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [luvit-meta](https://github.com/Bilal2453/luvit-meta)
-
- Manage libuv types with lazy. Plugin will never be loaded
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "Bilal2453/luvit-meta", lazy = true }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-
- snippets
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  opts.snippet = {
-    expand = function(item)
-      return LazyVim.cmp.expand(item.body)
-    end,
-  }
-  if LazyVim.has("nvim-snippets") then
-    table.insert(opts.sources, { name = "snippets" })
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-cmp",
-  optional = true,
-  dependencies = {
-    {
-      "garymjr/nvim-snippets",
-      opts = {
-        friendly_snippets = true,
-      },
-      dependencies = { "rafamadriz/friendly-snippets" },
-    },
-  },
-  opts = function(_, opts)
-    opts.snippet = {
-      expand = function(item)
-        return LazyVim.cmp.expand(item.body)
-      end,
-    }
-    if LazyVim.has("nvim-snippets") then
-      table.insert(opts.sources, { name = "snippets" })
-    end
-  end,
 }
 ```
 

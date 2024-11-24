@@ -62,7 +62,6 @@ opts = {
   nerd_font_variant = "mono",
   windows = {
     autocomplete = {
-      -- draw = "reversed",
       winblend = vim.o.pumblend,
     },
     documentation = {
@@ -115,7 +114,12 @@ opts = {
   dependencies = {
     "rafamadriz/friendly-snippets",
     -- add blink.compat to dependencies
-    -- { "saghen/blink.compat", opts = {} },
+    {
+      "saghen/blink.compat",
+      optional = true, -- make optional so it's only enabled if any extras need it
+      opts = {},
+      version = not vim.g.lazyvim_blink_main and "*",
+    },
   },
   event = "InsertEnter",
 
@@ -133,7 +137,6 @@ opts = {
     nerd_font_variant = "mono",
     windows = {
       autocomplete = {
-        -- draw = "reversed",
         winblend = vim.o.pumblend,
       },
       documentation = {
@@ -209,7 +212,12 @@ opts = nil
 {
   "rafamadriz/friendly-snippets",
   -- add blink.compat to dependencies
-  -- { "saghen/blink.compat", opts = {} },
+  {
+    "saghen/blink.compat",
+    optional = true, -- make optional so it's only enabled if any extras need it
+    opts = {},
+    version = not vim.g.lazyvim_blink_main and "*",
+  },
 }
 ```
 
@@ -306,6 +314,37 @@ opts = {
       },
     },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.compat](https://github.com/saghen/blink.compat) _(optional)_
+
+ add blink.compat to dependencies
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.compat",
+  optional = true, -- make optional so it's only enabled if any extras need it
+  opts = {},
+  version = not vim.g.lazyvim_blink_main and "*",
 }
 ```
 
