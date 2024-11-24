@@ -99,6 +99,8 @@ opts = nil
 
 ## [one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind)
 
+Debug adapter for Neovim plugins
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
