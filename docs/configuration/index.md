@@ -21,7 +21,7 @@ For more information, see [configuring plugins](/configuration/plugins).
 │       ├── spec1.lua
 │       ├── **
 │       └── spec2.lua
-└── init.toml
+└── init.lua
 ```
 
 ## Icons & Colorscheme
