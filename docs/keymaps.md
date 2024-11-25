@@ -76,7 +76,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
-| <code>&lt;leader&gt;gB</code> | Git Browse | **n**, **x** |
+| <code>&lt;leader&gt;gB</code> | Git Browse (open) | **n**, **x** |
+| <code>&lt;leader&gt;gY</code> | Git Browse (copy) | **n**, **x** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
 | <code>&lt;leader&gt;ui</code> | Inspect Pos | **n** |
 | <code>&lt;leader&gt;uI</code> | Inspect Tree | **n** |
@@ -680,19 +681,22 @@ Part of [lazyvim.plugins.extras.util.octo](/extras/util/octo)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;a</code> | +assignee (Octo) | **n** |
-| <code>&lt;leader&gt;c</code> | +comment/code (Octo) | **n** |
 | <code>&lt;leader&gt;gi</code> | List Issues (Octo) | **n** |
 | <code>&lt;leader&gt;gI</code> | Search Issues (Octo) | **n** |
 | <code>&lt;leader&gt;gp</code> | List PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gP</code> | Search PRs (Octo) | **n** |
 | <code>&lt;leader&gt;gr</code> | List Repos (Octo) | **n** |
 | <code>&lt;leader&gt;gS</code> | Search (Octo) | **n** |
-| <code>&lt;leader&gt;i</code> | +issue (Octo) | **n** |
-| <code>&lt;leader&gt;l</code> | +label (Octo) | **n** |
-| <code>&lt;leader&gt;p</code> | +pr (Octo) | **n** |
-| <code>&lt;leader&gt;r</code> | +react (Octo) | **n** |
-| <code>&lt;leader&gt;v</code> | +review (Octo) | **n** |
+| <code>&lt;localleader&gt;a</code> | +assignee (Octo) | **n** |
+| <code>&lt;localleader&gt;c</code> | +comment/code (Octo) | **n** |
+| <code>&lt;localleader&gt;g</code> | +goto_issue (Octo) | **n** |
+| <code>&lt;localleader&gt;i</code> | +issue (Octo) | **n** |
+| <code>&lt;localleader&gt;l</code> | +label (Octo) | **n** |
+| <code>&lt;localleader&gt;p</code> | +pr (Octo) | **n** |
+| <code>&lt;localleader&gt;pr</code> | +rebase (Octo) | **n** |
+| <code>&lt;localleader&gt;ps</code> | +squash (Octo) | **n** |
+| <code>&lt;localleader&gt;r</code> | +react (Octo) | **n** |
+| <code>&lt;localleader&gt;v</code> | +review (Octo) | **n** |
 
 ## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
 Part of [lazyvim.plugins.extras.util.project](/extras/util/project)
