@@ -238,7 +238,8 @@ opts = nil
 
 ```lua
 opts = function(_, opts)
-  opts.kind_icons = LazyVim.config.icons.kinds
+  opts.appearance = opts.appearance or {}
+  opts.appearance.kind_icons = LazyVim.config.icons.kinds
 end
 ```
 
@@ -251,7 +252,8 @@ end
 {
   "saghen/blink.cmp",
   opts = function(_, opts)
-    opts.kind_icons = LazyVim.config.icons.kinds
+    opts.appearance = opts.appearance or {}
+    opts.appearance.kind_icons = LazyVim.config.icons.kinds
   end,
 }
 ```
