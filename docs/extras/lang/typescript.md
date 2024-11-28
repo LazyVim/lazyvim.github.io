@@ -70,6 +70,7 @@ opts = {
           enableMoveToFileCodeAction = true,
           autoUseWorkspaceTsdk = true,
           experimental = {
+            maxInlayHintLength = 30,
             completion = {
               enableServerSideFuzzyMatch = true,
             },
@@ -250,6 +251,7 @@ opts = {
             enableMoveToFileCodeAction = true,
             autoUseWorkspaceTsdk = true,
             experimental = {
+              maxInlayHintLength = 30,
               completion = {
                 enableServerSideFuzzyMatch = true,
               },
