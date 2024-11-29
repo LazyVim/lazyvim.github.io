@@ -41,6 +41,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   hide_target_hack = true,
+  cursor_color = "none",
 }
 ```
 
@@ -56,6 +57,7 @@ opts = {
   cond = vim.g.neovide == nil,
   opts = {
     hide_target_hack = true,
+    cursor_color = "none",
   },
   specs = {
     -- disable mini.animate cursor
