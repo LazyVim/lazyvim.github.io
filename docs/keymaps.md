@@ -212,6 +212,9 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;.</code> | Toggle Scratch Buffer | **n** |
+| <code>&lt;leader&gt;n</code> | Notification History | **n** |
+| <code>&lt;leader&gt;S</code> | Select Scratch Buffer | **n** |
 | <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
 
 ## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
