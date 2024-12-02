@@ -63,6 +63,7 @@ opts = {
   completion = {
     menu = {
       winblend = vim.o.pumblend,
+      draw = { treesitter = true },
     },
     documentation = {
       auto_show = true,
@@ -139,6 +140,7 @@ opts = {
     completion = {
       menu = {
         winblend = vim.o.pumblend,
+        draw = { treesitter = true },
       },
       documentation = {
         auto_show = true,
