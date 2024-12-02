@@ -151,9 +151,7 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  disable_inline_completion = false,
-}
+opts = nil
 ```
 
 </TabItem>
@@ -164,9 +162,7 @@ opts = {
 ```lua
 {
   "supermaven-nvim",
-  opts = {
-    disable_inline_completion = false,
-  },
+  vim.g.ai_cmp and "saghen/blink.compat" or nil,
 }
 ```
 
@@ -225,23 +221,6 @@ end
 
  blink.cmp integration
 
- FIXME: this currently doesn't work properly
- {
-   "saghen/blink.cmp",
-   optional = true,
-   opts = {
-     sources = {
-       compat = vim.g.ai_cmp and { "supermaven" } or nil,
-     },
-   },
-   dependencies = {
-     "supermaven-nvim",
-     vim.g.ai_cmp and "saghen/blink.compat" or nil,
-   },
- },
-
- Disabble cmp integration for now
-
 
 <Tabs>
 
@@ -249,7 +228,9 @@ end
 
 ```lua
 opts = {
-  completion = { ghost_text = { enabled = false } },
+  sources = {
+    compat = vim.g.ai_cmp and { "supermaven" } or nil,
+  },
 }
 ```
 
@@ -265,15 +246,13 @@ opts = {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    completion = { ghost_text = { enabled = false } },
+    sources = {
+      compat = vim.g.ai_cmp and { "supermaven" } or nil,
+    },
   },
   dependencies = {
-    {
-      "supermaven-nvim",
-      opts = {
-        disable_inline_completion = false,
-      },
-    },
+    "supermaven-nvim",
+    vim.g.ai_cmp and "saghen/blink.compat" or nil,
   },
 }
 ```
