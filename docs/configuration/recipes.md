@@ -25,6 +25,8 @@ override nvim-cmp and add cmp-emoji
 
 Use `<tab>` for completion and snippets (supertab).
 
+### Without luasnip
+
 ```lua
 {
   "hrsh7th/nvim-cmp",
@@ -69,6 +71,43 @@ Use `<tab>` for completion and snippets (supertab).
 }
 ```
 
+### With luasnip
+
+If the `Luasnip` extra is enabled you should use the following configuration instead:
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  optional = true,
+  -- See https://www.lazyvim.org/configuration/recipes#supertab
+  -- See https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    opts.mapping = vim.tbl_extend("force", opts.mapping, {
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+          cmp.select_next_item()
+        elseif luasnip.locally_jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        elseif luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
+    })
+  end,
+}
 ## Change surround mappings
 
 ```lua
