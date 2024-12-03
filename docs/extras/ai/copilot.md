@@ -208,26 +208,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{
-  "giuxtaposition/blink-cmp-copilot",
-  enabled = vim.g.ai_cmp, -- only enable if needed
-  specs = {
-    {
-      "blink.cmp",
-      optional = true,
-      opts = {
-        sources = {
-          providers = {
-            copilot = { name = "copilot", module = "blink-cmp-copilot" },
-          },
-          completion = {
-            enabled_providers = { "copilot" },
-          },
-        },
-      },
-    },
-  },
-}
+{ "giuxtaposition/blink-cmp-copilot" }
 ```
 
 </TabItem>
@@ -390,15 +371,25 @@ end
 
 ## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
 
- blink.cmp
-
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = nil
+opts = {
+  sources = {
+    completion = {
+      enabled_providers = { "copilot" },
+    },
+    providers = {
+      copilot = {
+        name = "copilot",
+        module = "blink-cmp-copilot",
+        kind = "Copilot",
+      },
+    },
+  },
+}
 ```
 
 </TabItem>
@@ -410,70 +401,18 @@ opts = nil
 {
   "saghen/blink.cmp",
   optional = true,
-  dependencies = {
-    {
-      "giuxtaposition/blink-cmp-copilot",
-      enabled = vim.g.ai_cmp, -- only enable if needed
-      specs = {
-        {
-          "blink.cmp",
-          optional = true,
-          opts = {
-            sources = {
-              providers = {
-                copilot = { name = "copilot", module = "blink-cmp-copilot" },
-              },
-              completion = {
-                enabled_providers = { "copilot" },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  sources = {
-    providers = {
-      copilot = { name = "copilot", module = "blink-cmp-copilot" },
-    },
-    completion = {
-      enabled_providers = { "copilot" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "blink.cmp",
-  optional = true,
+  dependencies = { "giuxtaposition/blink-cmp-copilot" },
   opts = {
     sources = {
-      providers = {
-        copilot = { name = "copilot", module = "blink-cmp-copilot" },
-      },
       completion = {
         enabled_providers = { "copilot" },
+      },
+      providers = {
+        copilot = {
+          name = "copilot",
+          module = "blink-cmp-copilot",
+          kind = "Copilot",
+        },
       },
     },
   },

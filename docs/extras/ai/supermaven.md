@@ -160,10 +160,30 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{
-  "supermaven-nvim",
-  vim.g.ai_cmp and "saghen/blink.compat" or nil,
-}
+{ "supermaven-nvim", "saghen/blink.compat" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.compat](https://github.com/saghen/blink.compat)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+"saghen/blink.compat"
 ```
 
 </TabItem>
@@ -219,9 +239,6 @@ end
 
 ## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
 
- blink.cmp integration
-
-
 <Tabs>
 
 <TabItem value="opts" label="Options">
@@ -229,7 +246,8 @@ end
 ```lua
 opts = {
   sources = {
-    compat = vim.g.ai_cmp and { "supermaven" } or nil,
+    compat = { "supermaven" },
+    providers = { supermaven = { kind = "Supermaven" } },
   },
 }
 ```
@@ -243,16 +261,12 @@ opts = {
 {
   "saghen/blink.cmp",
   optional = true,
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
+  dependencies = { "supermaven-nvim", "saghen/blink.compat" },
   opts = {
     sources = {
-      compat = vim.g.ai_cmp and { "supermaven" } or nil,
+      compat = { "supermaven" },
+      providers = { supermaven = { kind = "Supermaven" } },
     },
-  },
-  dependencies = {
-    "supermaven-nvim",
-    vim.g.ai_cmp and "saghen/blink.compat" or nil,
   },
 }
 ```

@@ -167,10 +167,30 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{
-  "codeium.nvim",
-  vim.g.ai_cmp and "saghen/blink.compat" or nil,
-}
+{ "codeium.nvim", "saghen/blink.compat" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.compat](https://github.com/saghen/blink.compat)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+"saghen/blink.compat"
 ```
 
 </TabItem>
@@ -261,7 +281,8 @@ end
 ```lua
 opts = {
   sources = {
-    compat = vim.g.ai_cmp and { "codeium" } or nil,
+    compat = { "codeium" },
+    providers = { codeium = { kind = "Codeium" } },
   },
 }
 ```
@@ -275,14 +296,12 @@ opts = {
 {
   "saghen/blink.cmp",
   optional = true,
+  dependencies = { "codeium.nvim", "saghen/blink.compat" },
   opts = {
     sources = {
-      compat = vim.g.ai_cmp and { "codeium" } or nil,
+      compat = { "codeium" },
+      providers = { codeium = { kind = "Codeium" } },
     },
-  },
-  dependencies = {
-    "codeium.nvim",
-    vim.g.ai_cmp and "saghen/blink.compat" or nil,
   },
 }
 ```

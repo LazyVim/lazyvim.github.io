@@ -32,10 +32,117 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
 
  Tabnine cmp source
 
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  max_lines = 1000,
+  max_num_results = 3,
+  sort = true,
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "tzachar/cmp-tabnine",
+  build = LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
+  opts = {
+    max_lines = 1000,
+    max_num_results = 3,
+    sort = true,
+  },
+  config = function(_, opts)
+    require("cmp_tabnine.config"):setup(opts)
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "tzachar/cmp-tabnine" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "tzachar/cmp-tabnine", "saghen/blink.compat" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.compat](https://github.com/saghen/blink.compat)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+"saghen/blink.compat"
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
 <Tabs>
 
@@ -67,23 +174,7 @@ end
 {
   "nvim-cmp",
   optional = true,
-  dependencies = {
-    {
-      "tzachar/cmp-tabnine",
-      build = {
-        LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
-      },
-      dependencies = "hrsh7th/nvim-cmp",
-      opts = {
-        max_lines = 1000,
-        max_num_results = 3,
-        sort = true,
-      },
-      config = function(_, opts)
-        require("cmp_tabnine.config"):setup(opts)
-      end,
-    },
-  },
+  dependencies = { "tzachar/cmp-tabnine" },
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     table.insert(opts.sources, 1, {
@@ -106,7 +197,7 @@ end
 
 </Tabs>
 
-## [cmp-tabnine](https://github.com/tzachar/cmp-tabnine)
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
 
 <Tabs>
 
@@ -114,9 +205,10 @@ end
 
 ```lua
 opts = {
-  max_lines = 1000,
-  max_num_results = 3,
-  sort = true,
+  sources = {
+    compat = { "cmp_tabnine" },
+    providers = { cmp_tabnine = { kind = "TabNine" } },
+  },
 }
 ```
 
@@ -127,19 +219,15 @@ opts = {
 
 ```lua
 {
-  "tzachar/cmp-tabnine",
-  build = {
-    LazyVim.is_win() and "pwsh -noni .\\install.ps1" or "./install.sh",
-  },
-  dependencies = "hrsh7th/nvim-cmp",
+  "saghen/blink.cmp",
+  optional = true,
+  dependencies = { "tzachar/cmp-tabnine", "saghen/blink.compat" },
   opts = {
-    max_lines = 1000,
-    max_num_results = 3,
-    sort = true,
+    sources = {
+      compat = { "cmp_tabnine" },
+      providers = { cmp_tabnine = { kind = "TabNine" } },
+    },
   },
-  config = function(_, opts)
-    require("cmp_tabnine.config"):setup(opts)
-  end,
 }
 ```
 
