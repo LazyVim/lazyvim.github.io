@@ -71,8 +71,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uL</code> | Toggle Relative Number | **n** |
 | <code>&lt;leader&gt;ud</code> | Toggle Diagnostics | **n** |
 | <code>&lt;leader&gt;ul</code> | Toggle Line Numbers | **n** |
-| <code>&lt;leader&gt;uc</code> | Toggle conceallevel | **n** |
-| <code>&lt;leader&gt;uA</code> | Toggle showtabline | **n** |
+| <code>&lt;leader&gt;uc</code> | Toggle Conceal Level | **n** |
+| <code>&lt;leader&gt;uA</code> | Toggle Tabline | **n** |
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
 | <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
