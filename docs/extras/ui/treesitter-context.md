@@ -64,7 +64,7 @@ end
 ```lua
 {
   "nvim-treesitter/nvim-treesitter-context",
-  event = "VeryLazy",
+  event = "LazyFile",
   opts = function()
     local tsc = require("treesitter-context")
     Snacks.toggle({

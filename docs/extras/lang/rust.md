@@ -22,6 +22,18 @@ require("lazy").setup({
 
 </details>
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- LSP Server to use for Rust.
+-- Set to "bacon-ls" to use bacon-ls instead of rust-analyzer.
+-- only for diagnostics. The rest of LSP support will still be
+-- provided by rust-analyzer.
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -142,8 +154,12 @@ opts = {
             enable = true,
           },
         },
-        -- Add clippy lints for Rust.
-        checkOnSave = true,
+        -- Add clippy lints for Rust if using rust-analyzer
+        checkOnSave = diagnostics == "rust-analyzer",
+        -- Enable diagnostics if using rust-analyzer
+        diagnostics = {
+          enable = diagnostics == "rust-analyzer",
+        },
         procMacro = {
           enable = true,
           ignored = {
@@ -188,8 +204,12 @@ opts = {
               enable = true,
             },
           },
-          -- Add clippy lints for Rust.
-          checkOnSave = true,
+          -- Add clippy lints for Rust if using rust-analyzer
+          checkOnSave = diagnostics == "rust-analyzer",
+          -- Enable diagnostics if using rust-analyzer
+          diagnostics = {
+            enable = diagnostics == "rust-analyzer",
+          },
           procMacro = {
             enable = true,
             ignored = {
@@ -203,6 +223,16 @@ opts = {
     },
   },
   config = function(_, opts)
+    local package_path = require("mason-registry").get_package("codelldb"):get_install_path()
+    local codelldb = package_path .. "/extension/adapter/codelldb"
+    local library_path = package_path .. "/extension/lldb/lib/liblldb.dylib"
+    local uname = io.popen("uname"):read("*l")
+    if uname == "Linux" then
+      library_path = package_path .. "/extension/lldb/lib/liblldb.so"
+    end
+    opts.dap = {
+      adapter = require("rustaceanvim.config").get_codelldb_adapter(codelldb, library_path),
+    }
     vim.g.rustaceanvim = vim.tbl_deep_extend("keep", vim.g.rustaceanvim or {}, opts or {})
     if vim.fn.executable("rust-analyzer") == 0 then
       LazyVim.error(
@@ -230,6 +260,9 @@ opts = {
 ```lua
 opts = {
   servers = {
+    bacon_ls = {
+      enabled = diagnostics == "bacon-ls",
+    },
     rust_analyzer = { enabled = false },
   },
 }
@@ -245,6 +278,9 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
+      bacon_ls = {
+        enabled = diagnostics == "bacon-ls",
+      },
       rust_analyzer = { enabled = false },
     },
   },
@@ -265,7 +301,13 @@ opts = {
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "codelldb" } }
+opts = function(_, opts)
+  opts.ensure_installed = opts.ensure_installed or {}
+  vim.list_extend(opts.ensure_installed, { "codelldb" })
+  if diagnostics == "bacon-ls" then
+    vim.list_extend(opts.ensure_installed, { "bacon" })
+  end
+end
 ```
 
 </TabItem>
@@ -277,7 +319,13 @@ opts = { ensure_installed = { "codelldb" } }
 {
   "williamboman/mason.nvim",
   optional = true,
-  opts = { ensure_installed = { "codelldb" } },
+  opts = function(_, opts)
+    opts.ensure_installed = opts.ensure_installed or {}
+    vim.list_extend(opts.ensure_installed, { "codelldb" })
+    if diagnostics == "bacon-ls" then
+      vim.list_extend(opts.ensure_installed, { "bacon" })
+    end
+  end,
 }
 ```
 
