@@ -117,11 +117,12 @@ opts = function(_, opts)
     pattern = {
       [".*/waybar/config"] = "jsonc",
       [".*/mako/config"] = "dosini",
-      [".*/kitty/.+%.conf"] = "bash",
+      [".*/kitty/.+%.conf"] = "kitty",
       [".*/hypr/.+%.conf"] = "hyprlang",
       ["%.env%.[%w_.-]+"] = "sh",
     },
   })
+  vim.treesitter.language.register("bash", "kitty")
 
   add("git_config")
 
@@ -162,11 +163,12 @@ end
       pattern = {
         [".*/waybar/config"] = "jsonc",
         [".*/mako/config"] = "dosini",
-        [".*/kitty/.+%.conf"] = "bash",
+        [".*/kitty/.+%.conf"] = "kitty",
         [".*/hypr/.+%.conf"] = "hyprlang",
         ["%.env%.[%w_.-]+"] = "sh",
       },
     })
+    vim.treesitter.language.register("bash", "kitty")
 
     add("git_config")
 
