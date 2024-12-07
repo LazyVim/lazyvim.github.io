@@ -560,6 +560,52 @@ opts = {
 
 </Tabs>
 
+## [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  Snacks.toggle({
+    name = "Git Signs",
+    get = function()
+      return require("gitsigns.config").config.signcolumn
+    end,
+    set = function(state)
+      require("gitsigns").toggle_signs(state)
+    end,
+  }):map("<leader>uG")
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "gitsigns.nvim",
+  opts = function()
+    Snacks.toggle({
+      name = "Git Signs",
+      get = function()
+        return require("gitsigns.config").config.signcolumn
+      end,
+      set = function(state)
+        require("gitsigns").toggle_signs(state)
+      end,
+    }):map("<leader>uG")
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [trouble.nvim](https://github.com/folke/trouble.nvim)
 
  better diagnostics list and others

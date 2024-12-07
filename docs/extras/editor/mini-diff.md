@@ -89,6 +89,70 @@ opts = {
 
 </Tabs>
 
+## [mini.diff](https://github.com/echasnovski/mini.diff)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function()
+  Snacks.toggle({
+    name = "Mini Diff Signs",
+    get = function()
+      return vim.b.minidiff_disable ~= true
+    end,
+    set = function(state)
+      vim.b.minidiff_disable = not state
+      if state then
+        require("mini.diff").enable(0)
+      else
+        require("mini.diff").disable(0)
+      end
+      -- HACK: redraw to update the signs
+      vim.defer_fn(function()
+        vim.cmd([[redraw!]])
+      end, 200)
+    end,
+  }):map("<leader>uG")
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mini.diff",
+  opts = function()
+    Snacks.toggle({
+      name = "Mini Diff Signs",
+      get = function()
+        return vim.b.minidiff_disable ~= true
+      end,
+      set = function(state)
+        vim.b.minidiff_disable = not state
+        if state then
+          require("mini.diff").enable(0)
+        else
+          require("mini.diff").disable(0)
+        end
+        -- HACK: redraw to update the signs
+        vim.defer_fn(function()
+          vim.cmd([[redraw!]])
+        end, 200)
+      end,
+    }):map("<leader>uG")
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
  lualine integration
