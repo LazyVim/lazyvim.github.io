@@ -32,7 +32,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
+## [harpoon](https://github.com/ThePrimeagen/harpoon)
 
 <Tabs>
 
