@@ -474,7 +474,6 @@ vim.api.nvim_create_autocmd("FileType", {
     "neotest-summary",
     "notify",
     "qf",
-    "snacks_win",
     "spectre_panel",
     "startuptime",
     "tsplayground",
