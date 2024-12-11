@@ -345,9 +345,7 @@ end
 ```lua
 opts = {
   sources = {
-    completion = {
-      enabled_providers = { "dadbod" },
-    },
+    default = { "dadbod" },
     providers = {
       dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
     },
@@ -366,9 +364,7 @@ opts = {
   optional = true,
   opts = {
     sources = {
-      completion = {
-        enabled_providers = { "dadbod" },
-      },
+      default = { "dadbod" },
       providers = {
         dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
       },
