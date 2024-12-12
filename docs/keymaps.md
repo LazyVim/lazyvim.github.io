@@ -75,6 +75,12 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;uA</code> | Toggle Tabline | **n** |
 | <code>&lt;leader&gt;uT</code> | Toggle Treesitter Highlight | **n** |
 | <code>&lt;leader&gt;ub</code> | Toggle Dark Background | **n** |
+| <code>&lt;leader&gt;uD</code> | Toggle Dimming | **n** |
+| <code>&lt;leader&gt;ua</code> | Toggle Animations | **n** |
+| <code>&lt;leader&gt;ug</code> | Toggle Indent Guides | **n** |
+| <code>&lt;leader&gt;uS</code> | Toggle Smooth Scroll | **n** |
+| <code>&lt;leader&gt;dpp</code> | Toggle Profiler | **n** |
+| <code>&lt;leader&gt;dph</code> | Toggle Profiler Highlights | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
 | <code>&lt;leader&gt;gB</code> | Git Browse (open) | **n**, **x** |
@@ -92,7 +98,9 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
 | <code>&lt;leader&gt;&vert;</code> | Split Window Right | **n** |
 | <code>&lt;leader&gt;wd</code> | Delete Window | **n** |
-| <code>&lt;leader&gt;wm</code> | Toggle Maximize | **n** |
+| <code>&lt;leader&gt;wm</code> | Toggle Zoom Mode | **n** |
+| <code>&lt;leader&gt;uZ</code> | Toggle Zoom Mode | **n** |
+| <code>&lt;leader&gt;uz</code> | Toggle Zen Mode | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;l</code> | Last Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;o</code> | Close Other Tabs | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;f</code> | First Tab | **n** |
@@ -156,6 +164,49 @@ possible keymaps starting with `<space>`.
 | <code>s</code> | Flash | **n**, **o**, **x** |
 | <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
 
+## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
+| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
+| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
+| <code>&lt;leader&gt;:</code> | Command History | **n** |
+| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
+| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
+| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
+| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
+| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
+| <code>&lt;leader&gt;fr</code> | Recent | **n** |
+| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
+| <code>&lt;leader&gt;gc</code> | Commits | **n** |
+| <code>&lt;leader&gt;gs</code> | Status | **n** |
+| <code>&lt;leader&gt;s"</code> | Registers | **n** |
+| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
+| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
+| <code>&lt;leader&gt;sc</code> | Command History | **n** |
+| <code>&lt;leader&gt;sC</code> | Commands | **n** |
+| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
+| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
+| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
+| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
+| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
+| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
+| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
+| <code>&lt;leader&gt;sl</code> | Location List | **n** |
+| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
+| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
+| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
+| <code>&lt;leader&gt;sR</code> | Resume | **n** |
+| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
+| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
+| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
+| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
+| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
+| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
+| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
+
 ## [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim.git)
 
 | Key | Description | Mode |
@@ -214,53 +265,10 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;.</code> | Toggle Scratch Buffer | **n** |
+| <code>&lt;leader&gt;dps</code> | Profiler Scratch Buffer | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
 | <code>&lt;leader&gt;S</code> | Select Scratch Buffer | **n** |
 | <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
-
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;so</code> | Options | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
 
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
 
@@ -354,7 +362,6 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;d</code> | +debug | **n**, **v** |
 | <code>&lt;leader&gt;da</code> | Run with Args | **n** |
 | <code>&lt;leader&gt;db</code> | Toggle Breakpoint | **n** |
 | <code>&lt;leader&gt;dB</code> | Breakpoint Condition | **n** |
@@ -367,7 +374,7 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 | <code>&lt;leader&gt;dl</code> | Run Last | **n** |
 | <code>&lt;leader&gt;do</code> | Step Out | **n** |
 | <code>&lt;leader&gt;dO</code> | Step Over | **n** |
-| <code>&lt;leader&gt;dp</code> | Pause | **n** |
+| <code>&lt;leader&gt;dP</code> | Pause | **n** |
 | <code>&lt;leader&gt;dr</code> | Toggle REPL | **n** |
 | <code>&lt;leader&gt;ds</code> | Session | **n** |
 | <code>&lt;leader&gt;dt</code> | Terminate | **n** |
@@ -546,51 +553,6 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 | <code>&lt;leader&gt;rs</code> | Refactor | **v** |
 | <code>&lt;leader&gt;rx</code> | Extract Variable | **v** |
 
-## [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
-Part of [lazyvim.plugins.extras.editor.telescope](/extras/editor/telescope)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;so</code> | Options | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
-
 ## [nvim-ansible](https://github.com/mfussenegger/nvim-ansible.git)
 Part of [lazyvim.plugins.extras.lang.ansible](/extras/lang/ansible)
 
@@ -612,13 +574,6 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | --- | --- | --- |
 | <code>&lt;leader&gt;dPc</code> | Debug Class | **n** |
 | <code>&lt;leader&gt;dPt</code> | Debug Method | **n** |
-
-## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim.git)
-Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
 
 ## [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui.git)
 Part of [lazyvim.plugins.extras.lang.sql](/extras/lang/sql)

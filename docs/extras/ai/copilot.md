@@ -160,7 +160,6 @@ opts = {}
 ```lua
 {
   "zbirenbaum/copilot-cmp",
-  enabled = vim.g.ai_cmp, -- only enable if wanted
   opts = {},
   config = function(_, opts)
     local copilot_cmp = require("copilot_cmp")
@@ -173,7 +172,7 @@ opts = {}
   end,
   specs = {
     {
-      "nvim-cmp",
+      "hrsh7th/nvim-cmp",
       optional = true,
       ---@param opts cmp.ConfigSchema
       opts = function(_, opts)
@@ -290,12 +289,11 @@ opts = nil
 
 ```lua
 {
-  "nvim-cmp",
+  "hrsh7th/nvim-cmp",
   optional = true,
   dependencies = { -- this will only be evaluated if nvim-cmp is enabled
     {
       "zbirenbaum/copilot-cmp",
-      enabled = vim.g.ai_cmp, -- only enable if wanted
       opts = {},
       config = function(_, opts)
         local copilot_cmp = require("copilot_cmp")
@@ -308,7 +306,7 @@ opts = nil
       end,
       specs = {
         {
-          "nvim-cmp",
+          "hrsh7th/nvim-cmp",
           optional = true,
           ---@param opts cmp.ConfigSchema
           opts = function(_, opts)
@@ -352,7 +350,7 @@ end
 
 ```lua
 {
-  "nvim-cmp",
+  "hrsh7th/nvim-cmp",
   optional = true,
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)

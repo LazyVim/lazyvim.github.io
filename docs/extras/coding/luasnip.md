@@ -248,7 +248,7 @@ end
 
 ```lua
 {
-  "nvim-cmp",
+  "hrsh7th/nvim-cmp",
   optional = true,
   dependencies = { "saadparwaiz1/cmp_luasnip" },
   opts = function(_, opts)

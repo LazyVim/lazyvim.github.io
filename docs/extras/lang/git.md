@@ -61,7 +61,30 @@ opts = { ensure_installed = { "git_config", "gitcommit", "git_rebase", "gitignor
 
 </Tabs>
 
-## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+## [cmp-git](https://github.com/petertriho/cmp-git)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "petertriho/cmp-git", opts = {} }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
 <Tabs>
 
@@ -80,7 +103,8 @@ end
 
 ```lua
 {
-  "nvim-cmp",
+  "hrsh7th/nvim-cmp",
+  optional = true,
   dependencies = {
     { "petertriho/cmp-git", opts = {} },
   },
@@ -90,29 +114,6 @@ end
     table.insert(opts.sources, { name = "git" })
   end,
 }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [cmp-git](https://github.com/petertriho/cmp-git)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "petertriho/cmp-git", opts = {} }
 ```
 
 </TabItem>

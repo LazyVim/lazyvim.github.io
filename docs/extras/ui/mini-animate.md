@@ -32,7 +32,43 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+ disable snacks scroll when animate is enabled
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  scroll = { enabled = false },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "snacks.nvim",
+  opts = {
+    scroll = { enabled = false },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [mini.animate](https://github.com/echasnovski/mini.animate)
+
+ setup animate
+
 
 <Tabs>
 
@@ -96,7 +132,6 @@ end
 ```lua
 {
   "echasnovski/mini.animate",
-  recommended = true,
   event = "VeryLazy",
   cond = vim.g.neovide == nil,
   opts = function(_, opts)
