@@ -104,7 +104,47 @@ opts = {
 
 </Tabs>
 
-## [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+ disable snacks scroll when mini-indentscope is enabled
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  indent = {
+    scope = { enabled = false },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "snacks.nvim",
+  opts = {
+    indent = {
+      scope = { enabled = false },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) _(optional)_
+
+ disable inent-blankline scope when mini-indentscope is enabled
+
 
 <Tabs>
 
@@ -124,6 +164,7 @@ opts = {
 ```lua
 {
   "lukas-reineke/indent-blankline.nvim",
+  optional = true,
   event = "LazyFile",
   opts = {
     scope = { enabled = false },
