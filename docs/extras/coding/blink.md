@@ -193,6 +193,8 @@ opts = {
         table.insert(enabled, source)
       end
     end
+
+    -- Unset custom prop to pass blink.cmp validation
     opts.sources.compat = nil
 
     -- check if we need to override symbol kinds
@@ -216,6 +218,9 @@ opts = {
           end
           return items
         end
+
+        -- Unset custom prop to pass blink.cmp validation
+        provider.kind = nil
       end
     end
 
