@@ -196,6 +196,12 @@ opts = {
       end
     end
 
+    -- TODO: remove when blink made a new release > 0.7.6
+    if not vim.g.lazyvim_blink_main then
+      opts.sources.completion = opts.sources.completion or {}
+      opts.sources.completion.enabled_providers = enabled
+    end
+
     -- Unset custom prop to pass blink.cmp validation
     opts.sources.compat = nil
 
@@ -280,6 +286,9 @@ opts = nil
 opts = function(_, opts)
   opts.appearance = opts.appearance or {}
   opts.appearance.kind_icons = LazyVim.config.icons.kinds
+
+  -- Use block instead of icon for color items to make swatches more usable
+  opts.appearance.kind_icons.Color = "██"
 end
 ```
 
@@ -294,6 +303,9 @@ end
   opts = function(_, opts)
     opts.appearance = opts.appearance or {}
     opts.appearance.kind_icons = LazyVim.config.icons.kinds
+
+    -- Use block instead of icon for color items to make swatches more usable
+    opts.appearance.kind_icons.Color = "██"
   end,
 }
 ```
