@@ -69,7 +69,7 @@ opts = {
     },
     menu = {
       draw = {
-        treesitter = true,
+        treesitter = { "lsp" },
       },
     },
     documentation = {
@@ -150,7 +150,7 @@ opts = {
       },
       menu = {
         draw = {
-          treesitter = true,
+          treesitter = { "lsp" },
         },
       },
       documentation = {
@@ -196,10 +196,15 @@ opts = {
       end
     end
 
-    -- TODO: remove when blink made a new release > 0.7.6
+    ---  NOTE: compat with latest version. Currenlty 0.7.6
     if not vim.g.lazyvim_blink_main then
+      ---@diagnostic disable-next-line: inject-field
       opts.sources.completion = opts.sources.completion or {}
       opts.sources.completion.enabled_providers = enabled
+      if vim.tbl_get(opts, "completion", "menu", "draw", "treesitter") then
+        ---@diagnostic disable-next-line: assign-type-mismatch
+        opts.completion.menu.draw.treesitter = true
+      end
     end
 
     -- Unset custom prop to pass blink.cmp validation
@@ -213,6 +218,7 @@ opts = {
         local kind_idx = #CompletionItemKind + 1
 
         CompletionItemKind[kind_idx] = provider.kind
+        ---@diagnostic disable-next-line: no-unknown
         CompletionItemKind[provider.kind] = kind_idx
 
         ---@type fun(ctx: blink.cmp.Context, items: blink.cmp.CompletionItem[]): blink.cmp.CompletionItem[]
@@ -285,10 +291,9 @@ opts = nil
 ```lua
 opts = function(_, opts)
   opts.appearance = opts.appearance or {}
-  opts.appearance.kind_icons = LazyVim.config.icons.kinds
-
-  -- Use block instead of icon for color items to make swatches more usable
-  opts.appearance.kind_icons.Color = "██"
+  opts.appearance.kind_icons = vim.tbl_extend("keep", {
+    Color = "██", -- Use block instead of icon for color items to make swatches more usable
+  }, LazyVim.config.icons.kinds)
 end
 ```
 
@@ -302,10 +307,9 @@ end
   "saghen/blink.cmp",
   opts = function(_, opts)
     opts.appearance = opts.appearance or {}
-    opts.appearance.kind_icons = LazyVim.config.icons.kinds
-
-    -- Use block instead of icon for color items to make swatches more usable
-    opts.appearance.kind_icons.Color = "██"
+    opts.appearance.kind_icons = vim.tbl_extend("keep", {
+      Color = "██", -- Use block instead of icon for color items to make swatches more usable
+    }, LazyVim.config.icons.kinds)
   end,
 }
 ```
