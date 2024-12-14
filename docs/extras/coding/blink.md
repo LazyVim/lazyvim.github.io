@@ -94,6 +94,7 @@ opts = {
 
   keymap = {
     preset = "enter",
+    ["<C-y>"] = { "select_and_accept" },
     ["<Tab>"] = {
       LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
       "fallback",
@@ -175,6 +176,7 @@ opts = {
 
     keymap = {
       preset = "enter",
+      ["<C-y>"] = { "select_and_accept" },
       ["<Tab>"] = {
         LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
         "fallback",
