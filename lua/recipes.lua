@@ -1,3 +1,15 @@
+if true then
+  return {
+    "saghen/blink.cmp",
+    opts = function(_, opts) -- need to override all default in keymap including keybinds
+      opts.keymap = { preset = "super-tab" }
+      return opts
+    end,
+  }
+end
+
+-- Use the code below if you are still using nvim-cmp
+
 return {
   -- ## Add a `nvim-cmp` source
   --

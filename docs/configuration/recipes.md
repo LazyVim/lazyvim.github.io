@@ -25,6 +25,20 @@ override nvim-cmp and add cmp-emoji
 
 Use `<tab>` for completion and snippets (supertab).
 
+The newer `blink.cmp` has this setup as a preset (but you must also remove the extra keymaps the LazyVim default adds) :
+
+```lua
+{
+  "saghen/blink.cmp",
+  opts = function(_, opts)
+    opts.keymap = { preset = "super-tab" }
+    return opts
+  end,
+}
+```
+
+The previous `nvim-cmp` recipe would be :
+
 ```lua
 {
   "hrsh7th/nvim-cmp",
