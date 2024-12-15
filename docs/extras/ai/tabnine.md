@@ -207,7 +207,13 @@ end
 opts = {
   sources = {
     compat = { "cmp_tabnine" },
-    providers = { cmp_tabnine = { kind = "TabNine" } },
+    providers = {
+      cmp_tabnine = {
+        kind = "TabNine",
+        score_offset = 100,
+        async = true,
+      },
+    },
   },
 }
 ```
@@ -225,7 +231,13 @@ opts = {
   opts = {
     sources = {
       compat = { "cmp_tabnine" },
-      providers = { cmp_tabnine = { kind = "TabNine" } },
+      providers = {
+        cmp_tabnine = {
+          kind = "TabNine",
+          score_offset = 100,
+          async = true,
+        },
+      },
     },
   },
 }

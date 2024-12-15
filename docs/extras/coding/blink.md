@@ -95,10 +95,6 @@ opts = {
   keymap = {
     preset = "enter",
     ["<C-y>"] = { "select_and_accept" },
-    ["<Tab>"] = {
-      LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
-      "fallback",
-    },
   },
 }
 ```
@@ -177,10 +173,6 @@ opts = {
     keymap = {
       preset = "enter",
       ["<C-y>"] = { "select_and_accept" },
-      ["<Tab>"] = {
-        LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
-        "fallback",
-      },
     },
   },
   ---@param opts blink.cmp.Config | { sources: { compat: string[] } }
@@ -198,19 +190,26 @@ opts = {
       end
     end
 
-    -- fix super-tab completion
-    if opts.keymap.preset == "super-tab" then
-      opts.keymap["<Tab>"] = {
-        function(cmp)
-          if cmp.snippet_active() then
-            return cmp.accept()
-          else
-            return cmp.select_and_accept()
-          end
-        end,
-        LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
-        "fallback",
-      }
+    -- add ai_accept to <Tab> key
+    if not opts.keymap["<Tab>"] then
+      if opts.keymap.preset == "super-tab" then -- super-tab
+        opts.keymap["<Tab>"] = {
+          function(cmp)
+            if cmp.snippet_active() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        }
+      else -- other presets
+        opts.keymap["<Tab>"] = {
+          LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
+          "fallback",
+        }
+      end
     end
 
     ---  NOTE: compat with latest version. Currenlty 0.7.6

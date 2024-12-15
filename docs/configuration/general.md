@@ -203,12 +203,6 @@ vim.g.markdown_recommended_style = 0
 -- use `vim.keymap.set` instead
 local map = LazyVim.safe_keymap_set
 
--- Clear search and stop snippet on escape
-Snacks.util.on_key("<esc>", function()
-  vim.cmd("noh")
-  LazyVim.cmp.actions.snippet_stop()
-end)
-
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -249,6 +243,13 @@ map("n", "<leader>bo", function()
   Snacks.bufdelete.other()
 end, { desc = "Delete Other Buffers" })
 map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+
+-- Clear search and stop snippet on escape
+map({ "i", "n", "s" }, "<esc>", function()
+  vim.cmd("noh")
+  LazyVim.cmp.actions.snippet_stop()
+  return "<esc>"
+end, { expr = true, desc = "Escape and Clear hlsearch" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
