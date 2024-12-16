@@ -32,6 +32,32 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+ disable snacks words
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { words = { enabled = false } }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "snacks.nvim", opts = { words = { enabled = false } } }
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 <Tabs>
@@ -104,32 +130,6 @@ opts = {
     { "]]", desc = "Next Reference" },
     { "[[", desc = "Prev Reference" },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { document_highlight = { enabled = false } }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "neovim/nvim-lspconfig",
-  opts = { document_highlight = { enabled = false } },
 }
 ```
 
