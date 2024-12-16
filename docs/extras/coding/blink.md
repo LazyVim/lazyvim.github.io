@@ -72,9 +72,6 @@ opts = {
         enabled = true,
       },
     },
-    trigger = {
-      show_on_insert_on_trigger_character = false,
-    },
     menu = {
       draw = {
         treesitter = { "lsp" },
@@ -158,9 +155,6 @@ opts = {
           enabled = true,
         },
       },
-      trigger = {
-        show_on_insert_on_trigger_character = false,
-      },
       menu = {
         draw = {
           treesitter = { "lsp" },
@@ -210,13 +204,7 @@ opts = {
     if not opts.keymap["<Tab>"] then
       if opts.keymap.preset == "super-tab" then -- super-tab
         opts.keymap["<Tab>"] = {
-          function(cmp)
-            if cmp.snippet_active() then
-              return cmp.accept()
-            else
-              return cmp.select_and_accept()
-            end
-          end,
+          require("blink.cmp.keymap.presets")["super-tab"]["<Tab>"][1],
           LazyVim.cmp.map({ "snippet_forward", "ai_accept" }),
           "fallback",
         }
