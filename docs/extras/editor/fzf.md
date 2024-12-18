@@ -7,32 +7,7 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-<details>
-<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
-
-```lua title="lua/config/lazy.lua" {4}
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.editor.fzf" },
-    { import = "plugins" },
-  },
-})
-```
-
-</details>
-
-### Options
-
-Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
-
-```lua title="lua/config/options.lua"
--- In case you don't want to use `:LazyExtras`,
--- then you need to set the option below.
-vim.g.lazyvim_picker = "fzf"
-```
-
-Below you can find a list of included plugins and their default settings.
+lazyvim.plugins.extras.editor.fzfBelow you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

@@ -7,54 +7,7 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-<details>
-<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
-
-```lua title="lua/config/lazy.lua" {4}
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.lang.sql" },
-    { import = "plugins" },
-  },
-})
-```
-
-</details>
-
-### Options
-
-Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
-
-```lua title="lua/config/options.lua"
--- The setup below will automatically configure connections without the need for manual input each time.
-
--- Example configuration using dictionary with keys:
---    vim.g.dbs = {
---      dev = "Replace with your database connection URL.",
---      staging = "Replace with your database connection URL.",
---    }
--- or
--- Example configuration using a list of dictionaries:
---    vim.g.dbs = {
---      { name = "dev", url = "Replace with your database connection URL." },
---      { name = "staging", url = "Replace with your database connection URL." },
---    }
-
--- or
--- Create a `.lazy.lua` file in your project and set your connections like this:
--- ```lua
---    vim.g.dbs = {...}
---
---    return {}
--- ```
-
--- Alternatively, you can also use other methods to inject your environment variables.
-
--- Finally, please make sure to add `.lazy.lua` to your `.gitignore` file to protect your secrets.
-```
-
-Below you can find a list of included plugins and their default settings.
+lazyvim.plugins.extras.lang.sqlBelow you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

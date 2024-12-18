@@ -7,34 +7,7 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-<details>
-<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
-
-```lua title="lua/config/lazy.lua" {4}
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.lang.rust" },
-    { import = "plugins" },
-  },
-})
-```
-
-</details>
-
-### Options
-
-Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
-
-```lua title="lua/config/options.lua"
--- LSP Server to use for Rust.
--- Set to "bacon-ls" to use bacon-ls instead of rust-analyzer.
--- only for diagnostics. The rest of LSP support will still be
--- provided by rust-analyzer.
-vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
-```
-
-Below you can find a list of included plugins and their default settings.
+lazyvim.plugins.extras.lang.rustBelow you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

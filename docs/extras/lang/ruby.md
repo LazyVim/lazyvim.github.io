@@ -7,33 +7,7 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-<details>
-<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
-
-```lua title="lua/config/lazy.lua" {4}
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "lazyvim.plugins.extras.lang.ruby" },
-    { import = "plugins" },
-  },
-})
-```
-
-</details>
-
-### Options
-
-Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
-
-```lua title="lua/config/options.lua"
--- LSP Server to use for Ruby.
--- Set to "solargraph" to use solargraph instead of ruby_lsp.
-vim.g.lazyvim_ruby_lsp = "ruby_lsp"
-vim.g.lazyvim_ruby_formatter = "rubocop"
-```
-
-Below you can find a list of included plugins and their default settings.
+lazyvim.plugins.extras.lang.rubyBelow you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.
