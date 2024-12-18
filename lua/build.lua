@@ -308,21 +308,6 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-<details>
-<summary>Alternatively, you can add it to your <code>lazy.nvim</code> imports</summary>
-
-```lua title="lua/config/lazy.lua" {4}
-require("lazy").setup({
-  spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "%s" },
-    { import = "plugins" },
-  },
-})
-```
-
-</details>
-
 %sBelow you can find a list of included plugins and their default settings.
 
 :::caution
