@@ -7,7 +7,16 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-lazyvim.plugins.extras.formatting.biomeBelow you can find a list of included plugins and their default settings.
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- Enable this option to avoid conflicts with Prettier.
+vim.g.lazyvim_prettier_needs_config = true
+```
+
+Below you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

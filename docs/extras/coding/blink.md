@@ -7,7 +7,18 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-lazyvim.plugins.extras.coding.blinkBelow you can find a list of included plugins and their default settings.
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- set to `true` to follow the main branch
+-- you need to have a working rust toolchain to build the plugin
+-- in this case.
+vim.g.lazyvim_blink_main = false
+```
+
+Below you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

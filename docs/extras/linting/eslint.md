@@ -7,7 +7,16 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-lazyvim.plugins.extras.linting.eslintBelow you can find a list of included plugins and their default settings.
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- Set to false to disable auto format
+vim.g.lazyvim_eslint_auto_format = true
+```
+
+Below you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

@@ -7,7 +7,17 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
-lazyvim.plugins.extras.lang.phpBelow you can find a list of included plugins and their default settings.
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- LSP Server to use for PHP.
+-- Set to "intelephense" to use intelephense instead of phpactor.
+vim.g.lazyvim_php_lsp = "intelephense"
+```
+
+Below you can find a list of included plugins and their default settings.
 
 :::caution
 You don't need to copy the default settings to your config.

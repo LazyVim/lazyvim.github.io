@@ -314,7 +314,7 @@ Plugins marked as optional will only be configured if they are installed.
 You don't need to copy the default settings to your config.
 They are only shown here for reference.
 :::
-]]):format(modname, options or ""),
+]]):format(options or ""),
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
       })
