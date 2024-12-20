@@ -211,7 +211,7 @@ opts = function()
         end,
       },
     },
-    extensions = { "neo-tree", "lazy" },
+    extensions = { "neo-tree", "lazy", "fzf" },
   }
 
   -- do not add trouble symbols if aerial is enabled
@@ -345,7 +345,7 @@ end
           end,
         },
       },
-      extensions = { "neo-tree", "lazy" },
+      extensions = { "neo-tree", "lazy", "fzf" },
     }
 
     -- do not add trouble symbols if aerial is enabled
