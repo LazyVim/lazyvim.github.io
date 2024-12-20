@@ -172,52 +172,6 @@ opts = nil
 
 </Tabs>
 
-## [blink.compat](https://github.com/saghen/blink.compat)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = { impersonate_nvim_cmp = true }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "saghen/blink.compat", opts = { impersonate_nvim_cmp = true } }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{ "saadparwaiz1/cmp_luasnip" }
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
  nvim-cmp integration
@@ -279,7 +233,7 @@ end
 
 ```lua
 opts = {
-  sources = { compat = { "luasnip" } },
+  sources = { default = { "luasnip" } },
   snippets = {
     expand = function(snippet)
       require("luasnip").lsp_expand(snippet)
@@ -306,12 +260,8 @@ opts = {
 {
   "saghen/blink.cmp",
   optional = true,
-  dependencies = {
-    { "saghen/blink.compat", opts = { impersonate_nvim_cmp = true } },
-    { "saadparwaiz1/cmp_luasnip" },
-  },
   opts = {
-    sources = { compat = { "luasnip" } },
+    sources = { default = { "luasnip" } },
     snippets = {
       expand = function(snippet)
         require("luasnip").lsp_expand(snippet)
