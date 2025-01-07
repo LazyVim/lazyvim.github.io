@@ -233,7 +233,6 @@ end
 
 ```lua
 opts = {
-  sources = { default = { "luasnip" } },
   snippets = {
     expand = function(snippet)
       require("luasnip").lsp_expand(snippet)
@@ -261,7 +260,6 @@ opts = {
   "saghen/blink.cmp",
   optional = true,
   opts = {
-    sources = { default = { "luasnip" } },
     snippets = {
       expand = function(snippet)
         require("luasnip").lsp_expand(snippet)
@@ -277,6 +275,46 @@ opts = {
       end,
     },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+ Luasnip sources for blink
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  table.insert(opts.sources.default, "luasnip")
+  opts.sources.default = vim.tbl_filter(function(p)
+    return p ~= "snippets"
+  end, opts.sources.default)
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  opts = function(_, opts)
+    table.insert(opts.sources.default, "luasnip")
+    opts.sources.default = vim.tbl_filter(function(p)
+      return p ~= "snippets"
+    end, opts.sources.default)
+  end,
 }
 ```
 
