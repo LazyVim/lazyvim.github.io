@@ -234,18 +234,7 @@ end
 ```lua
 opts = {
   snippets = {
-    expand = function(snippet)
-      require("luasnip").lsp_expand(snippet)
-    end,
-    active = function(filter)
-      if filter and filter.direction then
-        return require("luasnip").jumpable(filter.direction)
-      end
-      return require("luasnip").in_snippet()
-    end,
-    jump = function(direction)
-      require("luasnip").jump(direction)
-    end,
+    preset = "luasnip",
   },
 }
 ```
@@ -261,60 +250,9 @@ opts = {
   optional = true,
   opts = {
     snippets = {
-      expand = function(snippet)
-        require("luasnip").lsp_expand(snippet)
-      end,
-      active = function(filter)
-        if filter and filter.direction then
-          return require("luasnip").jumpable(filter.direction)
-        end
-        return require("luasnip").in_snippet()
-      end,
-      jump = function(direction)
-        require("luasnip").jump(direction)
-      end,
+      preset = "luasnip",
     },
   },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
-
- Luasnip sources for blink
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function(_, opts)
-  table.insert(opts.sources.default, "luasnip")
-  opts.sources.default = vim.tbl_filter(function(p)
-    return p ~= "snippets"
-  end, opts.sources.default)
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "saghen/blink.cmp",
-  optional = true,
-  opts = function(_, opts)
-    table.insert(opts.sources.default, "luasnip")
-    opts.sources.default = vim.tbl_filter(function(p)
-      return p ~= "snippets"
-    end, opts.sources.default)
-  end,
 }
 ```
 
