@@ -161,6 +161,9 @@ opts = {
     sign = false,
     icons = {},
   },
+  checkbox = {
+    enabled = false,
+  },
 }
 ```
 
@@ -181,6 +184,9 @@ opts = {
     heading = {
       sign = false,
       icons = {},
+    },
+    checkbox = {
+      enabled = false,
     },
   },
   ft = { "markdown", "norg", "rmd", "org" },

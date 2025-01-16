@@ -142,6 +142,11 @@ opts = function()
         }),
       },
       markdown = {
+        augend.constant.new({
+          elements = { "[ ]", "[x]" },
+          word = false,
+          cyclic = true,
+        }),
         augend.misc.alias.markdown_header,
       },
       json = {
@@ -299,6 +304,11 @@ end
           }),
         },
         markdown = {
+          augend.constant.new({
+            elements = { "[ ]", "[x]" },
+            word = false,
+            cyclic = true,
+          }),
           augend.misc.alias.markdown_header,
         },
         json = {
