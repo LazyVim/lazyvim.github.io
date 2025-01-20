@@ -567,12 +567,12 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
 | <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
 | <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
+| <code>&lt;leader&gt;fp</code> | Projects | **n** |
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gc</code> | Git Log | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
-| <code>&lt;leader&gt;qp</code> | Projects | **n** |
 | <code>&lt;leader&gt;s"</code> | Registers | **n** |
 | <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
 | <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
