@@ -21,6 +21,8 @@ import TabItem from '@theme/TabItem';
 
 ## [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
+Improved Yank and Put functionalities for Neovim
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
