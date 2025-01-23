@@ -563,6 +563,7 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
 | <code>&lt;leader&gt;:</code> | Command History | **n** |
 | <code>&lt;leader&gt;fb</code> | Buffers | **n** |
+| <code>&lt;leader&gt;fB</code> | Buffers (all) | **n** |
 | <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
 | <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
 | <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
@@ -584,11 +585,13 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
 | <code>&lt;leader&gt;sH</code> | Highlights | **n** |
+| <code>&lt;leader&gt;si</code> | Icons | **n** |
 | <code>&lt;leader&gt;sj</code> | Jumps | **n** |
 | <code>&lt;leader&gt;sk</code> | Keymaps | **n** |
 | <code>&lt;leader&gt;sl</code> | Location List | **n** |
 | <code>&lt;leader&gt;sm</code> | Marks | **n** |
 | <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
+| <code>&lt;leader&gt;sp</code> | Search for Plugin Spec | **n** |
 | <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;sR</code> | Resume | **n** |
 | <code>&lt;leader&gt;su</code> | Undotree | **n** |
