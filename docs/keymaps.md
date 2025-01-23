@@ -591,6 +591,7 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
 | <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
 | <code>&lt;leader&gt;sR</code> | Resume | **n** |
+| <code>&lt;leader&gt;su</code> | Undotree | **n** |
 | <code>&lt;leader&gt;sw</code> | Visual selection or word (Root Dir) | **n**, **x** |
 | <code>&lt;leader&gt;sW</code> | Visual selection or word (cwd) | **n**, **x** |
 | <code>&lt;leader&gt;uC</code> | Colorschemes | **n** |
