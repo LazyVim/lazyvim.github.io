@@ -107,7 +107,9 @@ opts = {}
 opts = function()
   LazyVim.cmp.actions.snippet_forward = function()
     if require("luasnip").jumpable(1) then
-      require("luasnip").jump(1)
+      vim.schedule(function()
+        require("luasnip").jump(1)
+      end)
       return true
     end
   end
@@ -131,7 +133,9 @@ end
   opts = function()
     LazyVim.cmp.actions.snippet_forward = function()
       if require("luasnip").jumpable(1) then
-        require("luasnip").jump(1)
+        vim.schedule(function()
+          require("luasnip").jump(1)
+        end)
         return true
       end
     end
