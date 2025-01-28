@@ -94,7 +94,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;c-/&gt;</code> | Terminal (Root Dir) | **n** |
 | <code>&lt;c-_&gt;</code> | which_key_ignore | **n**, **t** |
 | <code>&lt;C-/&gt;</code> | Hide Terminal | **t** |
-| <code>&lt;leader&gt;w</code> | Windows | **n** |
 | <code>&lt;leader&gt;-</code> | Split Window Below | **n** |
 | <code>&lt;leader&gt;&vert;</code> | Split Window Right | **n** |
 | <code>&lt;leader&gt;wd</code> | Delete Window | **n** |
