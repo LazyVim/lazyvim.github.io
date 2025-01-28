@@ -573,6 +573,7 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;gc</code> | Git Log | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
+| <code>&lt;leader&gt;n</code> | Notification History | **n** |
 | <code>&lt;leader&gt;s"</code> | Registers | **n** |
 | <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
 | <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
