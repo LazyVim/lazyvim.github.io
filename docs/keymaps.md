@@ -555,6 +555,16 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 | <code>&lt;leader&gt;rx</code> | Extract Variable | **v** |
 
 ## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
+Part of [lazyvim.plugins.extras.editor.snacks_explorer](/extras/editor/snacks_explorer)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;e</code> | Explorer Snacks (root dir) | **n** |
+| <code>&lt;leader&gt;E</code> | Explorer Snacks (cwd) | **n** |
+| <code>&lt;leader&gt;fe</code> | Explorer Snacks (root dir) | **n** |
+| <code>&lt;leader&gt;fE</code> | Explorer Snacks (cwd) | **n** |
+
+## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
 Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_picker)
 
 | Key | Description | Mode |
