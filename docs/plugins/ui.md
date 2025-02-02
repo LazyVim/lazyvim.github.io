@@ -703,4 +703,50 @@ opts = {
 
 </Tabs>
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  if not opts.picker then
+    return
+  end
+  table.insert(opts.dashboard.preset.keys, 3, {
+    icon = " ",
+    key = "p",
+    desc = "Projects",
+    action = ":lua Snacks.picker.projects()",
+  })
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/snacks.nvim",
+  opts = function(_, opts)
+    if not opts.picker then
+      return
+    end
+    table.insert(opts.dashboard.preset.keys, 3, {
+      icon = " ",
+      key = "p",
+      desc = "Projects",
+      action = ":lua Snacks.picker.projects()",
+    })
+  end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
