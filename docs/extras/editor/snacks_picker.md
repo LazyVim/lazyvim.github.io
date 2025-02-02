@@ -159,7 +159,11 @@ opts = function(_, opts)
   if LazyVim.has("trouble.nvim") then
     return vim.tbl_deep_extend("force", opts or {}, {
       picker = {
-        actions = require("trouble.sources.snacks").actions,
+        actions = {
+          trouble_open = function(...)
+            return require("trouble.sources.snacks").actions.trouble_open.action(...)
+          end,
+        },
         win = {
           input = {
             keys = {
@@ -188,7 +192,11 @@ end
     if LazyVim.has("trouble.nvim") then
       return vim.tbl_deep_extend("force", opts or {}, {
         picker = {
-          actions = require("trouble.sources.snacks").actions,
+          actions = {
+            trouble_open = function(...)
+              return require("trouble.sources.snacks").actions.trouble_open.action(...)
+            end,
+          },
           win = {
             input = {
               keys = {
