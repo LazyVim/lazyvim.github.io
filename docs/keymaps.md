@@ -595,7 +595,7 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;sc</code> | Command History | **n** |
 | <code>&lt;leader&gt;sC</code> | Commands | **n** |
 | <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Buffer Diagnostics | **n** |
 | <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
