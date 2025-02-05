@@ -585,14 +585,17 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;gc</code> | Git Log | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
+| <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
 | <code>&lt;leader&gt;s"</code> | Registers | **n** |
+| <code>&lt;leader&gt;s/</code> | Search History | **n** |
 | <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
 | <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
 | <code>&lt;leader&gt;sB</code> | Grep Open Buffers | **n** |
 | <code>&lt;leader&gt;sc</code> | Command History | **n** |
 | <code>&lt;leader&gt;sC</code> | Commands | **n** |
 | <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Diagnostics | **n** |
 | <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
