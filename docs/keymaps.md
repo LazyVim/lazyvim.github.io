@@ -517,6 +517,18 @@ Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 | <code>&lt;leader&gt;fm</code> | Open mini.files (Directory of Current File) | **n** |
 | <code>&lt;leader&gt;fM</code> | Open mini.files (cwd) | **n** |
 
+## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
+Part of [lazyvim.plugins.extras.editor.neo-tree](/extras/editor/neo-tree)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;be</code> | Buffer Explorer | **n** |
+| <code>&lt;leader&gt;e</code> | Explorer NeoTree (Root Dir) | **n** |
+| <code>&lt;leader&gt;E</code> | Explorer NeoTree (cwd) | **n** |
+| <code>&lt;leader&gt;fe</code> | Explorer NeoTree (Root Dir) | **n** |
+| <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
+| <code>&lt;leader&gt;ge</code> | Git Explorer | **n** |
+
 ## [outline.nvim](https://github.com/hedyhli/outline.nvim.git)
 Part of [lazyvim.plugins.extras.editor.outline](/extras/editor/outline)
 
@@ -553,74 +565,6 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 | <code>&lt;leader&gt;rP</code> | Debug Print | **n** |
 | <code>&lt;leader&gt;rs</code> | Refactor | **v** |
 | <code>&lt;leader&gt;rx</code> | Extract Variable | **v** |
-
-## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
-Part of [lazyvim.plugins.extras.editor.snacks_explorer](/extras/editor/snacks_explorer)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;e</code> | Explorer Snacks (root dir) | **n** |
-| <code>&lt;leader&gt;E</code> | Explorer Snacks (cwd) | **n** |
-| <code>&lt;leader&gt;fe</code> | Explorer Snacks (root dir) | **n** |
-| <code>&lt;leader&gt;fE</code> | Explorer Snacks (cwd) | **n** |
-
-## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
-Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_picker)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Buffers | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fB</code> | Buffers (all) | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fp</code> | Projects | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Git Log | **n** |
-| <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
-| <code>&lt;leader&gt;gs</code> | Git Status | **n** |
-| <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
-| <code>&lt;leader&gt;n</code> | Notification History | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;s/</code> | Search History | **n** |
-| <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
-| <code>&lt;leader&gt;sB</code> | Grep Open Buffers | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Buffer Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Highlights | **n** |
-| <code>&lt;leader&gt;si</code> | Icons | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumps | **n** |
-| <code>&lt;leader&gt;sk</code> | Keymaps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Marks | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;sp</code> | Search for Plugin Spec | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;su</code> | Undotree | **n** |
-| <code>&lt;leader&gt;sw</code> | Visual selection or word (Root Dir) | **n**, **x** |
-| <code>&lt;leader&gt;sW</code> | Visual selection or word (cwd) | **n**, **x** |
-| <code>&lt;leader&gt;uC</code> | Colorschemes | **n** |
-
-## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
-Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_picker)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;st</code> | Todo | **n** |
-| <code>&lt;leader&gt;sT</code> | Todo/Fix/Fixme | **n** |
 
 ## [nvim-ansible](https://github.com/mfussenegger/nvim-ansible.git)
 Part of [lazyvim.plugins.extras.lang.ansible](/extras/lang/ansible)
