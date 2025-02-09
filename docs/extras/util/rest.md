@@ -36,6 +36,8 @@ opts = {}
 {
   "mistweaverco/kulala.nvim",
   ft = "http",
+  lazy = false,
+  name = "kulala",
   keys = {
     { "<leader>R", "", desc = "+Rest", ft = "http" },
     { "<leader>Rb", "<cmd>lua require('kulala').scratchpad()<cr>", desc = "Open scratchpad", ft = "http" },
