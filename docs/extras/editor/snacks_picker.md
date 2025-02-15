@@ -170,7 +170,7 @@ opts = function(_, opts)
         win = {
           input = {
             keys = {
-              ["<c-t>"] = {
+              ["<a-t>"] = {
                 "trouble_open",
                 mode = { "n", "i" },
               },
@@ -203,7 +203,7 @@ end
           win = {
             input = {
               keys = {
-                ["<c-t>"] = {
+                ["<a-t>"] = {
                   "trouble_open",
                   mode = { "n", "i" },
                 },
