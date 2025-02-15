@@ -82,6 +82,7 @@ opts = {
   },
 
   cmdline = {
+    enabled = false,
     sources = {},
   },
 
@@ -168,6 +169,7 @@ opts = {
     },
 
     cmdline = {
+      enabled = false,
       sources = {},
     },
 
