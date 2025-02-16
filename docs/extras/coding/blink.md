@@ -83,7 +83,6 @@ opts = {
 
   cmdline = {
     enabled = false,
-    sources = {},
   },
 
   keymap = {
@@ -170,7 +169,6 @@ opts = {
 
     cmdline = {
       enabled = false,
-      sources = {},
     },
 
     keymap = {
