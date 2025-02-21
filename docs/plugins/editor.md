@@ -234,9 +234,9 @@ opts = {
 
 ## [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 
- git signs highlights text that has changed since the list
+ git signs highlights text that has changed since the last
  git commit, and also lets you interactively stage & unstage
- hunks in a commit.
+ chunks in a commit.
 
 
 <Tabs>
