@@ -82,16 +82,25 @@ end
     {
       "<leader>aq",
       function()
-        local input = vim.fn.input("Quick Chat: ")
-        if input ~= "" then
-          require("CopilotChat").ask(input)
-        end
+        vim.ui.input({
+          prompt = "Quick Chat: ",
+        }, function(input)
+          if input ~= "" then
+            require("CopilotChat").ask(input)
+          end
+        end)
       end,
       desc = "Quick Chat (CopilotChat)",
       mode = { "n", "v" },
     },
-    -- Show prompts actions with telescope
-    { "<leader>ap", M.pick("prompt"), desc = "Prompt Actions (CopilotChat)", mode = { "n", "v" } },
+    {
+      "<leader>ap",
+      function()
+        require("CopilotChat").select_prompt()
+      end,
+      desc = "Prompt Actions (CopilotChat)",
+      mode = { "n", "v" },
+    },
   },
   config = function(_, opts)
     local chat = require("CopilotChat")
