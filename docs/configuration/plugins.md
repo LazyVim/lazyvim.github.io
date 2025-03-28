@@ -105,7 +105,7 @@ return {
       desc = "Find Plugin File",
     },
   },
-},
+}
 ```
 
 :::caution
