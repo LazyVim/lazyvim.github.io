@@ -150,7 +150,7 @@ Important: make sure not to add prettier to null-ls, otherwise this won't work!
         require("lazyvim.util").lsp.on_attach(function(client)
           if client.name == "eslint" then
             client.server_capabilities.documentFormattingProvider = true
-          elseif client.name == "tsserver" then
+          elseif client.name == "vtsls" then
             client.server_capabilities.documentFormattingProvider = false
           end
         end)
