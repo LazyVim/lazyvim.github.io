@@ -21,6 +21,27 @@ override nvim-cmp and add cmp-emoji
 }
 ```
 
+## Don't preselect completions
+
+Disable auto selecting first `nvim-cmp` option
+
+```lua
+{
+  "hrsh7th/nvim-cmp",
+  dependencies = { "hrsh7th/cmp-emoji" },
+  ---@param opts cmp.ConfigSchema
+  opts = function(_, opts)
+    opts.preselect = cmp.PreselectMode.None
+    opts.completion = {
+      completeopt = "noselect",
+    }
+    opts.mapping = vim.tbl_extend("force", opts.mapping, {
+      ["<CR>"] = cmp.mapping.confirm({ select = false }),
+    })
+  end,
+}
+```
+
 ## Supertab
 
 Use `<tab>` for completion and snippets (supertab).
