@@ -4,6 +4,16 @@ sidebar_position: 2
 
 # 🛠️ Installation
 
+Mani Arasteh ([@ManiProjs](https://github.com/ManiProjs)) created an script named LazyInstaller.
+
+> [!WARNING]
+> Even if you trust the author of the script, you must review it before doing anything for security.
+
+If you don't to manually do these things below, you can use this script by Mani Arasteh if you use macOS or Linux:
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ManiProjs/lazyinstaller/refs/heads/main/install.sh)"
+```
+
 You can find a starter template for **LazyVim** [here](https://github.com/LazyVim/starter)
 
 import Tabs from '@theme/Tabs';
