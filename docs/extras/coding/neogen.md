@@ -31,6 +31,7 @@ opts = function(_, opts)
 
   local map = {
     ["LuaSnip"] = "luasnip",
+    ["mini.snippets"] = "mini",
     ["nvim-snippy"] = "snippy",
     ["vim-vsnip"] = "vsnip",
   }
@@ -56,6 +57,7 @@ end
 ```lua
 {
   "danymat/neogen",
+  dependencies = LazyVim.has("mini.snippets") and { "mini.snippets" } or {},
   cmd = "Neogen",
   keys = {
     {
@@ -73,6 +75,7 @@ end
 
     local map = {
       ["LuaSnip"] = "luasnip",
+      ["mini.snippets"] = "mini",
       ["nvim-snippy"] = "snippy",
       ["vim-vsnip"] = "vsnip",
     }
