@@ -107,8 +107,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;&lt;tab&gt;]</code> | Next Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;d</code> | Close Tab | **n** |
 | <code>&lt;leader&gt;&lt;tab&gt;[</code> | Previous Tab | **n** |
-| <code>&lt;Tab&gt;</code> | Jump Next | **s** |
-| <code>&lt;S-Tab&gt;</code> | Jump Previous | **i**, **s** |
 
 ## LSP
 
@@ -165,49 +163,6 @@ possible keymaps starting with `<space>`.
 | <code>s</code> | Flash | **n**, **o**, **x** |
 | <code>S</code> | Flash Treesitter | **n**, **o**, **x** |
 
-## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
-
 ## [grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim.git)
 
 | Key | Description | Mode |
@@ -219,17 +174,6 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cm</code> | Mason | **n** |
-
-## [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;be</code> | Buffer Explorer | **n** |
-| <code>&lt;leader&gt;e</code> | Explorer NeoTree (Root Dir) | **n** |
-| <code>&lt;leader&gt;E</code> | Explorer NeoTree (cwd) | **n** |
-| <code>&lt;leader&gt;fe</code> | Explorer NeoTree (Root Dir) | **n** |
-| <code>&lt;leader&gt;fE</code> | Explorer NeoTree (cwd) | **n** |
-| <code>&lt;leader&gt;ge</code> | Git Explorer | **n** |
 
 ## [noice.nvim](https://github.com/folke/noice.nvim.git)
 
@@ -265,10 +209,56 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
+| <code>&lt;leader&gt;,</code> | Buffers | **n** |
 | <code>&lt;leader&gt;.</code> | Toggle Scratch Buffer | **n** |
+| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
+| <code>&lt;leader&gt;:</code> | Command History | **n** |
 | <code>&lt;leader&gt;dps</code> | Profiler Scratch Buffer | **n** |
+| <code>&lt;leader&gt;e</code> | Explorer Snacks (root dir) | **n** |
+| <code>&lt;leader&gt;E</code> | Explorer Snacks (cwd) | **n** |
+| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
+| <code>&lt;leader&gt;fB</code> | Buffers (all) | **n** |
+| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
+| <code>&lt;leader&gt;fe</code> | Explorer Snacks (root dir) | **n** |
+| <code>&lt;leader&gt;fE</code> | Explorer Snacks (cwd) | **n** |
+| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
+| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
+| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
+| <code>&lt;leader&gt;fp</code> | Projects | **n** |
+| <code>&lt;leader&gt;fr</code> | Recent | **n** |
+| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
+| <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
+| <code>&lt;leader&gt;gs</code> | Git Status | **n** |
+| <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
 | <code>&lt;leader&gt;S</code> | Select Scratch Buffer | **n** |
+| <code>&lt;leader&gt;s"</code> | Registers | **n** |
+| <code>&lt;leader&gt;s/</code> | Search History | **n** |
+| <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
+| <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
+| <code>&lt;leader&gt;sB</code> | Grep Open Buffers | **n** |
+| <code>&lt;leader&gt;sc</code> | Command History | **n** |
+| <code>&lt;leader&gt;sC</code> | Commands | **n** |
+| <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Buffer Diagnostics | **n** |
+| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
+| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
+| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
+| <code>&lt;leader&gt;sH</code> | Highlights | **n** |
+| <code>&lt;leader&gt;si</code> | Icons | **n** |
+| <code>&lt;leader&gt;sj</code> | Jumps | **n** |
+| <code>&lt;leader&gt;sk</code> | Keymaps | **n** |
+| <code>&lt;leader&gt;sl</code> | Location List | **n** |
+| <code>&lt;leader&gt;sm</code> | Marks | **n** |
+| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
+| <code>&lt;leader&gt;sp</code> | Search for Plugin Spec | **n** |
+| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
+| <code>&lt;leader&gt;sR</code> | Resume | **n** |
+| <code>&lt;leader&gt;su</code> | Undotree | **n** |
+| <code>&lt;leader&gt;sw</code> | Visual selection or word (Root Dir) | **n**, **x** |
+| <code>&lt;leader&gt;sW</code> | Visual selection or word (cwd) | **n**, **x** |
+| <code>&lt;leader&gt;uC</code> | Colorschemes | **n** |
 | <code>&lt;leader&gt;un</code> | Dismiss All Notifications | **n** |
 
 ## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
@@ -413,58 +403,6 @@ Part of [lazyvim.plugins.extras.editor.dial](/extras/editor/dial)
 | <code>g&lt;C-a&gt;</code> | Increment | **n**, **v** |
 | <code>g&lt;C-x&gt;</code> | Decrement | **n**, **v** |
 
-## [fzf-lua](https://github.com/ibhagwan/fzf-lua.git)
-Part of [lazyvim.plugins.extras.editor.fzf](/extras/editor/fzf)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;&lt;space&gt;</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;,</code> | Switch Buffer | **n** |
-| <code>&lt;leader&gt;/</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;:</code> | Command History | **n** |
-| <code>&lt;leader&gt;fb</code> | Buffers | **n** |
-| <code>&lt;leader&gt;fc</code> | Find Config File | **n** |
-| <code>&lt;leader&gt;ff</code> | Find Files (Root Dir) | **n** |
-| <code>&lt;leader&gt;fF</code> | Find Files (cwd) | **n** |
-| <code>&lt;leader&gt;fg</code> | Find Files (git-files) | **n** |
-| <code>&lt;leader&gt;fr</code> | Recent | **n** |
-| <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Commits | **n** |
-| <code>&lt;leader&gt;gs</code> | Status | **n** |
-| <code>&lt;leader&gt;s"</code> | Registers | **n** |
-| <code>&lt;leader&gt;sa</code> | Auto Commands | **n** |
-| <code>&lt;leader&gt;sb</code> | Buffer | **n** |
-| <code>&lt;leader&gt;sc</code> | Command History | **n** |
-| <code>&lt;leader&gt;sC</code> | Commands | **n** |
-| <code>&lt;leader&gt;sd</code> | Document Diagnostics | **n** |
-| <code>&lt;leader&gt;sD</code> | Workspace Diagnostics | **n** |
-| <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
-| <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
-| <code>&lt;leader&gt;sh</code> | Help Pages | **n** |
-| <code>&lt;leader&gt;sH</code> | Search Highlight Groups | **n** |
-| <code>&lt;leader&gt;sj</code> | Jumplist | **n** |
-| <code>&lt;leader&gt;sk</code> | Key Maps | **n** |
-| <code>&lt;leader&gt;sl</code> | Location List | **n** |
-| <code>&lt;leader&gt;sm</code> | Jump to Mark | **n** |
-| <code>&lt;leader&gt;sM</code> | Man Pages | **n** |
-| <code>&lt;leader&gt;sq</code> | Quickfix List | **n** |
-| <code>&lt;leader&gt;sR</code> | Resume | **n** |
-| <code>&lt;leader&gt;ss</code> | Goto Symbol | **n** |
-| <code>&lt;leader&gt;sS</code> | Goto Symbol (Workspace) | **n** |
-| <code>&lt;leader&gt;sw</code> | Word (Root Dir) | **n** |
-| <code>&lt;leader&gt;sW</code> | Word (cwd) | **n** |
-| <code>&lt;leader&gt;sw</code> | Selection (Root Dir) | **v** |
-| <code>&lt;leader&gt;sW</code> | Selection (cwd) | **v** |
-| <code>&lt;leader&gt;uC</code> | Colorscheme with Preview | **n** |
-
-## [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
-Part of [lazyvim.plugins.extras.editor.fzf](/extras/editor/fzf)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>&lt;leader&gt;st</code> | Todo | **n** |
-| <code>&lt;leader&gt;sT</code> | Todo/Fix/Fixme | **n** |
-
 ## [harpoon](https://github.com/ThePrimeagen/harpoon.git)
 Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
 
@@ -582,17 +520,19 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;fp</code> | Projects | **n** |
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
-| <code>&lt;leader&gt;gc</code> | Git Log | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
+| <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
 | <code>&lt;leader&gt;s"</code> | Registers | **n** |
+| <code>&lt;leader&gt;s/</code> | Search History | **n** |
 | <code>&lt;leader&gt;sa</code> | Autocmds | **n** |
 | <code>&lt;leader&gt;sb</code> | Buffer Lines | **n** |
 | <code>&lt;leader&gt;sB</code> | Grep Open Buffers | **n** |
 | <code>&lt;leader&gt;sc</code> | Command History | **n** |
 | <code>&lt;leader&gt;sC</code> | Commands | **n** |
 | <code>&lt;leader&gt;sd</code> | Diagnostics | **n** |
+| <code>&lt;leader&gt;sD</code> | Buffer Diagnostics | **n** |
 | <code>&lt;leader&gt;sg</code> | Grep (Root Dir) | **n** |
 | <code>&lt;leader&gt;sG</code> | Grep (cwd) | **n** |
 | <code>&lt;leader&gt;sh</code> | Help Pages | **n** |

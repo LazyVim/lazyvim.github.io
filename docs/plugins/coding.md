@@ -5,11 +5,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Includes the following extras
-
-- [coding.blink](/extras/coding/blink)
-- [coding.nvim-cmp](/extras/coding/nvim-cmp)
-
 ## [mini.pairs](https://github.com/echasnovski/mini.pairs)
 
  auto pairs
