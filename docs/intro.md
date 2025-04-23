@@ -50,3 +50,5 @@ with a walkthrough to get started.
 [@dusty-phillips](https://github.com/dusty-phillips) is working on a book called
 [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes)
 available for free online.
+
+[@catalinpit](https://github.com/catalinpit) wrote an article on [getting started with LazyVim](https://catalins.tech/lazyvim/) for developers coming from an IDE.
