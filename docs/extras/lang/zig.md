@@ -67,7 +67,25 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      zls = {},
+      zls = {
+        enable_inlay_hints = true,
+        enable_argument_placeholders = false,
+        enable_build_on_save = false,
+        enable_snippets = false,
+        warn_style = true,
+        highlight_global_var_declarations = false,
+        semantic_tokens = "full", -- full, partial, ???
+        inlay_hints_show_variable_type_hints = true,
+        inlay_hints_show_struct_literal_field_type = false,
+        inlay_hints_show_parameter_name = false,
+        inlay_hints_show_builtin = false,
+        inlay_hints_exclude_single_argument = false,
+        inlay_hints_hide_redundant_param_names = false,
+        inlay_hints_hide_redundant_param_names_last_token = false,
+        force_autofix = true,
+        prefer_ast_check_as_child_process = true,
+        completion_label_details = true,
+      },
     },
   },
 }
