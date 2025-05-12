@@ -189,7 +189,7 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
  Ensure Go tools are installed
 
@@ -209,7 +209,7 @@ opts = { ensure_installed = { "goimports", "gofumpt" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "goimports", "gofumpt" } },
 }
 ```
@@ -218,7 +218,7 @@ opts = { ensure_installed = { "goimports", "gofumpt" } }
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -235,7 +235,7 @@ opts = { ensure_installed = { "gomodifytags", "impl" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "gomodifytags", "impl" } },
 }
 ```
@@ -244,7 +244,7 @@ opts = { ensure_installed = { "gomodifytags", "impl" } }
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -261,7 +261,7 @@ opts = { ensure_installed = { "delve" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "delve" } },
 }
 ```
@@ -393,7 +393,7 @@ end
   optional = true,
   dependencies = {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       opts = { ensure_installed = { "gomodifytags", "impl" } },
     },
   },
@@ -469,7 +469,7 @@ opts = nil
   optional = true,
   dependencies = {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       opts = { ensure_installed = { "delve" } },
     },
     {

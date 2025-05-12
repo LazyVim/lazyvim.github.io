@@ -335,7 +335,7 @@ end
   optional = true,
   dependencies = {
     -- Ensure C/C++ debugger is installed
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     optional = true,
     opts = { ensure_installed = { "codelldb" } },
   },
@@ -383,7 +383,7 @@ end
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim) _(optional)_
+## [mason.nvim](https://github.com/mason-org/mason.nvim) _(optional)_
 
 <Tabs>
 
@@ -401,7 +401,7 @@ opts = { ensure_installed = { "codelldb" } }
 ```lua
 {
   -- Ensure C/C++ debugger is installed
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   optional = true,
   opts = { ensure_installed = { "codelldb" } },
 }

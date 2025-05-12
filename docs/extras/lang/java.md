@@ -46,7 +46,7 @@ opts = { ensure_installed = { "java" } }
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -63,7 +63,7 @@ opts = { ensure_installed = { "java-debug-adapter", "java-test" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
 }
 ```
@@ -496,7 +496,7 @@ end
   end,
   dependencies = {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
     },
   },

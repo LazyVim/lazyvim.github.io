@@ -103,7 +103,7 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -125,7 +125,7 @@ opts = {
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       "phpcs",

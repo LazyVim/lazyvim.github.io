@@ -304,7 +304,7 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim) _(optional)_
+## [mason.nvim](https://github.com/mason-org/mason.nvim) _(optional)_
 
  Ensure Rust debugger is installed
 
@@ -330,7 +330,7 @@ end
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   optional = true,
   opts = function(_, opts)
     opts.ensure_installed = opts.ensure_installed or {}

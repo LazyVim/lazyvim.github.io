@@ -155,7 +155,7 @@ end
   event = "LazyFile",
   dependencies = {
     "mason.nvim",
-    { "williamboman/mason-lspconfig.nvim", config = function() end },
+    { "mason-org/mason-lspconfig.nvim", config = function() end },
   },
   opts = function()
     ---@class PluginLspOpts
@@ -409,7 +409,7 @@ end
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -427,7 +427,7 @@ opts = nil
 ```lua
 {
   "mason.nvim",
-  { "williamboman/mason-lspconfig.nvim", config = function() end },
+  { "mason-org/mason-lspconfig.nvim", config = function() end },
 }
 ```
 
@@ -435,7 +435,7 @@ opts = nil
 
 </Tabs>
 
-## [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
+## [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
 
 <Tabs>
 
@@ -451,14 +451,14 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "williamboman/mason-lspconfig.nvim", config = function() end }
+{ "mason-org/mason-lspconfig.nvim", config = function() end }
 ```
 
 </TabItem>
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
  cmdline tools and lsp servers
 
@@ -484,7 +484,7 @@ opts = {
 ```lua
 {
 
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   cmd = "Mason",
   keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
   build = ":MasonUpdate",
@@ -519,6 +519,55 @@ opts = {
     end)
   end,
 }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
+
+ pin to v1 for now
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "mason-org/mason.nvim", version = "^1.0.0" }
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason-lspconfig.nvim](https://github.com/mason-org/mason-lspconfig.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "mason-org/mason-lspconfig.nvim", version = "^1.0.0" }
 ```
 
 </TabItem>

@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -34,7 +34,7 @@ opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "markdownlint-cli2", "markdown-toc" } },
 }
 ```

@@ -195,7 +195,7 @@ opts = nil
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
  Linters & formatters
 
@@ -215,7 +215,7 @@ opts = { ensure_installed = { "sqlfluff" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "sqlfluff" } },
 }
 ```

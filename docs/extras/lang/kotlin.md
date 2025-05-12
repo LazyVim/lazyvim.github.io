@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
  Add packages(linting, debug adapter)
 
@@ -37,7 +37,7 @@ opts = { ensure_installed = { "ktlint" } }
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = { ensure_installed = { "ktlint" } },
 }
 ```
@@ -136,7 +136,7 @@ opts = {
 {
   "mfussenegger/nvim-lint",
   optional = true,
-  dependencies = "williamboman/mason.nvim",
+  dependencies = "mason-org/mason.nvim",
   opts = {
     linters_by_ft = { kotlin = { "ktlint" } },
   },
@@ -288,7 +288,7 @@ end
 {
   "mfussenegger/nvim-dap",
   optional = true,
-  dependencies = "williamboman/mason.nvim",
+  dependencies = "mason-org/mason.nvim",
   opts = function()
     local dap = require("dap")
     if not dap.adapters.kotlin then

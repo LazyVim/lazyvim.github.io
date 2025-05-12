@@ -386,7 +386,7 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/williamboman/mason.nvim)
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
 <Tabs>
 
@@ -406,7 +406,7 @@ end
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = function(_, opts)
     opts.ensure_installed = opts.ensure_installed or {}
     table.insert(opts.ensure_installed, "js-debug-adapter")
@@ -549,7 +549,7 @@ end
   optional = true,
   dependencies = {
     {
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       opts = function(_, opts)
         opts.ensure_installed = opts.ensure_installed or {}
         table.insert(opts.ensure_installed, "js-debug-adapter")
