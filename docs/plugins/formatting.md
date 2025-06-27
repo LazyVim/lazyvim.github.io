@@ -2,7 +2,7 @@
 
 **LazyVim** uses `conform.nvim` for formatting.
 
-Additionally, options can be set in the options file, and they will be merged into the default conform [options](https://www.lazyvim.org/configuration/general#options) automatically.
+Additionally, setting can be set in the [options](https://www.lazyvim.org/configuration/general#options) file, and they will be merged into the default conform options automatically.
 
 Configuring `conform.nvim`:
 
