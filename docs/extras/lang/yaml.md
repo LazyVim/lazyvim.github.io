@@ -71,7 +71,7 @@ opts = {
         },
       },
       -- lazy-load schemastore when needed
-      on_new_config = function(new_config)
+      before_init = function(_, new_config)
         new_config.settings.yaml.schemas = vim.tbl_deep_extend(
           "force",
           new_config.settings.yaml.schemas or {},
@@ -122,7 +122,7 @@ opts = {
           },
         },
         -- lazy-load schemastore when needed
-        on_new_config = function(new_config)
+        before_init = function(_, new_config)
           new_config.settings.yaml.schemas = vim.tbl_deep_extend(
             "force",
             new_config.settings.yaml.schemas or {},
