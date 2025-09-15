@@ -251,6 +251,48 @@ opts = {}
 
 </Tabs>
 
+## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  settings = {
+    options = {
+      notify_user_on_venv_activation = true,
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "linux-cultist/venv-selector.nvim",
+  cmd = "VenvSelect",
+  opts = {
+    settings = {
+      options = {
+        notify_user_on_venv_activation = true,
+      },
+    },
+  },
+  --  Call config for Python files and load the cached venv automatically
+  ft = "python",
+  keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
 
 <Tabs>

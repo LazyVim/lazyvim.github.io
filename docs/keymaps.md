@@ -581,6 +581,13 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | <code>&lt;leader&gt;dPc</code> | Debug Class | **n** |
 | <code>&lt;leader&gt;dPt</code> | Debug Method | **n** |
 
+## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim.git)
+Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
+
 ## [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui.git)
 Part of [lazyvim.plugins.extras.lang.sql](/extras/lang/sql)
 
