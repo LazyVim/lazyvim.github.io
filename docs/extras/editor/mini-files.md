@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.files](https://github.com/echasnovski/mini.files)
+## [mini.files](https://github.com/nvim-mini/mini.files)
 
 <Tabs>
 
@@ -45,7 +45,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.files",
+  "nvim-mini/mini.files",
   opts = {
     windows = {
       preview = true,

@@ -5,7 +5,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.pairs](https://github.com/echasnovski/mini.pairs)
+## [mini.pairs](https://github.com/nvim-mini/mini.pairs)
 
  auto pairs
 
@@ -36,7 +36,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.pairs",
+  "nvim-mini/mini.pairs",
   event = "VeryLazy",
   opts = {
     modes = { insert = true, command = true, terminal = false },
@@ -90,7 +90,7 @@ opts = {}
 
 </Tabs>
 
-## [mini.ai](https://github.com/echasnovski/mini.ai)
+## [mini.ai](https://github.com/nvim-mini/mini.ai)
 
  Better text-objects
 
@@ -132,7 +132,7 @@ end
 
 ```lua
 {
-  "echasnovski/mini.ai",
+  "nvim-mini/mini.ai",
   event = "VeryLazy",
   opts = function()
     local ai = require("mini.ai")

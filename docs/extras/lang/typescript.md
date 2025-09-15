@@ -418,7 +418,7 @@ end
 
 </Tabs>
 
-## [mini.icons](https://github.com/echasnovski/mini.icons)
+## [mini.icons](https://github.com/nvim-mini/mini.icons)
 
  Filetype icons
 
@@ -450,7 +450,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.icons",
+  "nvim-mini/mini.icons",
   opts = {
     file = {
       [".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },

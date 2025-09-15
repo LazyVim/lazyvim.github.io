@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
+## [mini.indentscope](https://github.com/nvim-mini/mini.indentscope)
 
  Active indent guide and indent text objects. When you're browsing
  code, this highlights the current level of indentation, and animates
@@ -43,7 +43,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.indentscope",
+  "nvim-mini/mini.indentscope",
   version = false, -- wait till new 0.7.0 release to put it back on semver
   event = "LazyFile",
   opts = {

@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.hipatterns](https://github.com/echasnovski/mini.hipatterns)
+## [mini.hipatterns](https://github.com/nvim-mini/mini.hipatterns)
 
 <Tabs>
 
@@ -74,7 +74,7 @@ end
 
 ```lua
 {
-  "echasnovski/mini.hipatterns",
+  "nvim-mini/mini.hipatterns",
   recommended = true,
   desc = "Highlight colors in your code. Also includes Tailwind CSS support.",
   event = "LazyFile",

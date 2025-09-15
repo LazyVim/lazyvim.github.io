@@ -47,7 +47,7 @@ opts = {
   specs = {
     -- disable mini.animate cursor
     {
-      "echasnovski/mini.animate",
+      "nvim-mini/mini.animate",
       optional = true,
       opts = {
         cursor = { enable = false },
@@ -61,7 +61,7 @@ opts = {
 
 </Tabs>
 
-## [mini.animate](https://github.com/echasnovski/mini.animate) _(optional)_
+## [mini.animate](https://github.com/nvim-mini/mini.animate) _(optional)_
 
  disable mini.animate cursor
 
@@ -83,7 +83,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.animate",
+  "nvim-mini/mini.animate",
   optional = true,
   opts = {
     cursor = { enable = false },

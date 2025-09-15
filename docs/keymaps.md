@@ -304,7 +304,7 @@ Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 | <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
 
-## [mini.surround](https://github.com/echasnovski/mini.surround.git)
+## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
 
 | Key | Description | Mode |
@@ -413,6 +413,10 @@ Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
 | <code>&lt;leader&gt;3</code> | Harpoon to File 3 | **n** |
 | <code>&lt;leader&gt;4</code> | Harpoon to File 4 | **n** |
 | <code>&lt;leader&gt;5</code> | Harpoon to File 5 | **n** |
+| <code>&lt;leader&gt;6</code> | Harpoon to File 6 | **n** |
+| <code>&lt;leader&gt;7</code> | Harpoon to File 7 | **n** |
+| <code>&lt;leader&gt;8</code> | Harpoon to File 8 | **n** |
+| <code>&lt;leader&gt;9</code> | Harpoon to File 9 | **n** |
 | <code>&lt;leader&gt;h</code> | Harpoon Quick Menu | **n** |
 | <code>&lt;leader&gt;H</code> | Harpoon File | **n** |
 
@@ -433,21 +437,21 @@ Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 | <code>s</code> | Leap Forward to | **n**, **o**, **x** |
 | <code>S</code> | Leap Backward to | **n**, **o**, **x** |
 
-## [mini.surround](https://github.com/echasnovski/mini.surround.git)
+## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>gz</code> | +surround | **n** |
 
-## [mini.diff](https://github.com/echasnovski/mini.diff.git)
+## [mini.diff](https://github.com/nvim-mini/mini.diff.git)
 Part of [lazyvim.plugins.extras.editor.mini-diff](/extras/editor/mini-diff)
 
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;go</code> | Toggle mini.diff overlay | **n** |
 
-## [mini.files](https://github.com/echasnovski/mini.files.git)
+## [mini.files](https://github.com/nvim-mini/mini.files.git)
 Part of [lazyvim.plugins.extras.editor.mini-files](/extras/editor/mini-files)
 
 | Key | Description | Mode |

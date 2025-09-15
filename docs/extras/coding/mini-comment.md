@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.comment](https://github.com/echasnovski/mini.comment)
+## [mini.comment](https://github.com/nvim-mini/mini.comment)
 
 <Tabs>
 
@@ -40,7 +40,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.comment",
+  "nvim-mini/mini.comment",
   event = "VeryLazy",
   opts = {
     options = {

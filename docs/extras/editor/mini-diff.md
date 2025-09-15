@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.diff](https://github.com/echasnovski/mini.diff)
+## [mini.diff](https://github.com/nvim-mini/mini.diff)
 
  setup mini.diff
 
@@ -46,7 +46,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.diff",
+  "nvim-mini/mini.diff",
   event = "VeryLazy",
   keys = {
     {
@@ -74,7 +74,7 @@ opts = {
 
 </Tabs>
 
-## [mini.diff](https://github.com/echasnovski/mini.diff)
+## [mini.diff](https://github.com/nvim-mini/mini.diff)
 
 <Tabs>
 

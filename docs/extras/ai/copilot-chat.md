@@ -166,4 +166,58 @@ end
 
 </Tabs>
 
+## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
+
+ Blink integration
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  sources = {
+    providers = {
+      path = {
+        -- Path sources triggered by "/" interfere with CopilotChat commands
+        enabled = function()
+          return vim.bo.filetype ~= "copilot-chat"
+        end,
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "saghen/blink.cmp",
+  optional = true,
+  ---@module 'blink.cmp'
+  ---@type blink.cmp.Config
+  opts = {
+    sources = {
+      providers = {
+        path = {
+          -- Path sources triggered by "/" interfere with CopilotChat commands
+          enabled = function()
+            return vim.bo.filetype ~= "copilot-chat"
+          end,
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->

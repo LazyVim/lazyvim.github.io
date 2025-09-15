@@ -486,7 +486,7 @@ opts = {
 
 </Tabs>
 
-## [mini.icons](https://github.com/echasnovski/mini.icons)
+## [mini.icons](https://github.com/nvim-mini/mini.icons)
 
  icons
 
@@ -514,7 +514,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.icons",
+  "nvim-mini/mini.icons",
   lazy = true,
   opts = {
     file = {

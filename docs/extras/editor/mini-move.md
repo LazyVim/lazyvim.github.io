@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.move](https://github.com/echasnovski/mini.move)
+## [mini.move](https://github.com/nvim-mini/mini.move)
 
 <Tabs>
 
@@ -34,7 +34,7 @@ opts = {}
 
 ```lua
 {
-  "echasnovski/mini.move",
+  "nvim-mini/mini.move",
   event = "VeryLazy",
   opts = {},
 }

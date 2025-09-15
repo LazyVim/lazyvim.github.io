@@ -50,7 +50,7 @@ opts = {
 
 </Tabs>
 
-## [mini.animate](https://github.com/echasnovski/mini.animate)
+## [mini.animate](https://github.com/nvim-mini/mini.animate)
 
  setup animate
 
@@ -116,7 +116,7 @@ end
 
 ```lua
 {
-  "echasnovski/mini.animate",
+  "nvim-mini/mini.animate",
   event = "VeryLazy",
   cond = vim.g.neovide == nil,
   opts = function(_, opts)

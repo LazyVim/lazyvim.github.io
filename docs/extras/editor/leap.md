@@ -121,7 +121,7 @@ opts = nil
 
 </Tabs>
 
-## [mini.surround](https://github.com/echasnovski/mini.surround) _(optional)_
+## [mini.surround](https://github.com/nvim-mini/mini.surround) _(optional)_
 
  rename surround mappings from gs to gz to prevent conflict with leap
 
@@ -151,7 +151,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.surround",
+  "nvim-mini/mini.surround",
   optional = true,
   opts = {
     mappings = {

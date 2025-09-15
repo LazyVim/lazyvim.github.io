@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mini.surround](https://github.com/echasnovski/mini.surround)
+## [mini.surround](https://github.com/nvim-mini/mini.surround)
 
 <Tabs>
 
@@ -44,7 +44,7 @@ opts = {
 
 ```lua
 {
-  "echasnovski/mini.surround",
+  "nvim-mini/mini.surround",
   keys = function(_, keys)
     -- Populate the keys based on the user's options
     local opts = LazyVim.opts("mini.surround")

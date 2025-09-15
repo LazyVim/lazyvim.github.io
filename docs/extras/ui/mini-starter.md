@@ -43,7 +43,7 @@ opts = { dashboard = { enabled = false } }
 
 </Tabs>
 
-## [mini.starter](https://github.com/echasnovski/mini.starter)
+## [mini.starter](https://github.com/nvim-mini/mini.starter)
 
  enable mini.starter
 
@@ -99,7 +99,7 @@ end
 
 ```lua
 {
-  "echasnovski/mini.starter",
+  "nvim-mini/mini.starter",
   version = false, -- wait till new 0.7.0 release to put it back on semver
   event = "VimEnter",
   opts = function()
@@ -161,7 +161,7 @@ end
         local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
         local pad_footer = string.rep(" ", 8)
         starter.config.footer = pad_footer .. "⚡ Neovim loaded " .. stats.count .. " plugins in " .. ms .. "ms"
-        -- INFO: based on @echasnovski's recommendation (thanks a lot!!!)
+        -- INFO: based on @nvim-mini's recommendation (thanks a lot!!!)
         if vim.bo[ev.buf].filetype == "ministarter" then
           pcall(starter.refresh)
         end

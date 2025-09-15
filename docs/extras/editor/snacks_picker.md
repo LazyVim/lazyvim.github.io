@@ -464,7 +464,7 @@ end
 
 </Tabs>
 
-## [mini.starter](https://github.com/echasnovski/mini.starter) _(optional)_
+## [mini.starter](https://github.com/nvim-mini/mini.starter) _(optional)_
 
 <Tabs>
 
@@ -490,7 +490,7 @@ end
 
 ```lua
 {
-  "echasnovski/mini.starter",
+  "nvim-mini/mini.starter",
   optional = true,
   opts = function(_, opts)
     local items = {
