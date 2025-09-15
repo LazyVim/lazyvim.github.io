@@ -637,6 +637,24 @@ Part of [lazyvim.plugins.extras.ui.edgy](/extras/ui/edgy)
 | <code>&lt;leader&gt;ue</code> | Edgy Toggle | **n** |
 | <code>&lt;leader&gt;uE</code> | Edgy Select Window | **n** |
 
+## [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git)
+Part of [lazyvim.plugins.extras.ui.treesitter-main](/extras/ui/treesitter-main)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>[a</code> | Prev Parameter Start | **n**, **o**, **x** |
+| <code>[A</code> | Prev Parameter End | **n**, **o**, **x** |
+| <code>[c</code> | Prev Class Start | **n**, **o**, **x** |
+| <code>[C</code> | Prev Class End | **n**, **o**, **x** |
+| <code>[f</code> | Prev Function Start | **n**, **o**, **x** |
+| <code>[F</code> | Prev Function End | **n**, **o**, **x** |
+| <code>]a</code> | Next Parameter Start | **n**, **o**, **x** |
+| <code>]A</code> | Next Parameter End | **n**, **o**, **x** |
+| <code>]c</code> | Next Class Start | **n**, **o**, **x** |
+| <code>]C</code> | Next Class End | **n**, **o**, **x** |
+| <code>]f</code> | Next Function Start | **n**, **o**, **x** |
+| <code>]F</code> | Next Function End | **n**, **o**, **x** |
+
 ## [chezmoi.nvim](https://github.com/xvzc/chezmoi.nvim.git)
 Part of [lazyvim.plugins.extras.util.chezmoi](/extras/util/chezmoi)
 

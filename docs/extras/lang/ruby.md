@@ -62,7 +62,6 @@ opts = { ensure_installed = { "ruby" } }
 
 ```lua
 opts = {
-  ---@type lspconfig.options
   servers = {
     ruby_lsp = {
       enabled = lsp == "ruby_lsp",
@@ -91,9 +90,8 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  ---@class PluginLspOpts
+  ---@type PluginLspOpts
   opts = {
-    ---@type lspconfig.options
     servers = {
       ruby_lsp = {
         enabled = lsp == "ruby_lsp",
