@@ -148,14 +148,14 @@ opts = {
           local action, uri, range = unpack(command.arguments)
 
           local function move(newf)
-            client.request("workspace/executeCommand", {
+            client:request("workspace/executeCommand", {
               command = command.command,
               arguments = { action, uri, range, newf },
             })
           end
 
           local fname = vim.uri_to_fname(uri)
-          client.request("workspace/executeCommand", {
+          client:request("workspace/executeCommand", {
             command = "typescript.tsserverRequest",
             arguments = {
               "getMoveToRefactoringFileSuggestions",
@@ -329,14 +329,14 @@ opts = {
             local action, uri, range = unpack(command.arguments)
 
             local function move(newf)
-              client.request("workspace/executeCommand", {
+              client:request("workspace/executeCommand", {
                 command = command.command,
                 arguments = { action, uri, range, newf },
               })
             end
 
             local fname = vim.uri_to_fname(uri)
-            client.request("workspace/executeCommand", {
+            client:request("workspace/executeCommand", {
               command = "typescript.tsserverRequest",
               arguments = {
                 "getMoveToRefactoringFileSuggestions",
