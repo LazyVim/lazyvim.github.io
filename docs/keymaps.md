@@ -484,17 +484,16 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;r</code> | +refactor | **n**, **v** |
-| <code>&lt;leader&gt;rb</code> | Extract Block | **n** |
+| <code>&lt;leader&gt;r</code> | +refactor | **n**, **x** |
+| <code>&lt;leader&gt;rb</code> | Extract Block | **n**, **x** |
 | <code>&lt;leader&gt;rc</code> | Debug Cleanup | **n** |
-| <code>&lt;leader&gt;rf</code> | Extract Block To File | **n** |
-| <code>&lt;leader&gt;rf</code> | Extract Function | **v** |
-| <code>&lt;leader&gt;rF</code> | Extract Function To File | **v** |
-| <code>&lt;leader&gt;ri</code> | Inline Variable | **n**, **v** |
-| <code>&lt;leader&gt;rp</code> | Debug Print Variable | **n**, **v** |
+| <code>&lt;leader&gt;rf</code> | Extract Function | **n**, **x** |
+| <code>&lt;leader&gt;rF</code> | Extract Function To File | **n**, **x** |
+| <code>&lt;leader&gt;ri</code> | Inline Variable | **n**, **x** |
+| <code>&lt;leader&gt;rp</code> | Debug Print Variable | **n**, **x** |
 | <code>&lt;leader&gt;rP</code> | Debug Print | **n** |
-| <code>&lt;leader&gt;rs</code> | Refactor | **v** |
-| <code>&lt;leader&gt;rx</code> | Extract Variable | **v** |
+| <code>&lt;leader&gt;rs</code> | Refactor | **n**, **x** |
+| <code>&lt;leader&gt;rx</code> | Extract Variable | **n**, **x** |
 
 ## [snacks.nvim](https://github.com/folke/snacks.nvim.git)
 Part of [lazyvim.plugins.extras.editor.snacks_explorer](/extras/editor/snacks_explorer)
