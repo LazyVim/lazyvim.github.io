@@ -41,6 +41,7 @@ opts = {
       return LazyVim.cmp.expand(snippet)
     end,
   },
+
   appearance = {
     -- sets the fallback highlight groups to nvim-cmp's highlight groups
     -- useful for when your theme doesn't support blink.cmp
@@ -50,6 +51,7 @@ opts = {
     -- adjusts spacing to ensure icons are aligned
     nerd_font_variant = "mono",
   },
+
   completion = {
     accept = {
       -- experimental auto-brackets support
@@ -82,7 +84,20 @@ opts = {
   },
 
   cmdline = {
-    enabled = false,
+    enabled = true,
+    keymap = {
+      preset = "cmdline",
+      -- ["<Tab>"] = { "show", "accept" },
+      -- ["<CR>"] = { "accept_and_enter", "fallback" },
+    },
+    completion = {
+      menu = {
+        auto_show = function(ctx)
+          return vim.fn.getcmdtype() == ":"
+        end,
+      },
+      ghost_text = { enabled = true },
+    },
   },
 
   keymap = {
@@ -117,7 +132,7 @@ opts = {
       version = not vim.g.lazyvim_blink_main and "*",
     },
   },
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -127,6 +142,7 @@ opts = {
         return LazyVim.cmp.expand(snippet)
       end,
     },
+
     appearance = {
       -- sets the fallback highlight groups to nvim-cmp's highlight groups
       -- useful for when your theme doesn't support blink.cmp
@@ -136,6 +152,7 @@ opts = {
       -- adjusts spacing to ensure icons are aligned
       nerd_font_variant = "mono",
     },
+
     completion = {
       accept = {
         -- experimental auto-brackets support
@@ -168,7 +185,20 @@ opts = {
     },
 
     cmdline = {
-      enabled = false,
+      enabled = true,
+      keymap = {
+        preset = "cmdline",
+        -- ["<Tab>"] = { "show", "accept" },
+        -- ["<CR>"] = { "accept_and_enter", "fallback" },
+      },
+      completion = {
+        menu = {
+          auto_show = function(ctx)
+            return vim.fn.getcmdtype() == ":"
+          end,
+        },
+        ghost_text = { enabled = true },
+      },
     },
 
     keymap = {
@@ -327,8 +357,9 @@ end
 ```lua
 opts = {
   sources = {
-    -- add lazydev to your completion providers
-    default = { "lazydev" },
+    per_filetype = {
+      lua = { inherit_defaults = true, "lazydev" },
+    },
     providers = {
       lazydev = {
         name = "LazyDev",
@@ -350,8 +381,9 @@ opts = {
   "saghen/blink.cmp",
   opts = {
     sources = {
-      -- add lazydev to your completion providers
-      default = { "lazydev" },
+      per_filetype = {
+        lua = { inherit_defaults = true, "lazydev" },
+      },
       providers = {
         lazydev = {
           name = "LazyDev",
