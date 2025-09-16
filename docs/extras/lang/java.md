@@ -139,6 +139,7 @@ opts = function()
     table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
   end
   return {
+    root_dir = require("lspconfig.util").root_pattern(vim.lsp.config.jdtls.root_markers),
 
     -- How to find the project name for a given root dir.
     project_name = function(root_dir)
@@ -207,6 +208,7 @@ end
       table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
     end
     return {
+      root_dir = require("lspconfig.util").root_pattern(vim.lsp.config.jdtls.root_markers),
 
       -- How to find the project name for a given root dir.
       project_name = function(root_dir)
@@ -280,10 +282,12 @@ end
       end
     end
     local function attach_jdtls()
+      local fname = vim.api.nvim_buf_get_name(0)
+
       -- Configuration can be augmented and overridden by opts.jdtls
       local config = extend_or_override({
         cmd = opts.full_cmd(opts),
-        root_dir = vim.fs.root(0, vim.lsp.config.jdtls.root_markers),
+        root_dir = opts.root_dir(fname),
         init_options = {
           bundles = bundles,
         },

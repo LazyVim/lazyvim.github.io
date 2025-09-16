@@ -69,15 +69,12 @@ opts = {
         "reason",
         "dune",
       },
-      root_markers = {
-        "*.opam",
-        "esy.json",
-        "package.json",
-        ".git",
-        "dune-project",
-        "dune-workspace",
-        "*.ml",
-      },
+      root_dir = function(bufnr, on_dir)
+        local util = require("lspconfig.util")
+        local fname = vim.api.nvim_buf_get_name(bufnr)
+        --stylua: ignore
+        on_dir(util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace", "*.ml")( fname))
+      end,
     },
   },
 }
@@ -102,15 +99,12 @@ opts = {
           "reason",
           "dune",
         },
-        root_markers = {
-          "*.opam",
-          "esy.json",
-          "package.json",
-          ".git",
-          "dune-project",
-          "dune-workspace",
-          "*.ml",
-        },
+        root_dir = function(bufnr, on_dir)
+          local util = require("lspconfig.util")
+          local fname = vim.api.nvim_buf_get_name(bufnr)
+          --stylua: ignore
+          on_dir(util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace", "*.ml")( fname))
+        end,
       },
     },
   },
