@@ -20,7 +20,7 @@ local plugins = {
   { "LazyVim/LazyVim", import = "lazyvim.plugins", dev = true, version = false },
   { "LazyVim/LazyVim", dev = true, version = false },
   { "folke/lazy.nvim", version = false },
-  { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
+  { "nvim-treesitter/nvim-treesitter", branc = "main", opts = { ensure_installed = {} } },
 }
 
 local function main()
