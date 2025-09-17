@@ -75,6 +75,12 @@ opts = function()
     codelens = {
       enabled = false,
     },
+    -- Enable this to enable the builtin LSP folding on Neovim.
+    -- Be aware that you also will need to properly configure your LSP server to
+    -- provide the folds.
+    folds = {
+      enabled = true,
+    },
     -- add any global capabilities here
     capabilities = {
       workspace = {
@@ -194,6 +200,12 @@ end
       codelens = {
         enabled = false,
       },
+      -- Enable this to enable the builtin LSP folding on Neovim.
+      -- Be aware that you also will need to properly configure your LSP server to
+      -- provide the folds.
+      folds = {
+        enabled = true,
+      },
       -- add any global capabilities here
       capabilities = {
         workspace = {
@@ -283,6 +295,14 @@ end
         then
           vim.lsp.inlay_hint.enable(true, { bufnr = buffer })
         end
+      end)
+    end
+
+    -- folds
+    if opts.folds.enabled then
+      LazyVim.lsp.on_supports_method("textDocument/foldingRange", function(client, buffer)
+        local win = vim.api.nvim_get_current_win()
+        vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
       end)
     end
 
