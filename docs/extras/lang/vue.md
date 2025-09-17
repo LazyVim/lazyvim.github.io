@@ -59,13 +59,7 @@ opts = { ensure_installed = { "vue", "css" } }
 ```lua
 opts = {
   servers = {
-    volar = {
-      init_options = {
-        vue = {
-          hybridMode = true,
-        },
-      },
-    },
+    vue_ls = {},
     vtsls = {},
   },
 }
@@ -81,13 +75,7 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      volar = {
-        init_options = {
-          vue = {
-            hybridMode = true,
-          },
-        },
-      },
+      vue_ls = {},
       vtsls = {},
     },
   },
