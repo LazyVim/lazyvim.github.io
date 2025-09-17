@@ -52,7 +52,8 @@ opts = {
 
 ## [mini.animate](https://github.com/nvim-mini/mini.animate)
 
- setup animate
+ Animates many common Neovim actions, like scrolling,
+ moving the cursor, and resizing windows.
 
 
 <Tabs>

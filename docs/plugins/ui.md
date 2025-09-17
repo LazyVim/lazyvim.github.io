@@ -121,7 +121,8 @@ opts = {
 
 ## [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 
- statusline
+ Displays a fancy status line with git status,
+ LSP diagnostics, filetype information, and more.
 
 
 <Tabs>

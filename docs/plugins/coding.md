@@ -7,7 +7,9 @@ import TabItem from '@theme/TabItem';
 
 ## [mini.pairs](https://github.com/nvim-mini/mini.pairs)
 
- auto pairs
+ Auto pairs
+ Automatically inserts a matching closing character
+ when you type an opening character like `"`, `[`, or `(`.
 
 
 <Tabs>
@@ -62,7 +64,9 @@ opts = {
 
 ## [ts-comments.nvim](https://github.com/folke/ts-comments.nvim)
 
- comments
+ Improves comment syntax, lets Neovim handle multiple
+ types of comments for a single language, and relaxes rules
+ for uncommenting.
 
 
 <Tabs>
@@ -92,7 +96,9 @@ opts = {}
 
 ## [mini.ai](https://github.com/nvim-mini/mini.ai)
 
- Better text-objects
+ Extends the a & i text objects, this adds the ability to select
+ arguments, function calls, text within quotes and brackets, and to
+ repeat those selections to select an outer text object.
 
 
 <Tabs>
@@ -173,6 +179,10 @@ end
 </Tabs>
 
 ## [lazydev.nvim](https://github.com/folke/lazydev.nvim)
+
+ Configures LuaLS to support auto-completion and type checking
+ while editing your Neovim configuration.
+
 
 <Tabs>
 

@@ -7,6 +7,10 @@ import TabItem from '@theme/TabItem';
 
 ## [nvim-lint](https://github.com/mfussenegger/nvim-lint)
 
+ Asynchronously calls language-specific linter tools and reports
+ their results via the `vim.diagnostic` module.
+
+
 <Tabs>
 
 <TabItem value="opts" label="Options">

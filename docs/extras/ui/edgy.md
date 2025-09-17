@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ## [edgy.nvim](https://github.com/folke/edgy.nvim)
 
- edgy
+ Create and display predefined window layouts.
 
 
 <Tabs>
