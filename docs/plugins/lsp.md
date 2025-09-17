@@ -50,7 +50,6 @@ opts = function()
         source = "if_many",
         prefix = "●",
         -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-        -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
         -- prefix = "icons",
       },
       severity_sort = true,
@@ -63,14 +62,14 @@ opts = function()
         },
       },
     },
-    -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+    -- Enable this to enable the builtin LSP inlay hints on Neovim.
     -- Be aware that you also will need to properly configure your LSP server to
     -- provide the inlay hints.
     inlay_hints = {
       enabled = true,
       exclude = { "vue" }, -- filetypes for which you don't want to enable inlay hints
     },
-    -- Enable this to enable the builtin LSP code lenses on Neovim >= 0.10.0
+    -- Enable this to enable the builtin LSP code lenses on Neovim.
     -- Be aware that you also will need to properly configure your LSP server to
     -- provide the code lenses.
     codelens = {
@@ -170,7 +169,6 @@ end
           source = "if_many",
           prefix = "●",
           -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-          -- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
           -- prefix = "icons",
         },
         severity_sort = true,
@@ -183,14 +181,14 @@ end
           },
         },
       },
-      -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+      -- Enable this to enable the builtin LSP inlay hints on Neovim.
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the inlay hints.
       inlay_hints = {
         enabled = true,
         exclude = { "vue" }, -- filetypes for which you don't want to enable inlay hints
       },
-      -- Enable this to enable the builtin LSP code lenses on Neovim >= 0.10.0
+      -- Enable this to enable the builtin LSP code lenses on Neovim.
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the code lenses.
       codelens = {
