@@ -41,8 +41,7 @@ local function main()
   -- require("lazy.core.cache").reset()
 
   vim.opt.rtp:append(".")
-  require("nvim-treesitter").update({ "lua" }):wait(300000) -- max. 5 minutes
-  -- vim.cmd([[TSUpdateSync lua]])
+  require("nvim-treesitter.install").update({ "lua" }):wait(300000) -- max. 5 minutes
 
   print("Building docs")
 
