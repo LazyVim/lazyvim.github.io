@@ -157,7 +157,7 @@ end
 ```lua
 {
   "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile", "BufWritePre" },
+  event = "LazyFile",
   dependencies = {
     "mason.nvim",
     { "mason-org/mason-lspconfig.nvim", config = function() end },
@@ -273,7 +273,7 @@ end
     return ret
   end,
   ---@param opts PluginLspOpts
-  config = function(_, opts)
+  config = vim.schedule_wrap(function(_, opts)
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
@@ -411,7 +411,7 @@ end
       resolve("denols")
       resolve("vtsls")
     end
-  end,
+  end),
 }
 ```
 
