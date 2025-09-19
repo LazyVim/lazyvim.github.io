@@ -71,7 +71,7 @@ opts = nil
 
 </Tabs>
 
-## [nvim-treesitter-sexp](https://github.com/PaterJason/nvim-treesitter-sexp)
+## [nvim-paredit](https://github.com/julienvincent/nvim-paredit)
 
  Add s-exp mappings
 
@@ -90,7 +90,7 @@ opts = {}
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "PaterJason/nvim-treesitter-sexp", opts = {}, event = "LazyFile" }
+{ "julienvincent/nvim-paredit", opts = {}, event = "LazyFile" }
 ```
 
 </TabItem>
