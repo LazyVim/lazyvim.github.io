@@ -390,7 +390,7 @@ end
       })
     end
 
-    if vim.lsp.is_enabled("denols") and vim.lsp.is_enabled("vtsls") then
+    if vim.lsp.is_enabled and vim.lsp.is_enabled("denols") and vim.lsp.is_enabled("vtsls") then
       ---@param server string
       local resolve = function(server)
         local markers, root_dir = vim.lsp.config[server].root_markers, vim.lsp.config[server].root_dir
