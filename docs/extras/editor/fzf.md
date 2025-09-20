@@ -111,7 +111,7 @@ opts = function(_, opts)
         winopts = {
           layout = "vertical",
           -- height is number of items minus 15 lines for the preview, with a max of 80% screen height
-          height = math.floor(math.min(vim.o.lines * 0.8 - 16, #items + 2) + 0.5) + 16,
+          height = math.floor(math.min(vim.o.lines * 0.8 - 16, #items + 4) + 0.5) + 16,
           width = 0.5,
           preview = not vim.tbl_isempty(vim.lsp.get_clients({ bufnr = 0, name = "vtsls" })) and {
             layout = "vertical",
@@ -126,7 +126,7 @@ opts = function(_, opts)
         winopts = {
           width = 0.5,
           -- height is number of items, with a max of 80% screen height
-          height = math.floor(math.min(vim.o.lines * 0.8, #items + 2) + 0.5),
+          height = math.floor(math.min(vim.o.lines * 0.8, #items + 4) + 0.5),
         },
       })
     end,
@@ -256,7 +256,7 @@ end
           winopts = {
             layout = "vertical",
             -- height is number of items minus 15 lines for the preview, with a max of 80% screen height
-            height = math.floor(math.min(vim.o.lines * 0.8 - 16, #items + 2) + 0.5) + 16,
+            height = math.floor(math.min(vim.o.lines * 0.8 - 16, #items + 4) + 0.5) + 16,
             width = 0.5,
             preview = not vim.tbl_isempty(vim.lsp.get_clients({ bufnr = 0, name = "vtsls" })) and {
               layout = "vertical",
@@ -271,7 +271,7 @@ end
           winopts = {
             width = 0.5,
             -- height is number of items, with a max of 80% screen height
-            height = math.floor(math.min(vim.o.lines * 0.8, #items + 2) + 0.5),
+            height = math.floor(math.min(vim.o.lines * 0.8, #items + 4) + 0.5),
           },
         })
       end,
