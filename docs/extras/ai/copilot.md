@@ -178,7 +178,7 @@ opts = {}
 
 </Tabs>
 
-## [blink-cmp-copilot](https://github.com/giuxtaposition/blink-cmp-copilot)
+## [blink-copilot](https://github.com/fang2hou/blink-copilot)
 
 <Tabs>
 
@@ -194,7 +194,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "giuxtaposition/blink-cmp-copilot" }
+{ "fang2hou/blink-copilot" }
 ```
 
 </TabItem>
@@ -367,8 +367,7 @@ opts = {
     providers = {
       copilot = {
         name = "copilot",
-        module = "blink-cmp-copilot",
-        kind = "Copilot",
+        module = "blink-copilot",
         score_offset = 100,
         async = true,
       },
@@ -386,15 +385,14 @@ opts = {
 {
   "saghen/blink.cmp",
   optional = true,
-  dependencies = { "giuxtaposition/blink-cmp-copilot" },
+  dependencies = { "fang2hou/blink-copilot" },
   opts = {
     sources = {
       default = { "copilot" },
       providers = {
         copilot = {
           name = "copilot",
-          module = "blink-cmp-copilot",
-          kind = "Copilot",
+          module = "blink-copilot",
           score_offset = 100,
           async = true,
         },
