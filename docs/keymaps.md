@@ -82,7 +82,10 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;dpp</code> | Toggle Profiler | **n** |
 | <code>&lt;leader&gt;dph</code> | Toggle Profiler Highlights | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
+| <code>&lt;leader&gt;gL</code> | Git Log (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
+| <code>&lt;leader&gt;gf</code> | Git Current File History | **n** |
+| <code>&lt;leader&gt;gl</code> | Git Log | **n** |
 | <code>&lt;leader&gt;gB</code> | Git Browse (open) | **n**, **x** |
 | <code>&lt;leader&gt;gY</code> | Git Browse (copy) | **n**, **x** |
 | <code>&lt;leader&gt;qq</code> | Quit All | **n** |
