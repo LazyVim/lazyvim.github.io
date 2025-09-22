@@ -8,7 +8,7 @@ Configuring **LazyVim** plugins is exactly the same as using **lazy.nvim** to bu
 a config from scratch.
 
 For the full plugin spec documentation please check the **lazy.nvim**
-[readme](https://github.com/folke/lazy.nvim).
+[plugin spec](https://lazy.folke.io/spec).
 
 Refer to the **plugins** section in the sidebar for configuring
 included plugins.
