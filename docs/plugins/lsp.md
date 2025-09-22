@@ -10,7 +10,7 @@ but you need to configure it using the `opts()` method.
 -- LSP keymaps
 {
   "neovim/nvim-lspconfig",
-  opts = function()
+  init = function()
     local keys = require("lazyvim.plugins.lsp.keymaps").get()
     -- change a keymap
     keys[#keys + 1] = { "K", "<cmd>echo 'hello'<cr>" }
