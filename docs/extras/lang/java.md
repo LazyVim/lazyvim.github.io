@@ -88,11 +88,6 @@ opts = {
   servers = {
     jdtls = {},
   },
-  setup = {
-    jdtls = function()
-      return true -- avoid duplicate servers
-    end,
-  },
 }
 ```
 
@@ -108,11 +103,6 @@ opts = {
     -- make sure mason installs the server
     servers = {
       jdtls = {},
-    },
-    setup = {
-      jdtls = function()
-        return true -- avoid duplicate servers
-      end,
     },
   },
 }
@@ -269,19 +259,10 @@ end
     if LazyVim.has("mason.nvim") then
       local mason_registry = require("mason-registry")
       if opts.dap and LazyVim.has("nvim-dap") and mason_registry.is_installed("java-debug-adapter") then
-        local jar_patterns = {
-          vim.fn.expand("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin-*.jar"),
-        }
+        bundles = vim.fn.glob("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin-*jar", false, true)
         -- java-test also depends on java-debug-adapter.
         if opts.test and mason_registry.is_installed("java-test") then
-          vim.list_extend(jar_patterns, {
-            vim.fn.expand("$MASON/share/java-test/*.jar"),
-          })
-        end
-        for _, jar_pattern in ipairs(jar_patterns) do
-          for _, bundle in ipairs(vim.split(vim.fn.glob(jar_pattern), "\n")) do
-            table.insert(bundles, bundle)
-          end
+          vim.list_extend(bundles, vim.fn.glob("$MASON/share/java-test/*.jar", false, true))
         end
       end
     end
