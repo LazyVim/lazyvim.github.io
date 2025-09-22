@@ -28,7 +28,7 @@ to make it easy to customize and extend your config.
 - Git >= **2.19.0** (for partial clones support)
 - a [Nerd Font](https://www.nerdfonts.com/)(v3.0 or greater) **_(optional, but needed to display some icons)_**
 - [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
-- a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
+- **tree-sitter-cli** and a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter/tree/main?tab=readme-ov-file#requirements)
 - **curl** for [blink.cmp](https://github.com/Saghen/blink.cmp) **(completion engine)**
 - for [fzf-lua](https://github.com/ibhagwan/fzf-lua) **_(optional)_**
   - **fzf**: [fzf](https://github.com/junegunn/fzf) **(v0.25.1 or greater)**
