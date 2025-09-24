@@ -29,7 +29,7 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 - Clone the starter
 
   ```sh
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  git clone --depth=1 https://github.com/LazyVim/starter ~/.config/nvim
   ```
 
 - Remove the `.git` folder, so you can add it to your own repo later
