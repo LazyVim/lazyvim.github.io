@@ -193,23 +193,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;snt</code> | Noice Picker (Telescope/FzfLua) | **n** |
 | <code>&lt;S-Enter&gt;</code> | Redirect Cmdline | **c** |
 
-## [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git)
-
-| Key | Description | Mode |
-| --- | --- | --- |
-| <code>[a</code> | Prev Parameter Start | **n**, **o**, **x** |
-| <code>[A</code> | Prev Parameter End | **n**, **o**, **x** |
-| <code>[c</code> | Prev Class Start | **n**, **o**, **x** |
-| <code>[C</code> | Prev Class End | **n**, **o**, **x** |
-| <code>[f</code> | Prev Function Start | **n**, **o**, **x** |
-| <code>[F</code> | Prev Function End | **n**, **o**, **x** |
-| <code>]a</code> | Next Parameter Start | **n**, **o**, **x** |
-| <code>]A</code> | Next Parameter End | **n**, **o**, **x** |
-| <code>]c</code> | Next Class Start | **n**, **o**, **x** |
-| <code>]C</code> | Next Class End | **n**, **o**, **x** |
-| <code>]f</code> | Next Function Start | **n**, **o**, **x** |
-| <code>]F</code> | Next Function End | **n**, **o**, **x** |
-
 ## [persistence.nvim](https://github.com/folke/persistence.nvim.git)
 
 | Key | Description | Mode |
