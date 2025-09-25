@@ -50,6 +50,21 @@ opts = {
           end
         end,
       },
+      -- stylua: ignore
+      keys = {
+        {
+          "<M-]>",
+          function() vim.lsp.inline_completion.select({ count = 1 }) end,
+          desc = "Next Copilot Suggestion",
+          mode = { "i", "n" },
+        },
+        {
+          "<M-[>",
+          function() vim.lsp.inline_completion.select({ count = -1 }) end,
+          desc = "Next Copilot Suggestion",
+          mode = { "i", "n" },
+        },
+      },
     },
   },
   setup = {
@@ -84,6 +99,21 @@ opts = {
               LazyVim.error("Please use `:LspCopilotSignIn` to sign in to Copilot")
             end
           end,
+        },
+        -- stylua: ignore
+        keys = {
+          {
+            "<M-]>",
+            function() vim.lsp.inline_completion.select({ count = 1 }) end,
+            desc = "Next Copilot Suggestion",
+            mode = { "i", "n" },
+          },
+          {
+            "<M-[>",
+            function() vim.lsp.inline_completion.select({ count = -1 }) end,
+            desc = "Next Copilot Suggestion",
+            mode = { "i", "n" },
+          },
         },
       },
     },
