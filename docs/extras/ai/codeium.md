@@ -160,29 +160,6 @@ opts = nil
 
 </Tabs>
 
-## [blink.compat](https://github.com/saghen/blink.compat)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-"saghen/blink.compat"
-```
-
-</TabItem>
-
-</Tabs>
-
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
  codeium cmp source
@@ -251,56 +228,6 @@ end
   opts = function(_, opts)
     table.insert(opts.sections.lualine_x, 2, LazyVim.lualine.cmp_source("codeium"))
   end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [blink.cmp](https://github.com/saghen/blink.cmp) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  sources = {
-    compat = { "codeium" },
-    providers = {
-      codeium = {
-        kind = "Codeium",
-        score_offset = 100,
-        async = true,
-      },
-    },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "saghen/blink.cmp",
-  optional = true,
-  dependencies = { "codeium.nvim", "saghen/blink.compat" },
-  opts = {
-    sources = {
-      compat = { "codeium" },
-      providers = {
-        codeium = {
-          kind = "Codeium",
-          score_offset = 100,
-          async = true,
-        },
-      },
-    },
-  },
 }
 ```
 
