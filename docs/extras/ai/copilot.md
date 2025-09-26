@@ -81,6 +81,45 @@ opts = {
 
 </Tabs>
 
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+ copilot-language-server
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  servers = {
+    -- copilot.lua only works with its own copilot lsp server
+    copilot = { enabled = false },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      -- copilot.lua only works with its own copilot lsp server
+      copilot = { enabled = false },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 
  add ai_accept action
