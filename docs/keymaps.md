@@ -301,6 +301,17 @@ Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 | <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
 | <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
 
+## [sidekick.nvim](https://github.com/folke/sidekick.nvim.git)
+Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
+| <code>&lt;leader&gt;aa</code> | Sidekick Toggle | **n** |
+| <code>&lt;leader&gt;ap</code> | Sidekick Ask Prompt | **n**, **v** |
+| <code>&lt;leader&gt;as</code> | Sidekick Select Tool | **n** |
+| <code>&lt;c-.&gt;</code> | Sidekick Switch Focus | **n**, **i**, **t**, **x** |
+
 ## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
 
