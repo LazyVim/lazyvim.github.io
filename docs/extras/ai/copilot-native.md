@@ -50,7 +50,7 @@ opts = {
         {
           "<M-[>",
           function() vim.lsp.inline_completion.select({ count = -1 }) end,
-          desc = "Next Copilot Suggestion",
+          desc = "Prev Copilot Suggestion",
           mode = { "i", "n" },
         },
       },
@@ -106,7 +106,7 @@ opts = {
           {
             "<M-[>",
             function() vim.lsp.inline_completion.select({ count = -1 }) end,
-            desc = "Next Copilot Suggestion",
+            desc = "Prev Copilot Suggestion",
             mode = { "i", "n" },
           },
         },
