@@ -102,12 +102,12 @@ end
       desc = "Sidekick Toggle",
     },
     {
-      "<leader>an",
+      "<leader>as",
       function()
-        require("sidekick.cli").select_tool()
+        require("sidekick.cli").select()
       end,
       mode = { "n" },
-      desc = "Sidekick New Tool",
+      desc = "Sidekick Select",
     },
     {
       "<c-.>",
@@ -120,9 +120,9 @@ end
     {
       "<leader>ap",
       function()
-        require("sidekick.cli").select_prompt()
+        require("sidekick.cli").prompt()
       end,
-      desc = "Sidekick Ask Prompt",
+      desc = "Sidekick Prompt",
       mode = { "n", "v" },
     },
   },
