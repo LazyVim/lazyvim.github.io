@@ -307,9 +307,10 @@ Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
-| <code>&lt;leader&gt;aa</code> | Sidekick Toggle | **n** |
-| <code>&lt;leader&gt;ap</code> | Sidekick Prompt | **n**, **v** |
-| <code>&lt;leader&gt;as</code> | Sidekick Select | **n** |
+| <code>&lt;leader&gt;aa</code> | Sidekick Toggle CLI | **n** |
+| <code>&lt;leader&gt;ap</code> | Sidekick Select Prompt | **n**, **v** |
+| <code>&lt;leader&gt;as</code> | Sidekick Select CLI | **n** |
+| <code>&lt;leader&gt;as</code> | Sidekick Send Visual Selection | **v** |
 | <code>&lt;c-.&gt;</code> | Sidekick Switch Focus | **n**, **i**, **t**, **x** |
 
 ## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
