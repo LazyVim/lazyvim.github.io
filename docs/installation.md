@@ -88,8 +88,9 @@ with [PowerShell](https://github.com/PowerShell/PowerShell)
 <TabItem value="docker" label="Try it with Docker">
 
 ```sh
-docker run -w /root -it --rm alpine:edge sh -uelic '
-  apk add git lazygit fzf curl neovim ripgrep alpine-sdk --update
+docker run -w /root -it --rm fedora:latest sh -uelic '
+  dnf copr enable -y dejan/lazygit
+  dnf install -y git lazygit fd-find curl ripgrep tree-sitter-cli neovim
   git clone https://github.com/LazyVim/starter ~/.config/nvim
   cd ~/.config/nvim
   nvim
