@@ -67,7 +67,6 @@ return {
     neovim = false,
   },
   -- icons used by other plugins
-  -- stylua: ignore
   icons = {
     misc = {
       dots = "󰇘",
