@@ -307,6 +307,7 @@ Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
 | --- | --- | --- |
 | <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
 | <code>&lt;leader&gt;aa</code> | Sidekick Toggle CLI | **n** |
+| <code>&lt;leader&gt;ad</code> | Detach a CLI Session | **n** |
 | <code>&lt;leader&gt;af</code> | Send File | **n** |
 | <code>&lt;leader&gt;ap</code> | Sidekick Select Prompt | **n**, **x** |
 | <code>&lt;leader&gt;as</code> | Select CLI | **n** |
