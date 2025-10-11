@@ -27,11 +27,13 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  servers = {
-    copilot = {},
-  },
-}
+opts = function(_, opts)
+  local sk = LazyVim.opts("sidekick.nvim") ---@type sidekick.Config|{}
+  if vim.tbl_get(sk, "nes", "enabled") ~= false then
+    opts.servers = opts.servers or {}
+    opts.servers.copilot = opts.servers.copilot or {}
+  end
+end
 ```
 
 </TabItem>
@@ -42,11 +44,13 @@ opts = {
 ```lua
 {
   "neovim/nvim-lspconfig",
-  opts = {
-    servers = {
-      copilot = {},
-    },
-  },
+  opts = function(_, opts)
+    local sk = LazyVim.opts("sidekick.nvim") ---@type sidekick.Config|{}
+    if vim.tbl_get(sk, "nes", "enabled") ~= false then
+      opts.servers = opts.servers or {}
+      opts.servers.copilot = opts.servers.copilot or {}
+    end
+  end,
 }
 ```
 
