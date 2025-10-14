@@ -77,4 +77,39 @@ opts = {
 
 </Tabs>
 
+## [conform.nvim](https://github.com/stevearc/conform.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  formatters_by_ft = {
+    gleam = { "gleam" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "conform.nvim",
+  optional = true,
+  opts = {
+    formatters_by_ft = {
+      gleam = { "gleam" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
