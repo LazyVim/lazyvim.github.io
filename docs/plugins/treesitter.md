@@ -67,7 +67,7 @@ opts = {
       LazyVim.error("Please restart Neovim and run `:TSUpdate` to use the `nvim-treesitter` **main** branch.")
       return
     end
-    LazyVim.treesitter.ensure_treesitter_cli(function()
+    LazyVim.treesitter.build(function()
       TS.update(nil, { summary = true })
     end)
   end,
@@ -113,6 +113,16 @@ opts = {
   config = function(_, opts)
     local TS = require("nvim-treesitter")
 
+    -- On Windows, use `gcc` if `cl` is not available, and `gcc` is.
+    if
+      not vim.env.CC
+      and vim.fn.has("win32") == 1
+      and vim.fn.executable("cl") == 0
+      and vim.fn.executable("gcc") == 1
+    then
+      vim.env.CC = "gcc"
+    end
+
     setmetatable(require("nvim-treesitter.install"), {
       __newindex = function(_, k)
         if k == "compilers" then
@@ -144,7 +154,7 @@ opts = {
       return not LazyVim.treesitter.have(lang)
     end, opts.ensure_installed or {})
     if #install > 0 then
-      LazyVim.treesitter.ensure_treesitter_cli(function()
+      LazyVim.treesitter.build(function()
         TS.install(install, { summary = true }):await(function()
           LazyVim.treesitter.get_installed(true) -- refresh the installed langs
         end)
