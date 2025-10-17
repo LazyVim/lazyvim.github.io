@@ -225,4 +225,67 @@ end
 
 </Tabs>
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  picker = {
+    actions = {
+      sidekick_send = function(...)
+        return require("sidekick.cli.snacks").send(...)
+      end,
+    },
+    win = {
+      input = {
+        keys = {
+          ["<a-a>"] = {
+            "sidekick_send",
+            mode = { "n", "i" },
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/snacks.nvim",
+  optional = true,
+  opts = {
+    picker = {
+      actions = {
+        sidekick_send = function(...)
+          return require("sidekick.cli.snacks").send(...)
+        end,
+      },
+      win = {
+        input = {
+          keys = {
+            ["<a-a>"] = {
+              "sidekick_send",
+              mode = { "n", "i" },
+            },
+          },
+        },
+      },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
