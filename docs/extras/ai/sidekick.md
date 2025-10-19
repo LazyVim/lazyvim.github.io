@@ -183,6 +183,19 @@ opts = function(_, opts)
       return { fg = Snacks.util.color(hl) }
     end,
   })
+
+  table.insert(opts.sections.lualine_x, 2, {
+    function()
+      local status = require("sidekick.status").cli()
+      return " " .. (#status > 1 and #status or "")
+    end,
+    cond = function()
+      return #require("sidekick.status").cli() > 0
+    end,
+    color = function()
+      return { fg = Snacks.util.color("Special") }
+    end,
+  })
 end
 ```
 
@@ -217,6 +230,19 @@ end
         return { fg = Snacks.util.color(hl) }
       end,
     })
+
+    table.insert(opts.sections.lualine_x, 2, {
+      function()
+        local status = require("sidekick.status").cli()
+        return " " .. (#status > 1 and #status or "")
+      end,
+      cond = function()
+        return #require("sidekick.status").cli() > 0
+      end,
+      color = function()
+        return { fg = Snacks.util.color("Special") }
+      end,
+    })
   end,
 }
 ```
@@ -236,7 +262,7 @@ opts = {
   picker = {
     actions = {
       sidekick_send = function(...)
-        return require("sidekick.cli.snacks").send(...)
+        return require("sidekick.cli.picker.snacks").send(...)
       end,
     },
     win = {
@@ -266,7 +292,7 @@ opts = {
     picker = {
       actions = {
         sidekick_send = function(...)
-          return require("sidekick.cli.snacks").send(...)
+          return require("sidekick.cli.picker.snacks").send(...)
         end,
       },
       win = {
