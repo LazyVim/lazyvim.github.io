@@ -707,6 +707,7 @@ Part of [lazyvim.plugins.extras.util.rest](/extras/util/rest)
 | <code>&lt;leader&gt;Rb</code> | Open scratchpad | **n** |
 | <code>&lt;leader&gt;Rc</code> | Copy as cURL | **n** |
 | <code>&lt;leader&gt;RC</code> | Paste from curl | **n** |
+| <code>&lt;leader&gt;Re</code> | Set environment | **n** |
 | <code>&lt;leader&gt;Rg</code> | Download GraphQL schema | **n** |
 | <code>&lt;leader&gt;Ri</code> | Inspect current request | **n** |
 | <code>&lt;leader&gt;Rn</code> | Jump to next request | **n** |
