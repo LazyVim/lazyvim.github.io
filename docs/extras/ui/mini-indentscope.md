@@ -63,6 +63,7 @@ opts = {
         "mason",
         "neo-tree",
         "notify",
+        "sidekick_terminal",
         "snacks_dashboard",
         "snacks_notif",
         "snacks_terminal",
@@ -128,7 +129,7 @@ opts = {
 
 ## [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) _(optional)_
 
- disable inent-blankline scope when mini-indentscope is enabled
+ disable indent-blankline scope when mini-indentscope is enabled
 
 
 <Tabs>

@@ -166,7 +166,7 @@ opts = {
 
 </Tabs>
 
-## [neotest-dotnet](https://github.com/Issafalcon/neotest-dotnet)
+## [neotest-vstest](https://github.com/Nsidorenco/neotest-vstest)
 
 <Tabs>
 
@@ -183,7 +183,7 @@ opts = nil
 
 ```lua
 {
-  "Issafalcon/neotest-dotnet",
+  "Nsidorenco/neotest-vstest",
 }
 ```
 
@@ -237,12 +237,6 @@ opts = {
   formatters_by_ft = {
     cs = { "csharpier" },
   },
-  formatters = {
-    csharpier = {
-      command = "dotnet-csharpier",
-      args = { "--write-stdout" },
-    },
-  },
 }
 ```
 
@@ -258,12 +252,6 @@ opts = {
   opts = {
     formatters_by_ft = {
       cs = { "csharpier" },
-    },
-    formatters = {
-      csharpier = {
-        command = "dotnet-csharpier",
-        args = { "--write-stdout" },
-      },
     },
   },
 }
@@ -365,8 +353,8 @@ end
 ```lua
 opts = {
   adapters = {
-    ["neotest-dotnet"] = {
-      -- Here we can set options for neotest-dotnet
+    ["neotest-vstest"] = {
+      -- Here we can set options for neotest-vstest
     },
   },
 }
@@ -382,12 +370,12 @@ opts = {
   "nvim-neotest/neotest",
   optional = true,
   dependencies = {
-    "Issafalcon/neotest-dotnet",
+    "Nsidorenco/neotest-vstest",
   },
   opts = {
     adapters = {
-      ["neotest-dotnet"] = {
-        -- Here we can set options for neotest-dotnet
+      ["neotest-vstest"] = {
+        -- Here we can set options for neotest-vstest
       },
     },
   },

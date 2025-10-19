@@ -137,7 +137,7 @@ opts = {
     -- Ensure mason installs the server
     clangd = {
       keys = {
-        { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+        { "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
       },
       root_markers = {
         "compile_commands.json",
@@ -194,7 +194,7 @@ opts = {
       -- Ensure mason installs the server
       clangd = {
         keys = {
-          { "<leader>ch", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+          { "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
         },
         root_markers = {
           "compile_commands.json",

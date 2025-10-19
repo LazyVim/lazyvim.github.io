@@ -13,7 +13,7 @@ Additional options for this extra can be configured in your [lua/config/options.
 
 ```lua title="lua/config/options.lua"
 -- Set to `false` to prevent "non-lsp snippets"" from appearing inside completion windows
--- Motivation: Less clutter in completion windows and a more direct usage of snippits
+-- Motivation: Less clutter in completion windows and a more direct usage of snippets
 vim.g.lazyvim_mini_snippets_in_completion = true
 
 -- NOTE: Please also read:

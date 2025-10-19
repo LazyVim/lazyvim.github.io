@@ -622,6 +622,7 @@ Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;t</code> | +test | **n** |
+| <code>&lt;leader&gt;ta</code> | Attach to Test (Neotest) | **n** |
 | <code>&lt;leader&gt;tl</code> | Run Last (Neotest) | **n** |
 | <code>&lt;leader&gt;to</code> | Show Output (Neotest) | **n** |
 | <code>&lt;leader&gt;tO</code> | Toggle Output Panel (Neotest) | **n** |

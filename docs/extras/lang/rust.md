@@ -147,16 +147,12 @@ opts = {
         },
         procMacro = {
           enable = true,
-          ignored = {
-            ["async-trait"] = { "async_trait" },
-            ["napi-derive"] = { "napi" },
-            ["async-recursion"] = { "async_recursion" },
-          },
         },
         files = {
-          excludeDirs = {
+          exclude = {
             ".direnv",
             ".git",
+            ".jj",
             ".github",
             ".gitlab",
             "bin",
@@ -165,6 +161,8 @@ opts = {
             "venv",
             ".venv",
           },
+          -- Avoid Roots Scanned hanging, see https://github.com/rust-lang/rust-analyzer/issues/12613#issuecomment-2096386344
+          watcher = "client",
         },
       },
     },
@@ -209,16 +207,12 @@ opts = {
           },
           procMacro = {
             enable = true,
-            ignored = {
-              ["async-trait"] = { "async_trait" },
-              ["napi-derive"] = { "napi" },
-              ["async-recursion"] = { "async_recursion" },
-            },
           },
           files = {
-            excludeDirs = {
+            exclude = {
               ".direnv",
               ".git",
+              ".jj",
               ".github",
               ".gitlab",
               "bin",
@@ -227,6 +221,8 @@ opts = {
               "venv",
               ".venv",
             },
+            -- Avoid Roots Scanned hanging, see https://github.com/rust-lang/rust-analyzer/issues/12613#issuecomment-2096386344
+            watcher = "client",
           },
         },
       },

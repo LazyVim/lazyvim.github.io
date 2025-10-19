@@ -37,9 +37,7 @@ import TabItem from '@theme/TabItem';
 ```lua
 opts = {
   snippets = {
-    expand = function(snippet, _)
-      return LazyVim.cmp.expand(snippet)
-    end,
+    preset = "default",
   },
 
   appearance = {
@@ -139,9 +137,7 @@ opts = {
   ---@type blink.cmp.Config
   opts = {
     snippets = {
-      expand = function(snippet, _)
-        return LazyVim.cmp.expand(snippet)
-      end,
+      preset = "default",
     },
 
     appearance = {
