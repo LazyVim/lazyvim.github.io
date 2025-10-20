@@ -47,7 +47,7 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "c_sharp" } }
+opts = { ensure_installed = { "c_sharp", "fsharp" } }
 ```
 
 </TabItem>
@@ -58,7 +58,7 @@ opts = { ensure_installed = { "c_sharp" } }
 ```lua
 {
   "nvim-treesitter/nvim-treesitter",
-  opts = { ensure_installed = { "c_sharp" } },
+  opts = { ensure_installed = { "c_sharp", "fsharp" } },
 }
 ```
 
@@ -73,7 +73,7 @@ opts = { ensure_installed = { "c_sharp" } }
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "csharpier", "netcoredbg" } }
+opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fantomas" } }
 ```
 
 </TabItem>
@@ -84,7 +84,7 @@ opts = { ensure_installed = { "csharpier", "netcoredbg" } }
 ```lua
 {
   "mason-org/mason.nvim",
-  opts = { ensure_installed = { "csharpier", "netcoredbg" } },
+  opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fantomas" } },
 }
 ```
 
@@ -202,6 +202,7 @@ opts = function(_, opts)
   local nls = require("null-ls")
   opts.sources = opts.sources or {}
   table.insert(opts.sources, nls.builtins.formatting.csharpier)
+  table.insert(opts.sources, nls.builtins.formatting.fantomas)
 end
 ```
 
@@ -218,6 +219,7 @@ end
     local nls = require("null-ls")
     opts.sources = opts.sources or {}
     table.insert(opts.sources, nls.builtins.formatting.csharpier)
+    table.insert(opts.sources, nls.builtins.formatting.fantomas)
   end,
 }
 ```
@@ -236,6 +238,7 @@ end
 opts = {
   formatters_by_ft = {
     cs = { "csharpier" },
+    fsharp = { "fantomas" },
   },
 }
 ```
@@ -252,6 +255,7 @@ opts = {
   opts = {
     formatters_by_ft = {
       cs = { "csharpier" },
+      fsharp = { "fantomas" },
     },
   },
 }
