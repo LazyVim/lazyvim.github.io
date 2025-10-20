@@ -56,7 +56,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;xq</code> | Quickfix List | **n** |
 | <code>[q</code> | Previous Quickfix | **n** |
 | <code>]q</code> | Next Quickfix | **n** |
-| <code>&lt;leader&gt;cf</code> | Format | **n**, **v** |
+| <code>&lt;leader&gt;cf</code> | Format | **n**, **x** |
 | <code>&lt;leader&gt;cd</code> | Line Diagnostics | **n** |
 | <code>]d</code> | Next Diagnostic | **n** |
 | <code>[d</code> | Prev Diagnostic | **n** |
@@ -123,8 +123,8 @@ possible keymaps starting with `<space>`.
 | <code>K</code> | Hover | **n** |
 | <code>gK</code> | Signature Help | **n** |
 | <code>&lt;c-k&gt;</code> | Signature Help | **i** |
-| <code>&lt;leader&gt;ca</code> | Code Action | **n**, **v** |
-| <code>&lt;leader&gt;cc</code> | Run Codelens | **n**, **v** |
+| <code>&lt;leader&gt;ca</code> | Code Action | **n**, **x** |
+| <code>&lt;leader&gt;cc</code> | Run Codelens | **n**, **x** |
 | <code>&lt;leader&gt;cC</code> | Refresh & Display Codelens | **n** |
 | <code>&lt;leader&gt;cR</code> | Rename File | **n** |
 | <code>&lt;leader&gt;cr</code> | Rename | **n** |
@@ -153,7 +153,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **v** |
+| <code>&lt;leader&gt;cF</code> | Format Injected Langs | **n**, **x** |
 
 ## [flash.nvim](https://github.com/folke/flash.nvim.git)
 
@@ -170,7 +170,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;sr</code> | Search and Replace | **n**, **v** |
+| <code>&lt;leader&gt;sr</code> | Search and Replace | **n**, **x** |
 
 ## [mason.nvim](https://github.com/mason-org/mason.nvim.git)
 
@@ -294,11 +294,11 @@ Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;c-s&gt;</code> | Submit Prompt | **n** |
-| <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
-| <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **v** |
-| <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n**, **v** |
-| <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **v** |
-| <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **v** |
+| <code>&lt;leader&gt;a</code> | +ai | **n**, **x** |
+| <code>&lt;leader&gt;aa</code> | Toggle (CopilotChat) | **n**, **x** |
+| <code>&lt;leader&gt;ap</code> | Prompt Actions (CopilotChat) | **n**, **x** |
+| <code>&lt;leader&gt;aq</code> | Quick Chat (CopilotChat) | **n**, **x** |
+| <code>&lt;leader&gt;ax</code> | Clear (CopilotChat) | **n**, **x** |
 
 ## [sidekick.nvim](https://github.com/folke/sidekick.nvim.git)
 Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
@@ -320,7 +320,7 @@ Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surrou
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>gsa</code> | Add Surrounding | **n**, **v** |
+| <code>gsa</code> | Add Surrounding | **n**, **x** |
 | <code>gsd</code> | Delete Surrounding | **n** |
 | <code>gsf</code> | Find Right Surrounding | **n** |
 | <code>gsF</code> | Find Left Surrounding | **n** |
@@ -387,7 +387,7 @@ Part of [lazyvim.plugins.extras.dap.core](/extras/dap/core)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;de</code> | Eval | **n**, **v** |
+| <code>&lt;leader&gt;de</code> | Eval | **n**, **x** |
 | <code>&lt;leader&gt;du</code> | Dap UI | **n** |
 
 ## [aerial.nvim](https://github.com/stevearc/aerial.nvim.git)
@@ -411,8 +411,8 @@ Part of [lazyvim.plugins.extras.editor.dial](/extras/editor/dial)
 | --- | --- | --- |
 | <code>&lt;C-a&gt;</code> | Increment | **n**, **v** |
 | <code>&lt;C-x&gt;</code> | Decrement | **n**, **v** |
-| <code>g&lt;C-a&gt;</code> | Increment | **n**, **v** |
-| <code>g&lt;C-x&gt;</code> | Decrement | **n**, **v** |
+| <code>g&lt;C-a&gt;</code> | Increment | **n**, **x** |
+| <code>g&lt;C-x&gt;</code> | Decrement | **n**, **x** |
 
 ## [harpoon](https://github.com/ThePrimeagen/harpoon.git)
 Part of [lazyvim.plugins.extras.editor.harpoon2](/extras/editor/harpoon2)
@@ -601,6 +601,15 @@ Part of [lazyvim.plugins.extras.lang.python](/extras/lang/python)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cv</code> | Select VirtualEnv | **n** |
+
+## [nvim-metals](https://github.com/scalameta/nvim-metals.git)
+Part of [lazyvim.plugins.extras.lang.scala](/extras/lang/scala)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;mc</code> | Metals compile cascade | **n** |
+| <code>&lt;leader&gt;me</code> | Metals commands | **n** |
+| <code>&lt;leader&gt;mh</code> | Metals hover worksheet | **n** |
 
 ## [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui.git)
 Part of [lazyvim.plugins.extras.lang.sql](/extras/lang/sql)

@@ -50,7 +50,32 @@ opts = { ensure_installed = { "scala" } }
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {}
+opts = function()
+  local metals_config = require("metals").bare_config()
+
+  metals_config.init_options.statusBarProvider = "off"
+
+  metals_config.settings = {
+    verboseCompilation = true,
+    showImplicitArguments = true,
+    showImplicitConversionsAndClasses = true,
+    showInferredType = true,
+    superMethodLensesEnabled = true,
+    excludedPackages = {
+      "akka.actor.typed.javadsl",
+      "org.apache.pekko.actor.typed.javadsl",
+      "com.github.swagger.akka.javadsl",
+    },
+    testUserInterface = "Test Explorer",
+  }
+
+  metals_config.on_attach = function(client, bufnr)
+    -- your on_attach function
+    require("metals").setup_dap()
+  end
+
+  return metals_config
+end
 ```
 
 </TabItem>
@@ -61,8 +86,69 @@ opts = {}
 ```lua
 {
   "scalameta/nvim-metals",
-  ft = { "scala", "sbt" },
-  config = function() end,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  keys = {
+    {
+      "<leader>me",
+      function()
+        require("telescope").extensions.metals.commands()
+      end,
+      desc = "Metals commands",
+    },
+    {
+      "<leader>mc",
+      function()
+        require("metals").compile_cascade()
+      end,
+      desc = "Metals compile cascade",
+    },
+    {
+      "<leader>mh",
+      function()
+        require("metals").hover_worksheet()
+      end,
+      desc = "Metals hover worksheet",
+    },
+  },
+  ft = { "scala", "sbt", "java" },
+  opts = function()
+    local metals_config = require("metals").bare_config()
+
+    metals_config.init_options.statusBarProvider = "off"
+
+    metals_config.settings = {
+      verboseCompilation = true,
+      showImplicitArguments = true,
+      showImplicitConversionsAndClasses = true,
+      showInferredType = true,
+      superMethodLensesEnabled = true,
+      excludedPackages = {
+        "akka.actor.typed.javadsl",
+        "org.apache.pekko.actor.typed.javadsl",
+        "com.github.swagger.akka.javadsl",
+      },
+      testUserInterface = "Test Explorer",
+    }
+
+    metals_config.on_attach = function(client, bufnr)
+      -- your on_attach function
+      require("metals").setup_dap()
+    end
+
+    return metals_config
+  end,
+  config = function(self, metals_config)
+    local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = self.ft,
+      callback = function()
+        require("metals").initialize_or_attach(metals_config)
+      end,
+      group = nvim_metals_group,
+    })
+  end,
 }
 ```
 
@@ -70,66 +156,14 @@ opts = {}
 
 </Tabs>
 
-## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+## [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  servers = {
-    metals = {
-      keys = {
-        {
-          "<leader>me",
-          function()
-            require("telescope").extensions.metals.commands()
-          end,
-          desc = "Metals commands",
-        },
-        {
-          "<leader>mc",
-          function()
-            require("metals").compile_cascade()
-          end,
-          desc = "Metals compile cascade",
-        },
-        {
-          "<leader>mh",
-          function()
-            require("metals").hover_worksheet()
-          end,
-          desc = "Metals hover worksheet",
-        },
-      },
-      init_options = {
-        statusBarProvider = "off",
-      },
-      settings = {
-        showImplicitArguments = true,
-        excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-      },
-    },
-  },
-  setup = {
-    metals = function(_, opts)
-      local metals = require("metals")
-      local metals_config = vim.tbl_deep_extend("force", metals.bare_config(), opts)
-      metals_config.on_attach = LazyVim.has("nvim-dap") and metals.setup_dap or nil
-
-      local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "scala", "sbt" },
-        callback = function()
-          metals.initialize_or_attach(metals_config)
-        end,
-        group = nvim_metals_group,
-      })
-      return true
-    end,
-  },
-}
+opts = nil
 ```
 
 </TabItem>
@@ -139,60 +173,7 @@ opts = {
 
 ```lua
 {
-  "neovim/nvim-lspconfig",
-  opts = {
-    servers = {
-      metals = {
-        keys = {
-          {
-            "<leader>me",
-            function()
-              require("telescope").extensions.metals.commands()
-            end,
-            desc = "Metals commands",
-          },
-          {
-            "<leader>mc",
-            function()
-              require("metals").compile_cascade()
-            end,
-            desc = "Metals compile cascade",
-          },
-          {
-            "<leader>mh",
-            function()
-              require("metals").hover_worksheet()
-            end,
-            desc = "Metals hover worksheet",
-          },
-        },
-        init_options = {
-          statusBarProvider = "off",
-        },
-        settings = {
-          showImplicitArguments = true,
-          excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-        },
-      },
-    },
-    setup = {
-      metals = function(_, opts)
-        local metals = require("metals")
-        local metals_config = vim.tbl_deep_extend("force", metals.bare_config(), opts)
-        metals_config.on_attach = LazyVim.has("nvim-dap") and metals.setup_dap or nil
-
-        local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
-        vim.api.nvim_create_autocmd("FileType", {
-          pattern = { "scala", "sbt" },
-          callback = function()
-            metals.initialize_or_attach(metals_config)
-          end,
-          group = nvim_metals_group,
-        })
-        return true
-      end,
-    },
-  },
+  "nvim-lua/plenary.nvim",
 }
 ```
 

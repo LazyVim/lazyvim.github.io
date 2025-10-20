@@ -1,4 +1,4 @@
-# `Omnisharp`
+# `Dotnet`
 
 <!-- plugins:start -->
 
@@ -73,7 +73,7 @@ opts = { ensure_installed = { "c_sharp", "fsharp" } }
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fantomas" } }
+opts = { ensure_installed = { "csharpier", "netcoredbg", "fantomas" } }
 ```
 
 </TabItem>
@@ -84,7 +84,7 @@ opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fant
 ```lua
 {
   "mason-org/mason.nvim",
-  opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fantomas" } },
+  opts = { ensure_installed = { "csharpier", "netcoredbg", "fantomas" } },
 }
 ```
 
@@ -101,6 +101,7 @@ opts = { ensure_installed = { "csharpier", "netcoredbg", "fsautocomplete", "fant
 ```lua
 opts = {
   servers = {
+    fsautocomplete = {},
     omnisharp = {
       handlers = {
         ["textDocument/definition"] = function(...)
@@ -136,6 +137,7 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
+      fsautocomplete = {},
       omnisharp = {
         handlers = {
           ["textDocument/definition"] = function(...)

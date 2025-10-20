@@ -33,12 +33,12 @@ opts = {
       -- of files supported by R.nvim. This is an
       -- opportunity to create mappings local to buffers.
       vim.keymap.set("n", "<Enter>", "<Plug>RDSendLine", { buffer = true })
-      vim.keymap.set("v", "<Enter>", "<Plug>RSendSelection", { buffer = true })
+      vim.keymap.set("x", "<Enter>", "<Plug>RSendSelection", { buffer = true })
 
       local wk = require("which-key")
       wk.add({
         buffer = true,
-        mode = { "n", "v" },
+        mode = { "n", "x" },
         { "<localleader>a", group = "all" },
         { "<localleader>b", group = "between marks" },
         { "<localleader>c", group = "chunks" },
@@ -77,12 +77,12 @@ opts = {
         -- of files supported by R.nvim. This is an
         -- opportunity to create mappings local to buffers.
         vim.keymap.set("n", "<Enter>", "<Plug>RDSendLine", { buffer = true })
-        vim.keymap.set("v", "<Enter>", "<Plug>RSendSelection", { buffer = true })
+        vim.keymap.set("x", "<Enter>", "<Plug>RSendSelection", { buffer = true })
 
         local wk = require("which-key")
         wk.add({
           buffer = true,
-          mode = { "n", "v" },
+          mode = { "n", "x" },
           { "<localleader>a", group = "all" },
           { "<localleader>b", group = "between marks" },
           { "<localleader>c", group = "chunks" },
