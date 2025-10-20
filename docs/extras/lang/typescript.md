@@ -526,31 +526,34 @@ opts = {
 ```lua
 opts = function()
   local dap = require("dap")
-  if not dap.adapters["pwa-node"] then
-    require("dap").adapters["pwa-node"] = {
-      type = "server",
-      host = "localhost",
-      port = "${port}",
-      executable = {
-        command = "node",
-        -- 💀 Make sure to update this path to point to your installation
-        args = {
-          LazyVim.get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
-          "${port}",
+
+  for _, adapterType in ipairs({ "node", "chrome", "msedge" }) do
+    local pwaType = "pwa-" .. adapterType
+
+    if not dap.adapters[pwaType] then
+      dap.adapters[pwaType] = {
+        type = "server",
+        host = "localhost",
+        port = "${port}",
+        executable = {
+          command = "js-debug-adapter",
+          args = { "${port}" },
         },
-      },
-    }
-  end
-  if not dap.adapters["node"] then
-    dap.adapters["node"] = function(cb, config)
-      if config.type == "node" then
-        config.type = "pwa-node"
-      end
-      local nativeAdapter = dap.adapters["pwa-node"]
-      if type(nativeAdapter) == "function" then
-        nativeAdapter(cb, config)
-      else
-        cb(nativeAdapter)
+      }
+    end
+
+    -- Define adapters without the "pwa-" prefix for VSCode compatibility
+    if not dap.adapters[adapterType] then
+      dap.adapters[adapterType] = function(cb, config)
+        local nativeAdapter = dap.adapters[pwaType]
+
+        config.type = pwaType
+
+        if type(nativeAdapter) == "function" then
+          nativeAdapter(cb, config)
+        else
+          cb(nativeAdapter)
+        end
       end
     end
   end
@@ -628,31 +631,34 @@ end
   },
   opts = function()
     local dap = require("dap")
-    if not dap.adapters["pwa-node"] then
-      require("dap").adapters["pwa-node"] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "node",
-          -- 💀 Make sure to update this path to point to your installation
-          args = {
-            LazyVim.get_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
-            "${port}",
+
+    for _, adapterType in ipairs({ "node", "chrome", "msedge" }) do
+      local pwaType = "pwa-" .. adapterType
+
+      if not dap.adapters[pwaType] then
+        dap.adapters[pwaType] = {
+          type = "server",
+          host = "localhost",
+          port = "${port}",
+          executable = {
+            command = "js-debug-adapter",
+            args = { "${port}" },
           },
-        },
-      }
-    end
-    if not dap.adapters["node"] then
-      dap.adapters["node"] = function(cb, config)
-        if config.type == "node" then
-          config.type = "pwa-node"
-        end
-        local nativeAdapter = dap.adapters["pwa-node"]
-        if type(nativeAdapter) == "function" then
-          nativeAdapter(cb, config)
-        else
-          cb(nativeAdapter)
+        }
+      end
+
+      -- Define adapters without the "pwa-" prefix for VSCode compatibility
+      if not dap.adapters[adapterType] then
+        dap.adapters[adapterType] = function(cb, config)
+          local nativeAdapter = dap.adapters[pwaType]
+
+          config.type = pwaType
+
+          if type(nativeAdapter) == "function" then
+            nativeAdapter(cb, config)
+          else
+            cb(nativeAdapter)
+          end
         end
       end
     end
@@ -708,6 +714,39 @@ end
       end
     end
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  -- chrome adapter is deprecated, use js-debug-adapter instead
+  automatic_installation = { exclude = { "chrome" } },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "jay-babu/mason-nvim-dap.nvim",
+  optional = true,
+  opts = {
+    -- chrome adapter is deprecated, use js-debug-adapter instead
+    automatic_installation = { exclude = { "chrome" } },
+  },
 }
 ```
 
