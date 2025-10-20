@@ -112,4 +112,39 @@ opts = {
 
 </Tabs>
 
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    nix = { "statix" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = {
+    linters_by_ft = {
+      nix = { "statix" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 <!-- plugins:end -->
