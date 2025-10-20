@@ -65,7 +65,7 @@ opts = {
 
 ```lua
 {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       "twigcs",

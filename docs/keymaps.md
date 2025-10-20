@@ -288,6 +288,13 @@ possible keymaps starting with `<space>`.
 | <code>&lt;c-w&gt;&lt;space&gt;</code> | Window Hydra Mode (which-key) | **n** |
 | <code>&lt;leader&gt;?</code> | Buffer Keymaps (which-key) | **n** |
 
+## [avante.nvim](https://github.com/yetone/avante.nvim.git)
+Part of [lazyvim.plugins.extras.ai.avante](/extras/ai/avante)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>n</code> | Toggle Avante | **n** |
+
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
 Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 

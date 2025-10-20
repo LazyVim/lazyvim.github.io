@@ -17,7 +17,7 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [vim-helm](https://github.com/towolf/vim-helm)
+## [helm-ls.nvim](https://github.com/qvalentin/helm-ls.nvim)
 
 <Tabs>
 
@@ -33,7 +33,7 @@ opts = nil
 <TabItem value="code" label="Full Spec">
 
 ```lua
-{ "towolf/vim-helm", ft = "helm" }
+{ "qvalentin/helm-ls.nvim", ft = "helm" }
 ```
 
 </TabItem>
@@ -77,17 +77,6 @@ opts = {
   servers = {
     helm_ls = {},
   },
-  setup = {
-    yamlls = function()
-      LazyVim.lsp.on_attach(function(client, buffer)
-        if vim.bo[buffer].filetype == "helm" then
-          vim.schedule(function()
-            vim.cmd("LspStop ++force yamlls")
-          end)
-        end
-      end, "yamlls")
-    end,
-  },
 }
 ```
 
@@ -102,17 +91,6 @@ opts = {
   opts = {
     servers = {
       helm_ls = {},
-    },
-    setup = {
-      yamlls = function()
-        LazyVim.lsp.on_attach(function(client, buffer)
-          if vim.bo[buffer].filetype == "helm" then
-            vim.schedule(function()
-              vim.cmd("LspStop ++force yamlls")
-            end)
-          end
-        end, "yamlls")
-      end,
     },
   },
 }

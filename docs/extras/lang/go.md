@@ -251,6 +251,32 @@ opts = { ensure_installed = { "gomodifytags", "impl" } }
 <TabItem value="opts" label="Options">
 
 ```lua
+opts = { ensure_installed = { "golangci-lint" } }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mason-org/mason.nvim",
+  opts = { ensure_installed = { "golangci-lint" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
 opts = { ensure_installed = { "delve" } }
 ```
 
@@ -406,6 +432,50 @@ end
       nls.builtins.formatting.gofumpt,
     })
   end,
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lint](https://github.com/mfussenegger/nvim-lint) _(optional)_
+
+ Add linting
+
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  linters_by_ft = {
+    go = { "golangcilint" },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mfussenegger/nvim-lint",
+  optional = true,
+  dependencies = {
+    {
+      "mason-org/mason.nvim",
+      opts = { ensure_installed = { "golangci-lint" } },
+    },
+  },
+  opts = {
+    linters_by_ft = {
+      go = { "golangcilint" },
+    },
+  },
 }
 ```
 
