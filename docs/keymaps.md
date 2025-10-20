@@ -293,7 +293,17 @@ Part of [lazyvim.plugins.extras.ai.avante](/extras/ai/avante)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>n</code> | Toggle Avante | **n** |
+| <code>&lt;leader&gt;aa</code> | Ask Avante | **n** |
+| <code>&lt;leader&gt;ac</code> | Chat with Avante | **n** |
+| <code>&lt;leader&gt;ae</code> | Edit Avante | **n** |
+| <code>&lt;leader&gt;af</code> | Focus Avante | **n** |
+| <code>&lt;leader&gt;ah</code> | Avante History | **n** |
+| <code>&lt;leader&gt;am</code> | Select Avante Model | **n** |
+| <code>&lt;leader&gt;an</code> | New Avante Chat | **n** |
+| <code>&lt;leader&gt;ap</code> | Switch Avante Provider | **n** |
+| <code>&lt;leader&gt;ar</code> | Refresh Avante | **n** |
+| <code>&lt;leader&gt;as</code> | Stop Avante | **n** |
+| <code>&lt;leader&gt;at</code> | Toggle Avante | **n** |
 
 ## [claudecode.nvim](https://github.com/coder/claudecode.nvim.git)
 Part of [lazyvim.plugins.extras.ai.claudecode](/extras/ai/claudecode)
