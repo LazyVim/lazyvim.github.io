@@ -171,7 +171,7 @@ opts = {
 
         -- highlighting
         if enabled("highlight", "highlights") then
-          pcall(vim.treesitter.start)
+          pcall(vim.treesitter.start, ev.buf)
         end
 
         -- indents

@@ -295,6 +295,22 @@ Part of [lazyvim.plugins.extras.ai.avante](/extras/ai/avante)
 | --- | --- | --- |
 | <code>n</code> | Toggle Avante | **n** |
 
+## [claudecode.nvim](https://github.com/coder/claudecode.nvim.git)
+Part of [lazyvim.plugins.extras.ai.claudecode](/extras/ai/claudecode)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;a</code> | +ai | **n**, **v** |
+| <code>&lt;leader&gt;aa</code> | Accept diff | **n** |
+| <code>&lt;leader&gt;ab</code> | Add current buffer | **n** |
+| <code>&lt;leader&gt;ac</code> | Toggle Claude | **n** |
+| <code>&lt;leader&gt;aC</code> | Continue Claude | **n** |
+| <code>&lt;leader&gt;ad</code> | Deny diff | **n** |
+| <code>&lt;leader&gt;af</code> | Focus Claude | **n** |
+| <code>&lt;leader&gt;ar</code> | Resume Claude | **n** |
+| <code>&lt;leader&gt;as</code> | Add file | **n** |
+| <code>&lt;leader&gt;as</code> | Send to Claude | **v** |
+
 ## [CopilotChat.nvim](https://github.com/CopilotC-Nvim/CopilotChat.nvim.git)
 Part of [lazyvim.plugins.extras.ai.copilot-chat](/extras/ai/copilot-chat)
 
