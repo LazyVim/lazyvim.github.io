@@ -580,6 +580,23 @@ Part of [lazyvim.plugins.extras.lang.ansible](/extras/lang/ansible)
 | --- | --- | --- |
 | <code>&lt;leader&gt;ta</code> | Ansible Run Playbook/Role | **n** |
 
+## [haskell-tools.nvim](https://github.com/mrcjkb/haskell-tools.nvim.git)
+Part of [lazyvim.plugins.extras.lang.haskell](/extras/lang/haskell)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;localleader&gt;e</code> | Evaluate All | **n** |
+| <code>&lt;localleader&gt;h</code> | Hoogle Signature | **n** |
+| <code>&lt;localleader&gt;r</code> | REPL (Package) | **n** |
+| <code>&lt;localleader&gt;R</code> | REPL (Buffer) | **n** |
+
+## [telescope_hoogle](https://github.com/luc-tielen/telescope_hoogle.git)
+Part of [lazyvim.plugins.extras.lang.haskell](/extras/lang/haskell)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;localleader&gt;H</code> | Hoogle | **n** |
+
 ## [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim.git)
 Part of [lazyvim.plugins.extras.lang.markdown](/extras/lang/markdown)
 
@@ -625,6 +642,13 @@ Part of [lazyvim.plugins.extras.lang.tex](/extras/lang/tex)
 | --- | --- | --- |
 | <code>&lt;localLeader&gt;l</code> | +vimtex | **n** |
 
+## [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim.git)
+Part of [lazyvim.plugins.extras.lang.typst](/extras/lang/typst)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;cp</code> | Toggle Typst Preview | **n** |
+
 ## [neotest](https://github.com/nvim-neotest/neotest.git)
 Part of [lazyvim.plugins.extras.test.core](/extras/test/core)
 
@@ -663,6 +687,44 @@ Part of [lazyvim.plugins.extras.util.chezmoi](/extras/util/chezmoi)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;sz</code> | Chezmoi | **n** |
+
+## [gh.nvim](https://github.com/ldelossa/gh.nvim.git)
+Part of [lazyvim.plugins.extras.util.gh](/extras/util/gh)
+
+| Key | Description | Mode |
+| --- | --- | --- |
+| <code>&lt;leader&gt;G</code> | +Github | **n** |
+| <code>&lt;leader&gt;Gc</code> | +Commits | **n** |
+| <code>&lt;leader&gt;Gcc</code> | Close | **n** |
+| <code>&lt;leader&gt;Gce</code> | Expand | **n** |
+| <code>&lt;leader&gt;Gco</code> | Open To | **n** |
+| <code>&lt;leader&gt;Gcp</code> | Pop Out | **n** |
+| <code>&lt;leader&gt;Gcz</code> | Collapse | **n** |
+| <code>&lt;leader&gt;Gi</code> | +Issues | **n** |
+| <code>&lt;leader&gt;Gio</code> | Open | **n** |
+| <code>&lt;leader&gt;Gip</code> | Preview | **n** |
+| <code>&lt;leader&gt;Gl</code> | +Litee | **n** |
+| <code>&lt;leader&gt;Glt</code> | Toggle Panel | **n** |
+| <code>&lt;leader&gt;Gp</code> | +Pull Request | **n** |
+| <code>&lt;leader&gt;Gpc</code> | Close | **n** |
+| <code>&lt;leader&gt;Gpd</code> | Details | **n** |
+| <code>&lt;leader&gt;Gpe</code> | Expand | **n** |
+| <code>&lt;leader&gt;Gpo</code> | Open | **n** |
+| <code>&lt;leader&gt;Gpp</code> | PopOut | **n** |
+| <code>&lt;leader&gt;Gpr</code> | Refresh | **n** |
+| <code>&lt;leader&gt;Gpt</code> | Open To | **n** |
+| <code>&lt;leader&gt;Gpz</code> | Collapse | **n** |
+| <code>&lt;leader&gt;Gr</code> | +Review | **n** |
+| <code>&lt;leader&gt;Grb</code> | Begin | **n** |
+| <code>&lt;leader&gt;Grc</code> | Close | **n** |
+| <code>&lt;leader&gt;Grd</code> | Delete | **n** |
+| <code>&lt;leader&gt;Gre</code> | Expand | **n** |
+| <code>&lt;leader&gt;Grs</code> | Submit | **n** |
+| <code>&lt;leader&gt;Grz</code> | Collapse | **n** |
+| <code>&lt;leader&gt;Gt</code> | +Threads | **n** |
+| <code>&lt;leader&gt;Gtc</code> | Create | **n** |
+| <code>&lt;leader&gt;Gtn</code> | Next | **n** |
+| <code>&lt;leader&gt;Gtt</code> | Toggle | **n** |
 
 ## [mason.nvim](https://github.com/mason-org/mason.nvim.git)
 Part of [lazyvim.plugins.extras.util.gitui](/extras/util/gitui)
