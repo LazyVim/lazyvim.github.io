@@ -139,6 +139,83 @@ opts = {
 
 </Tabs>
 
+## [neotest-pest](https://github.com/V13Axel/neotest-pest)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "V13Axel/neotest-pest",
+  "olimorris/neotest-phpunit",
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest-phpunit](https://github.com/olimorris/neotest-phpunit)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+"olimorris/neotest-phpunit"
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest-pest](https://github.com/V13Axel/neotest-pest)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neotest-pest",
+  ["neotest-phpunit"] = {
+    root_ignore_files = { "tests/Pest.php" },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
 
 <Tabs>
@@ -278,6 +355,51 @@ opts = {
   opts = {
     formatters_by_ft = {
       php = { "php_cs_fixer" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [neotest](https://github.com/nvim-neotest/neotest) _(optional)_
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  adapters = {
+    "neotest-pest",
+    ["neotest-phpunit"] = {
+      root_ignore_files = { "tests/Pest.php" },
+    },
+  },
+}
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "nvim-neotest/neotest",
+  optional = true,
+  dependencies = {
+    "V13Axel/neotest-pest",
+    "olimorris/neotest-phpunit",
+  },
+  opts = {
+    adapters = {
+      "neotest-pest",
+      ["neotest-phpunit"] = {
+        root_ignore_files = { "tests/Pest.php" },
+      },
     },
   },
 }
