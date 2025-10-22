@@ -85,11 +85,6 @@ opts = { ensure_installed = { "dart" } }
 
 ```lua
 opts = {
-  formatters = {
-    dart_format = {
-      args = { "format", "--line-length", "120" },
-    },
-  },
   formatters_by_ft = {
     dart = { "dart_format" },
   },
@@ -105,11 +100,6 @@ opts = {
 {
   "stevearc/conform.nvim",
   opts = {
-    formatters = {
-      dart_format = {
-        args = { "format", "--line-length", "120" },
-      },
-    },
     formatters_by_ft = {
       dart = { "dart_format" },
     },

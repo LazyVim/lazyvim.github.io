@@ -97,12 +97,6 @@ opts = {
   formatters_by_ft = {
     solidity = { "forge_fmt" },
   },
-  formatters = {
-    forge_fmt = {
-      command = "forge",
-      args = { "fmt" },
-    },
-  },
 }
 ```
 
@@ -118,12 +112,6 @@ opts = {
   opts = {
     formatters_by_ft = {
       solidity = { "forge_fmt" },
-    },
-    formatters = {
-      forge_fmt = {
-        command = "forge",
-        args = { "fmt" },
-      },
     },
   },
 }
