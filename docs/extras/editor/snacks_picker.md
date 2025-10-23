@@ -111,6 +111,7 @@ opts = {
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
     -- git
     { "<leader>gd", function() Snacks.picker.git_diff() end, desc = "Git Diff (hunks)" },
+    { "<leader>gD", function() Snacks.picker.git_diff({ base = "origin" }) end, desc = "Git Diff (origin)" },
     { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
     { "<leader>gS", function() Snacks.picker.git_stash() end, desc = "Git Stash" },
     -- Grep

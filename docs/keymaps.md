@@ -225,6 +225,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
+| <code>&lt;leader&gt;gD</code> | Git Diff (origin) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
 | <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
@@ -568,6 +569,7 @@ Part of [lazyvim.plugins.extras.editor.snacks_picker](/extras/editor/snacks_pick
 | <code>&lt;leader&gt;fr</code> | Recent | **n** |
 | <code>&lt;leader&gt;fR</code> | Recent (cwd) | **n** |
 | <code>&lt;leader&gt;gd</code> | Git Diff (hunks) | **n** |
+| <code>&lt;leader&gt;gD</code> | Git Diff (origin) | **n** |
 | <code>&lt;leader&gt;gs</code> | Git Status | **n** |
 | <code>&lt;leader&gt;gS</code> | Git Stash | **n** |
 | <code>&lt;leader&gt;n</code> | Notification History | **n** |
