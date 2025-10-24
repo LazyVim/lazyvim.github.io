@@ -38,7 +38,7 @@ opts = nil
   "alker0/chezmoi.vim",
   init = function()
     vim.g["chezmoi#use_tmp_buffer"] = 1
-    vim.g["chezmoi#source_dir_path"] = os.getenv("HOME") .. "/.local/share/chezmoi"
+    vim.g["chezmoi#source_dir_path"] = vim.env.HOME .. "/.local/share/chezmoi"
   end,
 }
 ```
@@ -103,7 +103,7 @@ opts = {
   init = function()
     -- run chezmoi edit on file enter
     vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-      pattern = { os.getenv("HOME") .. "/.local/share/chezmoi/*" },
+      pattern = { vim.env.HOME .. "/.local/share/chezmoi/*" },
       callback = function()
         vim.schedule(require("chezmoi.commands.__edit").watch)
       end,
