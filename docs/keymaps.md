@@ -82,8 +82,6 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;dpp</code> | Toggle Profiler | **n** |
 | <code>&lt;leader&gt;dph</code> | Toggle Profiler Highlights | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
-| <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
-| <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;gL</code> | Git Log (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
 | <code>&lt;leader&gt;gf</code> | Git Current File History | **n** |
