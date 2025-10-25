@@ -2,25 +2,85 @@
 
 ## ⌨️ Customizing [LSP Keymaps](/keymaps#lsp)
 
-The syntax for adding, deleting and changing [LSP Keymaps](/keymaps#lsp),
-is the same as for [plugin keymaps](/configuration/plugins#%EF%B8%8F-adding--disabling-plugin-keymaps),
-but you need to configure it using the `opts()` method.
+LSP keymaps are configured using the `keys` option in your server configuration.
+You can add global keymaps that apply to all LSP servers, or server-specific keymaps.
+
+### Global LSP Keymaps
+
+Use the special `servers['*']` key to add keymaps for all LSP servers:
 
 ```lua
--- LSP keymaps
 {
   "neovim/nvim-lspconfig",
-  opts = function()
-    local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    -- change a keymap
-    keys[#keys + 1] = { "K", "<cmd>echo 'hello'<cr>" }
-    -- disable a keymap
-    keys[#keys + 1] = { "K", false }
-    -- add a keymap
-    keys[#keys + 1] = { "H", "<cmd>echo 'hello'<cr>" }
-  end,
+  opts = {
+    servers = {
+      ['*'] = {
+        keys = {
+          -- Add a keymap
+          { "H", "<cmd>echo 'hello'<cr>", desc = "Say Hello" },
+          -- Change an existing keymap
+          { "K", "<cmd>echo 'custom hover'<cr>", desc = "Custom Hover" },
+          -- Disable a keymap
+          { "gd", false },
+        },
+      },
+    },
+  },
 }
 ```
+
+### Server-Specific Keymaps
+
+Add keymaps for specific LSP servers:
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      vtsls = {
+        keys = {
+          { "<leader>co", function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = {
+                only = { "source.organizeImports" },
+                diagnostics = {},
+              },
+            })
+          end, desc = "Organize Imports" },
+        },
+      },
+    },
+  },
+}
+```
+
+### Capability-Based Keymaps
+
+Use the `has` field to only set keymaps when the LSP server supports specific capabilities:
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      ['*'] = {
+        keys = {
+          -- Only set this keymap for servers that support code actions
+          { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
+          -- Multiple capabilities
+          { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File",
+            has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
+        },
+      },
+    },
+  },
+}
+```
+
+**Note**: The `has` field automatically prefixes methods with `textDocument/` if no `/` is present.
+So `has = "codeAction"` becomes `has = "textDocument/codeAction"`.
 
 <!-- plugins:start -->
 
@@ -81,15 +141,6 @@ opts = function()
     folds = {
       enabled = true,
     },
-    -- add any global capabilities here
-    capabilities = {
-      workspace = {
-        fileOperations = {
-          didRename = true,
-          willRename = true,
-        },
-      },
-    },
     -- options for vim.lsp.buf.format
     -- `bufnr` and `filter` is handled by the LazyVim formatter,
     -- but can be also overridden when specified
@@ -98,9 +149,47 @@ opts = function()
       timeout_ms = nil,
     },
     -- LSP Server Settings
-    ---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean}
+    -- Sets the default configuration for an LSP client (or all clients if the special name "*" is used).
+    ---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean, keys?:LazyKeysLspSpec[]}
     ---@type table<string, lazyvim.lsp.Config|boolean>
     servers = {
+      -- configuration for all lsp servers
+      ["*"] = {
+        capabilities = {
+          workspace = {
+            fileOperations = {
+              didRename = true,
+              willRename = true,
+            },
+          },
+        },
+        -- stylua: ignore
+        keys = {
+          { "<leader>cl", function() Snacks.picker.lsp_config() end, desc = "Lsp Info" },
+          { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+          { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
+          { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+          { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+          { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+          { "K", function() return vim.lsp.buf.hover() end, desc = "Hover" },
+          { "gK", function() return vim.lsp.buf.signature_help() end, desc = "Signature Help", has = "signatureHelp" },
+          { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+          { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "x" }, has = "codeAction" },
+          { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "x" }, has = "codeLens" },
+          { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
+          { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
+          { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
+          { "<leader>cA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" },
+          { "]]", function() Snacks.words.jump(vim.v.count1) end, has = "documentHighlight",
+            desc = "Next Reference", cond = function() return Snacks.words.is_enabled() end },
+          { "[[", function() Snacks.words.jump(-vim.v.count1) end, has = "documentHighlight",
+            desc = "Prev Reference", cond = function() return Snacks.words.is_enabled() end },
+          { "<a-n>", function() Snacks.words.jump(vim.v.count1, true) end, has = "documentHighlight",
+            desc = "Next Reference", cond = function() return Snacks.words.is_enabled() end },
+          { "<a-p>", function() Snacks.words.jump(-vim.v.count1, true) end, has = "documentHighlight",
+            desc = "Prev Reference", cond = function() return Snacks.words.is_enabled() end },
+        },
+      },
       stylua = { enabled = false },
       lua_ls = {
         -- mason = false, -- set to false if you don't want this server to be installed with mason
@@ -164,6 +253,7 @@ end
     "mason.nvim",
     { "mason-org/mason-lspconfig.nvim", config = function() end },
   },
+  opts_extend = { "servers.*.keys" },
   opts = function()
     ---@class PluginLspOpts
     local ret = {
@@ -208,15 +298,6 @@ end
       folds = {
         enabled = true,
       },
-      -- add any global capabilities here
-      capabilities = {
-        workspace = {
-          fileOperations = {
-            didRename = true,
-            willRename = true,
-          },
-        },
-      },
       -- options for vim.lsp.buf.format
       -- `bufnr` and `filter` is handled by the LazyVim formatter,
       -- but can be also overridden when specified
@@ -225,9 +306,47 @@ end
         timeout_ms = nil,
       },
       -- LSP Server Settings
-      ---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean}
+      -- Sets the default configuration for an LSP client (or all clients if the special name "*" is used).
+      ---@alias lazyvim.lsp.Config vim.lsp.Config|{mason?:boolean, enabled?:boolean, keys?:LazyKeysLspSpec[]}
       ---@type table<string, lazyvim.lsp.Config|boolean>
       servers = {
+        -- configuration for all lsp servers
+        ["*"] = {
+          capabilities = {
+            workspace = {
+              fileOperations = {
+                didRename = true,
+                willRename = true,
+              },
+            },
+          },
+          -- stylua: ignore
+          keys = {
+            { "<leader>cl", function() Snacks.picker.lsp_config() end, desc = "Lsp Info" },
+            { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+            { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
+            { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+            { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+            { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+            { "K", function() return vim.lsp.buf.hover() end, desc = "Hover" },
+            { "gK", function() return vim.lsp.buf.signature_help() end, desc = "Signature Help", has = "signatureHelp" },
+            { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+            { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "x" }, has = "codeAction" },
+            { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "x" }, has = "codeLens" },
+            { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
+            { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
+            { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
+            { "<leader>cA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" },
+            { "]]", function() Snacks.words.jump(vim.v.count1) end, has = "documentHighlight",
+              desc = "Next Reference", cond = function() return Snacks.words.is_enabled() end },
+            { "[[", function() Snacks.words.jump(-vim.v.count1) end, has = "documentHighlight",
+              desc = "Prev Reference", cond = function() return Snacks.words.is_enabled() end },
+            { "<a-n>", function() Snacks.words.jump(vim.v.count1, true) end, has = "documentHighlight",
+              desc = "Next Reference", cond = function() return Snacks.words.is_enabled() end },
+            { "<a-p>", function() Snacks.words.jump(-vim.v.count1, true) end, has = "documentHighlight",
+              desc = "Prev Reference", cond = function() return Snacks.words.is_enabled() end },
+          },
+        },
         stylua = { enabled = false },
         lua_ls = {
           -- mason = false, -- set to false if you don't want this server to be installed with mason
@@ -282,16 +401,15 @@ end
     LazyVim.format.register(LazyVim.lsp.formatter())
 
     -- setup keymaps
-    LazyVim.lsp.on_attach(function(client, buffer)
-      require("lazyvim.plugins.lsp.keymaps").on_attach(client, buffer)
-    end)
-
-    LazyVim.lsp.setup()
-    LazyVim.lsp.on_dynamic_capability(require("lazyvim.plugins.lsp.keymaps").on_attach)
+    for server, server_opts in pairs(opts.servers) do
+      if type(server_opts) == "table" and server_opts.keys then
+        require("lazyvim.plugins.lsp.keymaps").set({ name = server ~= "*" and server or nil }, server_opts.keys)
+      end
+    end
 
     -- inlay hints
     if opts.inlay_hints.enabled then
-      LazyVim.lsp.on_supports_method("textDocument/inlayHint", function(client, buffer)
+      Snacks.util.lsp.on({ method = "textDocument/inlayHint" }, function(buffer)
         if
           vim.api.nvim_buf_is_valid(buffer)
           and vim.bo[buffer].buftype == ""
@@ -304,7 +422,7 @@ end
 
     -- folds
     if opts.folds.enabled then
-      LazyVim.lsp.on_supports_method("textDocument/foldingRange", function(client, buffer)
+      Snacks.util.lsp.on({ method = "textDocument/foldingRange" }, function()
         if LazyVim.set_default("foldmethod", "expr") then
           LazyVim.set_default("foldexpr", "v:lua.vim.lsp.foldexpr()")
         end
@@ -313,7 +431,7 @@ end
 
     -- code lens
     if opts.codelens.enabled and vim.lsp.codelens then
-      LazyVim.lsp.on_supports_method("textDocument/codeLens", function(client, buffer)
+      Snacks.util.lsp.on({ method = "textDocument/codeLens" }, function(buffer)
         vim.lsp.codelens.refresh()
         vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
           buffer = buffer,
@@ -337,7 +455,14 @@ end
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
     if opts.capabilities then
-      vim.lsp.config("*", { capabilities = opts.capabilities })
+      LazyVim.deprecate("lsp-config.opts.capabilities", "Use lsp-config.opts.servers['*'].capabilities instead")
+      opts.servers["*"] = vim.tbl_deep_extend("force", opts.servers["*"] or {}, {
+        capabilities = opts.capabilities,
+      })
+    end
+
+    if opts.servers["*"] then
+      vim.lsp.config("*", opts.servers["*"])
     end
 
     -- get all the servers that are available through mason-lspconfig
@@ -349,6 +474,9 @@ end
 
     ---@return boolean? exclude automatic setup
     local function configure(server)
+      if server == "*" then
+        return false
+      end
       local sopts = opts.servers[server]
       sopts = sopts == true and {} or (not sopts) and { enabled = false } or sopts --[[@as lazyvim.lsp.Config]]
 

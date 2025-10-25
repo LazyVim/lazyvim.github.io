@@ -71,15 +71,17 @@ function M.keymaps()
   group = "General"
   dofile(rootLazyVim .. "/lua/lazyvim/config/keymaps.lua")
   group = "LSP"
-  local lsp = dofile(rootLazyVim .. "/lua/lazyvim/plugins/lsp/keymaps.lua")
-  for _, keys in ipairs(lsp.get()) do
-    map(keys.mode or "n", keys[1], keys[2], keys)
+  local core = require("lazy.core.plugin").Spec.new({ import = "lazyvim.plugins" }, { optional = true })
+
+  local Plugin = require("lazy.core.plugin")
+  local lsp_opts = Plugin.values(core.plugins["nvim-lspconfig"], "opts", false)
+  for _, km in ipairs(lsp_opts.servers["*"].keys or {}) do
+    map(km.mode or "n", km[1], km[2], km)
   end
   vim.keymap.set = keymap_set
 
   group = "Plugins"
 
-  local core = require("lazy.core.plugin").Spec.new({ import = "lazyvim.plugins" }, { optional = true })
   Util.foreach(core.plugins, function(name, plugin)
     Handler.resolve(plugin)
     group = ("[%s](%s)"):format(plugin.name, plugin.url)

@@ -20,23 +20,53 @@ For more info on configuring plugin keymaps, see [Adding & Disabling Plugin Keym
 
 ## LSP keymaps
 
-These are the default keymaps that will be added when an LSP server is attached to the current buffer.
+LSP keymaps are configured using the `keys` option in your LSP server configuration.
+You can add global keymaps that apply to all LSP servers using the special `servers['*']` key,
+or server-specific keymaps.
+
 For more info see [Customizing LSP Keymaps](/plugins/lsp#%EF%B8%8F-customizing-lsp-keymaps)
 
-### LSP Server keymaps
+### Global LSP Keymaps
 
-Sometimes it may be necessary to add keymaps for a specific LSP server.
-Lazyutils provides a `keys` LSP option for this purpose.
+Global LSP keymaps apply to all LSP servers:
 
 ```lua
 {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      tsserver = {
+      ['*'] = {
         keys = {
-          { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-          { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+          -- Add or change a keymap
+          { "K", vim.lsp.buf.hover, desc = "Hover" },
+          -- Disable a keymap
+          { "gd", false },
+          -- Capability-based keymap (only set if server supports it)
+          { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", has = "codeAction" },
+        },
+      },
+    },
+  },
+}
+```
+
+### Server-Specific Keymaps
+
+Add keymaps for specific LSP servers:
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      vtsls = {
+        keys = {
+          { "<leader>co", function()
+            vim.lsp.buf.code_action({
+              apply = true,
+              context = { only = { "source.organizeImports" }, diagnostics = {} },
+            })
+          end, desc = "Organize Imports" },
         },
       },
     },

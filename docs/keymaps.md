@@ -82,6 +82,8 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;dpp</code> | Toggle Profiler | **n** |
 | <code>&lt;leader&gt;dph</code> | Toggle Profiler Highlights | **n** |
 | <code>&lt;leader&gt;uh</code> | Toggle Inlay Hints | **n** |
+| <code>&lt;leader&gt;gg</code> | Lazygit (Root Dir) | **n** |
+| <code>&lt;leader&gt;gG</code> | Lazygit (cwd) | **n** |
 | <code>&lt;leader&gt;gL</code> | Git Log (cwd) | **n** |
 | <code>&lt;leader&gt;gb</code> | Git Blame Line | **n** |
 | <code>&lt;leader&gt;gf</code> | Git Current File History | **n** |
@@ -115,10 +117,10 @@ possible keymaps starting with `<space>`.
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;cl</code> | Lsp Info | **n** |
-| <code>gd</code> | Goto Definition | **n** |
-| <code>gr</code> | References | **n** |
-| <code>gI</code> | Goto Implementation | **n** |
-| <code>gy</code> | Goto T[y]pe Definition | **n** |
+| <code>gd</code> | Goto Definition | **n**, **n** |
+| <code>gr</code> | References | **n**, **n** |
+| <code>gI</code> | Goto Implementation | **n**, **n** |
+| <code>gy</code> | Goto T[y]pe Definition | **n**, **n** |
 | <code>gD</code> | Goto Declaration | **n** |
 | <code>K</code> | Hover | **n** |
 | <code>gK</code> | Signature Help | **n** |
@@ -133,6 +135,10 @@ possible keymaps starting with `<space>`.
 | <code>[[</code> | Prev Reference | **n** |
 | <code>&lt;a-n&gt;</code> | Next Reference | **n** |
 | <code>&lt;a-p&gt;</code> | Prev Reference | **n** |
+| <code>&lt;leader&gt;ss</code> | LSP Symbols | **n** |
+| <code>&lt;leader&gt;sS</code> | LSP Workspace Symbols | **n** |
+| <code>gai</code> | C[a]lls Incoming | **n** |
+| <code>gao</code> | C[a]lls Outgoing | **n** |
 
 ## [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git)
 
