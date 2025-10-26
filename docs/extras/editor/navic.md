@@ -30,6 +30,9 @@ import TabItem from '@theme/TabItem';
 
 ```lua
 opts = function()
+  Snacks.util.lsp.on({ method = "textDocument/documentSymbol" }, function(buffer, client)
+    require("nvim-navic").attach(client, buffer)
+  end)
   return {
     separator = " ",
     highlight = true,
@@ -51,11 +54,11 @@ end
   lazy = true,
   init = function()
     vim.g.navic_silence = true
+  end,
+  opts = function()
     Snacks.util.lsp.on({ method = "textDocument/documentSymbol" }, function(buffer, client)
       require("nvim-navic").attach(client, buffer)
     end)
-  end,
-  opts = function()
     return {
       separator = " ",
       highlight = true,
