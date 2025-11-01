@@ -21,6 +21,37 @@ import TabItem from '@theme/TabItem';
 
 - [lang.git](/extras/lang/git)
 
+## [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "folke/snacks.nvim",
+  keys = { -- disable conflicting keymaps
+    { "<leader>gi", false },
+    { "<leader>gI", false },
+    { "<leader>gp", false },
+    { "<leader>gP", false },
+  },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [octo.nvim](https://github.com/pwntester/octo.nvim)
 
  Octo
