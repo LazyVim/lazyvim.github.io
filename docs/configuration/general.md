@@ -561,4 +561,25 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 </TabItem>
 </Tabs>
 
+## Project-Specific Settings
+
+You can also load different configurations based on what directory you are in.
+
+Project-specific settings are defined in `<project_root>/.lazy.lua`, where
+`<project_root>` is the directory neovim is opened in.
+
+```lua title="<project_root>/.lazy.lua"
+-- Project-specific editor settings
+-- e.g. vim.opt.tabstop = 4
+
+-- Return is required, even if it's an empty table
+return {
+  -- Project-specific plugin settings
+  -- See next page for how to configure plugins
+}
+```
+
+See [@kezhenxu94's blog](https://kezhenxu94.me/blog/lazyvim-project-specific-settings)
+for more details.
+
 <!-- general:end -->
