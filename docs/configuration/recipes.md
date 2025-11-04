@@ -25,6 +25,23 @@ override nvim-cmp and add cmp-emoji
 
 Use `<tab>` for completion and snippets (supertab).
 
+### blink.cmp
+
+```lua
+{
+  "Saghen/blink.cmp",
+  opts = {
+   keymap = {
+    preset = "enter",
+    ["<Tab>"] = { "select_next", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "fallback" },
+   },
+  },
+ }
+```
+
+### nvim-cmp
+
 ```lua
 {
   "hrsh7th/nvim-cmp",
