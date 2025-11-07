@@ -19,6 +19,8 @@ import TabItem from '@theme/TabItem';
 
 ## [harpoon](https://github.com/ThePrimeagen/harpoon)
 
+Harpoon is a  plugin that aims to enhance file and terminal navigation with a focus on minimizing keystrokes and providing a seamless workflow.
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
