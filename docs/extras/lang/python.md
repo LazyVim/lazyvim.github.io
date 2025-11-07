@@ -368,6 +368,46 @@ opts = nil
 
 </Tabs>
 
+## [venv-selector.nvim](https://github.com/linux-cultist/venv-selector.nvim/tree/regexp)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = {
+  settings = {
+    options = {
+      notify_user_on_venv_activation = true,
+    },
+  },
+}
+```
+```lua
+{
+  "linux-cultist/venv-selector.nvim",
+  branch = "regexp", -- Use this branch for the new version
+  cmd = "VenvSelect",
+  enabled = function()
+    return LazyVim.has("telescope.nvim")
+  end,
+  opts = {
+    settings = {
+      options = {
+        notify_user_on_venv_activation = true,
+      },
+    },
+  },
+  --  Call config for python files and load the cached venv automatically
+  ft = "python",
+  keys = { { "<leader>cv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) _(optional)_
 
 <Tabs>
