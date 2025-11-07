@@ -160,4 +160,78 @@ Important: make sure not to add prettier to null-ls, otherwise this won't work!
 }
 ```
 
+## Change `alpha-nvim` header
+
+If you would like to change the logo that greets you when opening nvim, you can do this:
+```lua
+{
+  "goolord/alpha-nvim",
+  opts = function()
+    local dashboard = require("alpha.themes.dashboard")
+
+      local logo = [[
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝
+      ]]
+      dashboard.section.header.val = vim.split(logo, "\n")
+  end,
+},
+```
+
+Generate or find ASCII art by Googling for "ASCII art (generator)", or check https://github.com/goolord/alpha-nvim/discussions/16 for inspiration.
+
+## Open `alpha-nvim` when all buffers are closed
+
+If you like a clean Lualine and remove buffers a lot (for example when using `bd` or `bP`), you are greeted by an empty buffer when all buffers are closed. If you'd like, you can configure `alpha-nvim` to open when there are no more buffers:
+
+```lua
+{
+  "echasnovski/mini.bufremove",
+  keys = {
+    {
+      "<leader>bd",
+      function()
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("mini.bufremove").delete(0, false)
+        if bufs and not bufs[2] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete Buffer",
+    },
+    {
+      "<leader>bD",
+      function()
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        require("mini.bufremove").delete(0, true)
+        if bufs and not bufs[2] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete Buffer (Force)",
+    },
+  },
+},
+{
+  "akinsho/bufferline.nvim",
+  keys = {
+    {
+      "<leader>bP",
+      function()
+        vim.cmd("BufferLineGroupClose ungrouped")
+        local bufs = vim.fn.getbufinfo({ buflisted = true })
+        if bufs and not bufs[2] then
+          require("alpha").start(true)
+        end
+      end,
+      desc = "Delete non-pinned buffers",
+    },
+  },
+},
+```
+
 <!-- recipes:end -->
