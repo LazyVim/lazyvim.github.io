@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 ## [mason.nvim](https://github.com/mason-org/mason.nvim)
 
- Ensure GitUI tool is installed
+ Ensure [GitUI tool](https://github.com/gitui-org/gitui) is installed
 
 
 <Tabs>
