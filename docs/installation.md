@@ -12,6 +12,14 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="local" label="Linux/MacOS" default>
 
+Mani Arasteh ([@ManiProjs](https://github.com/ManiProjs)) made an script named LazyInstaller.
+If you don't want to manually do these things below, you can use this script by Mani Arasteh if you use macOS or Linux:
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ManiProjs/lazyinstaller/refs/heads/main/install.sh)"
+```
+
+Follow the guide below to install manually
+
 Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 
 - Make a backup of your current Neovim files:
