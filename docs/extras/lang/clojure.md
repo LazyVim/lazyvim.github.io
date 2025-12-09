@@ -14,6 +14,12 @@ You don't need to copy the default settings to your config.
 They are only shown here for reference.
 :::
 
+:::info
+You will need to re-enable `zipPlugin` in your `lua/config/lazy.lua`
+to allow "jump to definition" in jar dependencies,
+otherwise you will get "Cursor position outside buffer" errors.
+:::
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
