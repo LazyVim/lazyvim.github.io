@@ -142,6 +142,7 @@ possible keymaps starting with `<space>`.
 
 | Key | Description | Mode |
 | --- | --- | --- |
+| <code>&lt;leader&gt;bj</code> | Pick Buffer | **n** |
 | <code>&lt;leader&gt;bl</code> | Delete Buffers to the Left | **n** |
 | <code>&lt;leader&gt;bp</code> | Toggle Pin | **n** |
 | <code>&lt;leader&gt;bP</code> | Delete Non-Pinned Buffers | **n** |
