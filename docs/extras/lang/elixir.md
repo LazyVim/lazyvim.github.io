@@ -33,6 +33,8 @@ opts = {
           function()
             local params = vim.lsp.util.make_position_params()
             LazyVim.lsp.execute({
+              title = "toPipe",
+              filter = "elixirls",
               command = "manipulatePipes:serverid",
               arguments = { "toPipe", params.textDocument.uri, params.position.line, params.position.character },
             })
@@ -44,6 +46,8 @@ opts = {
           function()
             local params = vim.lsp.util.make_position_params()
             LazyVim.lsp.execute({
+              title = "fromPipe",
+              filter = "elixirls",
               command = "manipulatePipes:serverid",
               arguments = { "fromPipe", params.textDocument.uri, params.position.line, params.position.character },
             })
@@ -73,6 +77,8 @@ opts = {
             function()
               local params = vim.lsp.util.make_position_params()
               LazyVim.lsp.execute({
+                title = "toPipe",
+                filter = "elixirls",
                 command = "manipulatePipes:serverid",
                 arguments = { "toPipe", params.textDocument.uri, params.position.line, params.position.character },
               })
@@ -84,6 +90,8 @@ opts = {
             function()
               local params = vim.lsp.util.make_position_params()
               LazyVim.lsp.execute({
+                title = "fromPipe",
+                filter = "elixirls",
                 command = "manipulatePipes:serverid",
                 arguments = { "fromPipe", params.textDocument.uri, params.position.line, params.position.character },
               })

@@ -481,7 +481,7 @@ Part of [lazyvim.plugins.extras.editor.illuminate](/extras/editor/illuminate)
 | <code>[[</code> | Prev Reference | **n** |
 | <code>]]</code> | Next Reference | **n** |
 
-## [leap.nvim](https://github.com/ggandor/leap.nvim.git)
+## [leap.nvim](https://codeberg.org/andyg/leap.nvim.git)
 Part of [lazyvim.plugins.extras.editor.leap](/extras/editor/leap)
 
 | Key | Description | Mode |
@@ -524,11 +524,7 @@ Part of [lazyvim.plugins.extras.editor.overseer](/extras/editor/overseer)
 
 | Key | Description | Mode |
 | --- | --- | --- |
-| <code>&lt;leader&gt;ob</code> | Task builder | **n** |
-| <code>&lt;leader&gt;oc</code> | Clear cache | **n** |
-| <code>&lt;leader&gt;oi</code> | Overseer Info | **n** |
 | <code>&lt;leader&gt;oo</code> | Run task | **n** |
-| <code>&lt;leader&gt;oq</code> | Action recent task | **n** |
 | <code>&lt;leader&gt;ot</code> | Task action | **n** |
 | <code>&lt;leader&gt;ow</code> | Task list | **n** |
 

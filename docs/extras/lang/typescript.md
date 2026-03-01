@@ -124,7 +124,11 @@ opts = {
         {
           "<leader>cV",
           function()
-            LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
+            LazyVim.lsp.execute({
+              title = "Select TypeScript Version",
+              filter = "vtsls",
+              command = "typescript.selectTypeScriptVersion",
+            })
           end,
           desc = "Select TS workspace version",
         },
@@ -328,7 +332,11 @@ opts = {
           {
             "<leader>cV",
             function()
-              LazyVim.lsp.execute({ command = "typescript.selectTypeScriptVersion" })
+              LazyVim.lsp.execute({
+                title = "Select TypeScript Version",
+                filter = "vtsls",
+                command = "typescript.selectTypeScriptVersion",
+              })
             end,
             desc = "Select TS workspace version",
           },
