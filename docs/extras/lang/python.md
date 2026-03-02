@@ -14,7 +14,7 @@ Additional options for this extra can be configured in your [lua/config/options.
 ```lua title="lua/config/options.lua"
 -- LSP Server to use for Python.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
-vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_lsp = "basedpyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
 ```
@@ -40,7 +40,6 @@ opts = { ensure_installed = { "ninja", "rst" } }
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -101,7 +100,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -169,7 +167,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -201,7 +198,6 @@ opts = nil
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -225,7 +221,6 @@ opts = {}
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -263,7 +258,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -307,7 +301,6 @@ opts = {
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -344,7 +337,6 @@ opts = nil
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
@@ -385,7 +377,6 @@ end
 
 </TabItem>
 
-
 <TabItem value="code" label="Full Spec">
 
 ```lua
@@ -405,8 +396,7 @@ end
 
 ## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim) _(optional)_
 
- Don't mess up DAP adapters provided by nvim-dap-python
-
+Don't mess up DAP adapters provided by nvim-dap-python
 
 <Tabs>
 
@@ -421,7 +411,6 @@ opts = {
 ```
 
 </TabItem>
-
 
 <TabItem value="code" label="Full Spec">
 
