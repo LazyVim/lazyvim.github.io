@@ -63,11 +63,11 @@ opts = function(_, opts)
   opts.formatters_by_ft = opts.formatters_by_ft or {}
   for _, ft in ipairs(supported) do
     opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
-    table.insert(opts.formatters_by_ft[ft], "biome")
+    table.insert(opts.formatters_by_ft[ft], "biome-check")
   end
 
   opts.formatters = opts.formatters or {}
-  opts.formatters.biome = {
+  opts.formatters["biome-check"] = {
     require_cwd = true,
   }
 end
@@ -82,16 +82,16 @@ end
 {
   "stevearc/conform.nvim",
   optional = true,
-  ---@param opts ConformOpts
+  ---@param opts conform.setupOpts
   opts = function(_, opts)
     opts.formatters_by_ft = opts.formatters_by_ft or {}
     for _, ft in ipairs(supported) do
       opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
-      table.insert(opts.formatters_by_ft[ft], "biome")
+      table.insert(opts.formatters_by_ft[ft], "biome-check")
     end
 
     opts.formatters = opts.formatters or {}
-    opts.formatters.biome = {
+    opts.formatters["biome-check"] = {
       require_cwd = true,
     }
   end,
