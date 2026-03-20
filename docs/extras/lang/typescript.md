@@ -7,6 +7,17 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- LSP Server to use for TypeScript.
+vim.g.lazyvim_ts_lsp = "vtsls" -- currently the default
+-- Set to "tsgo" to use the new typescript-language-server implementation instead of tsserver.
+vim.g.lazyvim_ts_lsp = "tsgo"
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
@@ -30,13 +41,50 @@ import TabItem from '@theme/TabItem';
 opts = {
   -- make sure mason installs the server
   servers = {
-    --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-    --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-    tsserver = {
-      enabled = false,
-    },
-    ts_ls = {
-      enabled = false,
+    ---@type lspconfig.settings.tsgo
+    tsgo = {
+      -- explicitly add default filetypes, so that we can extend
+      -- them in related extras
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+      },
+      settings = {
+        typescript = {
+          inlayHints = {
+            parameterNames = {
+              enabled = "literals",
+              suppressWhenArgumentMatchesName = true,
+            },
+            parameterTypes = { enabled = true },
+            variableTypes = { enabled = true },
+            propertyDeclarationTypes = { enabled = true },
+            functionLikeReturnTypes = { enabled = true },
+            enumMemberValues = { enabled = true },
+          },
+        },
+      },
+      keys = {
+        {
+          "<leader>co",
+          LazyVim.lsp.action["source.organizeImports"],
+          desc = "Organize Imports",
+        },
+        {
+          "<leader>cu",
+          LazyVim.lsp.action["source.removeUnused.ts"],
+          desc = "Remove unused imports",
+        },
+        {
+          "<leader>cD",
+          LazyVim.lsp.action["source.fixAll.ts"],
+          desc = "Fix all diagnostics",
+        },
+      },
     },
     vtsls = {
       -- explicitly add default filetypes, so that we can extend
@@ -216,13 +264,50 @@ opts = {
   opts = {
     -- make sure mason installs the server
     servers = {
-      --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-      --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-      tsserver = {
-        enabled = false,
-      },
-      ts_ls = {
-        enabled = false,
+      ---@type lspconfig.settings.tsgo
+      tsgo = {
+        -- explicitly add default filetypes, so that we can extend
+        -- them in related extras
+        filetypes = {
+          "javascript",
+          "javascriptreact",
+          "javascript.jsx",
+          "typescript",
+          "typescriptreact",
+          "typescript.tsx",
+        },
+        settings = {
+          typescript = {
+            inlayHints = {
+              parameterNames = {
+                enabled = "literals",
+                suppressWhenArgumentMatchesName = true,
+              },
+              parameterTypes = { enabled = true },
+              variableTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              functionLikeReturnTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
+            },
+          },
+        },
+        keys = {
+          {
+            "<leader>co",
+            LazyVim.lsp.action["source.organizeImports"],
+            desc = "Organize Imports",
+          },
+          {
+            "<leader>cu",
+            LazyVim.lsp.action["source.removeUnused.ts"],
+            desc = "Remove unused imports",
+          },
+          {
+            "<leader>cD",
+            LazyVim.lsp.action["source.fixAll.ts"],
+            desc = "Fix all diagnostics",
+          },
+        },
       },
       vtsls = {
         -- explicitly add default filetypes, so that we can extend
@@ -389,6 +474,44 @@ opts = {
       end,
     },
   },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = function(_, opts)
+  local servers = { "tsserver", "ts_ls", "vtsls", "tsgo", lsp }
+  for _, server in ipairs(servers) do
+    opts.servers[server] = opts.servers[server] or {}
+    opts.servers[server].enabled = server == lsp
+  end
+end
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "neovim/nvim-lspconfig",
+  opts = function(_, opts)
+    local servers = { "tsserver", "ts_ls", "vtsls", "tsgo", lsp }
+    for _, server in ipairs(servers) do
+      opts.servers[server] = opts.servers[server] or {}
+      opts.servers[server].enabled = server == lsp
+    end
+  end,
 }
 ```
 

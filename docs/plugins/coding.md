@@ -195,6 +195,7 @@ opts = {
     { path = "LazyVim", words = { "LazyVim" } },
     { path = "snacks.nvim", words = { "Snacks" } },
     { path = "lazy.nvim", words = { "LazyVim" } },
+    { path = "nvim-lspconfig", words = { "lspconfig.settings" } },
   },
 }
 ```
@@ -215,6 +216,7 @@ opts = {
       { path = "LazyVim", words = { "LazyVim" } },
       { path = "snacks.nvim", words = { "Snacks" } },
       { path = "lazy.nvim", words = { "LazyVim" } },
+      { path = "nvim-lspconfig", words = { "lspconfig.settings" } },
     },
   },
 }

@@ -26,14 +26,19 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## [mason.nvim](https://github.com/mason-org/mason.nvim)
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "biome" } }
+opts = {
+  servers = {
+    ---@type lspconfig.settings.biome
+    biome = {},
+  },
+}
 ```
 
 </TabItem>
@@ -43,8 +48,13 @@ opts = { ensure_installed = { "biome" } }
 
 ```lua
 {
-  "mason-org/mason.nvim",
-  opts = { ensure_installed = { "biome" } },
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      ---@type lspconfig.settings.biome
+      biome = {},
+    },
+  },
 }
 ```
 
