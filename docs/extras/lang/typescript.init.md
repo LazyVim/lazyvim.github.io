@@ -68,18 +68,6 @@ opts = {
           },
         },
       },
-      keys = {
-        {
-          "<leader>cu",
-          LazyVim.lsp.action["source.removeUnused.ts"],
-          desc = "Remove unused imports",
-        },
-        {
-          "<leader>cD",
-          LazyVim.lsp.action["source.fixAll.ts"],
-          desc = "Fix all diagnostics",
-        },
-      },
     },
     vtsls = {
       -- explicitly add default filetypes, so that we can extend
@@ -148,11 +136,6 @@ opts = {
           "<leader>cM",
           LazyVim.lsp.action["source.addMissingImports.ts"],
           desc = "Add missing imports",
-        },
-        {
-          "<leader>cu",
-          LazyVim.lsp.action["source.removeUnused.ts"],
-          desc = "Remove unused imports",
         },
         {
           "<leader>cD",
@@ -281,18 +264,6 @@ opts = {
             },
           },
         },
-        keys = {
-          {
-            "<leader>cu",
-            LazyVim.lsp.action["source.removeUnused.ts"],
-            desc = "Remove unused imports",
-          },
-          {
-            "<leader>cD",
-            LazyVim.lsp.action["source.fixAll.ts"],
-            desc = "Fix all diagnostics",
-          },
-        },
       },
       vtsls = {
         -- explicitly add default filetypes, so that we can extend
@@ -361,11 +332,6 @@ opts = {
             "<leader>cM",
             LazyVim.lsp.action["source.addMissingImports.ts"],
             desc = "Add missing imports",
-          },
-          {
-            "<leader>cu",
-            LazyVim.lsp.action["source.removeUnused.ts"],
-            desc = "Remove unused imports",
           },
           {
             "<leader>cD",
