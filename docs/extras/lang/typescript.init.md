@@ -1,4 +1,4 @@
-# Typescript
+# `Init`
 
 <!-- plugins:start -->
 
@@ -69,11 +69,6 @@ opts = {
         },
       },
       keys = {
-        {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
-        },
         {
           "<leader>cu",
           LazyVim.lsp.action["source.removeUnused.ts"],
@@ -148,11 +143,6 @@ opts = {
             })
           end,
           desc = "File References",
-        },
-        {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
         },
         {
           "<leader>cM",
@@ -293,11 +283,6 @@ opts = {
         },
         keys = {
           {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-          {
             "<leader>cu",
             LazyVim.lsp.action["source.removeUnused.ts"],
             desc = "Remove unused imports",
@@ -371,11 +356,6 @@ opts = {
               })
             end,
             desc = "File References",
-          },
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
           },
           {
             "<leader>cM",

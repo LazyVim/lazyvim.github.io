@@ -133,6 +133,7 @@ possible keymaps starting with `<space>`.
 | <code>[[</code> | Prev Reference | **n** |
 | <code>&lt;a-n&gt;</code> | Next Reference | **n** |
 | <code>&lt;a-p&gt;</code> | Prev Reference | **n** |
+| <code>&lt;leader&gt;co</code> | Organize Imports | **n** |
 | <code>&lt;leader&gt;ss</code> | LSP Symbols | **n** |
 | <code>&lt;leader&gt;sS</code> | LSP Workspace Symbols | **n** |
 | <code>gai</code> | C[a]lls Incoming | **n** |
