@@ -356,7 +356,7 @@ Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
 | <code>&lt;leader&gt;as</code> | Select CLI | **n** |
 | <code>&lt;leader&gt;at</code> | Send This | **n**, **x** |
 | <code>&lt;leader&gt;av</code> | Send Visual Selection | **x** |
-| <code>&lt;c-.&gt;</code> | Sidekick Toggle | **n**, **i**, **t**, **x** |
+| <code>&lt;c-.&gt;</code> | Sidekick Focus | **n**, **i**, **t**, **x** |
 
 ## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
