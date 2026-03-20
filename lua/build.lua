@@ -285,6 +285,11 @@ function M.update()
   Util.walk(rootLazyVim .. "/lua/lazyvim/plugins/extras", function(path, name, type)
     if type == "file" and name:find("%.lua$") then
       local modname = path:gsub(".*/lua/", ""):gsub("/", "."):gsub("%.lua$", "")
+      local index = modname:find("%.init$")
+      if index then
+        modname = modname:sub(1, index - 1)
+      end
+
       local lines = {} ---@type string[]
       local title = modname:match("%.([^%.]+)$")
       title = title:sub(1, 1):upper() .. title:sub(2)
@@ -320,7 +325,10 @@ They are only shown here for reference.
         M.plugins("extras/" .. path:gsub(".*/extras/", "")).content,
         "",
       })
-      local md_file = docs .. "/extras/" .. modname:gsub(".*extras%.", ""):gsub("%.", "/", 1) .. ".md"
+      local md_file = docs .. "/extras/" .. modname:gsub(".*extras%.", ""):gsub("%.", "/", 2) .. ".md"
+      if index then
+        md_file = md_file:gsub("%.md$", "/index.md")
+      end
       keep[#keep + 1] = "docs" .. md_file:sub(#docs + 1)
       if not vim.loop.fs_stat(md_file) then
         local dir = vim.fn.fnamemodify(md_file, ":h")

@@ -1,4 +1,4 @@
-# `Init`
+# `Typescript`
 
 <!-- plugins:start -->
 
