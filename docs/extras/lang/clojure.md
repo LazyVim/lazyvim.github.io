@@ -163,7 +163,6 @@ opts = {}
   event = "LazyFile",
   config = function(_, _)
     require("conjure.main").main()
-    require("conjure.mapping")["on-filetype"]()
   end,
   init = function()
     -- print color codes if baleia.nvim is available

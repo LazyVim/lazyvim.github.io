@@ -7,6 +7,20 @@ You can enable the extra with the `:LazyExtras` command.
 Plugins marked as optional will only be configured if they are installed.
 :::
 
+### Options
+
+Additional options for this extra can be configured in your [lua/config/options.lua](/configuration/general#options) file:
+
+```lua title="lua/config/options.lua"
+-- LSP Server to use for TypeScript.
+---@type "vtsls" | "tsgo"
+vim.g.lazyvim_ts_lsp = "vtsls" -- currently the default
+
+-- To use the newer, much faster `tsgo` LSP server, either:
+-- * enable the `tsgo` extra, or
+-- * set `vim.g.lazyvim_ts_lsp = "tsgo"` in your `options.lua`
+```
+
 Below you can find a list of included plugins and their default settings.
 
 :::caution
