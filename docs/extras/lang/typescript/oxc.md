@@ -27,7 +27,11 @@ import TabItem from '@theme/TabItem';
 opts = {
   servers = {
     ---@type lspconfig.settings.oxlint
-    oxlint = {},
+    oxlint = {
+      settings = {
+        fixKind = "all",
+      },
+    },
     --- disable the oxfmt lsp server since we use conform for formatting
     oxfmt = { enabled = false },
   },
@@ -45,7 +49,11 @@ opts = {
   opts = {
     servers = {
       ---@type lspconfig.settings.oxlint
-      oxlint = {},
+      oxlint = {
+        settings = {
+          fixKind = "all",
+        },
+      },
       --- disable the oxfmt lsp server since we use conform for formatting
       oxfmt = { enabled = false },
     },
