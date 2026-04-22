@@ -17,6 +17,29 @@ They are only shown here for reference.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## [async.nvim](https://github.com/lewis6991/async.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = nil
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{ "lewis6991/async.nvim", lazy = true }
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim)
 
 <Tabs>
@@ -24,30 +47,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = {
-  prompt_func_return_type = {
-    go = false,
-    java = false,
-    cpp = false,
-    c = false,
-    h = false,
-    hpp = false,
-    cxx = false,
-  },
-  prompt_func_param_type = {
-    go = false,
-    java = false,
-    cpp = false,
-    c = false,
-    h = false,
-    hpp = false,
-    cxx = false,
-  },
-  printf_statements = {},
-  print_var_statements = {},
-  show_success_message = true, -- shows a message with information about the refactor on success
-  -- i.e. [Refactor] Inlined 3 variable occurrences
-}
+opts = {}
 ```
 
 </TabItem>
@@ -59,71 +59,54 @@ opts = {
 {
   "ThePrimeagen/refactoring.nvim",
   event = { "BufReadPre", "BufNewFile" },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
   keys = {
     { "<leader>r", "", desc = "+refactor", mode = { "n", "x" } },
     {
       "<leader>rs",
-      pick,
+      function()
+        return require("refactoring").select_refactor()
+      end,
       mode = { "n", "x" },
-      desc = "Refactor",
+      desc = "Select Refactor",
     },
     {
       "<leader>ri",
       function()
-        return require("refactoring").refactor("Inline Variable")
+        return require("refactoring").inline_var()
       end,
       mode = { "n", "x" },
       desc = "Inline Variable",
       expr = true,
     },
     {
-      "<leader>rb",
-      function()
-        return require("refactoring").refactor("Extract Block")
-      end,
-      mode = { "n", "x" },
-      desc = "Extract Block",
-      expr = true,
-    },
-    {
-      "<leader>rf",
-      function()
-        return require("refactoring").refactor("Extract Block To File")
-      end,
-      mode = { "n", "x" },
-      desc = "Extract Block To File",
-      expr = true,
-    },
-    {
       "<leader>rP",
       function()
-        require("refactoring").debug.printf({ below = false })
+        return require("refactoring.debug").print_loc({ output_location = "below" })
       end,
-      desc = "Debug Print",
+      desc = "Debug Print Location",
+      expr = true,
     },
     {
       "<leader>rp",
       function()
-        require("refactoring").debug.print_var({ normal = true })
+        return require("refactoring.debug").print_var({ output_location = "below" }) .. "iw"
       end,
       mode = { "n", "x" },
       desc = "Debug Print Variable",
+      expr = true,
     },
     {
       "<leader>rc",
       function()
-        require("refactoring").debug.cleanup({})
+        return require("refactoring.debug").cleanup({ restore_view = true }) .. "ag"
       end,
       desc = "Debug Cleanup",
+      expr = true,
     },
     {
       "<leader>rf",
       function()
-        return require("refactoring").refactor("Extract Function")
+        return require("refactoring").extract_func()
       end,
       mode = { "n", "x" },
       desc = "Extract Function",
@@ -132,7 +115,7 @@ opts = {
     {
       "<leader>rF",
       function()
-        return require("refactoring").refactor("Extract Function To File")
+        return require("refactoring").extract_func_to_file()
       end,
       mode = { "n", "x" },
       desc = "Extract Function To File",
@@ -141,103 +124,15 @@ opts = {
     {
       "<leader>rx",
       function()
-        return require("refactoring").refactor("Extract Variable")
+        return require("refactoring").extract_var()
       end,
       mode = { "n", "x" },
       desc = "Extract Variable",
       expr = true,
     },
-    {
-      "<leader>rp",
-      function()
-        require("refactoring").debug.print_var()
-      end,
-      mode = { "n", "x" },
-      desc = "Debug Print Variable",
-    },
   },
-  opts = {
-    prompt_func_return_type = {
-      go = false,
-      java = false,
-      cpp = false,
-      c = false,
-      h = false,
-      hpp = false,
-      cxx = false,
-    },
-    prompt_func_param_type = {
-      go = false,
-      java = false,
-      cpp = false,
-      c = false,
-      h = false,
-      hpp = false,
-      cxx = false,
-    },
-    printf_statements = {},
-    print_var_statements = {},
-    show_success_message = true, -- shows a message with information about the refactor on success
-    -- i.e. [Refactor] Inlined 3 variable occurrences
-  },
-  config = function(_, opts)
-    require("refactoring").setup(opts)
-    if LazyVim.has("telescope.nvim") then
-      LazyVim.on_load("telescope.nvim", function()
-        require("telescope").load_extension("refactoring")
-      end)
-    end
-  end,
+  opts = {},
 }
-```
-
-</TabItem>
-
-</Tabs>
-
-## [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-lua/plenary.nvim",
-  "nvim-treesitter/nvim-treesitter",
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = nil
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-"nvim-treesitter/nvim-treesitter"
 ```
 
 </TabItem>
