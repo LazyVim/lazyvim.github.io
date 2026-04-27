@@ -35,11 +35,11 @@ to make it easy to customize and extend your config.
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
 - a terminal that support true color and _undercurl_:
-  - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & Macos)_**
-  - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
-  - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
-  - [iterm2](https://iterm2.com/) **_(Macos)_**
-  - [ghostty](https://ghostty.org/) **_(Linux, Macos & Windows)_**
+  - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & macOS)_**
+  - [wezterm](https://github.com/wez/wezterm) **_(Linux, macOS & Windows)_**
+  - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, macOS & Windows)_**
+  - [iterm2](https://iterm2.com/) **_(macOS)_**
+  - [ghostty](https://ghostty.org/) **_(Linux & macOS)_**
 
 ## 🎓 Learn
 
