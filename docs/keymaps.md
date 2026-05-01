@@ -184,6 +184,25 @@ possible keymaps starting with `<space>`.
 | --- | --- | --- |
 | <code>&lt;leader&gt;cm</code> | Mason | **n** |
 
+## [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+| Key | Description         | Mode |
+| --- |---------------------| --- |
+| <code>]h</code> | Next Hunk           | **n** |
+| <code>[h</code> | Previous Hunk       | **n** |
+| <code>]H</code> | Last Hunk           | **n** |
+| <code>[H</code> | First Hunk          | **n** |
+| <code>&lt;leader&gt;ghs</code> | Stage Hunk          | **n**, **x** |
+| <code>&lt;leader&gt;ghr</code> | Reset Hunk          | **n**, **x** |
+| <code>&lt;leader&gt;ghS</code> | Stage Buffer        | **n** |
+| <code>&lt;leader&gt;ghu</code> | Undo Stage Hunk     | **n** |
+| <code>&lt;leader&gt;ghR</code> | Reset Buffer        | **n** |
+| <code>&lt;leader&gt;ghp</code> | Preview Hunk Inline | **n** |
+| <code>&lt;leader&gt;ghb</code> | Blame Line          | **n** |
+| <code>&lt;leader&gt;ghB</code> | Blame Buffer        | **n** |
+| <code>&lt;leader&gt;ghd</code> | Diff This           | **n** |
+| <code>&lt;leader&gt;ghD</code> | Diff This ~         | **n** |
+| <code>ih</code> | GitSigns Select Hunk | **o**, **x** |
+
 ## [noice.nvim](https://github.com/folke/noice.nvim.git)
 
 | Key | Description | Mode |
