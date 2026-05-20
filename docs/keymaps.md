@@ -41,6 +41,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
 | <code>&lt;leader&gt;bo</code> | Delete Other Buffers | **n** |
+| <code>&lt;leader&gt;bi</code> | Delete Invisible Buffers | **n** |
 | <code>&lt;leader&gt;bD</code> | Delete Buffer and Window | **n** |
 | <code>&lt;esc&gt;</code> | Escape and Clear hlsearch | **i**, **n**, **s** |
 | <code>&lt;leader&gt;ur</code> | Redraw / Clear hlsearch / Diff Update | **n** |
