@@ -42,6 +42,8 @@ opts = nil
 
 ## [refactoring.nvim](https://github.com/ThePrimeagen/refactoring.nvim)
 
+A Refactoring library based off the Refactoring book by Martin Fowler
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
