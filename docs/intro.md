@@ -30,8 +30,8 @@ to make it easy to customize and extend your config.
 - [lazygit](https://github.com/jesseduffield/lazygit) **_(optional)_**
 - **tree-sitter-cli** and a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter/tree/main?tab=readme-ov-file#requirements)
 - **curl** for [blink.cmp](https://github.com/Saghen/blink.cmp) **(completion engine)**
-- for [fzf-lua](https://github.com/ibhagwan/fzf-lua) **_(optional)_**
-  - **fzf**: [fzf](https://github.com/junegunn/fzf) **(v0.25.1 or greater)**
+- for [fzf-lua](https://github.com/ibhagwan/fzf-lua) **_(optional)_** and [snacks.nvim](https://github.com/folke/snacks.nvim) **_(which is the default picker in new installations)_**
+  - **fzf**: [fzf](https://github.com/junegunn/fzf) **(v0.25.1 or greater)** (only needed if you use [fzf-lua](https://github.com/ibhagwan/fzf-lua) picker)
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
 - a terminal that support true color and _undercurl_:
