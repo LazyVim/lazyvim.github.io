@@ -11,7 +11,7 @@ return {
     end,
   },
 
-  -- ## Supertab
+  -- ## Supertab for nvim-cmp
   --
   -- Use `<tab>` for completion and snippets (supertab).
   {
@@ -54,6 +54,20 @@ return {
         end, { "i", "s" }),
       })
     end,
+  },
+
+  -- ## Supertab for blink.cmp
+  --
+  -- Use `<tab>` for completion and snippets (supertab).
+  {
+    "Saghen/blink.cmp",
+    opts = {
+      keymap = {
+        preset = "enter",
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
+      },
+    },
   },
 
   -- ## Change surround mappings
