@@ -82,6 +82,7 @@ opts = function(_, opts)
     fzf_colors = true,
     fzf_opts = {
       ["--no-scrollbar"] = true,
+      -- ["--history"] = vim.fn.stdpath("data") .. "/fzf-history", -- stores previous searches (<C-p> = "next-history" and <C-n> = "prev-history")
     },
     defaults = {
       -- formatter = "path.filename_first",
@@ -227,6 +228,7 @@ end
       fzf_colors = true,
       fzf_opts = {
         ["--no-scrollbar"] = true,
+        -- ["--history"] = vim.fn.stdpath("data") .. "/fzf-history", -- stores previous searches (<C-p> = "next-history" and <C-n> = "prev-history")
       },
       defaults = {
         -- formatter = "path.filename_first",
