@@ -2,6 +2,8 @@
 
 **LazyVim** uses `conform.nvim` for formatting.
 
+Additionally, settings can be set in the [options](https://www.lazyvim.org/configuration/general#options) file, and they will be merged with the default conform options automatically.
+
 Configuring `conform.nvim`:
 
 - `opts.format`: extra options passed to `require("conform").format(options)`
