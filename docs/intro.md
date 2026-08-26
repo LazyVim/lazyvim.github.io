@@ -39,7 +39,7 @@ to make it easy to customize and extend your config.
   - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
-  - [ghostty](https://ghostty.org/) **_(Linux, Macos & Windows)_**
+  - [ghostty](https://ghostty.org/) **_(Linux & Macos)_**
 
 ## 🎓 Learn
 
