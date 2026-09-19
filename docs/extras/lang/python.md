@@ -16,7 +16,7 @@ Additional options for this extra can be configured in your [lua/config/options.
 -- Set to "basedpyright" to use basedpyright instead of pyright.
 vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
-vim.g.lazyvim_python_ruff = "ruff"
+vim.g.lazyvim_python_lsp = "ruff"
 ```
 
 Below you can find a list of included plugins and their default settings.
