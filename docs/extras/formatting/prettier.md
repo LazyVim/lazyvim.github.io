@@ -81,6 +81,10 @@ end
 
 </TabItem>
 
+:::info
+The snippets below rely on values defined in LazyVim's Prettier extra implementation
+(`supported`, `M.has_parser`, `M.has_config`), so they are shown for reference only.
+:::
 
 <TabItem value="code" label="Full Spec">
 
