@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="local" label="Linux/MacOS" default>
+<TabItem value="local" label="Linux/macOS" default>
 
 Install the [LazyVim Starter](https://github.com/LazyVim/starter)
 
