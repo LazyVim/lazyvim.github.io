@@ -34,12 +34,13 @@ to make it easy to customize and extend your config.
   - **fzf**: [fzf](https://github.com/junegunn/fzf) **(v0.25.1 or greater)**
   - **live grep**: [ripgrep](https://github.com/BurntSushi/ripgrep)
   - **find files**: [fd](https://github.com/sharkdp/fd)
-- a terminal that support true color and _undercurl_:
+- a terminal that supports true color and _undercurl_:
   - [kitty](https://github.com/kovidgoyal/kitty) **_(Linux & Macos)_**
   - [wezterm](https://github.com/wez/wezterm) **_(Linux, Macos & Windows)_**
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, Macos & Windows)_**
   - [iterm2](https://iterm2.com/) **_(Macos)_**
-  - [ghostty](https://ghostty.org/) **_(Linux, Macos & Windows)_**
+  - [ghostty](https://ghostty.org/) **_(Linux, Macos)_**
+  - [Windows Terminal](https://learn.microsoft.com/en-us/windows/terminal/) **_(Windows)_**
 
 ## 🎓 Learn
 
