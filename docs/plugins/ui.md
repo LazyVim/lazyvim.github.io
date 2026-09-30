@@ -69,6 +69,7 @@ opts = {
     { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
     { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
     { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+    { "<leader>bj", "<cmd>BufferLinePick<cr>", desc = "Pick Buffer" },
   },
   opts = {
     options = {

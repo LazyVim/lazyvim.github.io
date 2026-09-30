@@ -92,7 +92,7 @@ opts = {
 
 ## [snacks.nvim](https://github.com/folke/snacks.nvim)
 
- disable snacks scroll when mini-indentscope is enabled
+ disable snacks scope when mini-indentscope is enabled
 
 
 <Tabs>

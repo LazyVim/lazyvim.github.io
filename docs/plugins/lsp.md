@@ -188,6 +188,18 @@ opts = function()
             desc = "Next Reference", enabled = function() return Snacks.words.is_enabled() end },
           { "<a-p>", function() Snacks.words.jump(-vim.v.count1, true) end, has = "documentHighlight",
             desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
+          {
+            "<leader>co",
+            LazyVim.lsp.action["source.organizeImports"],
+            desc = "Organize Imports",
+            has = "codeAction",
+            enabled = function(buf)
+              local code_actions = vim.tbl_filter(function(action)
+                return action:find("^source%.organizeImports%.?$")
+              end, LazyVim.lsp.code_actions({ bufnr = buf }))
+              return #code_actions > 0
+            end
+          },
         },
       },
       stylua = { enabled = false },
@@ -248,7 +260,7 @@ end
 ```lua
 {
   "neovim/nvim-lspconfig",
-  event = "LazyFile",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "mason.nvim",
     { "mason-org/mason-lspconfig.nvim", config = function() end },
@@ -345,6 +357,18 @@ end
               desc = "Next Reference", enabled = function() return Snacks.words.is_enabled() end },
             { "<a-p>", function() Snacks.words.jump(-vim.v.count1, true) end, has = "documentHighlight",
               desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
+            {
+              "<leader>co",
+              LazyVim.lsp.action["source.organizeImports"],
+              desc = "Organize Imports",
+              has = "codeAction",
+              enabled = function(buf)
+                local code_actions = vim.tbl_filter(function(action)
+                  return action:find("^source%.organizeImports%.?$")
+                end, LazyVim.lsp.code_actions({ bufnr = buf }))
+                return #code_actions > 0
+              end
+            },
           },
         },
         stylua = { enabled = false },
@@ -396,12 +420,15 @@ end
     return ret
   end,
   ---@param opts PluginLspOpts
-  config = vim.schedule_wrap(function(_, opts)
+  config = function(_, opts)
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
     -- setup keymaps
-    for server, server_opts in pairs(opts.servers) do
+    local names = vim.tbl_keys(opts.servers) ---@type string[]
+    table.sort(names)
+    for _, server in ipairs(names) do
+      local server_opts = opts.servers[server]
       if type(server_opts) == "table" and server_opts.keys then
         require("lazyvim.plugins.lsp.keymaps").set({ name = server ~= "*" and server or nil }, server_opts.keys)
       end
@@ -505,7 +532,7 @@ end
         automatic_enable = { exclude = mason_exclude },
       })
     end
-  end),
+  end,
 }
 ```
 
