@@ -71,23 +71,8 @@ opts = {
           logLevel = "error",
         },
       },
-      keys = {
-        {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
-        },
-      },
     },
-    ruff_lsp = {
-      keys = {
-        {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
-        },
-      },
-    },
+    ruff_lsp = {},
   },
   setup = {
     [ruff] = function()
@@ -117,23 +102,8 @@ opts = {
             logLevel = "error",
           },
         },
-        keys = {
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-        },
       },
-      ruff_lsp = {
-        keys = {
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-        },
-      },
+      ruff_lsp = {},
     },
     setup = {
       [ruff] = function()

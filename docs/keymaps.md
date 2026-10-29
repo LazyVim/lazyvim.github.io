@@ -41,6 +41,7 @@ possible keymaps starting with `<space>`.
 | <code>&lt;leader&gt;`</code> | Switch to Other Buffer | **n** |
 | <code>&lt;leader&gt;bd</code> | Delete Buffer | **n** |
 | <code>&lt;leader&gt;bo</code> | Delete Other Buffers | **n** |
+| <code>&lt;leader&gt;bi</code> | Delete Invisible Buffers | **n** |
 | <code>&lt;leader&gt;bD</code> | Delete Buffer and Window | **n** |
 | <code>&lt;esc&gt;</code> | Escape and Clear hlsearch | **i**, **n**, **s** |
 | <code>&lt;leader&gt;ur</code> | Redraw / Clear hlsearch / Diff Update | **n** |
@@ -133,6 +134,7 @@ possible keymaps starting with `<space>`.
 | <code>[[</code> | Prev Reference | **n** |
 | <code>&lt;a-n&gt;</code> | Next Reference | **n** |
 | <code>&lt;a-p&gt;</code> | Prev Reference | **n** |
+| <code>&lt;leader&gt;co</code> | Organize Imports | **n** |
 | <code>&lt;leader&gt;ss</code> | LSP Symbols | **n** |
 | <code>&lt;leader&gt;sS</code> | LSP Workspace Symbols | **n** |
 | <code>gai</code> | C[a]lls Incoming | **n** |
@@ -356,7 +358,7 @@ Part of [lazyvim.plugins.extras.ai.sidekick](/extras/ai/sidekick)
 | <code>&lt;leader&gt;as</code> | Select CLI | **n** |
 | <code>&lt;leader&gt;at</code> | Send This | **n**, **x** |
 | <code>&lt;leader&gt;av</code> | Send Visual Selection | **x** |
-| <code>&lt;c-.&gt;</code> | Sidekick Toggle | **n**, **i**, **t**, **x** |
+| <code>&lt;c-.&gt;</code> | Sidekick Focus | **n**, **i**, **t**, **x** |
 
 ## [mini.surround](https://github.com/nvim-mini/mini.surround.git)
 Part of [lazyvim.plugins.extras.coding.mini-surround](/extras/coding/mini-surround)
@@ -535,14 +537,13 @@ Part of [lazyvim.plugins.extras.editor.refactoring](/extras/editor/refactoring)
 | Key | Description | Mode |
 | --- | --- | --- |
 | <code>&lt;leader&gt;r</code> | +refactor | **n**, **x** |
-| <code>&lt;leader&gt;rb</code> | Extract Block | **n**, **x** |
 | <code>&lt;leader&gt;rc</code> | Debug Cleanup | **n** |
 | <code>&lt;leader&gt;rf</code> | Extract Function | **n**, **x** |
 | <code>&lt;leader&gt;rF</code> | Extract Function To File | **n**, **x** |
 | <code>&lt;leader&gt;ri</code> | Inline Variable | **n**, **x** |
 | <code>&lt;leader&gt;rp</code> | Debug Print Variable | **n**, **x** |
-| <code>&lt;leader&gt;rP</code> | Debug Print | **n** |
-| <code>&lt;leader&gt;rs</code> | Refactor | **n**, **x** |
+| <code>&lt;leader&gt;rP</code> | Debug Print Location | **n** |
+| <code>&lt;leader&gt;rs</code> | Select Refactor | **n**, **x** |
 | <code>&lt;leader&gt;rx</code> | Extract Variable | **n**, **x** |
 
 ## [snacks.nvim](https://github.com/folke/snacks.nvim.git)

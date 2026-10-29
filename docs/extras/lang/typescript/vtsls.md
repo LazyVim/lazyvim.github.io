@@ -1,4 +1,4 @@
-# Typescript
+# `Vtsls`
 
 <!-- plugins:start -->
 
@@ -30,14 +30,6 @@ import TabItem from '@theme/TabItem';
 opts = {
   -- make sure mason installs the server
   servers = {
-    --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-    --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-    tsserver = {
-      enabled = false,
-    },
-    ts_ls = {
-      enabled = false,
-    },
     vtsls = {
       -- explicitly add default filetypes, so that we can extend
       -- them in related extras
@@ -102,19 +94,9 @@ opts = {
           desc = "File References",
         },
         {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
-        },
-        {
           "<leader>cM",
           LazyVim.lsp.action["source.addMissingImports.ts"],
           desc = "Add missing imports",
-        },
-        {
-          "<leader>cu",
-          LazyVim.lsp.action["source.removeUnused.ts"],
-          desc = "Remove unused imports",
         },
         {
           "<leader>cD",
@@ -136,16 +118,6 @@ opts = {
     },
   },
   setup = {
-    --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-    --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-    tsserver = function()
-      -- disable tsserver
-      return true
-    end,
-    ts_ls = function()
-      -- disable tsserver
-      return true
-    end,
     vtsls = function(_, opts)
       Snacks.util.lsp.on({ name = "vtsls" }, function(buffer, client)
         client.commands["_typescript.moveToFileRefactoring"] = function(command, ctx)
@@ -216,14 +188,6 @@ opts = {
   opts = {
     -- make sure mason installs the server
     servers = {
-      --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-      --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-      tsserver = {
-        enabled = false,
-      },
-      ts_ls = {
-        enabled = false,
-      },
       vtsls = {
         -- explicitly add default filetypes, so that we can extend
         -- them in related extras
@@ -288,19 +252,9 @@ opts = {
             desc = "File References",
           },
           {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-          {
             "<leader>cM",
             LazyVim.lsp.action["source.addMissingImports.ts"],
             desc = "Add missing imports",
-          },
-          {
-            "<leader>cu",
-            LazyVim.lsp.action["source.removeUnused.ts"],
-            desc = "Remove unused imports",
           },
           {
             "<leader>cD",
@@ -322,16 +276,6 @@ opts = {
       },
     },
     setup = {
-      --- @deprecated -- tsserver renamed to ts_ls but not yet released, so keep this for now
-      --- the proper approach is to check the nvim-lspconfig release version when it's released to determine the server name dynamically
-      tsserver = function()
-        -- disable tsserver
-        return true
-      end,
-      ts_ls = function()
-        -- disable tsserver
-        return true
-      end,
       vtsls = function(_, opts)
         Snacks.util.lsp.on({ name = "vtsls" }, function(buffer, client)
           client.commands["_typescript.moveToFileRefactoring"] = function(command, ctx)
@@ -396,17 +340,17 @@ opts = {
 
 </Tabs>
 
-## [mason.nvim](https://github.com/mason-org/mason.nvim)
+## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+
+ correctly setup lspconfig
+
 
 <Tabs>
 
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = function(_, opts)
-  opts.ensure_installed = opts.ensure_installed or {}
-  table.insert(opts.ensure_installed, "js-debug-adapter")
-end
+opts = {}
 ```
 
 </TabItem>
@@ -416,301 +360,8 @@ end
 
 ```lua
 {
-  "mason-org/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = opts.ensure_installed or {}
-    table.insert(opts.ensure_installed, "js-debug-adapter")
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mini.icons](https://github.com/nvim-mini/mini.icons)
-
- Filetype icons
-
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  file = {
-    [".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-    [".node-version"] = { glyph = "", hl = "MiniIconsGreen" },
-    [".prettierrc"] = { glyph = "", hl = "MiniIconsPurple" },
-    [".yarnrc.yml"] = { glyph = "", hl = "MiniIconsBlue" },
-    ["eslint.config.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-    ["package.json"] = { glyph = "", hl = "MiniIconsGreen" },
-    ["tsconfig.json"] = { glyph = "", hl = "MiniIconsAzure" },
-    ["tsconfig.build.json"] = { glyph = "", hl = "MiniIconsAzure" },
-    ["yarn.lock"] = { glyph = "", hl = "MiniIconsBlue" },
-  },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "nvim-mini/mini.icons",
-  opts = {
-    file = {
-      [".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      [".node-version"] = { glyph = "", hl = "MiniIconsGreen" },
-      [".prettierrc"] = { glyph = "", hl = "MiniIconsPurple" },
-      [".yarnrc.yml"] = { glyph = "", hl = "MiniIconsBlue" },
-      ["eslint.config.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
-      ["package.json"] = { glyph = "", hl = "MiniIconsGreen" },
-      ["tsconfig.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      ["tsconfig.build.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      ["yarn.lock"] = { glyph = "", hl = "MiniIconsBlue" },
-    },
-  },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [nvim-dap](https://github.com/mfussenegger/nvim-dap) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = function()
-  local dap = require("dap")
-
-  for _, adapterType in ipairs({ "node", "chrome", "msedge" }) do
-    local pwaType = "pwa-" .. adapterType
-
-    if not dap.adapters[pwaType] then
-      dap.adapters[pwaType] = {
-        type = "server",
-        host = "localhost",
-        port = "${port}",
-        executable = {
-          command = "js-debug-adapter",
-          args = { "${port}" },
-        },
-      }
-    end
-
-    -- Define adapters without the "pwa-" prefix for VSCode compatibility
-    if not dap.adapters[adapterType] then
-      dap.adapters[adapterType] = function(cb, config)
-        local nativeAdapter = dap.adapters[pwaType]
-
-        config.type = pwaType
-
-        if type(nativeAdapter) == "function" then
-          nativeAdapter(cb, config)
-        else
-          cb(nativeAdapter)
-        end
-      end
-    end
-  end
-
-  local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
-
-  local vscode = require("dap.ext.vscode")
-  vscode.type_to_filetypes["node"] = js_filetypes
-  vscode.type_to_filetypes["pwa-node"] = js_filetypes
-
-  for _, language in ipairs(js_filetypes) do
-    if not dap.configurations[language] then
-      local runtimeExecutable = nil
-      if language:find("typescript") then
-        runtimeExecutable = vim.fn.executable("tsx") == 1 and "tsx" or "ts-node"
-      end
-      dap.configurations[language] = {
-        {
-          type = "pwa-node",
-          request = "launch",
-          name = "Launch file",
-          program = "${file}",
-          cwd = "${workspaceFolder}",
-          sourceMaps = true,
-          runtimeExecutable = runtimeExecutable,
-          skipFiles = {
-            "<node_internals>/**",
-            "node_modules/**",
-          },
-          resolveSourceMapLocations = {
-            "${workspaceFolder}/**",
-            "!**/node_modules/**",
-          },
-        },
-        {
-          type = "pwa-node",
-          request = "attach",
-          name = "Attach",
-          processId = require("dap.utils").pick_process,
-          cwd = "${workspaceFolder}",
-          sourceMaps = true,
-          runtimeExecutable = runtimeExecutable,
-          skipFiles = {
-            "<node_internals>/**",
-            "node_modules/**",
-          },
-          resolveSourceMapLocations = {
-            "${workspaceFolder}/**",
-            "!**/node_modules/**",
-          },
-        },
-      }
-    end
-  end
-end
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "mfussenegger/nvim-dap",
-  optional = true,
-  dependencies = {
-    {
-      "mason-org/mason.nvim",
-      opts = function(_, opts)
-        opts.ensure_installed = opts.ensure_installed or {}
-        table.insert(opts.ensure_installed, "js-debug-adapter")
-      end,
-    },
-  },
-  opts = function()
-    local dap = require("dap")
-
-    for _, adapterType in ipairs({ "node", "chrome", "msedge" }) do
-      local pwaType = "pwa-" .. adapterType
-
-      if not dap.adapters[pwaType] then
-        dap.adapters[pwaType] = {
-          type = "server",
-          host = "localhost",
-          port = "${port}",
-          executable = {
-            command = "js-debug-adapter",
-            args = { "${port}" },
-          },
-        }
-      end
-
-      -- Define adapters without the "pwa-" prefix for VSCode compatibility
-      if not dap.adapters[adapterType] then
-        dap.adapters[adapterType] = function(cb, config)
-          local nativeAdapter = dap.adapters[pwaType]
-
-          config.type = pwaType
-
-          if type(nativeAdapter) == "function" then
-            nativeAdapter(cb, config)
-          else
-            cb(nativeAdapter)
-          end
-        end
-      end
-    end
-
-    local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
-
-    local vscode = require("dap.ext.vscode")
-    vscode.type_to_filetypes["node"] = js_filetypes
-    vscode.type_to_filetypes["pwa-node"] = js_filetypes
-
-    for _, language in ipairs(js_filetypes) do
-      if not dap.configurations[language] then
-        local runtimeExecutable = nil
-        if language:find("typescript") then
-          runtimeExecutable = vim.fn.executable("tsx") == 1 and "tsx" or "ts-node"
-        end
-        dap.configurations[language] = {
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch file",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            sourceMaps = true,
-            runtimeExecutable = runtimeExecutable,
-            skipFiles = {
-              "<node_internals>/**",
-              "node_modules/**",
-            },
-            resolveSourceMapLocations = {
-              "${workspaceFolder}/**",
-              "!**/node_modules/**",
-            },
-          },
-          {
-            type = "pwa-node",
-            request = "attach",
-            name = "Attach",
-            processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
-            sourceMaps = true,
-            runtimeExecutable = runtimeExecutable,
-            skipFiles = {
-              "<node_internals>/**",
-              "node_modules/**",
-            },
-            resolveSourceMapLocations = {
-              "${workspaceFolder}/**",
-              "!**/node_modules/**",
-            },
-          },
-        }
-      end
-    end
-  end,
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim) _(optional)_
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
-opts = {
-  -- chrome adapter is deprecated, use js-debug-adapter instead
-  automatic_installation = { exclude = { "chrome" } },
-}
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "jay-babu/mason-nvim-dap.nvim",
-  optional = true,
-  opts = {
-    -- chrome adapter is deprecated, use js-debug-adapter instead
-    automatic_installation = { exclude = { "chrome" } },
-  },
+  "neovim/nvim-lspconfig",
+  opts = {},
 }
 ```
 

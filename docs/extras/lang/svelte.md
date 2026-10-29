@@ -59,15 +59,7 @@ opts = { ensure_installed = { "svelte" } }
 ```lua
 opts = {
   servers = {
-    svelte = {
-      keys = {
-        {
-          "<leader>co",
-          LazyVim.lsp.action["source.organizeImports"],
-          desc = "Organize Imports",
-        },
-      },
-    },
+    svelte = {},
   },
 }
 ```
@@ -82,15 +74,7 @@ opts = {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      svelte = {
-        keys = {
-          {
-            "<leader>co",
-            LazyVim.lsp.action["source.organizeImports"],
-            desc = "Organize Imports",
-          },
-        },
-      },
+      svelte = {},
     },
   },
 }
