@@ -112,32 +112,6 @@ opts = nil
 <TabItem value="opts" label="Options">
 
 ```lua
-opts = { ensure_installed = { "haskell-language-server" } }
-```
-
-</TabItem>
-
-
-<TabItem value="code" label="Full Spec">
-
-```lua
-{
-  "mason-org/mason.nvim",
-  opts = { ensure_installed = { "haskell-language-server" } },
-}
-```
-
-</TabItem>
-
-</Tabs>
-
-## [mason.nvim](https://github.com/mason-org/mason.nvim)
-
-<Tabs>
-
-<TabItem value="opts" label="Options">
-
-```lua
 opts = { ensure_installed = { "haskell-debug-adapter" } }
 ```
 
@@ -277,9 +251,35 @@ end
 
 </Tabs>
 
+## [mason.nvim](https://github.com/mason-org/mason.nvim)
+
+<Tabs>
+
+<TabItem value="opts" label="Options">
+
+```lua
+opts = { ensure_installed = { "hlint" } }
+```
+
+</TabItem>
+
+
+<TabItem value="code" label="Full Spec">
+
+```lua
+{
+  "mason-org/mason.nvim",
+  opts = { ensure_installed = { "hlint" } },
+}
+```
+
+</TabItem>
+
+</Tabs>
+
 ## [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 
- Make sure lspconfig doesn't start hls,
+ Make sure neither lspconfig nor mason-lspconfig starts hls,
  as it conflicts with haskell-tools
 
 
@@ -289,6 +289,9 @@ end
 
 ```lua
 opts = {
+  servers = {
+    hls = {},
+  },
   setup = {
     hls = function()
       return true
@@ -306,6 +309,9 @@ opts = {
 {
   "neovim/nvim-lspconfig",
   opts = {
+    servers = {
+      hls = {},
+    },
     setup = {
       hls = function()
         return true
@@ -497,6 +503,12 @@ opts = {
   opts = {
     linters_by_ft = {
       haskell = { "hlint" },
+    },
+  },
+  dependencies = {
+    {
+      "mason-org/mason.nvim",
+      opts = { ensure_installed = { "hlint" } },
     },
   },
 }
