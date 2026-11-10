@@ -44,6 +44,11 @@ Install the [LazyVim Starter](https://github.com/LazyVim/starter)
   nvim
   ```
 
+- Or if you wish we can stack the commands like this:
+  ```sh
+  mv ~/.config/nvim{,.bak}; mv ~/.local/share/nvim{,.bak}; mv ~/.local/state/nvim{,.bak}; mv ~/.cache/nvim{,.bak}; git clone https://github.com/LazyVim/starter ~/.config/nvim; rm -rf ~/.config/nvim/.git; nvim
+  ```
+
   Refer to the comments in the files on how to customize **LazyVim**.
 
 </TabItem>
@@ -79,6 +84,11 @@ with [PowerShell](https://github.com/PowerShell/PowerShell)
 
   ```powershell
   nvim
+  ```
+
+- Or if you wish we can stack the commands like this:
+  ```powershell
+  Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak; Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak; git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim; Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force; nvim
   ```
 
   Refer to the comments in the files on how to customize **LazyVim**.
