@@ -102,6 +102,19 @@ Use `<tab>` for completion and snippets (supertab).
   },
 }
 ```
+And, optionally, make the fzf-lua file picker transparent as well:
+```lua
+{
+  "ibhagwan/fzf-lua",
+  opts = {
+    fzf_colors = {
+      true,
+      bg = "-1",
+      gutter = "-1",
+    },
+  },
+}
+```
 
 ## Fix clangd offset encoding
 
