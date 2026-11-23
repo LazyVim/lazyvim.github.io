@@ -19,6 +19,8 @@ import TabItem from '@theme/TabItem';
 
 ## [neogen](https://github.com/danymat/neogen)
 
+An annotation generator that supports multiple languages and annotation conventions.
+
 <Tabs>
 
 <TabItem value="opts" label="Options">
