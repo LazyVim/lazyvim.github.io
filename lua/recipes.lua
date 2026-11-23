@@ -131,4 +131,24 @@ return {
       },
     },
   },
-}
+
+  -- ## Multiplexer support (e.g. tmux, wezterm)
+  --
+  -- Allows you to seamlessly navigate between neovim and different terminal multiplexers.
+  --
+  -- Requires adding [these](https://github.com/numToStr/Navigator.nvim/wiki/Tmux-Integration) changes to your tmux config.
+  {
+    "numToStr/Navigator.nvim",
+    config = function()
+      require("Navigator").setup({
+        disable_on_zoom = true,
+      })
+    end,
+    keys = {
+      { "<C-h>", "<CMD>NavigatorLeft<CR>", mode = { "n", "t" } },
+      { "<C-l>", "<CMD>NavigatorRight<CR>", mode = { "n", "t" } },
+      { "<C-k>", "<CMD>NavigatorUp<CR>", mode = { "n", "t" } },
+      { "<C-j>", "<CMD>NavigatorDown<CR>", mode = { "n", "t" } },
+      { "<C-\\>", "<CMD>NavigatorPrevious<CR>", mode = { "n", "t" } },
+    },
+  }
