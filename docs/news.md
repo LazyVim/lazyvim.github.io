@@ -189,7 +189,7 @@ Additionally, some core plugins have been moved to extras.
 
 ## 10.x
 
-- added new extra for [mini.diff](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-diff.md)
+- added new extra for [mini.diff](https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-diff.md)
   This is a plugin similar to gitsigns but with a neat diff overlay
   that can be toggled with `<leader>go`.
 
